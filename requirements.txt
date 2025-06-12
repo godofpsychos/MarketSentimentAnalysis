@@ -1,0 +1,4 @@
+newscatcher
+feedsearch
+newspaper3k
+GoogleNews

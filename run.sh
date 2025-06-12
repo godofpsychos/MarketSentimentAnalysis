@@ -1,0 +1,1 @@
+python3 temp.py > output_scrapper.txt 2>&1 &
