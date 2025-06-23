@@ -1,0 +1,683 @@
+/* Modern Dashboard Design */
+.App {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  color: #1a202c;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dashboard Header */
+.App-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem 0;
+  margin: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stock Selector */
+.stock-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stock-selector label {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.stock-selector select {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  color: #2d3748;
+  font-size: 0.95rem;
+  font-weight: 500;
+  min-width: 200px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.stock-selector select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Main Content */
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+/* Sentiment Section */
+.sentiment-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sentiment-section h2 {
+  margin: 0 0 2rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sentiment-section h2::before {
+  content: "📊";
+  font-size: 2.5rem;
+}
+
+/* Stock Container Layout */
+.sentiment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Individual Stock Container */
+.stock-sentiment {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.stock-sentiment::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.stock-sentiment:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Stock Container Header */
+.stock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.stock-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.stock-sentiment h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stock-sentiment h3::before {
+  content: "📊";
+  font-size: 1.8rem;
+}
+
+.updated-date {
+  color: #718096;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* Stock Container Content Layout */
+.stock-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.sentiment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chart-section {
+  min-height: 500px;
+}
+
+/* Sentiment Meter */
+.sentiment-meter-container {
+  margin: 2rem 0;
+}
+
+.main-stream-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.main-stream-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2d3748;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sentiment-meter {
+  width: 100%;
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.sentiment-meter-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: all 0.6s ease;
+  position: relative;
+}
+
+.sentiment-meter-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.3) 25%, rgba(255,255,255,0.3) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.3) 75%);
+  background-size: 20px 20px;
+  animation: move 2s linear infinite;
+}
+
+@keyframes move {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; }
+}
+
+.sentiment-label {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.sentiment-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sentiment-scale .buy { color: #48bb78; }
+.sentiment-scale .neutral { color: #ed8936; }
+.sentiment-scale .sell { color: #f56565; }
+
+/* Yahoo Finance Chart */
+.yahoo-finance-chart {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.stock-info-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f7fafc;
+}
+
+.stock-info-header h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stock-info-header h3::before {
+  content: "📈";
+  font-size: 1.2rem;
+}
+
+.price-info {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.current-price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #48bb78;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.current-price::before {
+  content: "₹";
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.price-range {
+  color: #718096;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: #f7fafc;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+/* Chart Controls */
+.chart-controls {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.period-selector {
+  display: flex;
+  gap: 0.5rem;
+  background: #f7fafc;
+  padding: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.period-btn {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.period-btn:hover {
+  background: #e2e8f0;
+  color: #2d3748;
+}
+
+.period-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.chart-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  flex: 1;
+  min-height: 400px;
+}
+
+/* Loading States */
+.loading, .chart-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: #4a5568;
+}
+
+.spinner, .chart-loading .spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading p, .chart-loading p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Error States */
+.error-container, .chart-error {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #fed7d7;
+  color: #e53e3e;
+}
+
+.error-container h3, .chart-error h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.error-container button, .chart-error button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+}
+
+.error-container button:hover, .chart-error button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* News Section */
+.news-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.news-section h2 {
+  margin: 0 0 2rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.news-section h2::before {
+  content: "📰";
+  font-size: 2.5rem;
+}
+
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.news-item {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.news-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.news-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.news-item h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #2d3748;
+}
+
+.news-date {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.news-sentiment {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.sentiment-score {
+  display: inline-block;
+  border-radius: 8px;
+  padding: 0.4rem 1rem;
+  margin-left: 0.75rem;
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.news-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.news-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.no-data {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #718096;
+  font-style: italic;
+  font-size: 1.1rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .stock-content {
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .App-header h1 {
+    font-size: 2rem;
+  }
+  
+  .content {
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+  }
+  
+  .sentiment-section, .news-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .stock-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .stock-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .news-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .stock-selector {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  .stock-selector select {
+    min-width: unset;
+    width: 100%;
+  }
+  
+  .price-info {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .period-selector {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .period-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header h1 {
+    font-size: 1.7rem;
+  }
+  
+  .sentiment-section h2, .news-section h2 {
+    font-size: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .stock-sentiment, .news-item {
+    padding: 1.5rem;
+  }
+  
+  .yahoo-finance-chart {
+    padding: 1.5rem;
+  }
+  
+  .chart-container {
+    height: 300px;
+  }
+}

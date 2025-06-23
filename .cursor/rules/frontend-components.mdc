@@ -1,0 +1,61 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Frontend Architecture & Components
+
+## React Application Structure
+**Location**: [frontend/src/](mdc:frontend/src)  
+**Framework**: React 19  
+**Main Component**: [App.js](mdc:frontend/src/App.js)
+
+## Key React Components
+
+### Main App Component
+**File**: [frontend/src/App.js](mdc:frontend/src/App.js)  
+**Features**:
+- Fetches data from Flask API endpoints
+- Manages global state for stocks and sentiment data
+- Handles loading and error states
+
+### UI Components
+
+#### SentimentMeter
+**Purpose**: Visual sentiment display with color-coded meters  
+**Scale**: 1-10 sentiment score  
+**Colors**:
+- Green (1-3): Strong Buy
+- Yellow (4-6): Neutral/Hold  
+- Red (7-10): Strong Sell
+
+#### StockSentiment  
+**Purpose**: Individual stock card display  
+**Contains**: Stock name, last updated timestamp, sentiment meter
+
+#### Loading Component
+**Purpose**: Loading spinner and message display
+
+#### ErrorMessage
+**Purpose**: Error state display with retry functionality
+
+## API Integration
+**Base URL**: `http://localhost:5000`  
+**Endpoints Used**:
+- `/api/stocks` - Get list of available stocks
+- `/api/sentiment` - Get sentiment data (with optional stock filter)
+
+## State Management
+**Stocks Data**: Array of sentiment objects  
+**Stocks List**: Array of available stock symbols  
+**Selected Stock**: Currently filtered stock (empty = show all)  
+**Loading/Error States**: Boolean flags for UI state
+
+## Styling
+**CSS File**: [frontend/src/App.css](mdc:frontend/src/App.css)  
+**Features**: Responsive design, color-coded sentiment indicators, modern UI
+
+## Development Server
+**Port**: 3000  
+**Start Command**: `npm start` (from frontend directory)  
+**Dependencies**: Managed via [frontend/package.json](mdc:frontend/package.json)

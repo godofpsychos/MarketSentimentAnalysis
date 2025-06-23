@@ -1,0 +1,57 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Data Processing Pipeline
+
+## Pipeline Overview
+The data pipeline runs sequentially through [run.sh](mdc:run.sh) and processes market sentiment in 5 stages.
+
+## Pipeline Stages
+
+### Stage 1: News Scraping
+**Script**: [temp.py](mdc:temp.py)  
+**Function**: Scrapes Google News for 50+ Indian stocks  
+**Output**: [news.json](mdc:news.json) - Raw news data  
+**Stocks Covered**: RELIANCE, TCS, HDFCBANK, ICICIBANK, INFY, ITC, LTIM, LT, HINDUNILVR, AXISBANK, KOTAKBANK, SBIN, BHARTIARTL, HCLTECH, MARUTI, ASIANPAINT, BAJFINANCE, BAJAJFINSV, TITAN, ULTRACEMCO, SUNPHARMA, NESTLEIND, POWERGRID, ADANIENT, ADANIGREEN, ADANIPORTS, ADANIPOWER, APOLLOHOSP, BPCL, BRITANNIA, CIPLA, COALINDIA, DIVISLAB, DRREDDY, EICHERMOT, GRASIM, HDFCLIFE, HEROMOTOCO, HINDALCO, INDUSINDBK, JSWSTEEL, M&M, NTPC, ONGC, SBI, SHREECEM, TATACONSUM, TATAMOTORS, TATASTEEL, TECHM, WIPRO
+
+### Stage 2: Database Storage  
+**Script**: [db/sqllitedb.py](mdc:db/sqllitedb.py)  
+**Function**: Stores news in SQLite database  
+**Input**: [news.json](mdc:news.json)  
+**Output**: `db/stock_news.db`
+
+### Stage 3: Recent News Filtering
+**Script**: [insightGen/genInsight.py](mdc:insightGen/genInsight.py)  
+**Function**: Filters news based on market timing logic  
+**Output**: `insightGen/recent_news.json`
+
+#### Market Timing Logic:
+- **Before 12:00 PM**:
+  - Monday: Gets news from last Friday 12:00 PM to now
+  - Tuesday: Gets news from Monday 12:00 PM to now  
+  - Other days: Gets news from today 12:00 PM to now
+- **After 12:00 PM**: Gets news from 9 hours ago to now
+
+### Stage 4: Sentiment Analysis
+**Script**: [Sentiment_Analysis/sentiment_analysis.py](mdc:Sentiment_Analysis/sentiment_analysis.py)  
+**Function**: Uses OpenAI GPT-4-mini to analyze sentiment  
+**Input**: `insightGen/recent_news.json`  
+**Output**: `Sentiment_Analysis/sentiment_analysis_results.json`  
+**AI Model**: GPT-4o-mini with temperature=0  
+**Scoring**: 1-10 scale (1=very negative, 10=very positive)
+
+### Stage 5: Results Storage
+**Script**: [Sentiment_Analysis/saveResults.py](mdc:Sentiment_Analysis/saveResults.py)  
+**Function**: Saves sentiment scores to database  
+**Input**: `sentiment_analysis_results.json`  
+**Output**: `Sentiment_Analysis/sentiment_analysis.db`
+
+## Execution Commands
+- **Full Pipeline**: `./run.sh`
+- **With Web Services**: `./start_app.sh` 
+- **UI Only**: `./start_UI.sh`
+
+## Dependencies Between Stages
+Each stage depends on the previous stage completing successfully. The pipeline is designed to run sequentially, not in parallel.

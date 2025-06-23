@@ -2,3 +2,6 @@ newscatcher
 feedsearch
 newspaper3k
 GoogleNews
+flask
+flask_cors
+requests

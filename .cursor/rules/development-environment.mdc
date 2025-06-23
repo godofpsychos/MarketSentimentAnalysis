@@ -1,0 +1,44 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Development Environment & Setup
+
+## Python Virtual Environment
+**CRITICAL**: This project ALWAYS uses a Python virtual environment located in `.venv/` directory.
+
+### Virtual Environment Usage
+- **Location**: `.venv/` in project root
+- **Activation**: `source .venv/bin/activate` (must be done before any Python operations)
+- **Dependencies**: Managed via [requirements.txt](mdc:requirements.txt)
+
+### Required Dependencies
+- `newscatcher` - News API integration
+- `feedsearch` - RSS feed discovery
+- `newspaper3k` - Article extraction
+- `GoogleNews` - Google News scraping
+- `flask` - Web framework
+- `flask_cors` - Cross-origin resource sharing
+- `requests` - HTTP library
+
+## Environment Variables
+- **OPENAI_API_KEY**: Required for sentiment analysis in [Sentiment_Analysis/sentiment_analysis.py](mdc:Sentiment_Analysis/sentiment_analysis.py)
+
+## Database Setup
+- **SQLite databases** are created automatically by the scripts
+- **No manual database setup** required
+- Databases are recreated/updated on each run
+
+## Development Workflow
+1. Always activate virtual environment first
+2. Run data pipeline via [run.sh](mdc:run.sh) to collect and process data
+3. Start web services via [start_app.sh](mdc:start_app.sh) or [start_UI.sh](mdc:start_UI.sh)
+
+## Log Files
+All logs are stored in `LOGS_APP/` directory:
+- `backend_api.log` - API server logs
+- `frontend.log` - React development server logs
+- `newsDB.log` - Database operation logs
+- `output_sentiment.txt` - Sentiment analysis logs
+- `output_scrapper.txt` - Web scraping logs

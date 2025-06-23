@@ -1,0 +1,52 @@
+# Market Sentiment Analysis - Comprehensive Cron Jobs
+# 
+# This file contains all scheduled tasks for the Market Sentiment Analysis system
+# To apply: crontab crontab_config.txt
+#
+# Format: minute hour day_of_month month day_of_week command
+# 
+# ============================================================================
+# EXISTING JOBS - Main Market Sentiment Analysis
+# ============================================================================
+
+# Run main analysis at 8:00 AM on weekdays (Monday-Friday)
+00 08 * * 1-5 /home/tarun/MarketSentimentAnalysis/run.sh
+
+# Run main analysis at 12:05 PM on weekdays (Monday-Friday) 
+05 12 * * 1-5 /home/tarun/MarketSentimentAnalysis/run.sh
+
+# ============================================================================
+# NEW JOBS - Corporate Actions Scraper
+# ============================================================================
+
+# Run corporate actions scraper at 6:30 AM on weekdays (before market opens)
+30 06 * * 1-5 /home/tarun/MarketSentimentAnalysis/cron_corporate_scraper.sh
+
+# Run corporate actions scraper at 9:30 AM on weekdays (after market opens)
+30 09 * * 1-5 /home/tarun/MarketSentimentAnalysis/cron_corporate_scraper.sh
+
+# Run corporate actions scraper at 6:00 PM on weekdays (after market closes)
+00 18 * * 1-5 /home/tarun/MarketSentimentAnalysis/cron_corporate_scraper.sh
+
+# ============================================================================
+# WEEKEND JOBS - Weekly Maintenance
+# ============================================================================
+
+# Run corporate actions scraper on Saturday at 10:00 AM (weekly summary)
+00 10 * * 6 /home/tarun/MarketSentimentAnalysis/cron_corporate_scraper.sh
+
+# ============================================================================
+# SYSTEM MAINTENANCE
+# ============================================================================
+
+# Clean up old log files every Sunday at 2:00 AM
+00 02 * * 0 find /home/tarun/MarketSentimentAnalysis/LOGS_APP -name "*.log" -mtime +30 -delete
+
+# Clean up old corporate actions JSON files every Sunday at 2:30 AM (keep last 15 days)
+30 02 * * 0 find /home/tarun/MarketSentimentAnalysis/corporate_announcements -name "stock_corporate_actions_*.json" -mtime +15 -delete
+
+# ============================================================================
+# ENVIRONMENT VARIABLES (if needed)
+# ============================================================================
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+SHELL=/bin/bash 

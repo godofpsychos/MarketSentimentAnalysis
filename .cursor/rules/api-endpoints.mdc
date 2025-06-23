@@ -1,0 +1,66 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# API Endpoints & Database Schema
+
+## Flask API Server
+**Location**: [backend_api.py](mdc:backend_api.py)  
+**Port**: 5000  
+**CORS**: Enabled for all routes
+
+## Available Endpoints
+
+### GET /api/stocks
+**Purpose**: Get list of all stocks in the database  
+**Returns**: JSON array of stock symbols  
+**Example Response**:
+```json
+{
+  "stocks": ["RELIANCE", "TCS", "HDFCBANK", "ICICIBANK", ...]
+}
+```
+
+### GET /api/sentiment
+**Purpose**: Get sentiment data for stocks  
+**Parameters**: 
+- `stock` (optional): Specific stock symbol to filter by
+**Returns**: Latest sentiment scores  
+
+**Example Response**:
+```json
+{
+  "data": [
+    {
+      "datetime": "2024-01-01T10:00:00",
+      "stock": "RELIANCE", 
+      "sentiment": 7.5
+    }
+  ]
+}
+```
+
+## Database Schema
+
+### News Database (`db/stock_news.db`)
+**Table**: `news`
+- `datetime` (TEXT, PRIMARY KEY) - ISO format timestamp
+- `stock` (TEXT, PRIMARY KEY) - Stock symbol
+- `description` (TEXT) - News headline/description
+- `source_link` (TEXT) - URL to original article
+
+### Sentiment Database (`Sentiment_Analysis/sentiment_analysis.db`)
+**Table**: `sentimentResult`
+- `datetime` (TEXT, PRIMARY KEY) - ISO format timestamp  
+- `stock` (TEXT, PRIMARY KEY) - Stock symbol
+- `marketSentiment` (FLOAT) - AI sentiment score (1-10 scale)
+
+## Sentiment Score Interpretation
+- **1-3**: Strong Buy (Very Positive)
+- **4-6**: Neutral/Hold
+- **7-10**: Strong Sell (Very Negative)
+
+## Database Connections
+- **News DB Path**: `/home/tarun/MarketSentimentAnalysis/db/stock_news.db`
+- **Sentiment DB Path**: `/home/tarun/MarketSentimentAnalysis/Sentiment_Analysis/sentiment_analysis.db`

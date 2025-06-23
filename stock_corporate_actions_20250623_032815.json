@@ -1,0 +1,655 @@
+{
+  "scraping_info": {
+    "total_stocks": 51,
+    "days_back": 60,
+    "scraped_at": "2025-06-23T03:28:15.036501",
+    "csv_file": "stocksList.csv"
+  },
+  "stock_symbols": [
+    "RELIANCE",
+    "TCS",
+    "HDFCBANK",
+    "ICICIBANK",
+    "INFY",
+    "ITC",
+    "LTIM",
+    "LT",
+    "HINDUNILVR",
+    "AXISBANK",
+    "KOTAKBANK",
+    "SBIN",
+    "BHARTIARTL",
+    "HCLTECH",
+    "MARUTI",
+    "ASIANPAINT",
+    "BAJFINANCE",
+    "BAJAJFINSV",
+    "TITAN",
+    "ULTRACEMCO",
+    "SUNPHARMA",
+    "NESTLEIND",
+    "POWERGRID",
+    "ADANIENT",
+    "ADANIGREEN",
+    "ADANIPORTS",
+    "ADANIPOWER",
+    "APOLLOHOSP",
+    "BPCL",
+    "BRITANNIA",
+    "CIPLA",
+    "COALINDIA",
+    "DIVISLAB",
+    "DRREDDY",
+    "EICHERMOT",
+    "GRASIM",
+    "HDFCLIFE",
+    "HEROMOTOCO",
+    "HINDALCO",
+    "INDUSINDBK",
+    "JSWSTEEL",
+    "M&M",
+    "NTPC",
+    "ONGC",
+    "SBI",
+    "SHREECEM",
+    "TATACONSUM",
+    "TATAMOTORS",
+    "TATASTEEL",
+    "TECHM",
+    "WIPRO"
+  ],
+  "individual_stock_announcements": {
+    "RELIANCE": {
+      "company_info": {
+        "bse_code": 500325,
+        "nse_symbol": "RELIANCE",
+        "company_name": "RELIANCE"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:40.012878"
+    },
+    "TCS": {
+      "company_info": {
+        "bse_code": 532540,
+        "nse_symbol": "TCS",
+        "company_name": "TCS"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:40.868532"
+    },
+    "HDFCBANK": {
+      "company_info": {
+        "bse_code": 500180,
+        "nse_symbol": "HDFCBANK",
+        "company_name": "HDFCBANK"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:41.118574"
+    },
+    "ICICIBANK": {
+      "company_info": {
+        "bse_code": 532174,
+        "nse_symbol": "ICICIBANK",
+        "company_name": "ICICIBANK"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:41.394754"
+    },
+    "INFY": {
+      "company_info": {
+        "bse_code": 500209,
+        "nse_symbol": "INFY",
+        "company_name": "INFY"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:41.603529"
+    },
+    "ITC": {
+      "company_info": {
+        "bse_code": 500875,
+        "nse_symbol": "ITC",
+        "company_name": "ITC"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:41.811937"
+    },
+    "LTIM": {
+      "company_info": {
+        "bse_code": 541540,
+        "nse_symbol": "LTIM",
+        "company_name": "LTIM"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:55.947237"
+    },
+    "LT": {
+      "company_info": {
+        "bse_code": 500510,
+        "nse_symbol": "LT",
+        "company_name": "LT"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:56.298406"
+    },
+    "HINDUNILVR": {
+      "company_info": {
+        "bse_code": 500696,
+        "nse_symbol": "HINDUNILVR",
+        "company_name": "HINDUNILVR"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:56.714834"
+    },
+    "AXISBANK": {
+      "company_info": {
+        "bse_code": 532215,
+        "nse_symbol": "AXISBANK",
+        "company_name": "AXISBANK"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:56.914319"
+    },
+    "KOTAKBANK": {
+      "company_info": {
+        "bse_code": 500247,
+        "nse_symbol": "KOTAKBANK",
+        "company_name": "KOTAKBANK"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:57.123953"
+    },
+    "SBIN": {
+      "company_info": {
+        "bse_code": 500112,
+        "nse_symbol": "SBIN",
+        "company_name": "SBIN"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:57.554700"
+    },
+    "BHARTIARTL": {
+      "company_info": {
+        "bse_code": 532454,
+        "nse_symbol": "BHARTIARTL",
+        "company_name": "BHARTIARTL"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:57.848446"
+    },
+    "HCLTECH": {
+      "company_info": {
+        "bse_code": 532281,
+        "nse_symbol": "HCLTECH",
+        "company_name": "HCLTECH"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:58.062534"
+    },
+    "MARUTI": {
+      "company_info": {
+        "bse_code": 532500,
+        "nse_symbol": "MARUTI",
+        "company_name": "MARUTI"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:58.354837"
+    },
+    "ASIANPAINT": {
+      "company_info": {
+        "bse_code": 500820,
+        "nse_symbol": "ASIANPAINT",
+        "company_name": "ASIANPAINT"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:58.750878"
+    },
+    "BAJFINANCE": {
+      "company_info": {
+        "bse_code": 500034,
+        "nse_symbol": "BAJFINANCE",
+        "company_name": "BAJFINANCE"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:58.989223"
+    },
+    "BAJAJFINSV": {
+      "company_info": {
+        "bse_code": 532978,
+        "nse_symbol": "BAJAJFINSV",
+        "company_name": "BAJAJFINSV"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:59.639933"
+    },
+    "TITAN": {
+      "company_info": {
+        "bse_code": 500114,
+        "nse_symbol": "TITAN",
+        "company_name": "TITAN"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:27:59.958862"
+    },
+    "ULTRACEMCO": {
+      "company_info": {
+        "bse_code": 532538,
+        "nse_symbol": "ULTRACEMCO",
+        "company_name": "ULTRACEMCO"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:00.435583"
+    },
+    "SUNPHARMA": {
+      "company_info": {
+        "bse_code": 524715,
+        "nse_symbol": "SUNPHARMA",
+        "company_name": "SUNPHARMA"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:01.133741"
+    },
+    "NESTLEIND": {
+      "company_info": {
+        "bse_code": 500790,
+        "nse_symbol": "NESTLEIND",
+        "company_name": "NESTLEIND"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:01.342078"
+    },
+    "POWERGRID": {
+      "company_info": {
+        "bse_code": 532898,
+        "nse_symbol": "POWERGRID",
+        "company_name": "POWERGRID"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:01.678454"
+    },
+    "ADANIENT": {
+      "company_info": {
+        "bse_code": 512599,
+        "nse_symbol": "ADANIENT",
+        "company_name": "ADANIENT"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:02.099282"
+    },
+    "ADANIGREEN": {
+      "company_info": {
+        "bse_code": 541450,
+        "nse_symbol": "ADANIGREEN",
+        "company_name": "ADANIGREEN"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:02.324714"
+    },
+    "ADANIPORTS": {
+      "company_info": {
+        "bse_code": 532921,
+        "nse_symbol": "ADANIPORTS",
+        "company_name": "ADANIPORTS"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:02.557214"
+    },
+    "ADANIPOWER": {
+      "company_info": {
+        "bse_code": 533096,
+        "nse_symbol": "ADANIPOWER",
+        "company_name": "ADANIPOWER"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:02.782253"
+    },
+    "APOLLOHOSP": {
+      "company_info": {
+        "bse_code": 526777,
+        "nse_symbol": "APOLLOHOSP",
+        "company_name": "APOLLOHOSP"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:02.974828"
+    },
+    "BPCL": {
+      "company_info": {
+        "bse_code": 500547,
+        "nse_symbol": "BPCL",
+        "company_name": "BPCL"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:03.151626"
+    },
+    "BRITANNIA": {
+      "company_info": {
+        "bse_code": 500825,
+        "nse_symbol": "BRITANNIA",
+        "company_name": "BRITANNIA"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:03.505684"
+    },
+    "CIPLA": {
+      "company_info": {
+        "bse_code": 500087,
+        "nse_symbol": "CIPLA",
+        "company_name": "CIPLA"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:03.729377"
+    },
+    "COALINDIA": {
+      "company_info": {
+        "bse_code": 533278,
+        "nse_symbol": "COALINDIA",
+        "company_name": "COALINDIA"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:03.929932"
+    },
+    "DIVISLAB": {
+      "company_info": {
+        "bse_code": 532488,
+        "nse_symbol": "DIVISLAB",
+        "company_name": "DIVISLAB"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:04.201183"
+    },
+    "DRREDDY": {
+      "company_info": {
+        "bse_code": 500124,
+        "nse_symbol": "DRREDDY",
+        "company_name": "DRREDDY"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:04.488217"
+    },
+    "EICHERMOT": {
+      "company_info": {
+        "bse_code": 505200,
+        "nse_symbol": "EICHERMOT",
+        "company_name": "EICHERMOT"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:04.722609"
+    },
+    "GRASIM": {
+      "company_info": {
+        "bse_code": 500300,
+        "nse_symbol": "GRASIM",
+        "company_name": "GRASIM"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:04.940416"
+    },
+    "HDFCLIFE": {
+      "company_info": {
+        "bse_code": 540777,
+        "nse_symbol": "HDFCLIFE",
+        "company_name": "HDFCLIFE"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:05.146671"
+    },
+    "HEROMOTOCO": {
+      "company_info": {
+        "bse_code": 500182,
+        "nse_symbol": "HEROMOTOCO",
+        "company_name": "HEROMOTOCO"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:05.556695"
+    },
+    "HINDALCO": {
+      "company_info": {
+        "bse_code": 500440,
+        "nse_symbol": "HINDALCO",
+        "company_name": "HINDALCO"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:05.793490"
+    },
+    "INDUSINDBK": {
+      "company_info": {
+        "bse_code": 532187,
+        "nse_symbol": "INDUSINDBK",
+        "company_name": "INDUSINDBK"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:06.050526"
+    },
+    "JSWSTEEL": {
+      "company_info": {
+        "bse_code": 500228,
+        "nse_symbol": "JSWSTEEL",
+        "company_name": "JSWSTEEL"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:06.252808"
+    },
+    "M&M": {
+      "company_info": {
+        "bse_code": 500520,
+        "nse_symbol": "M&M",
+        "company_name": "M&M"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:06.480877"
+    },
+    "NTPC": {
+      "company_info": {
+        "bse_code": 532555,
+        "nse_symbol": "NTPC",
+        "company_name": "NTPC"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:06.724574"
+    },
+    "ONGC": {
+      "company_info": {
+        "bse_code": 500312,
+        "nse_symbol": "ONGC",
+        "company_name": "ONGC"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:06.939983"
+    },
+    "SBI": {
+      "company_info": {
+        "bse_code": 500112,
+        "nse_symbol": "SBI",
+        "company_name": "SBI"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:07.144106"
+    },
+    "SHREECEM": {
+      "company_info": {
+        "bse_code": 500387,
+        "nse_symbol": "SHREECEM",
+        "company_name": "SHREECEM"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:07.299858"
+    },
+    "TATACONSUM": {
+      "company_info": {
+        "bse_code": 500800,
+        "nse_symbol": "TATACONSUM",
+        "company_name": "TATACONSUM"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:07.499678"
+    },
+    "TATAMOTORS": {
+      "company_info": {
+        "bse_code": 500570,
+        "nse_symbol": "TATAMOTORS",
+        "company_name": "TATAMOTORS"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:07.668278"
+    },
+    "TATASTEEL": {
+      "company_info": {
+        "bse_code": 500470,
+        "nse_symbol": "TATASTEEL",
+        "company_name": "TATASTEEL"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:07.867688"
+    },
+    "TECHM": {
+      "company_info": {
+        "bse_code": 532755,
+        "nse_symbol": "TECHM",
+        "company_name": "TECHM"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:08.053924"
+    },
+    "WIPRO": {
+      "company_info": {
+        "bse_code": 507685,
+        "nse_symbol": "WIPRO",
+        "company_name": "WIPRO"
+      },
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:08.383778"
+    }
+  },
+  "general_corporate_actions": {
+    "period_days": 60,
+    "keyword_based_results": {
+      "keywords": [
+        "dividend",
+        "bonus",
+        "split",
+        "rights",
+        "buyback",
+        "merger",
+        "demerger",
+        "spin-off",
+        "allotment"
+      ],
+      "bse_announcements": [],
+      "nse_announcements": [],
+      "combined_count": 0,
+      "fetched_at": "2025-06-23T03:28:08.780901"
+    },
+    "nse_corporate_actions_feed": [],
+    "total_actions": 0,
+    "fetched_at": "2025-06-23T03:28:15.036488"
+  },
+  "summary": {
+    "total_stocks_scraped": 51,
+    "stocks_with_announcements": 0,
+    "total_announcements": 0,
+    "bse_announcements": 0,
+    "nse_announcements": 0,
+    "general_corporate_actions": 0
+  }
+}

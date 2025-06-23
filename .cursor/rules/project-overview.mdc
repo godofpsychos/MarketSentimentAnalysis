@@ -1,0 +1,40 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Market Sentiment Analysis Project Overview
+
+## Project Purpose
+This is a Market Sentiment Analysis System that scrapes news about Indian stock market companies, analyzes sentiment using OpenAI GPT, and displays results on a web dashboard.
+
+## Architecture Overview
+- **Frontend**: React 19 application in [frontend/](mdc:frontend)
+- **Backend**: Flask API server in [backend_api.py](mdc:backend_api.py)
+- **Data Pipeline**: Sequential processing scripts for news scraping and analysis
+- **Databases**: Two SQLite databases for news storage and sentiment results
+
+## Key Components
+
+### Data Collection & Processing Pipeline
+1. **News Scraping**: [temp.py](mdc:temp.py) - Scrapes Google News for 50+ Indian stocks
+2. **Database Storage**: [db/sqllitedb.py](mdc:db/sqllitedb.py) - Stores news in SQLite
+3. **Recent News Filtering**: [insightGen/genInsight.py](mdc:insightGen/genInsight.py) - Filters recent news based on market hours
+4. **Sentiment Analysis**: [Sentiment_Analysis/sentiment_analysis.py](mdc:Sentiment_Analysis/sentiment_analysis.py) - Uses OpenAI GPT for sentiment scoring
+5. **Results Storage**: [Sentiment_Analysis/saveResults.py](mdc:Sentiment_Analysis/saveResults.py) - Saves sentiment scores to database
+
+### Web Application
+- **API Server**: [backend_api.py](mdc:backend_api.py) - Flask server with CORS enabled
+- **Frontend**: [frontend/src/App.js](mdc:frontend/src/App.js) - React dashboard with sentiment visualization
+
+### Databases
+- **News Database**: `db/stock_news.db` - Stores scraped news articles
+- **Sentiment Database**: `Sentiment_Analysis/sentiment_analysis.db` - Stores AI sentiment scores
+
+## Execution Scripts
+- **Full Pipeline**: [start_app.sh](mdc:start_app.sh) - Runs complete data pipeline + web services
+- **UI Only**: [start_UI.sh](mdc:start_UI.sh) - Starts only API server and frontend
+- **Data Pipeline**: [run.sh](mdc:run.sh) - Runs only the data processing components
+
+## Stock Coverage
+Covers 50+ major Indian stocks including: RELIANCE, TCS, HDFCBANK, ICICIBANK, INFY, ITC, LTIM, LT, HINDUNILVR, AXISBANK, KOTAKBANK, SBIN, BHARTIARTL, HCLTECH, MARUTI, ASIANPAINT, BAJFINANCE, etc.
