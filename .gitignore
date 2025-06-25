@@ -1,2 +1,6 @@
 .venv/*
-LOGS_APP/*Sentiment_Analysis/.env
+LOGS_APP/*
+Sentiment_Analysis/.env
+../=*
+__pycache__/*
+*.log
