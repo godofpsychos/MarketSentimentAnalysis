@@ -1,0 +1,73 @@
+{
+  "symbol": "SBI",
+  "ticker_symbol": "SBI.NS",
+  "fetch_date": "2025-06-24T02:49:33.532728",
+  "company_info": {
+    "name": "SBI",
+    "sector": "N/A",
+    "industry": "N/A",
+    "market_cap": null,
+    "market_cap_formatted": "₹0",
+    "employees": null,
+    "business_summary": "",
+    "website": "",
+    "city": "",
+    "country": "",
+    "currency": "INR"
+  },
+  "current_price_info": {
+    "current_price": null,
+    "previous_close": null,
+    "day_high": null,
+    "day_low": null,
+    "fifty_two_week_high": null,
+    "fifty_two_week_low": null,
+    "volume": null,
+    "avg_volume": null
+  },
+  "financial_statements": {
+    "annual": {
+      "income_statement": {},
+      "balance_sheet": {},
+      "cash_flow": {}
+    },
+    "quarterly": {
+      "income_statement": {},
+      "balance_sheet": {},
+      "cash_flow": {}
+    }
+  },
+  "historical_prices": {},
+  "corporate_actions": {},
+  "valuation_metrics": {
+    "pe_ratio": null,
+    "forward_pe": null,
+    "peg_ratio": null,
+    "price_to_book": null,
+    "price_to_sales": null,
+    "enterprise_value": null,
+    "enterprise_value_formatted": "₹0",
+    "ev_to_revenue": null,
+    "ev_to_ebitda": null
+  },
+  "financial_health": {
+    "return_on_equity": null,
+    "return_on_assets": null,
+    "debt_to_equity": null,
+    "current_ratio": null,
+    "quick_ratio": null,
+    "gross_margin": null,
+    "operating_margin": null,
+    "profit_margin": null,
+    "revenue_growth": null,
+    "earnings_growth": null
+  },
+  "earnings": {},
+  "data_summary": {
+    "annual_financial_periods": 0,
+    "quarterly_financial_periods": 0,
+    "historical_price_periods": 0,
+    "dividend_records": 0,
+    "split_records": 0
+  }
+}

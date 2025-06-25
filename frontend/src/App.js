@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { format, parseISO } from 'date-fns';
+import StockFinancialChart from './StockFinancialChart';
 
 // Component for showing loading state
 const Loading = () => (
@@ -120,6 +121,19 @@ const YahooFinanceChart = ({ symbol }) => {
 
     if (symbol) {
       fetchStockData();
+      
+      // Set up auto-refresh every 5 minutes (300,000 ms)
+      // For testing: use 30 seconds in development, 5 minutes in production
+      const refreshInterval = process.env.NODE_ENV === 'development' ? 30 * 1000 : 5 * 60 * 1000;
+      const intervalId = setInterval(() => {
+        console.log(`Auto-refreshing stock data for ${symbol}...`);
+        fetchStockData();
+      }, refreshInterval);
+      
+      // Cleanup interval on component unmount or when dependencies change
+      return () => {
+        clearInterval(intervalId);
+      };
     }
   }, [symbol, period]);
 
@@ -241,8 +255,13 @@ const StockSentiment = ({ data }) => (
       <div className="sentiment-info">
         <SentimentMeter value={data.sentiment} />
       </div>
-      <div className="chart-section">
-        <YahooFinanceChart symbol={data.stock} />
+      <div className="charts-section">
+        <div className="live-price-chart">
+          <YahooFinanceChart symbol={data.stock} />
+        </div>
+        <div className="financial-chart">
+          <StockFinancialChart stockSymbol={data.stock} />
+        </div>
       </div>
     </div>
   </div>
@@ -270,7 +289,8 @@ function App() {
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [overallSentiment, setOverallSentiment] = useState(0);
+  const [lastRefresh, setLastRefresh] = useState(new Date());
+  // const [overallSentiment, setOverallSentiment] = useState(0); // Currently not used
 
   // Fetch stocks list when component mounts
   useEffect(() => {
@@ -339,8 +359,8 @@ function App() {
         
         // Calculate overall sentiment if data has sentiment values
         if (data.length > 0 && data[0].sentiment !== undefined) {
-          const avgSentiment = data.reduce((sum, item) => sum + item.sentiment, 0) / data.length;
-          setOverallSentiment(avgSentiment);
+          // const avgSentiment = data.reduce((sum, item) => sum + item.sentiment, 0) / data.length;
+          // setOverallSentiment(avgSentiment); // Currently not used in UI
         }
         
       } catch (err) {
@@ -364,6 +384,21 @@ function App() {
     };
 
     fetchAllData();
+    
+    // Set up auto-refresh for sentiment and news data every 5 minutes
+    // For testing: use 30 seconds in development, 5 minutes in production
+    const refreshInterval = process.env.NODE_ENV === 'development' ? 30 * 1000 : 5 * 60 * 1000;
+    const intervalId = setInterval(() => {
+      console.log('Auto-refreshing sentiment and news data...');
+      setLastRefresh(new Date());
+      fetchSentimentData();
+      fetchNewsData();
+    }, refreshInterval);
+    
+    // Cleanup interval on component unmount or when selectedStock changes
+    return () => {
+      clearInterval(intervalId);
+    };
   }, [selectedStock]);
 
   if (loading) return <Loading />;
@@ -374,18 +409,40 @@ function App() {
       <header className="App-header">
         <div className="header-content">
           <h1>Market Sentiment Analysis</h1>
-          <div className="stock-selector">
-            <label htmlFor="stock-select">Select Stock: </label>
-            <select 
-              id="stock-select"
-              value={selectedStock}
-              onChange={(e) => setSelectedStock(e.target.value)}
-            >
-              <option value="">All Stocks</option>
-              {stocksList.map((stock) => (
-                <option key={stock} value={stock}>{stock}</option>
-              ))}
-            </select>
+          <div className="header-right">
+            <div className="refresh-indicator">
+              <span className="refresh-icon">🔄</span>
+              <span className="last-refresh">
+                Last updated: {lastRefresh.toLocaleTimeString()}
+              </span>
+              <span className="auto-refresh-note">
+                (Auto-refresh every {process.env.NODE_ENV === 'development' ? '30 sec' : '5 min'})
+              </span>
+              <button 
+                className="manual-refresh-btn"
+                onClick={() => {
+                  setLastRefresh(new Date());
+                  fetchSentimentData();
+                  fetchNewsData();
+                }}
+                title="Refresh now"
+              >
+                Refresh Now
+              </button>
+            </div>
+            <div className="stock-selector">
+              <label htmlFor="stock-select">Select Stock: </label>
+              <select 
+                id="stock-select"
+                value={selectedStock}
+                onChange={(e) => setSelectedStock(e.target.value)}
+              >
+                <option value="">All Stocks</option>
+                {stocksList.map((stock) => (
+                  <option key={stock} value={stock}>{stock}</option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
       </header>
@@ -393,7 +450,7 @@ function App() {
       <main className="content">
         <div className="dashboard-grid">
           <section className="sentiment-section">
-            <h2>{selectedStock ? `${selectedStock} Sentiment` : 'Stock Sentiments'}</h2>
+            <h2>{selectedStock ? `${selectedStock} Analysis` : 'Stock Analysis Dashboard'}</h2>
             <div className="sentiment-container">
               {stocksData.length > 0 ? (
                 stocksData.map((data, index) => (

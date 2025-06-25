@@ -26,7 +26,7 @@ def main():
     scraper = StockCSVScraper(csv_file_path='stocksList.csv')
     
     try:
-        results = scraper.run_scraping(days_back=365, save_results=True)
+        results = scraper.run_scraping(days_back=7, save_results=True)
         
         if results:
             print("\n🎉 SCRAPING COMPLETED SUCCESSFULLY!")

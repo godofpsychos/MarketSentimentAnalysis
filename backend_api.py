@@ -5,6 +5,7 @@ import os
 import yfinance as yf
 from datetime import datetime, timedelta
 import pandas as pd
+import csv
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -445,6 +446,49 @@ def search_stock(search_term):
             "search_term": search_term,
             "matches": len(matching_stocks),
             "stocks": matching_stocks[:20]  # Limit to 20 results
+        })
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/financial-data', methods=['GET'])
+def get_financial_data():
+    """Get financial data from the CSV report"""
+    try:
+        # Path to the CSV file
+        csv_file_path = "/home/tarun/MarketSentimentAnalysis/report.csv"
+        
+        if not os.path.exists(csv_file_path):
+            return jsonify({"error": "Financial data file not found"}), 404
+        
+        financial_data = []
+        
+        # Read CSV file
+        with open(csv_file_path, 'r', encoding='utf-8') as file:
+            csv_reader = csv.DictReader(file)
+            for row in csv_reader:
+                # Convert string values to numbers
+                try:
+                    total_revenue = float(row['total_revenue']) if row['total_revenue'] else 0
+                    total_expenditure = float(row['total_expenditure']) if row['total_expenditure'] else 0
+                    net_profit = float(row['net_profit']) if row['net_profit'] else 0
+                    
+                    financial_data.append({
+                        'symbol': row['symbol'],
+                        'company_name': row['company_name'],
+                        'period_date': row['period_date'],
+                        'total_revenue': total_revenue,
+                        'total_expenditure': total_expenditure,
+                        'net_profit': net_profit
+                    })
+                except (ValueError, KeyError) as e:
+                    print(f"Error processing row: {row}, Error: {e}")
+                    continue
+        
+        return jsonify({
+            "data": financial_data,
+            "total_records": len(financial_data),
+            "companies": list(set([item['symbol'] for item in financial_data]))
         })
         
     except Exception as e:

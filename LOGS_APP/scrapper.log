@@ -1,12 +1,12 @@
 Starting web scrapper service...
-Web scrapper service started with PID: 1976
+Web scrapper service started with PID: 1172
 Starting database service...
-Database service started with PID: 2059
+Database service started with PID: 1173
 Starting insight generation service...
-Insight generation service started with PID: 2060
+Insight generation service started with PID: 1174
 Starting sentiment analysis service...
-Sentiment analysis service started with PID: 2061
-Save results service started with PID: 2063
+Sentiment analysis service started with PID: 1175
+Save results service started with PID: 1177
 All services ran successfully!
 Log files:
 - Scrapper: output_scrapper.txt

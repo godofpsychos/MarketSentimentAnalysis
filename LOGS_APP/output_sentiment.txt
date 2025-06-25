@@ -1,44 +1,74 @@
 
-Analyzing sentiment for company: TCS
-Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='6', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
-
-Analyzing sentiment for company: INFY
-Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='4', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
-
-Analyzing sentiment for company: RELIANCE
-Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='6', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
-
-Analyzing sentiment for company: HDFCBANK
-Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='5', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
-
-Analyzing sentiment for company: MARUTI
-Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='9', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
-
-Analyzing sentiment for company: SBIN
-Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='2', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
-
-Analyzing sentiment for company: LT
-Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='4', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
-
-Analyzing sentiment for company: ASIANPAINT
-Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='7', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
-
-Analyzing sentiment for company: ITC
+Analyzing sentiment for company: M&M
 Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='6', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
 
 Analyzing sentiment for company: TITAN
 Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='6', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
 
-Analyzing sentiment for company: AXISBANK
+Analyzing sentiment for company: SBI
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='7', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: HDFCBANK
 Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='4', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
 
-Analyzing sentiment for company: ICICIBANK
-Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='5', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
-
-Analyzing sentiment for company: HCLTECH
+Analyzing sentiment for company: HDFCLIFE
 Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='8', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
 
-Analyzing sentiment for company: KOTAKBANK
+Analyzing sentiment for company: INFY
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='4', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: MARUTI
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='8', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: HCLTECH
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='9', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: RELIANCE
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='8', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: TCS
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='7', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: WIPRO
 Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='5', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: ADANIPOWER
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='4', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: NTPC
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='6', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: AXISBANK
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='6', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: ONGC
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='3', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: TATASTEEL
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='6', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: TATAMOTORS
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='7', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: BRITANNIA
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='6', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: HINDALCO
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='8', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: LT
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='6', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: ITC
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='6', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: SUNPHARMA
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='8', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: TECHM
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='7', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
+
+Analyzing sentiment for company: ADANIPORTS
+Response from OpenAI: [Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='7', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))]
 
 ✅ Sentiment analysis complete. Results saved to 'sentiment_analysis_results.json'.

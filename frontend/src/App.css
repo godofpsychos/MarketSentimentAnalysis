@@ -29,6 +29,64 @@
   gap: 1rem;
 }
 
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.refresh-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #4a5568;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.refresh-icon {
+  animation: rotate 2s linear infinite;
+  font-size: 0.9rem;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.last-refresh {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.auto-refresh-note {
+  color: #718096;
+  font-style: italic;
+}
+
+.manual-refresh-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.manual-refresh-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
 .App-header h1 {
   margin: 0;
   font-size: 2.5rem;
@@ -205,8 +263,80 @@
   gap: 1.5rem;
 }
 
-.chart-section {
-  min-height: 500px;
+.charts-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.live-price-chart {
+  min-height: 400px;
+}
+
+.financial-chart {
+  min-height: 300px;
+}
+
+/* Stock Financial Chart Styles */
+.stock-financial-chart {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.stock-financial-chart h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.stock-financial-chart h4::before {
+  content: "📊";
+  font-size: 1rem;
+}
+
+.stock-financial-loading,
+.stock-financial-error,
+.stock-financial-no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  min-height: 200px;
+}
+
+.mini-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 0.5rem;
+}
+
+.stock-financial-loading p,
+.stock-financial-error p,
+.stock-financial-no-data p {
+  margin: 0;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.stock-financial-error p {
+  color: #e53e3e;
 }
 
 /* Sentiment Meter */
@@ -603,6 +733,16 @@
     text-align: center;
   }
   
+  .header-right {
+    align-items: center;
+  }
+  
+  .refresh-indicator {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+  }
+  
   .App-header h1 {
     font-size: 2rem;
   }
@@ -619,6 +759,10 @@
   .stock-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  
+  .charts-section {
+    gap: 1rem;
   }
   
   .stock-header {
@@ -681,3 +825,5 @@
     height: 300px;
   }
 }
+
+

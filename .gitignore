@@ -4,3 +4,4 @@ Sentiment_Analysis/.env
 /=*
 __pycache__/*
 *.log
+*.pyc

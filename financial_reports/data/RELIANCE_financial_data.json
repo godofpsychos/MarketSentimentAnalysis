@@ -1,0 +1,5883 @@
+{
+  "symbol": "RELIANCE",
+  "ticker_symbol": "RELIANCE.NS",
+  "fetch_date": "2025-06-24T02:49:02.924528",
+  "company_info": {
+    "name": "Reliance Industries Limited",
+    "sector": "Energy",
+    "industry": "Oil & Gas Refining & Marketing",
+    "market_cap": 19841324941312,
+    "market_cap_formatted": "₹1984132.49 Cr",
+    "employees": null,
+    "business_summary": "Reliance Industries Limited engages in hydrocarbon exploration and production, oil and chemicals, textile, retail, digital, material and composites, renewables, and financial services businesses worldwide. It operates through Oil to Chemicals, Oil and Gas, Retail, Digital Services, and Others segments. The company produces and markets petroleum products, such as liquefied petroleum gas, propylene, naphtha, gasoline, jet/aviation turbine fuel, kerosene oil, diesel, sulphur, and petroleum coke. It also provides petrochemicals, including high-density and low-density polyethylene (PE), linear low-density PE, polyester fibers and yarns, polypropylene, polyvinyl chloride, purified terephthalic acid, ethylene glycols and oxide, paraxylene, ortho xylene, benzene, linear alkyl benzene and paraffin, poly butadiene rubber, styrene butadiene rubber, butyl rubber, and polyethylene terephthalate. In addition, the company manufactures and markets yarns, fabrics, apparel, and auto furnishings; explores, develops, and produces crude oil and natural gas; and operates various stores comprising neighborhood, supermarket, hypermarket, wholesale cash and carry, specialty, online stores, as well as stores that offer apparel, beauty and cosmetics, accessories, footwear, consumer electronics, connectivity products, and others. Further, the company provides range of digital television, gaming, broadband, and telecommunication services under the Jio brand name; and non-banking financial and insurance broking services. Additionally, it operates news and entertainment platforms, and Network18 and television channels; publishes magazines; and offers highway hospitality and fleet management services. The company was founded in 1957 and is based in Mumbai, India.",
+    "website": "https://www.ril.com",
+    "city": "Mumbai",
+    "country": "India",
+    "currency": "INR"
+  },
+  "current_price_info": {
+    "current_price": 1456.8,
+    "previous_close": 1466.2,
+    "day_high": 1463.8,
+    "day_low": 1442.0,
+    "fifty_two_week_high": 1608.8,
+    "fifty_two_week_low": 1114.85,
+    "volume": 5988605,
+    "avg_volume": 12504148
+  },
+  "financial_statements": {
+    "annual": {
+      "income_statement": {
+        "2025-03-31": {
+          "Tax Effect Of Unusual Items": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Tax Rate For Calcs": {
+            "value": 0.237981,
+            "formatted": "₹0.24"
+          },
+          "Normalized EBITDA": {
+            "value": 1834220000000.0,
+            "formatted": "₹183422.00 Cr"
+          },
+          "Total Unusual Items": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Unusual Items Excluding Goodwill": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income From Continuing Operation Net Minority Interest": {
+            "value": 696480000000.0,
+            "formatted": "₹69648.00 Cr"
+          },
+          "Reconciled Depreciation": {
+            "value": 531360000000.0,
+            "formatted": "₹53136.00 Cr"
+          },
+          "Reconciled Cost Of Revenue": {
+            "value": 6828250000000.0,
+            "formatted": "₹682825.00 Cr"
+          },
+          "EBITDA": {
+            "value": 1834220000000.0,
+            "formatted": "₹183422.00 Cr"
+          },
+          "EBIT": {
+            "value": 1302860000000.0,
+            "formatted": "₹130286.00 Cr"
+          },
+          "Net Interest Income": {
+            "value": -242690000000.0,
+            "formatted": "₹-24269.00 Cr"
+          },
+          "Interest Expense": {
+            "value": 242690000000.0,
+            "formatted": "₹24269.00 Cr"
+          },
+          "Interest Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Normalized Income": {
+            "value": 696480000000.0,
+            "formatted": "₹69648.00 Cr"
+          },
+          "Net Income From Continuing And Discontinued Operation": {
+            "value": 696480000000.0,
+            "formatted": "₹69648.00 Cr"
+          },
+          "Total Expenses": {
+            "value": 8523850000000.0,
+            "formatted": "₹852385.00 Cr"
+          },
+          "Rent Expense Supplemental": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Diluted Average Shares": {
+            "value": 13531766077.0,
+            "formatted": "₹1353.18 Cr"
+          },
+          "Basic Average Shares": {
+            "value": 13531766077.0,
+            "formatted": "₹1353.18 Cr"
+          },
+          "Diluted EPS": {
+            "value": 51.47,
+            "formatted": "₹51.47"
+          },
+          "Basic EPS": {
+            "value": 51.47,
+            "formatted": "₹51.47"
+          },
+          "Diluted NI Availto Com Stockholders": {
+            "value": 696480000000.0,
+            "formatted": "₹69648.00 Cr"
+          },
+          "Net Income Common Stockholders": {
+            "value": 696480000000.0,
+            "formatted": "₹69648.00 Cr"
+          },
+          "Otherunder Preferred Stock Dividend": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income": {
+            "value": 696480000000.0,
+            "formatted": "₹69648.00 Cr"
+          },
+          "Minority Interests": {
+            "value": -116610000000.0,
+            "formatted": "₹-11661.00 Cr"
+          },
+          "Net Income Including Noncontrolling Interests": {
+            "value": 813090000000.0,
+            "formatted": "₹81309.00 Cr"
+          },
+          "Net Income Discontinuous Operations": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Continuous Operations": {
+            "value": 813090000000.0,
+            "formatted": "₹81309.00 Cr"
+          },
+          "Tax Provision": {
+            "value": 252300000000.0,
+            "formatted": "₹25230.00 Cr"
+          },
+          "Pretax Income": {
+            "value": 1060170000000.0,
+            "formatted": "₹106017.00 Cr"
+          },
+          "Other Non Operating Income Expenses": {
+            "value": 179780000000.0,
+            "formatted": "₹17978.00 Cr"
+          },
+          "Special Income Charges": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Special Charges": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Write Off": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Non Operating Interest Income Expense": {
+            "value": -242690000000.0,
+            "formatted": "₹-24269.00 Cr"
+          },
+          "Total Other Finance Cost": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Interest Expense Non Operating": {
+            "value": 242690000000.0,
+            "formatted": "₹24269.00 Cr"
+          },
+          "Interest Income Non Operating": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Operating Income": {
+            "value": 1123080000000.0,
+            "formatted": "₹112308.00 Cr"
+          },
+          "Operating Expense": {
+            "value": 1695600000000.0,
+            "formatted": "₹169560.00 Cr"
+          },
+          "Other Operating Expenses": {
+            "value": 1410010000000.0,
+            "formatted": "₹141001.00 Cr"
+          },
+          "Selling General And Administration": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Selling And Marketing Expense": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "General And Administrative Expense": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Rent And Landing Fees": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Gross Profit": {
+            "value": 2818680000000.0,
+            "formatted": "₹281868.00 Cr"
+          },
+          "Cost Of Revenue": {
+            "value": 6828250000000.0,
+            "formatted": "₹682825.00 Cr"
+          },
+          "Total Revenue": {
+            "value": 9646930000000.0,
+            "formatted": "₹964693.00 Cr"
+          },
+          "Operating Revenue": {
+            "value": 9646930000000.0,
+            "formatted": "₹964693.00 Cr"
+          }
+        },
+        "2024-03-31": {
+          "Tax Effect Of Unusual Items": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Tax Rate For Calcs": {
+            "value": 0.245467,
+            "formatted": "₹0.25"
+          },
+          "Normalized EBITDA": {
+            "value": 1786770000000.0,
+            "formatted": "₹178677.00 Cr"
+          },
+          "Total Unusual Items": {
+            "value": 16560000000.0,
+            "formatted": "₹1656.00 Cr"
+          },
+          "Total Unusual Items Excluding Goodwill": {
+            "value": 16560000000.0,
+            "formatted": "₹1656.00 Cr"
+          },
+          "Net Income From Continuing Operation Net Minority Interest": {
+            "value": 696210000000.0,
+            "formatted": "₹69621.00 Cr"
+          },
+          "Reconciled Depreciation": {
+            "value": 508320000000.0,
+            "formatted": "₹50832.00 Cr"
+          },
+          "Reconciled Cost Of Revenue": {
+            "value": 6361750000000.0,
+            "formatted": "₹636175.00 Cr"
+          },
+          "EBITDA": {
+            "value": 1786770000000.0,
+            "formatted": "₹178677.00 Cr"
+          },
+          "EBIT": {
+            "value": 1278450000000.0,
+            "formatted": "₹127845.00 Cr"
+          },
+          "Net Interest Income": {
+            "value": -231180000000.0,
+            "formatted": "₹-23118.00 Cr"
+          },
+          "Interest Expense": {
+            "value": 231180000000.0,
+            "formatted": "₹23118.00 Cr"
+          },
+          "Interest Income": {
+            "value": 107450000000.0,
+            "formatted": "₹10745.00 Cr"
+          },
+          "Normalized Income": {
+            "value": 696210000000.0,
+            "formatted": "₹69621.00 Cr"
+          },
+          "Net Income From Continuing And Discontinued Operation": {
+            "value": 696210000000.0,
+            "formatted": "₹69621.00 Cr"
+          },
+          "Total Expenses": {
+            "value": 7896630000000.0,
+            "formatted": "₹789663.00 Cr"
+          },
+          "Rent Expense Supplemental": {
+            "value": 7150000000.0,
+            "formatted": "₹715.00 Cr"
+          },
+          "Diluted Average Shares": {
+            "value": 13531778426.0,
+            "formatted": "₹1353.18 Cr"
+          },
+          "Basic Average Shares": {
+            "value": 13531778426.0,
+            "formatted": "₹1353.18 Cr"
+          },
+          "Diluted EPS": {
+            "value": 51.45,
+            "formatted": "₹51.45"
+          },
+          "Basic EPS": {
+            "value": 51.45,
+            "formatted": "₹51.45"
+          },
+          "Diluted NI Availto Com Stockholders": {
+            "value": 696210000000.0,
+            "formatted": "₹69621.00 Cr"
+          },
+          "Net Income Common Stockholders": {
+            "value": 696210000000.0,
+            "formatted": "₹69621.00 Cr"
+          },
+          "Otherunder Preferred Stock Dividend": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income": {
+            "value": 696210000000.0,
+            "formatted": "₹69621.00 Cr"
+          },
+          "Minority Interests": {
+            "value": -93990000000.0,
+            "formatted": "₹-9399.00 Cr"
+          },
+          "Net Income Including Noncontrolling Interests": {
+            "value": 790200000000.0,
+            "formatted": "₹79020.00 Cr"
+          },
+          "Net Income Discontinuous Operations": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income Continuous Operations": {
+            "value": 790200000000.0,
+            "formatted": "₹79020.00 Cr"
+          },
+          "Tax Provision": {
+            "value": 257070000000.0,
+            "formatted": "₹25707.00 Cr"
+          },
+          "Pretax Income": {
+            "value": 1047270000000.0,
+            "formatted": "₹104727.00 Cr"
+          },
+          "Other Non Operating Income Expenses": {
+            "value": 160570000000.0,
+            "formatted": "₹16057.00 Cr"
+          },
+          "Special Income Charges": {
+            "value": -2650000000.0,
+            "formatted": "₹-265.00 Cr"
+          },
+          "Other Special Charges": {
+            "value": 2650000000.0,
+            "formatted": "₹265.00 Cr"
+          },
+          "Write Off": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Non Operating Interest Income Expense": {
+            "value": -231180000000.0,
+            "formatted": "₹-23118.00 Cr"
+          },
+          "Total Other Finance Cost": {
+            "value": 1630000000.0,
+            "formatted": "₹163.00 Cr"
+          },
+          "Interest Expense Non Operating": {
+            "value": 231180000000.0,
+            "formatted": "₹23118.00 Cr"
+          },
+          "Interest Income Non Operating": {
+            "value": 107450000000.0,
+            "formatted": "₹10745.00 Cr"
+          },
+          "Operating Income": {
+            "value": 1114010000000.0,
+            "formatted": "₹111401.00 Cr"
+          },
+          "Operating Expense": {
+            "value": 1534880000000.0,
+            "formatted": "₹153488.00 Cr"
+          },
+          "Other Operating Expenses": {
+            "value": 1278090000000.0,
+            "formatted": "₹127809.00 Cr"
+          },
+          "Selling General And Administration": {
+            "value": 371420000000.0,
+            "formatted": "₹37142.00 Cr"
+          },
+          "Selling And Marketing Expense": {
+            "value": 209890000000.0,
+            "formatted": "₹20989.00 Cr"
+          },
+          "General And Administrative Expense": {
+            "value": 161530000000.0,
+            "formatted": "₹16153.00 Cr"
+          },
+          "Rent And Landing Fees": {
+            "value": 6010000000.0,
+            "formatted": "₹601.00 Cr"
+          },
+          "Gross Profit": {
+            "value": 2648890000000.0,
+            "formatted": "₹264889.00 Cr"
+          },
+          "Cost Of Revenue": {
+            "value": 6361750000000.0,
+            "formatted": "₹636175.00 Cr"
+          },
+          "Total Revenue": {
+            "value": 9010640000000.0,
+            "formatted": "₹901064.00 Cr"
+          },
+          "Operating Revenue": {
+            "value": 9010640000000.0,
+            "formatted": "₹901064.00 Cr"
+          }
+        },
+        "2023-03-31": {
+          "Tax Effect Of Unusual Items": {
+            "value": -3185730000.0,
+            "formatted": "₹-318.57 Cr"
+          },
+          "Tax Rate For Calcs": {
+            "value": 0.2185,
+            "formatted": "₹0.22"
+          },
+          "Normalized EBITDA": {
+            "value": 1547650000000.0,
+            "formatted": "₹154765.00 Cr"
+          },
+          "Total Unusual Items": {
+            "value": -14580000000.0,
+            "formatted": "₹-1458.00 Cr"
+          },
+          "Total Unusual Items Excluding Goodwill": {
+            "value": -14580000000.0,
+            "formatted": "₹-1458.00 Cr"
+          },
+          "Net Income From Continuing Operation Net Minority Interest": {
+            "value": 662840000000.0,
+            "formatted": "₹66284.00 Cr"
+          },
+          "Reconciled Depreciation": {
+            "value": 403030000000.0,
+            "formatted": "₹40303.00 Cr"
+          },
+          "Reconciled Cost Of Revenue": {
+            "value": 6718980000000.0,
+            "formatted": "₹671898.00 Cr"
+          },
+          "EBITDA": {
+            "value": 1533070000000.0,
+            "formatted": "₹153307.00 Cr"
+          },
+          "EBIT": {
+            "value": 1130040000000.0,
+            "formatted": "₹113004.00 Cr"
+          },
+          "Net Interest Income": {
+            "value": -78420000000.0,
+            "formatted": "₹-7842.00 Cr"
+          },
+          "Interest Expense": {
+            "value": 189580000000.0,
+            "formatted": "₹18958.00 Cr"
+          },
+          "Interest Income": {
+            "value": 112400000000.0,
+            "formatted": "₹11240.00 Cr"
+          },
+          "Normalized Income": {
+            "value": 674234270000.0,
+            "formatted": "₹67423.43 Cr"
+          },
+          "Net Income From Continuing And Discontinued Operation": {
+            "value": 667020000000.0,
+            "formatted": "₹66702.00 Cr"
+          },
+          "Total Expenses": {
+            "value": 7758200000000.0,
+            "formatted": "₹775820.00 Cr"
+          },
+          "Rent Expense Supplemental": {
+            "value": 8440000000.0,
+            "formatted": "₹844.00 Cr"
+          },
+          "Diluted Average Shares": {
+            "value": 13532311532.0,
+            "formatted": "₹1353.23 Cr"
+          },
+          "Basic Average Shares": {
+            "value": 13531101934.0,
+            "formatted": "₹1353.11 Cr"
+          },
+          "Diluted EPS": {
+            "value": 49.295,
+            "formatted": "₹49.30"
+          },
+          "Basic EPS": {
+            "value": 49.295,
+            "formatted": "₹49.30"
+          },
+          "Diluted NI Availto Com Stockholders": {
+            "value": 667020000000.0,
+            "formatted": "₹66702.00 Cr"
+          },
+          "Net Income Common Stockholders": {
+            "value": 667020000000.0,
+            "formatted": "₹66702.00 Cr"
+          },
+          "Otherunder Preferred Stock Dividend": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income": {
+            "value": 667020000000.0,
+            "formatted": "₹66702.00 Cr"
+          },
+          "Minority Interests": {
+            "value": -73860000000.0,
+            "formatted": "₹-7386.00 Cr"
+          },
+          "Net Income Including Noncontrolling Interests": {
+            "value": 740880000000.0,
+            "formatted": "₹74088.00 Cr"
+          },
+          "Net Income Discontinuous Operations": {
+            "value": 4180000000.0,
+            "formatted": "₹418.00 Cr"
+          },
+          "Net Income Continuous Operations": {
+            "value": 736700000000.0,
+            "formatted": "₹73670.00 Cr"
+          },
+          "Tax Provision": {
+            "value": 203760000000.0,
+            "formatted": "₹20376.00 Cr"
+          },
+          "Pretax Income": {
+            "value": 940460000000.0,
+            "formatted": "₹94046.00 Cr"
+          },
+          "Other Non Operating Income Expenses": {
+            "value": 17580000000.0,
+            "formatted": "₹1758.00 Cr"
+          },
+          "Special Income Charges": {
+            "value": -1560000000.0,
+            "formatted": "₹-156.00 Cr"
+          },
+          "Other Special Charges": {
+            "value": 1560000000.0,
+            "formatted": "₹156.00 Cr"
+          },
+          "Write Off": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Non Operating Interest Income Expense": {
+            "value": -78420000000.0,
+            "formatted": "₹-7842.00 Cr"
+          },
+          "Total Other Finance Cost": {
+            "value": 1240000000.0,
+            "formatted": "₹124.00 Cr"
+          },
+          "Interest Expense Non Operating": {
+            "value": 189580000000.0,
+            "formatted": "₹18958.00 Cr"
+          },
+          "Interest Income Non Operating": {
+            "value": 112400000000.0,
+            "formatted": "₹11240.00 Cr"
+          },
+          "Operating Income": {
+            "value": 1020150000000.0,
+            "formatted": "₹102015.00 Cr"
+          },
+          "Operating Expense": {
+            "value": 1039220000000.0,
+            "formatted": "₹103922.00 Cr"
+          },
+          "Other Operating Expenses": {
+            "value": 477350000000.0,
+            "formatted": "₹47735.00 Cr"
+          },
+          "Selling General And Administration": {
+            "value": 316730000000.0,
+            "formatted": "₹31673.00 Cr"
+          },
+          "Selling And Marketing Expense": {
+            "value": 197360000000.0,
+            "formatted": "₹19736.00 Cr"
+          },
+          "General And Administrative Expense": {
+            "value": 119370000000.0,
+            "formatted": "₹11937.00 Cr"
+          },
+          "Rent And Landing Fees": {
+            "value": 7290000000.0,
+            "formatted": "₹729.00 Cr"
+          },
+          "Gross Profit": {
+            "value": 2059370000000.0,
+            "formatted": "₹205937.00 Cr"
+          },
+          "Cost Of Revenue": {
+            "value": 6718980000000.0,
+            "formatted": "₹671898.00 Cr"
+          },
+          "Total Revenue": {
+            "value": 8778350000000.0,
+            "formatted": "₹877835.00 Cr"
+          },
+          "Operating Revenue": {
+            "value": 8778350000000.0,
+            "formatted": "₹877835.00 Cr"
+          }
+        },
+        "2022-03-31": {
+          "Tax Effect Of Unusual Items": {
+            "value": 8188344000.0,
+            "formatted": "₹818.83 Cr"
+          },
+          "Tax Rate For Calcs": {
+            "value": 0.2004,
+            "formatted": "₹0.20"
+          },
+          "Normalized EBITDA": {
+            "value": 1222880000000.0,
+            "formatted": "₹122288.00 Cr"
+          },
+          "Total Unusual Items": {
+            "value": 40860000000.0,
+            "formatted": "₹4086.00 Cr"
+          },
+          "Total Unusual Items Excluding Goodwill": {
+            "value": 40860000000.0,
+            "formatted": "₹4086.00 Cr"
+          },
+          "Net Income From Continuing Operation Net Minority Interest": {
+            "value": 590440000000.0,
+            "formatted": "₹59044.00 Cr"
+          },
+          "Reconciled Depreciation": {
+            "value": 297820000000.0,
+            "formatted": "₹29782.00 Cr"
+          },
+          "Reconciled Cost Of Revenue": {
+            "value": 5316780000000.0,
+            "formatted": "₹531678.00 Cr"
+          },
+          "EBITDA": {
+            "value": 1263740000000.0,
+            "formatted": "₹126374.00 Cr"
+          },
+          "EBIT": {
+            "value": 965920000000.0,
+            "formatted": "₹96592.00 Cr"
+          },
+          "Net Interest Income": {
+            "value": -19260000000.0,
+            "formatted": "₹-1926.00 Cr"
+          },
+          "Interest Expense": {
+            "value": 144380000000.0,
+            "formatted": "₹14438.00 Cr"
+          },
+          "Interest Income": {
+            "value": 125290000000.0,
+            "formatted": "₹12529.00 Cr"
+          },
+          "Normalized Income": {
+            "value": 557768344000.0,
+            "formatted": "₹55776.83 Cr"
+          },
+          "Net Income From Continuing And Discontinued Operation": {
+            "value": 607050000000.0,
+            "formatted": "₹60705.00 Cr"
+          },
+          "Total Expenses": {
+            "value": 6172000000000.0,
+            "formatted": "₹617200.00 Cr"
+          },
+          "Rent Expense Supplemental": {
+            "value": 6260000000.0,
+            "formatted": "₹626.00 Cr"
+          },
+          "Diluted Average Shares": {
+            "value": 13532311532.0,
+            "formatted": "₹1353.23 Cr"
+          },
+          "Basic Average Shares": {
+            "value": 13531101934.0,
+            "formatted": "₹1353.11 Cr"
+          },
+          "Diluted EPS": {
+            "value": 45.43,
+            "formatted": "₹45.43"
+          },
+          "Basic EPS": {
+            "value": 46.0,
+            "formatted": "₹46.00"
+          },
+          "Diluted NI Availto Com Stockholders": {
+            "value": 607050000000.0,
+            "formatted": "₹60705.00 Cr"
+          },
+          "Net Income Common Stockholders": {
+            "value": 607050000000.0,
+            "formatted": "₹60705.00 Cr"
+          },
+          "Otherunder Preferred Stock Dividend": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income": {
+            "value": 607050000000.0,
+            "formatted": "₹60705.00 Cr"
+          },
+          "Minority Interests": {
+            "value": -71400000000.0,
+            "formatted": "₹-7140.00 Cr"
+          },
+          "Net Income Including Noncontrolling Interests": {
+            "value": 678450000000.0,
+            "formatted": "₹67845.00 Cr"
+          },
+          "Net Income Discontinuous Operations": {
+            "value": 16610000000.0,
+            "formatted": "₹1661.00 Cr"
+          },
+          "Net Income Continuous Operations": {
+            "value": 661840000000.0,
+            "formatted": "₹66184.00 Cr"
+          },
+          "Tax Provision": {
+            "value": 159700000000.0,
+            "formatted": "₹15970.00 Cr"
+          },
+          "Pretax Income": {
+            "value": 821540000000.0,
+            "formatted": "₹82154.00 Cr"
+          },
+          "Other Non Operating Income Expenses": {
+            "value": 10240000000.0,
+            "formatted": "₹1024.00 Cr"
+          },
+          "Special Income Charges": {
+            "value": 27370000000.0,
+            "formatted": "₹2737.00 Cr"
+          },
+          "Other Special Charges": {
+            "value": -27370000000.0,
+            "formatted": "₹-2737.00 Cr"
+          },
+          "Write Off": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Non Operating Interest Income Expense": {
+            "value": -19260000000.0,
+            "formatted": "₹-1926.00 Cr"
+          },
+          "Total Other Finance Cost": {
+            "value": 170000000.0,
+            "formatted": "₹17.00 Cr"
+          },
+          "Interest Expense Non Operating": {
+            "value": 144380000000.0,
+            "formatted": "₹14438.00 Cr"
+          },
+          "Interest Income Non Operating": {
+            "value": 125290000000.0,
+            "formatted": "₹12529.00 Cr"
+          },
+          "Operating Income": {
+            "value": 787630000000.0,
+            "formatted": "₹78763.00 Cr"
+          },
+          "Operating Expense": {
+            "value": 855220000000.0,
+            "formatted": "₹85522.00 Cr"
+          },
+          "Other Operating Expenses": {
+            "value": 420900000000.0,
+            "formatted": "₹42090.00 Cr"
+          },
+          "Selling General And Administration": {
+            "value": 248250000000.0,
+            "formatted": "₹24825.00 Cr"
+          },
+          "Selling And Marketing Expense": {
+            "value": 159420000000.0,
+            "formatted": "₹15942.00 Cr"
+          },
+          "General And Administrative Expense": {
+            "value": 88830000000.0,
+            "formatted": "₹8883.00 Cr"
+          },
+          "Rent And Landing Fees": {
+            "value": 5780000000.0,
+            "formatted": "₹578.00 Cr"
+          },
+          "Gross Profit": {
+            "value": 1642850000000.0,
+            "formatted": "₹164285.00 Cr"
+          },
+          "Cost Of Revenue": {
+            "value": 5316780000000.0,
+            "formatted": "₹531678.00 Cr"
+          },
+          "Total Revenue": {
+            "value": 6959630000000.0,
+            "formatted": "₹695963.00 Cr"
+          },
+          "Operating Revenue": {
+            "value": 6959630000000.0,
+            "formatted": "₹695963.00 Cr"
+          }
+        },
+        "2021-03-31": {
+          "Tax Effect Of Unusual Items": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Tax Rate For Calcs": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Normalized EBITDA": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Unusual Items": {
+            "value": 106060000000.0,
+            "formatted": "₹10606.00 Cr"
+          },
+          "Total Unusual Items Excluding Goodwill": {
+            "value": 106060000000.0,
+            "formatted": "₹10606.00 Cr"
+          },
+          "Net Income From Continuing Operation Net Minority Interest": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Reconciled Depreciation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Reconciled Cost Of Revenue": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "EBITDA": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "EBIT": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Interest Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Interest Expense": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Interest Income": {
+            "value": 103660000000.0,
+            "formatted": "₹10366.00 Cr"
+          },
+          "Normalized Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income From Continuing And Discontinued Operation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Expenses": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Rent Expense Supplemental": {
+            "value": 7780000000.0,
+            "formatted": "₹778.00 Cr"
+          },
+          "Diluted Average Shares": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Basic Average Shares": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Diluted EPS": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Basic EPS": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Diluted NI Availto Com Stockholders": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Common Stockholders": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Otherunder Preferred Stock Dividend": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Minority Interests": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Including Noncontrolling Interests": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Discontinuous Operations": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Continuous Operations": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Tax Provision": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Pretax Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Non Operating Income Expenses": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Special Income Charges": {
+            "value": 6760000000.0,
+            "formatted": "₹676.00 Cr"
+          },
+          "Other Special Charges": {
+            "value": -7970000000.0,
+            "formatted": "₹-797.00 Cr"
+          },
+          "Write Off": {
+            "value": 1210000000.0,
+            "formatted": "₹121.00 Cr"
+          },
+          "Net Non Operating Interest Income Expense": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Other Finance Cost": {
+            "value": 650000000.0,
+            "formatted": "₹65.00 Cr"
+          },
+          "Interest Expense Non Operating": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Interest Income Non Operating": {
+            "value": 103660000000.0,
+            "formatted": "₹10366.00 Cr"
+          },
+          "Operating Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Operating Expense": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Operating Expenses": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Selling General And Administration": {
+            "value": 196700000000.0,
+            "formatted": "₹19670.00 Cr"
+          },
+          "Selling And Marketing Expense": {
+            "value": 126780000000.0,
+            "formatted": "₹12678.00 Cr"
+          },
+          "General And Administrative Expense": {
+            "value": 69920000000.0,
+            "formatted": "₹6992.00 Cr"
+          },
+          "Rent And Landing Fees": {
+            "value": 5990000000.0,
+            "formatted": "₹599.00 Cr"
+          },
+          "Gross Profit": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Cost Of Revenue": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Revenue": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Operating Revenue": {
+            "value": NaN,
+            "formatted": "₹nan"
+          }
+        }
+      },
+      "balance_sheet": {
+        "2025-03-31": {
+          "Ordinary Shares Number": {
+            "value": 13532971224.0,
+            "formatted": "₹1353.30 Cr"
+          },
+          "Share Issued": {
+            "value": 13532971224.0,
+            "formatted": "₹1353.30 Cr"
+          },
+          "Net Debt": {
+            "value": 2410280000000.0,
+            "formatted": "₹241028.00 Cr"
+          },
+          "Total Debt": {
+            "value": 3695750000000.0,
+            "formatted": "₹369575.00 Cr"
+          },
+          "Tangible Book Value": {
+            "value": 4342610000000.0,
+            "formatted": "₹434261.00 Cr"
+          },
+          "Invested Capital": {
+            "value": 11907300000000.0,
+            "formatted": "₹1190730.00 Cr"
+          },
+          "Working Capital": {
+            "value": 455330000000.0,
+            "formatted": "₹45533.00 Cr"
+          },
+          "Net Tangible Assets": {
+            "value": 4342610000000.0,
+            "formatted": "₹434261.00 Cr"
+          },
+          "Capital Lease Obligations": {
+            "value": 220450000000.0,
+            "formatted": "₹22045.00 Cr"
+          },
+          "Common Stock Equity": {
+            "value": 8432000000000.0,
+            "formatted": "₹843200.00 Cr"
+          },
+          "Total Capitalization": {
+            "value": 10800990000000.0,
+            "formatted": "₹1080099.00 Cr"
+          },
+          "Total Equity Gross Minority Interest": {
+            "value": 10096280000000.0,
+            "formatted": "₹1009628.00 Cr"
+          },
+          "Minority Interest": {
+            "value": 1664260000000.0,
+            "formatted": "₹166426.00 Cr"
+          },
+          "Stockholders Equity": {
+            "value": 8432000000000.0,
+            "formatted": "₹843200.00 Cr"
+          },
+          "Other Equity Interest": {
+            "value": 8296680000000.0,
+            "formatted": "₹829668.00 Cr"
+          },
+          "Retained Earnings": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Additional Paid In Capital": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Capital Stock": {
+            "value": 135320000000.0,
+            "formatted": "₹13532.00 Cr"
+          },
+          "Common Stock": {
+            "value": 135320000000.0,
+            "formatted": "₹13532.00 Cr"
+          },
+          "Total Liabilities Net Minority Interest": {
+            "value": 9404930000000.0,
+            "formatted": "₹940493.00 Cr"
+          },
+          "Total Non Current Liabilities Net Minority Interest": {
+            "value": 4867560000000.0,
+            "formatted": "₹486756.00 Cr"
+          },
+          "Other Non Current Liabilities": {
+            "value": 1100490000000.0,
+            "formatted": "₹110049.00 Cr"
+          },
+          "Tradeand Other Payables Non Current": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Non Current Deferred Taxes Liabilities": {
+            "value": 834530000000.0,
+            "formatted": "₹83453.00 Cr"
+          },
+          "Long Term Debt And Capital Lease Obligation": {
+            "value": 2540410000000.0,
+            "formatted": "₹254041.00 Cr"
+          },
+          "Long Term Capital Lease Obligation": {
+            "value": 171420000000.0,
+            "formatted": "₹17142.00 Cr"
+          },
+          "Long Term Debt": {
+            "value": 2368990000000.0,
+            "formatted": "₹236899.00 Cr"
+          },
+          "Long Term Provisions": {
+            "value": 283040000000.0,
+            "formatted": "₹28304.00 Cr"
+          },
+          "Current Liabilities": {
+            "value": 4537370000000.0,
+            "formatted": "₹453737.00 Cr"
+          },
+          "Other Current Liabilities": {
+            "value": 901240000000.0,
+            "formatted": "₹90124.00 Cr"
+          },
+          "Current Debt And Capital Lease Obligation": {
+            "value": 1155340000000.0,
+            "formatted": "₹115534.00 Cr"
+          },
+          "Current Capital Lease Obligation": {
+            "value": 49030000000.0,
+            "formatted": "₹4903.00 Cr"
+          },
+          "Current Debt": {
+            "value": 1106310000000.0,
+            "formatted": "₹110631.00 Cr"
+          },
+          "Current Provisions": {
+            "value": 41470000000.0,
+            "formatted": "₹4147.00 Cr"
+          },
+          "Payables": {
+            "value": 1867890000000.0,
+            "formatted": "₹186789.00 Cr"
+          },
+          "Other Payable": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Dividends Payable": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Accounts Payable": {
+            "value": 1867890000000.0,
+            "formatted": "₹186789.00 Cr"
+          },
+          "Total Assets": {
+            "value": 19501210000000.0,
+            "formatted": "₹1950121.00 Cr"
+          },
+          "Total Non Current Assets": {
+            "value": 14508510000000.0,
+            "formatted": "₹1450851.00 Cr"
+          },
+          "Other Non Current Assets": {
+            "value": 581900000000.0,
+            "formatted": "₹58190.00 Cr"
+          },
+          "Non Current Prepaid Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Non Current Deferred Taxes Assets": {
+            "value": 4080000000.0,
+            "formatted": "₹408.00 Cr"
+          },
+          "Investmentin Financial Assets": {
+            "value": 1297600000000.0,
+            "formatted": "₹129760.00 Cr"
+          },
+          "Available For Sale Securities": {
+            "value": 1297600000000.0,
+            "formatted": "₹129760.00 Cr"
+          },
+          "Financial Assets Designatedas Fair Value Through Profitor Loss Total": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Long Term Equity Investment": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Investmentsin Joint Venturesat Cost": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Investmentsin Associatesat Cost": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Goodwill And Other Intangible Assets": {
+            "value": 4089390000000.0,
+            "formatted": "₹408939.00 Cr"
+          },
+          "Other Intangible Assets": {
+            "value": 3844090000000.0,
+            "formatted": "₹384409.00 Cr"
+          },
+          "Goodwill": {
+            "value": 245300000000.0,
+            "formatted": "₹24530.00 Cr"
+          },
+          "Net PPE": {
+            "value": 8528120000000.0,
+            "formatted": "₹852812.00 Cr"
+          },
+          "Accumulated Depreciation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Gross PPE": {
+            "value": 8528120000000.0,
+            "formatted": "₹852812.00 Cr"
+          },
+          "Construction In Progress": {
+            "value": 1697100000000.0,
+            "formatted": "₹169710.00 Cr"
+          },
+          "Other Properties": {
+            "value": 6831020000000.0,
+            "formatted": "₹683102.00 Cr"
+          },
+          "Machinery Furniture Equipment": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Buildings And Improvements": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Land And Improvements": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Properties": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Current Assets": {
+            "value": 4992700000000.0,
+            "formatted": "₹499270.00 Cr"
+          },
+          "Other Current Assets": {
+            "value": 571480000000.0,
+            "formatted": "₹57148.00 Cr"
+          },
+          "Restricted Cash": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Prepaid Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Inventory": {
+            "value": 1460620000000.0,
+            "formatted": "₹146062.00 Cr"
+          },
+          "Other Inventories": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Finished Goods": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Work In Process": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Raw Materials": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Receivables": {
+            "value": 51820000000.0,
+            "formatted": "₹5182.00 Cr"
+          },
+          "Accounts Receivable": {
+            "value": 421210000000.0,
+            "formatted": "₹42121.00 Cr"
+          },
+          "Cash Cash Equivalents And Short Term Investments": {
+            "value": 2487570000000.0,
+            "formatted": "₹248757.00 Cr"
+          },
+          "Other Short Term Investments": {
+            "value": 1422550000000.0,
+            "formatted": "₹142255.00 Cr"
+          },
+          "Cash And Cash Equivalents": {
+            "value": 1065020000000.0,
+            "formatted": "₹106502.00 Cr"
+          },
+          "Cash Equivalents": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Cash Financial": {
+            "value": NaN,
+            "formatted": "₹nan"
+          }
+        },
+        "2024-03-31": {
+          "Ordinary Shares Number": {
+            "value": 13532218028.0,
+            "formatted": "₹1353.22 Cr"
+          },
+          "Share Issued": {
+            "value": 13532218028.0,
+            "formatted": "₹1353.22 Cr"
+          },
+          "Net Debt": {
+            "value": 2310820000000.0,
+            "formatted": "₹231082.00 Cr"
+          },
+          "Total Debt": {
+            "value": 3461420000000.0,
+            "formatted": "₹346142.00 Cr"
+          },
+          "Tangible Book Value": {
+            "value": 4331070000000.0,
+            "formatted": "₹433107.00 Cr"
+          },
+          "Invested Capital": {
+            "value": 11181030000000.0,
+            "formatted": "₹1118103.00 Cr"
+          },
+          "Working Capital": {
+            "value": 727330000000.0,
+            "formatted": "₹72733.00 Cr"
+          },
+          "Net Tangible Assets": {
+            "value": 4331070000000.0,
+            "formatted": "₹433107.00 Cr"
+          },
+          "Capital Lease Obligations": {
+            "value": 215200000000.0,
+            "formatted": "₹21520.00 Cr"
+          },
+          "Common Stock Equity": {
+            "value": 7934810000000.0,
+            "formatted": "₹793481.00 Cr"
+          },
+          "Total Capitalization": {
+            "value": 10161930000000.0,
+            "formatted": "₹1016193.00 Cr"
+          },
+          "Total Equity Gross Minority Interest": {
+            "value": 9257880000000.0,
+            "formatted": "₹925788.00 Cr"
+          },
+          "Minority Interest": {
+            "value": 1323070000000.0,
+            "formatted": "₹132307.00 Cr"
+          },
+          "Stockholders Equity": {
+            "value": 7934810000000.0,
+            "formatted": "₹793481.00 Cr"
+          },
+          "Other Equity Interest": {
+            "value": 7800000000.0,
+            "formatted": "₹780.00 Cr"
+          },
+          "Retained Earnings": {
+            "value": 3397870000000.0,
+            "formatted": "₹339787.00 Cr"
+          },
+          "Additional Paid In Capital": {
+            "value": 998460000000.0,
+            "formatted": "₹99846.00 Cr"
+          },
+          "Capital Stock": {
+            "value": 67660000000.0,
+            "formatted": "₹6766.00 Cr"
+          },
+          "Common Stock": {
+            "value": 67660000000.0,
+            "formatted": "₹6766.00 Cr"
+          },
+          "Total Liabilities Net Minority Interest": {
+            "value": 8301980000000.0,
+            "formatted": "₹830198.00 Cr"
+          },
+          "Total Non Current Liabilities Net Minority Interest": {
+            "value": 4328310000000.0,
+            "formatted": "₹432831.00 Cr"
+          },
+          "Other Non Current Liabilities": {
+            "value": 1127520000000.0,
+            "formatted": "₹112752.00 Cr"
+          },
+          "Tradeand Other Payables Non Current": {
+            "value": 56670000000.0,
+            "formatted": "₹5667.00 Cr"
+          },
+          "Non Current Deferred Taxes Liabilities": {
+            "value": 722410000000.0,
+            "formatted": "₹72241.00 Cr"
+          },
+          "Long Term Debt And Capital Lease Obligation": {
+            "value": 2401270000000.0,
+            "formatted": "₹240127.00 Cr"
+          },
+          "Long Term Capital Lease Obligation": {
+            "value": 174150000000.0,
+            "formatted": "₹17415.00 Cr"
+          },
+          "Long Term Debt": {
+            "value": 2227120000000.0,
+            "formatted": "₹222712.00 Cr"
+          },
+          "Long Term Provisions": {
+            "value": 20440000000.0,
+            "formatted": "₹2044.00 Cr"
+          },
+          "Current Liabilities": {
+            "value": 3973670000000.0,
+            "formatted": "₹397367.00 Cr"
+          },
+          "Other Current Liabilities": {
+            "value": 30000000.0,
+            "formatted": "₹3.00 Cr"
+          },
+          "Current Debt And Capital Lease Obligation": {
+            "value": 1060150000000.0,
+            "formatted": "₹106015.00 Cr"
+          },
+          "Current Capital Lease Obligation": {
+            "value": 41050000000.0,
+            "formatted": "₹4105.00 Cr"
+          },
+          "Current Debt": {
+            "value": 1019100000000.0,
+            "formatted": "₹101910.00 Cr"
+          },
+          "Current Provisions": {
+            "value": 21750000000.0,
+            "formatted": "₹2175.00 Cr"
+          },
+          "Payables": {
+            "value": 2613080000000.0,
+            "formatted": "₹261308.00 Cr"
+          },
+          "Other Payable": {
+            "value": 827590000000.0,
+            "formatted": "₹82759.00 Cr"
+          },
+          "Dividends Payable": {
+            "value": 1720000000.0,
+            "formatted": "₹172.00 Cr"
+          },
+          "Accounts Payable": {
+            "value": 1783770000000.0,
+            "formatted": "₹178377.00 Cr"
+          },
+          "Total Assets": {
+            "value": 17559860000000.0,
+            "formatted": "₹1755986.00 Cr"
+          },
+          "Total Non Current Assets": {
+            "value": 12858860000000.0,
+            "formatted": "₹1285886.00 Cr"
+          },
+          "Other Non Current Assets": {
+            "value": 267840000000.0,
+            "formatted": "₹26784.00 Cr"
+          },
+          "Non Current Prepaid Assets": {
+            "value": 77640000000.0,
+            "formatted": "₹7764.00 Cr"
+          },
+          "Non Current Deferred Taxes Assets": {
+            "value": 9380000000.0,
+            "formatted": "₹938.00 Cr"
+          },
+          "Investmentin Financial Assets": {
+            "value": 1035610000000.0,
+            "formatted": "₹103561.00 Cr"
+          },
+          "Available For Sale Securities": {
+            "value": 980240000000.0,
+            "formatted": "₹98024.00 Cr"
+          },
+          "Financial Assets Designatedas Fair Value Through Profitor Loss Total": {
+            "value": 55370000000.0,
+            "formatted": "₹5537.00 Cr"
+          },
+          "Long Term Equity Investment": {
+            "value": 180730000000.0,
+            "formatted": "₹18073.00 Cr"
+          },
+          "Investmentsin Joint Venturesat Cost": {
+            "value": 101410000000.0,
+            "formatted": "₹10141.00 Cr"
+          },
+          "Investmentsin Associatesat Cost": {
+            "value": 79320000000.0,
+            "formatted": "₹7932.00 Cr"
+          },
+          "Goodwill And Other Intangible Assets": {
+            "value": 3603740000000.0,
+            "formatted": "₹360374.00 Cr"
+          },
+          "Other Intangible Assets": {
+            "value": 3453850000000.0,
+            "formatted": "₹345385.00 Cr"
+          },
+          "Goodwill": {
+            "value": 149890000000.0,
+            "formatted": "₹14989.00 Cr"
+          },
+          "Net PPE": {
+            "value": 7674930000000.0,
+            "formatted": "₹767493.00 Cr"
+          },
+          "Accumulated Depreciation": {
+            "value": -2499930000000.0,
+            "formatted": "₹-249993.00 Cr"
+          },
+          "Gross PPE": {
+            "value": 10174860000000.0,
+            "formatted": "₹1017486.00 Cr"
+          },
+          "Construction In Progress": {
+            "value": 1614090000000.0,
+            "formatted": "₹161409.00 Cr"
+          },
+          "Other Properties": {
+            "value": 887600000000.0,
+            "formatted": "₹88760.00 Cr"
+          },
+          "Machinery Furniture Equipment": {
+            "value": 5979680000000.0,
+            "formatted": "₹597968.00 Cr"
+          },
+          "Buildings And Improvements": {
+            "value": 820620000000.0,
+            "formatted": "₹82062.00 Cr"
+          },
+          "Land And Improvements": {
+            "value": 872870000000.0,
+            "formatted": "₹87287.00 Cr"
+          },
+          "Properties": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Current Assets": {
+            "value": 4701000000000.0,
+            "formatted": "₹470100.00 Cr"
+          },
+          "Other Current Assets": {
+            "value": 146510000000.0,
+            "formatted": "₹14651.00 Cr"
+          },
+          "Restricted Cash": {
+            "value": 36850000000.0,
+            "formatted": "₹3685.00 Cr"
+          },
+          "Prepaid Assets": {
+            "value": 535390000000.0,
+            "formatted": "₹53539.00 Cr"
+          },
+          "Inventory": {
+            "value": 1527700000000.0,
+            "formatted": "₹152770.00 Cr"
+          },
+          "Other Inventories": {
+            "value": 102100000000.0,
+            "formatted": "₹10210.00 Cr"
+          },
+          "Finished Goods": {
+            "value": 528000000000.0,
+            "formatted": "₹52800.00 Cr"
+          },
+          "Work In Process": {
+            "value": 589360000000.0,
+            "formatted": "₹58936.00 Cr"
+          },
+          "Raw Materials": {
+            "value": 308240000000.0,
+            "formatted": "₹30824.00 Cr"
+          },
+          "Other Receivables": {
+            "value": 25170000000.0,
+            "formatted": "₹2517.00 Cr"
+          },
+          "Accounts Receivable": {
+            "value": 316280000000.0,
+            "formatted": "₹31628.00 Cr"
+          },
+          "Cash Cash Equivalents And Short Term Investments": {
+            "value": 2113100000000.0,
+            "formatted": "₹211310.00 Cr"
+          },
+          "Other Short Term Investments": {
+            "value": 1177700000000.0,
+            "formatted": "₹117770.00 Cr"
+          },
+          "Cash And Cash Equivalents": {
+            "value": 935400000000.0,
+            "formatted": "₹93540.00 Cr"
+          },
+          "Cash Equivalents": {
+            "value": 195280000000.0,
+            "formatted": "₹19528.00 Cr"
+          },
+          "Cash Financial": {
+            "value": 740120000000.0,
+            "formatted": "₹74012.00 Cr"
+          }
+        },
+        "2023-03-31": {
+          "Ordinary Shares Number": {
+            "value": 13532188028.0,
+            "formatted": "₹1353.22 Cr"
+          },
+          "Share Issued": {
+            "value": 13532188028.0,
+            "formatted": "₹1353.22 Cr"
+          },
+          "Net Debt": {
+            "value": 2798100000000.0,
+            "formatted": "₹279810.00 Cr"
+          },
+          "Total Debt": {
+            "value": 3343920000000.0,
+            "formatted": "₹334392.00 Cr"
+          },
+          "Tangible Book Value": {
+            "value": 3850770000000.0,
+            "formatted": "₹385077.00 Cr"
+          },
+          "Invested Capital": {
+            "value": 10298380000000.0,
+            "formatted": "₹1029838.00 Cr"
+          },
+          "Working Capital": {
+            "value": 295530000000.0,
+            "formatted": "₹29553.00 Cr"
+          },
+          "Net Tangible Assets": {
+            "value": 3850770000000.0,
+            "formatted": "₹385077.00 Cr"
+          },
+          "Capital Lease Obligations": {
+            "value": 204260000000.0,
+            "formatted": "₹20426.00 Cr"
+          },
+          "Common Stock Equity": {
+            "value": 7158720000000.0,
+            "formatted": "₹715872.00 Cr"
+          },
+          "Total Capitalization": {
+            "value": 8990480000000.0,
+            "formatted": "₹899048.00 Cr"
+          },
+          "Total Equity Gross Minority Interest": {
+            "value": 8288810000000.0,
+            "formatted": "₹828881.00 Cr"
+          },
+          "Minority Interest": {
+            "value": 1130090000000.0,
+            "formatted": "₹113009.00 Cr"
+          },
+          "Stockholders Equity": {
+            "value": 7158720000000.0,
+            "formatted": "₹715872.00 Cr"
+          },
+          "Other Equity Interest": {
+            "value": 6460000000.0,
+            "formatted": "₹646.00 Cr"
+          },
+          "Retained Earnings": {
+            "value": 2957390000000.0,
+            "formatted": "₹295739.00 Cr"
+          },
+          "Additional Paid In Capital": {
+            "value": 998360000000.0,
+            "formatted": "₹99836.00 Cr"
+          },
+          "Capital Stock": {
+            "value": 67660000000.0,
+            "formatted": "₹6766.00 Cr"
+          },
+          "Common Stock": {
+            "value": 67660000000.0,
+            "formatted": "₹6766.00 Cr"
+          },
+          "Total Liabilities Net Minority Interest": {
+            "value": 7785500000000.0,
+            "formatted": "₹778550.00 Cr"
+          },
+          "Total Non Current Liabilities Net Minority Interest": {
+            "value": 3828070000000.0,
+            "formatted": "₹382807.00 Cr"
+          },
+          "Other Non Current Liabilities": {
+            "value": 1137660000000.0,
+            "formatted": "₹113766.00 Cr"
+          },
+          "Tradeand Other Payables Non Current": {
+            "value": 77040000000.0,
+            "formatted": "₹7704.00 Cr"
+          },
+          "Non Current Deferred Taxes Liabilities": {
+            "value": 603240000000.0,
+            "formatted": "₹60324.00 Cr"
+          },
+          "Long Term Debt And Capital Lease Obligation": {
+            "value": 1994060000000.0,
+            "formatted": "₹199406.00 Cr"
+          },
+          "Long Term Capital Lease Obligation": {
+            "value": 162300000000.0,
+            "formatted": "₹16230.00 Cr"
+          },
+          "Long Term Debt": {
+            "value": 1831760000000.0,
+            "formatted": "₹183176.00 Cr"
+          },
+          "Long Term Provisions": {
+            "value": 16070000000.0,
+            "formatted": "₹1607.00 Cr"
+          },
+          "Current Liabilities": {
+            "value": 3957430000000.0,
+            "formatted": "₹395743.00 Cr"
+          },
+          "Other Current Liabilities": {
+            "value": 20000000.0,
+            "formatted": "₹2.00 Cr"
+          },
+          "Current Debt And Capital Lease Obligation": {
+            "value": 1349860000000.0,
+            "formatted": "₹134986.00 Cr"
+          },
+          "Current Capital Lease Obligation": {
+            "value": 41960000000.0,
+            "formatted": "₹4196.00 Cr"
+          },
+          "Current Debt": {
+            "value": 1307900000000.0,
+            "formatted": "₹130790.00 Cr"
+          },
+          "Current Provisions": {
+            "value": 21780000000.0,
+            "formatted": "₹2178.00 Cr"
+          },
+          "Payables": {
+            "value": 2353090000000.0,
+            "formatted": "₹235309.00 Cr"
+          },
+          "Other Payable": {
+            "value": 879500000000.0,
+            "formatted": "₹87950.00 Cr"
+          },
+          "Dividends Payable": {
+            "value": 1870000000.0,
+            "formatted": "₹187.00 Cr"
+          },
+          "Accounts Payable": {
+            "value": 1471720000000.0,
+            "formatted": "₹147172.00 Cr"
+          },
+          "Total Assets": {
+            "value": 16074310000000.0,
+            "formatted": "₹1607431.00 Cr"
+          },
+          "Total Non Current Assets": {
+            "value": 11821350000000.0,
+            "formatted": "₹1182135.00 Cr"
+          },
+          "Other Non Current Assets": {
+            "value": 257830000000.0,
+            "formatted": "₹25783.00 Cr"
+          },
+          "Non Current Prepaid Assets": {
+            "value": 83900000000.0,
+            "formatted": "₹8390.00 Cr"
+          },
+          "Non Current Deferred Taxes Assets": {
+            "value": 15490000000.0,
+            "formatted": "₹1549.00 Cr"
+          },
+          "Investmentin Financial Assets": {
+            "value": 1054600000000.0,
+            "formatted": "₹105460.00 Cr"
+          },
+          "Available For Sale Securities": {
+            "value": 1002500000000.0,
+            "formatted": "₹100250.00 Cr"
+          },
+          "Financial Assets Designatedas Fair Value Through Profitor Loss Total": {
+            "value": 52100000000.0,
+            "formatted": "₹5210.00 Cr"
+          },
+          "Long Term Equity Investment": {
+            "value": 136460000000.0,
+            "formatted": "₹13646.00 Cr"
+          },
+          "Investmentsin Joint Venturesat Cost": {
+            "value": 62110000000.0,
+            "formatted": "₹6211.00 Cr"
+          },
+          "Investmentsin Associatesat Cost": {
+            "value": 74350000000.0,
+            "formatted": "₹7435.00 Cr"
+          },
+          "Goodwill And Other Intangible Assets": {
+            "value": 3307950000000.0,
+            "formatted": "₹330795.00 Cr"
+          },
+          "Other Intangible Assets": {
+            "value": 3155250000000.0,
+            "formatted": "₹315525.00 Cr"
+          },
+          "Goodwill": {
+            "value": 152700000000.0,
+            "formatted": "₹15270.00 Cr"
+          },
+          "Net PPE": {
+            "value": 6949870000000.0,
+            "formatted": "₹694987.00 Cr"
+          },
+          "Accumulated Depreciation": {
+            "value": -2240410000000.0,
+            "formatted": "₹-224041.00 Cr"
+          },
+          "Gross PPE": {
+            "value": 9190280000000.0,
+            "formatted": "₹919028.00 Cr"
+          },
+          "Construction In Progress": {
+            "value": 1244840000000.0,
+            "formatted": "₹124484.00 Cr"
+          },
+          "Other Properties": {
+            "value": 707440000000.0,
+            "formatted": "₹70744.00 Cr"
+          },
+          "Machinery Furniture Equipment": {
+            "value": 5743560000000.0,
+            "formatted": "₹574356.00 Cr"
+          },
+          "Buildings And Improvements": {
+            "value": 697470000000.0,
+            "formatted": "₹69747.00 Cr"
+          },
+          "Land And Improvements": {
+            "value": 796970000000.0,
+            "formatted": "₹79697.00 Cr"
+          },
+          "Properties": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Current Assets": {
+            "value": 4252960000000.0,
+            "formatted": "₹425296.00 Cr"
+          },
+          "Other Current Assets": {
+            "value": 120840000000.0,
+            "formatted": "₹12084.00 Cr"
+          },
+          "Restricted Cash": {
+            "value": 345080000000.0,
+            "formatted": "₹34508.00 Cr"
+          },
+          "Prepaid Assets": {
+            "value": 488390000000.0,
+            "formatted": "₹48839.00 Cr"
+          },
+          "Inventory": {
+            "value": 1400080000000.0,
+            "formatted": "₹140008.00 Cr"
+          },
+          "Other Inventories": {
+            "value": 58910000000.0,
+            "formatted": "₹5891.00 Cr"
+          },
+          "Finished Goods": {
+            "value": 545390000000.0,
+            "formatted": "₹54539.00 Cr"
+          },
+          "Work In Process": {
+            "value": 512820000000.0,
+            "formatted": "₹51282.00 Cr"
+          },
+          "Raw Materials": {
+            "value": 282960000000.0,
+            "formatted": "₹28296.00 Cr"
+          },
+          "Other Receivables": {
+            "value": 1760000000.0,
+            "formatted": "₹176.00 Cr"
+          },
+          "Accounts Receivable": {
+            "value": 284480000000.0,
+            "formatted": "₹28448.00 Cr"
+          },
+          "Cash Cash Equivalents And Short Term Investments": {
+            "value": 1612330000000.0,
+            "formatted": "₹161233.00 Cr"
+          },
+          "Other Short Term Investments": {
+            "value": 1270770000000.0,
+            "formatted": "₹127077.00 Cr"
+          },
+          "Cash And Cash Equivalents": {
+            "value": 341560000000.0,
+            "formatted": "₹34156.00 Cr"
+          },
+          "Cash Equivalents": {
+            "value": 301840000000.0,
+            "formatted": "₹30184.00 Cr"
+          },
+          "Cash Financial": {
+            "value": 39720000000.0,
+            "formatted": "₹3972.00 Cr"
+          }
+        },
+        "2022-03-31": {
+          "Ordinary Shares Number": {
+            "value": 13531988028.0,
+            "formatted": "₹1353.20 Cr"
+          },
+          "Share Issued": {
+            "value": 13531988028.0,
+            "formatted": "₹1353.20 Cr"
+          },
+          "Net Debt": {
+            "value": 2327960000000.0,
+            "formatted": "₹232796.00 Cr"
+          },
+          "Total Debt": {
+            "value": 2819740000000.0,
+            "formatted": "₹281974.00 Cr"
+          },
+          "Tangible Book Value": {
+            "value": 5476870000000.0,
+            "formatted": "₹547687.00 Cr"
+          },
+          "Invested Capital": {
+            "value": 10457900000000.0,
+            "formatted": "₹1045790.00 Cr"
+          },
+          "Working Capital": {
+            "value": 383570000000.0,
+            "formatted": "₹38357.00 Cr"
+          },
+          "Net Tangible Assets": {
+            "value": 5476870000000.0,
+            "formatted": "₹547687.00 Cr"
+          },
+          "Capital Lease Obligations": {
+            "value": 156690000000.0,
+            "formatted": "₹15669.00 Cr"
+          },
+          "Common Stock Equity": {
+            "value": 7794850000000.0,
+            "formatted": "₹779485.00 Cr"
+          },
+          "Total Capitalization": {
+            "value": 9671840000000.0,
+            "formatted": "₹967184.00 Cr"
+          },
+          "Total Equity Gross Minority Interest": {
+            "value": 8889840000000.0,
+            "formatted": "₹888984.00 Cr"
+          },
+          "Minority Interest": {
+            "value": 1094990000000.0,
+            "formatted": "₹109499.00 Cr"
+          },
+          "Stockholders Equity": {
+            "value": 7794850000000.0,
+            "formatted": "₹779485.00 Cr"
+          },
+          "Other Equity Interest": {
+            "value": 4340000000.0,
+            "formatted": "₹434.00 Cr"
+          },
+          "Retained Earnings": {
+            "value": 2479510000000.0,
+            "formatted": "₹247951.00 Cr"
+          },
+          "Additional Paid In Capital": {
+            "value": 1148460000000.0,
+            "formatted": "₹114846.00 Cr"
+          },
+          "Capital Stock": {
+            "value": 67650000000.0,
+            "formatted": "₹6765.00 Cr"
+          },
+          "Common Stock": {
+            "value": 67650000000.0,
+            "formatted": "₹6765.00 Cr"
+          },
+          "Total Liabilities Net Minority Interest": {
+            "value": 6106810000000.0,
+            "formatted": "₹610681.00 Cr"
+          },
+          "Total Non Current Liabilities Net Minority Interest": {
+            "value": 3020190000000.0,
+            "formatted": "₹302019.00 Cr"
+          },
+          "Other Non Current Liabilities": {
+            "value": 377920000000.0,
+            "formatted": "₹37792.00 Cr"
+          },
+          "Tradeand Other Payables Non Current": {
+            "value": 120240000000.0,
+            "formatted": "₹12024.00 Cr"
+          },
+          "Non Current Deferred Taxes Liabilities": {
+            "value": 496440000000.0,
+            "formatted": "₹49644.00 Cr"
+          },
+          "Long Term Debt And Capital Lease Obligation": {
+            "value": 2007060000000.0,
+            "formatted": "₹200706.00 Cr"
+          },
+          "Long Term Capital Lease Obligation": {
+            "value": 130070000000.0,
+            "formatted": "₹13007.00 Cr"
+          },
+          "Long Term Debt": {
+            "value": 1876990000000.0,
+            "formatted": "₹187699.00 Cr"
+          },
+          "Long Term Provisions": {
+            "value": 18530000000.0,
+            "formatted": "₹1853.00 Cr"
+          },
+          "Current Liabilities": {
+            "value": 3086620000000.0,
+            "formatted": "₹308662.00 Cr"
+          },
+          "Other Current Liabilities": {
+            "value": 215840000000.0,
+            "formatted": "₹21584.00 Cr"
+          },
+          "Current Debt And Capital Lease Obligation": {
+            "value": 812680000000.0,
+            "formatted": "₹81268.00 Cr"
+          },
+          "Current Capital Lease Obligation": {
+            "value": 26620000000.0,
+            "formatted": "₹2662.00 Cr"
+          },
+          "Current Debt": {
+            "value": 786060000000.0,
+            "formatted": "₹78606.00 Cr"
+          },
+          "Current Provisions": {
+            "value": 19360000000.0,
+            "formatted": "₹1936.00 Cr"
+          },
+          "Payables": {
+            "value": 2232840000000.0,
+            "formatted": "₹223284.00 Cr"
+          },
+          "Other Payable": {
+            "value": 637520000000.0,
+            "formatted": "₹63752.00 Cr"
+          },
+          "Dividends Payable": {
+            "value": 2020000000.0,
+            "formatted": "₹202.00 Cr"
+          },
+          "Accounts Payable": {
+            "value": 1593300000000.0,
+            "formatted": "₹159330.00 Cr"
+          },
+          "Total Assets": {
+            "value": 14996650000000.0,
+            "formatted": "₹1499665.00 Cr"
+          },
+          "Total Non Current Assets": {
+            "value": 11526460000000.0,
+            "formatted": "₹1152646.00 Cr"
+          },
+          "Other Non Current Assets": {
+            "value": 433700000000.0,
+            "formatted": "₹43370.00 Cr"
+          },
+          "Non Current Prepaid Assets": {
+            "value": 96260000000.0,
+            "formatted": "₹9626.00 Cr"
+          },
+          "Non Current Deferred Taxes Assets": {
+            "value": 10430000000.0,
+            "formatted": "₹1043.00 Cr"
+          },
+          "Investmentin Financial Assets": {
+            "value": 1795940000000.0,
+            "formatted": "₹179594.00 Cr"
+          },
+          "Available For Sale Securities": {
+            "value": 1746820000000.0,
+            "formatted": "₹174682.00 Cr"
+          },
+          "Financial Assets Designatedas Fair Value Through Profitor Loss Total": {
+            "value": 49120000000.0,
+            "formatted": "₹4912.00 Cr"
+          },
+          "Long Term Equity Investment": {
+            "value": 1084090000000.0,
+            "formatted": "₹108409.00 Cr"
+          },
+          "Investmentsin Joint Venturesat Cost": {
+            "value": 26330000000.0,
+            "formatted": "₹2633.00 Cr"
+          },
+          "Investmentsin Associatesat Cost": {
+            "value": 1057760000000.0,
+            "formatted": "₹105776.00 Cr"
+          },
+          "Goodwill And Other Intangible Assets": {
+            "value": 2317980000000.0,
+            "formatted": "₹231798.00 Cr"
+          },
+          "Other Intangible Assets": {
+            "value": 2187890000000.0,
+            "formatted": "₹218789.00 Cr"
+          },
+          "Goodwill": {
+            "value": 130090000000.0,
+            "formatted": "₹13009.00 Cr"
+          },
+          "Net PPE": {
+            "value": 5772180000000.0,
+            "formatted": "₹577218.00 Cr"
+          },
+          "Accumulated Depreciation": {
+            "value": -1964830000000.0,
+            "formatted": "₹-196483.00 Cr"
+          },
+          "Gross PPE": {
+            "value": 7737010000000.0,
+            "formatted": "₹773701.00 Cr"
+          },
+          "Construction In Progress": {
+            "value": 767640000000.0,
+            "formatted": "₹76764.00 Cr"
+          },
+          "Other Properties": {
+            "value": 511490000000.0,
+            "formatted": "₹51149.00 Cr"
+          },
+          "Machinery Furniture Equipment": {
+            "value": 5283720000000.0,
+            "formatted": "₹528372.00 Cr"
+          },
+          "Buildings And Improvements": {
+            "value": 475610000000.0,
+            "formatted": "₹47561.00 Cr"
+          },
+          "Land And Improvements": {
+            "value": 698550000000.0,
+            "formatted": "₹69855.00 Cr"
+          },
+          "Properties": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Current Assets": {
+            "value": 3470190000000.0,
+            "formatted": "₹347019.00 Cr"
+          },
+          "Other Current Assets": {
+            "value": 159370000000.0,
+            "formatted": "₹15937.00 Cr"
+          },
+          "Restricted Cash": {
+            "value": 26690000000.0,
+            "formatted": "₹2669.00 Cr"
+          },
+          "Prepaid Assets": {
+            "value": 439650000000.0,
+            "formatted": "₹43965.00 Cr"
+          },
+          "Inventory": {
+            "value": 1077780000000.0,
+            "formatted": "₹107778.00 Cr"
+          },
+          "Other Inventories": {
+            "value": 26810000000.0,
+            "formatted": "₹2681.00 Cr"
+          },
+          "Finished Goods": {
+            "value": 412700000000.0,
+            "formatted": "₹41270.00 Cr"
+          },
+          "Work In Process": {
+            "value": 339850000000.0,
+            "formatted": "₹33985.00 Cr"
+          },
+          "Raw Materials": {
+            "value": 298420000000.0,
+            "formatted": "₹29842.00 Cr"
+          },
+          "Other Receivables": {
+            "value": 1300000000.0,
+            "formatted": "₹130.00 Cr"
+          },
+          "Accounts Receivable": {
+            "value": 236400000000.0,
+            "formatted": "₹23640.00 Cr"
+          },
+          "Cash Cash Equivalents And Short Term Investments": {
+            "value": 1529000000000.0,
+            "formatted": "₹152900.00 Cr"
+          },
+          "Other Short Term Investments": {
+            "value": 1193910000000.0,
+            "formatted": "₹119391.00 Cr"
+          },
+          "Cash And Cash Equivalents": {
+            "value": 335090000000.0,
+            "formatted": "₹33509.00 Cr"
+          },
+          "Cash Equivalents": {
+            "value": 246890000000.0,
+            "formatted": "₹24689.00 Cr"
+          },
+          "Cash Financial": {
+            "value": 88200000000.0,
+            "formatted": "₹8820.00 Cr"
+          }
+        },
+        "2021-03-31": {
+          "Ordinary Shares Number": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Share Issued": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Debt": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Debt": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Tangible Book Value": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Invested Capital": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Working Capital": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Tangible Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Capital Lease Obligations": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Common Stock Equity": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Capitalization": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Equity Gross Minority Interest": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Minority Interest": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Stockholders Equity": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Equity Interest": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Retained Earnings": {
+            "value": 1960590000000.0,
+            "formatted": "₹196059.00 Cr"
+          },
+          "Additional Paid In Capital": {
+            "value": 745580000000.0,
+            "formatted": "₹74558.00 Cr"
+          },
+          "Capital Stock": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Common Stock": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Liabilities Net Minority Interest": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Non Current Liabilities Net Minority Interest": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Non Current Liabilities": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Tradeand Other Payables Non Current": {
+            "value": 146160000000.0,
+            "formatted": "₹14616.00 Cr"
+          },
+          "Non Current Deferred Taxes Liabilities": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Long Term Debt And Capital Lease Obligation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Long Term Capital Lease Obligation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Long Term Debt": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Long Term Provisions": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Current Liabilities": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Current Liabilities": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Current Debt And Capital Lease Obligation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Current Capital Lease Obligation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Current Debt": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Current Provisions": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Payables": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Payable": {
+            "value": 604400000000.0,
+            "formatted": "₹60440.00 Cr"
+          },
+          "Dividends Payable": {
+            "value": 2080000000.0,
+            "formatted": "₹208.00 Cr"
+          },
+          "Accounts Payable": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Non Current Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Non Current Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Non Current Prepaid Assets": {
+            "value": 88170000000.0,
+            "formatted": "₹8817.00 Cr"
+          },
+          "Non Current Deferred Taxes Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Investmentin Financial Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Available For Sale Securities": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Financial Assets Designatedas Fair Value Through Profitor Loss Total": {
+            "value": 15460000000.0,
+            "formatted": "₹1546.00 Cr"
+          },
+          "Long Term Equity Investment": {
+            "value": 801640000000.0,
+            "formatted": "₹80164.00 Cr"
+          },
+          "Investmentsin Joint Venturesat Cost": {
+            "value": 23720000000.0,
+            "formatted": "₹2372.00 Cr"
+          },
+          "Investmentsin Associatesat Cost": {
+            "value": 777920000000.0,
+            "formatted": "₹77792.00 Cr"
+          },
+          "Goodwill And Other Intangible Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Intangible Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Goodwill": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net PPE": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Accumulated Depreciation": {
+            "value": -1665740000000.0,
+            "formatted": "₹-166574.00 Cr"
+          },
+          "Gross PPE": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Construction In Progress": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Properties": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Machinery Furniture Equipment": {
+            "value": 4782340000000.0,
+            "formatted": "₹478234.00 Cr"
+          },
+          "Buildings And Improvements": {
+            "value": 367810000000.0,
+            "formatted": "₹36781.00 Cr"
+          },
+          "Land And Improvements": {
+            "value": 687680000000.0,
+            "formatted": "₹68768.00 Cr"
+          },
+          "Properties": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Current Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Current Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Restricted Cash": {
+            "value": 28910000000.0,
+            "formatted": "₹2891.00 Cr"
+          },
+          "Prepaid Assets": {
+            "value": 401290000000.0,
+            "formatted": "₹40129.00 Cr"
+          },
+          "Inventory": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Inventories": {
+            "value": 19700000000.0,
+            "formatted": "₹1970.00 Cr"
+          },
+          "Finished Goods": {
+            "value": 251210000000.0,
+            "formatted": "₹25121.00 Cr"
+          },
+          "Work In Process": {
+            "value": 277810000000.0,
+            "formatted": "₹27781.00 Cr"
+          },
+          "Raw Materials": {
+            "value": 268000000000.0,
+            "formatted": "₹26800.00 Cr"
+          },
+          "Other Receivables": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Accounts Receivable": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Cash Cash Equivalents And Short Term Investments": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Short Term Investments": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Cash And Cash Equivalents": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Cash Equivalents": {
+            "value": 60390000000.0,
+            "formatted": "₹6039.00 Cr"
+          },
+          "Cash Financial": {
+            "value": 84670000000.0,
+            "formatted": "₹8467.00 Cr"
+          }
+        }
+      },
+      "cash_flow": {
+        "2025-03-31": {
+          "Free Cash Flow": {
+            "value": 387360000000.0,
+            "formatted": "₹38736.00 Cr"
+          },
+          "Repayment Of Debt": {
+            "value": -317550000000.0,
+            "formatted": "₹-31755.00 Cr"
+          },
+          "Issuance Of Debt": {
+            "value": 263780000000.0,
+            "formatted": "₹26378.00 Cr"
+          },
+          "Issuance Of Capital Stock": {
+            "value": 220000000.0,
+            "formatted": "₹22.00 Cr"
+          },
+          "Capital Expenditure": {
+            "value": -1399670000000.0,
+            "formatted": "₹-139967.00 Cr"
+          },
+          "End Cash Position": {
+            "value": 1065020000000.0,
+            "formatted": "₹106502.00 Cr"
+          },
+          "Other Cash Adjustment Outside Changein Cash": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Beginning Cash Position": {
+            "value": 972250000000.0,
+            "formatted": "₹97225.00 Cr"
+          },
+          "Changes In Cash": {
+            "value": 92770000000.0,
+            "formatted": "₹9277.00 Cr"
+          },
+          "Financing Cash Flow": {
+            "value": -318910000000.0,
+            "formatted": "₹-31891.00 Cr"
+          },
+          "Net Other Financing Charges": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Interest Paid Cff": {
+            "value": -410240000000.0,
+            "formatted": "₹-41024.00 Cr"
+          },
+          "Cash Dividends Paid": {
+            "value": -67660000000.0,
+            "formatted": "₹-6766.00 Cr"
+          },
+          "Net Common Stock Issuance": {
+            "value": 220000000.0,
+            "formatted": "₹22.00 Cr"
+          },
+          "Common Stock Issuance": {
+            "value": 220000000.0,
+            "formatted": "₹22.00 Cr"
+          },
+          "Net Issuance Payments Of Debt": {
+            "value": 192470000000.0,
+            "formatted": "₹19247.00 Cr"
+          },
+          "Net Short Term Debt Issuance": {
+            "value": 246240000000.0,
+            "formatted": "₹24624.00 Cr"
+          },
+          "Net Long Term Debt Issuance": {
+            "value": -53770000000.0,
+            "formatted": "₹-5377.00 Cr"
+          },
+          "Long Term Debt Payments": {
+            "value": -317550000000.0,
+            "formatted": "₹-31755.00 Cr"
+          },
+          "Long Term Debt Issuance": {
+            "value": 263780000000.0,
+            "formatted": "₹26378.00 Cr"
+          },
+          "Investing Cash Flow": {
+            "value": -1375350000000.0,
+            "formatted": "₹-137535.00 Cr"
+          },
+          "Net Other Investing Changes": {
+            "value": -45740000000.0,
+            "formatted": "₹-4574.00 Cr"
+          },
+          "Interest Received Cfi": {
+            "value": 158330000000.0,
+            "formatted": "₹15833.00 Cr"
+          },
+          "Dividends Received Cfi": {
+            "value": 6120000000.0,
+            "formatted": "₹612.00 Cr"
+          },
+          "Net Investment Purchase And Sale": {
+            "value": -117820000000.0,
+            "formatted": "₹-11782.00 Cr"
+          },
+          "Sale Of Investment": {
+            "value": 6725580000000.0,
+            "formatted": "₹672558.00 Cr"
+          },
+          "Purchase Of Investment": {
+            "value": -6843400000000.0,
+            "formatted": "₹-684340.00 Cr"
+          },
+          "Net PPE Purchase And Sale": {
+            "value": 23430000000.0,
+            "formatted": "₹2343.00 Cr"
+          },
+          "Sale Of PPE": {
+            "value": 23430000000.0,
+            "formatted": "₹2343.00 Cr"
+          },
+          "Purchase Of PPE": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Capital Expenditure Reported": {
+            "value": -1399670000000.0,
+            "formatted": "₹-139967.00 Cr"
+          },
+          "Operating Cash Flow": {
+            "value": 1787030000000.0,
+            "formatted": "₹178703.00 Cr"
+          },
+          "Taxes Refund Paid": {
+            "value": -119250000000.0,
+            "formatted": "₹-11925.00 Cr"
+          },
+          "Change In Working Capital": {
+            "value": 237240000000.0,
+            "formatted": "₹23724.00 Cr"
+          },
+          "Change In Payable": {
+            "value": 384270000000.0,
+            "formatted": "₹38427.00 Cr"
+          },
+          "Change In Inventory": {
+            "value": 31340000000.0,
+            "formatted": "₹3134.00 Cr"
+          },
+          "Change In Receivables": {
+            "value": -178370000000.0,
+            "formatted": "₹-17837.00 Cr"
+          },
+          "Other Non Cash Items": {
+            "value": 118590000000.0,
+            "formatted": "₹11859.00 Cr"
+          },
+          "Provisionand Write Offof Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Deferred Tax": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Depreciation And Amortization": {
+            "value": 531360000000.0,
+            "formatted": "₹53136.00 Cr"
+          },
+          "Depreciation": {
+            "value": 531360000000.0,
+            "formatted": "₹53136.00 Cr"
+          },
+          "Gain Loss On Investment Securities": {
+            "value": -20610000000.0,
+            "formatted": "₹-2061.00 Cr"
+          },
+          "Net Foreign Currency Exchange Gain Loss": {
+            "value": -21820000000.0,
+            "formatted": "₹-2182.00 Cr"
+          },
+          "Gain Loss On Sale Of PPE": {
+            "value": 1350000000.0,
+            "formatted": "₹135.00 Cr"
+          },
+          "Gain Loss On Sale Of Business": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income From Continuing Operations": {
+            "value": 1060170000000.0,
+            "formatted": "₹106017.00 Cr"
+          }
+        },
+        "2024-03-31": {
+          "Free Cash Flow": {
+            "value": 59050000000.0,
+            "formatted": "₹5905.00 Cr"
+          },
+          "Repayment Of Debt": {
+            "value": -350550000000.0,
+            "formatted": "₹-35055.00 Cr"
+          },
+          "Issuance Of Debt": {
+            "value": 696100000000.0,
+            "formatted": "₹69610.00 Cr"
+          },
+          "Issuance Of Capital Stock": {
+            "value": 70000000.0,
+            "formatted": "₹7.00 Cr"
+          },
+          "Capital Expenditure": {
+            "value": -1528830000000.0,
+            "formatted": "₹-152883.00 Cr"
+          },
+          "End Cash Position": {
+            "value": 972250000000.0,
+            "formatted": "₹97225.00 Cr"
+          },
+          "Other Cash Adjustment Outside Changein Cash": {
+            "value": 7200000000.0,
+            "formatted": "₹720.00 Cr"
+          },
+          "Beginning Cash Position": {
+            "value": 686640000000.0,
+            "formatted": "₹68664.00 Cr"
+          },
+          "Changes In Cash": {
+            "value": 285610000000.0,
+            "formatted": "₹28561.00 Cr"
+          },
+          "Financing Cash Flow": {
+            "value": -166460000000.0,
+            "formatted": "₹-16646.00 Cr"
+          },
+          "Net Other Financing Charges": {
+            "value": 198300000000.0,
+            "formatted": "₹19830.00 Cr"
+          },
+          "Interest Paid Cff": {
+            "value": -371730000000.0,
+            "formatted": "₹-37173.00 Cr"
+          },
+          "Cash Dividends Paid": {
+            "value": -60890000000.0,
+            "formatted": "₹-6089.00 Cr"
+          },
+          "Net Common Stock Issuance": {
+            "value": 70000000.0,
+            "formatted": "₹7.00 Cr"
+          },
+          "Common Stock Issuance": {
+            "value": 70000000.0,
+            "formatted": "₹7.00 Cr"
+          },
+          "Net Issuance Payments Of Debt": {
+            "value": 92620000000.0,
+            "formatted": "₹9262.00 Cr"
+          },
+          "Net Short Term Debt Issuance": {
+            "value": -252930000000.0,
+            "formatted": "₹-25293.00 Cr"
+          },
+          "Net Long Term Debt Issuance": {
+            "value": 345550000000.0,
+            "formatted": "₹34555.00 Cr"
+          },
+          "Long Term Debt Payments": {
+            "value": -350550000000.0,
+            "formatted": "₹-35055.00 Cr"
+          },
+          "Long Term Debt Issuance": {
+            "value": 696100000000.0,
+            "formatted": "₹69610.00 Cr"
+          },
+          "Investing Cash Flow": {
+            "value": -1135810000000.0,
+            "formatted": "₹-113581.00 Cr"
+          },
+          "Net Other Investing Changes": {
+            "value": -44230000000.0,
+            "formatted": "₹-4423.00 Cr"
+          },
+          "Interest Received Cfi": {
+            "value": 106480000000.0,
+            "formatted": "₹10648.00 Cr"
+          },
+          "Dividends Received Cfi": {
+            "value": 750000000.0,
+            "formatted": "₹75.00 Cr"
+          },
+          "Net Investment Purchase And Sale": {
+            "value": 176950000000.0,
+            "formatted": "₹17695.00 Cr"
+          },
+          "Sale Of Investment": {
+            "value": 5313550000000.0,
+            "formatted": "₹531355.00 Cr"
+          },
+          "Purchase Of Investment": {
+            "value": -5136600000000.0,
+            "formatted": "₹-513660.00 Cr"
+          },
+          "Net PPE Purchase And Sale": {
+            "value": 153070000000.0,
+            "formatted": "₹15307.00 Cr"
+          },
+          "Sale Of PPE": {
+            "value": 153070000000.0,
+            "formatted": "₹15307.00 Cr"
+          },
+          "Purchase Of PPE": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Capital Expenditure Reported": {
+            "value": -1528830000000.0,
+            "formatted": "₹-152883.00 Cr"
+          },
+          "Operating Cash Flow": {
+            "value": 1587880000000.0,
+            "formatted": "₹158788.00 Cr"
+          },
+          "Taxes Refund Paid": {
+            "value": -119610000000.0,
+            "formatted": "₹-11961.00 Cr"
+          },
+          "Change In Working Capital": {
+            "value": 63660000000.0,
+            "formatted": "₹6366.00 Cr"
+          },
+          "Change In Payable": {
+            "value": 347960000000.0,
+            "formatted": "₹34796.00 Cr"
+          },
+          "Change In Inventory": {
+            "value": -127560000000.0,
+            "formatted": "₹-12756.00 Cr"
+          },
+          "Change In Receivables": {
+            "value": -156740000000.0,
+            "formatted": "₹-15674.00 Cr"
+          },
+          "Other Non Cash Items": {
+            "value": 123730000000.0,
+            "formatted": "₹12373.00 Cr"
+          },
+          "Provisionand Write Offof Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Deferred Tax": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Depreciation And Amortization": {
+            "value": 508320000000.0,
+            "formatted": "₹50832.00 Cr"
+          },
+          "Depreciation": {
+            "value": 508320000000.0,
+            "formatted": "₹50832.00 Cr"
+          },
+          "Gain Loss On Investment Securities": {
+            "value": -20100000000.0,
+            "formatted": "₹-2010.00 Cr"
+          },
+          "Net Foreign Currency Exchange Gain Loss": {
+            "value": -13300000000.0,
+            "formatted": "₹-1330.00 Cr"
+          },
+          "Gain Loss On Sale Of PPE": {
+            "value": 1780000000.0,
+            "formatted": "₹178.00 Cr"
+          },
+          "Gain Loss On Sale Of Business": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income From Continuing Operations": {
+            "value": 1043400000000.0,
+            "formatted": "₹104340.00 Cr"
+          }
+        },
+        "2023-03-31": {
+          "Free Cash Flow": {
+            "value": -259560000000.0,
+            "formatted": "₹-25956.00 Cr"
+          },
+          "Repayment Of Debt": {
+            "value": -290590000000.0,
+            "formatted": "₹-29059.00 Cr"
+          },
+          "Issuance Of Debt": {
+            "value": 359360000000.0,
+            "formatted": "₹35936.00 Cr"
+          },
+          "Issuance Of Capital Stock": {
+            "value": 400000000.0,
+            "formatted": "₹40.00 Cr"
+          },
+          "Capital Expenditure": {
+            "value": -1409880000000.0,
+            "formatted": "₹-140988.00 Cr"
+          },
+          "End Cash Position": {
+            "value": 686640000000.0,
+            "formatted": "₹68664.00 Cr"
+          },
+          "Other Cash Adjustment Outside Changein Cash": {
+            "value": -17660000000.0,
+            "formatted": "₹-1766.00 Cr"
+          },
+          "Beginning Cash Position": {
+            "value": 361780000000.0,
+            "formatted": "₹36178.00 Cr"
+          },
+          "Changes In Cash": {
+            "value": 342520000000.0,
+            "formatted": "₹34252.00 Cr"
+          },
+          "Financing Cash Flow": {
+            "value": 104550000000.0,
+            "formatted": "₹10455.00 Cr"
+          },
+          "Net Other Financing Charges": {
+            "value": 4790000000.0,
+            "formatted": "₹479.00 Cr"
+          },
+          "Interest Paid Cff": {
+            "value": -216500000000.0,
+            "formatted": "₹-21650.00 Cr"
+          },
+          "Cash Dividends Paid": {
+            "value": -50830000000.0,
+            "formatted": "₹-5083.00 Cr"
+          },
+          "Net Common Stock Issuance": {
+            "value": 400000000.0,
+            "formatted": "₹40.00 Cr"
+          },
+          "Common Stock Issuance": {
+            "value": 400000000.0,
+            "formatted": "₹40.00 Cr"
+          },
+          "Net Issuance Payments Of Debt": {
+            "value": 380750000000.0,
+            "formatted": "₹38075.00 Cr"
+          },
+          "Net Short Term Debt Issuance": {
+            "value": 311980000000.0,
+            "formatted": "₹31198.00 Cr"
+          },
+          "Net Long Term Debt Issuance": {
+            "value": 68770000000.0,
+            "formatted": "₹6877.00 Cr"
+          },
+          "Long Term Debt Payments": {
+            "value": -290590000000.0,
+            "formatted": "₹-29059.00 Cr"
+          },
+          "Long Term Debt Issuance": {
+            "value": 359360000000.0,
+            "formatted": "₹35936.00 Cr"
+          },
+          "Investing Cash Flow": {
+            "value": -912350000000.0,
+            "formatted": "₹-91235.00 Cr"
+          },
+          "Net Other Investing Changes": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Interest Received Cfi": {
+            "value": 111030000000.0,
+            "formatted": "₹11103.00 Cr"
+          },
+          "Dividends Received Cfi": {
+            "value": 200000000.0,
+            "formatted": "₹20.00 Cr"
+          },
+          "Net Investment Purchase And Sale": {
+            "value": 294440000000.0,
+            "formatted": "₹29444.00 Cr"
+          },
+          "Sale Of Investment": {
+            "value": 5012660000000.0,
+            "formatted": "₹501266.00 Cr"
+          },
+          "Purchase Of Investment": {
+            "value": -4718220000000.0,
+            "formatted": "₹-471822.00 Cr"
+          },
+          "Net PPE Purchase And Sale": {
+            "value": 91860000000.0,
+            "formatted": "₹9186.00 Cr"
+          },
+          "Sale Of PPE": {
+            "value": 91860000000.0,
+            "formatted": "₹9186.00 Cr"
+          },
+          "Purchase Of PPE": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Capital Expenditure Reported": {
+            "value": -1409880000000.0,
+            "formatted": "₹-140988.00 Cr"
+          },
+          "Operating Cash Flow": {
+            "value": 1150320000000.0,
+            "formatted": "₹115032.00 Cr"
+          },
+          "Taxes Refund Paid": {
+            "value": -62970000000.0,
+            "formatted": "₹-6297.00 Cr"
+          },
+          "Change In Working Capital": {
+            "value": -196340000000.0,
+            "formatted": "₹-19634.00 Cr"
+          },
+          "Change In Payable": {
+            "value": -6000000000.0,
+            "formatted": "₹-600.00 Cr"
+          },
+          "Change In Inventory": {
+            "value": -322280000000.0,
+            "formatted": "₹-32228.00 Cr"
+          },
+          "Change In Receivables": {
+            "value": 131940000000.0,
+            "formatted": "₹13194.00 Cr"
+          },
+          "Other Non Cash Items": {
+            "value": 79580000000.0,
+            "formatted": "₹7958.00 Cr"
+          },
+          "Provisionand Write Offof Assets": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Deferred Tax": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Depreciation And Amortization": {
+            "value": 403030000000.0,
+            "formatted": "₹40303.00 Cr"
+          },
+          "Depreciation": {
+            "value": 403030000000.0,
+            "formatted": "₹40303.00 Cr"
+          },
+          "Gain Loss On Investment Securities": {
+            "value": 11760000000.0,
+            "formatted": "₹1176.00 Cr"
+          },
+          "Net Foreign Currency Exchange Gain Loss": {
+            "value": -31910000000.0,
+            "formatted": "₹-3191.00 Cr"
+          },
+          "Gain Loss On Sale Of PPE": {
+            "value": -600000000.0,
+            "formatted": "₹-60.00 Cr"
+          },
+          "Gain Loss On Sale Of Business": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income From Continuing Operations": {
+            "value": 948010000000.0,
+            "formatted": "₹94801.00 Cr"
+          }
+        },
+        "2022-03-31": {
+          "Free Cash Flow": {
+            "value": 105090000000.0,
+            "formatted": "₹10509.00 Cr"
+          },
+          "Repayment Of Debt": {
+            "value": -406470000000.0,
+            "formatted": "₹-40647.00 Cr"
+          },
+          "Issuance Of Debt": {
+            "value": 593430000000.0,
+            "formatted": "₹59343.00 Cr"
+          },
+          "Issuance Of Capital Stock": {
+            "value": 397670000000.0,
+            "formatted": "₹39767.00 Cr"
+          },
+          "Capital Expenditure": {
+            "value": -1001450000000.0,
+            "formatted": "₹-100145.00 Cr"
+          },
+          "End Cash Position": {
+            "value": 361780000000.0,
+            "formatted": "₹36178.00 Cr"
+          },
+          "Other Cash Adjustment Outside Changein Cash": {
+            "value": 9410000000.0,
+            "formatted": "₹941.00 Cr"
+          },
+          "Beginning Cash Position": {
+            "value": 173970000000.0,
+            "formatted": "₹17397.00 Cr"
+          },
+          "Changes In Cash": {
+            "value": 178400000000.0,
+            "formatted": "₹17840.00 Cr"
+          },
+          "Financing Cash Flow": {
+            "value": 172890000000.0,
+            "formatted": "₹17289.00 Cr"
+          },
+          "Net Other Financing Charges": {
+            "value": 4500000000.0,
+            "formatted": "₹450.00 Cr"
+          },
+          "Interest Paid Cff": {
+            "value": -263490000000.0,
+            "formatted": "₹-26349.00 Cr"
+          },
+          "Cash Dividends Paid": {
+            "value": -42970000000.0,
+            "formatted": "₹-4297.00 Cr"
+          },
+          "Net Common Stock Issuance": {
+            "value": 397670000000.0,
+            "formatted": "₹39767.00 Cr"
+          },
+          "Common Stock Issuance": {
+            "value": 397670000000.0,
+            "formatted": "₹39767.00 Cr"
+          },
+          "Net Issuance Payments Of Debt": {
+            "value": 98500000000.0,
+            "formatted": "₹9850.00 Cr"
+          },
+          "Net Short Term Debt Issuance": {
+            "value": -88460000000.0,
+            "formatted": "₹-8846.00 Cr"
+          },
+          "Net Long Term Debt Issuance": {
+            "value": 186960000000.0,
+            "formatted": "₹18696.00 Cr"
+          },
+          "Long Term Debt Payments": {
+            "value": -406470000000.0,
+            "formatted": "₹-40647.00 Cr"
+          },
+          "Long Term Debt Issuance": {
+            "value": 593430000000.0,
+            "formatted": "₹59343.00 Cr"
+          },
+          "Investing Cash Flow": {
+            "value": -1101030000000.0,
+            "formatted": "₹-110103.00 Cr"
+          },
+          "Net Other Investing Changes": {
+            "value": -193060000000.0,
+            "formatted": "₹-19306.00 Cr"
+          },
+          "Interest Received Cfi": {
+            "value": 59330000000.0,
+            "formatted": "₹5933.00 Cr"
+          },
+          "Dividends Received Cfi": {
+            "value": 190000000.0,
+            "formatted": "₹19.00 Cr"
+          },
+          "Net Investment Purchase And Sale": {
+            "value": 2590000000.0,
+            "formatted": "₹259.00 Cr"
+          },
+          "Sale Of Investment": {
+            "value": 6681370000000.0,
+            "formatted": "₹668137.00 Cr"
+          },
+          "Purchase Of Investment": {
+            "value": -6678780000000.0,
+            "formatted": "₹-667878.00 Cr"
+          },
+          "Net PPE Purchase And Sale": {
+            "value": 31370000000.0,
+            "formatted": "₹3137.00 Cr"
+          },
+          "Sale Of PPE": {
+            "value": 31370000000.0,
+            "formatted": "₹3137.00 Cr"
+          },
+          "Purchase Of PPE": {
+            "value": -1001450000000.0,
+            "formatted": "₹-100145.00 Cr"
+          },
+          "Capital Expenditure Reported": {
+            "value": -1001450000000.0,
+            "formatted": "₹-100145.00 Cr"
+          },
+          "Operating Cash Flow": {
+            "value": 1106540000000.0,
+            "formatted": "₹110654.00 Cr"
+          },
+          "Taxes Refund Paid": {
+            "value": -37970000000.0,
+            "formatted": "₹-3797.00 Cr"
+          },
+          "Change In Working Capital": {
+            "value": 7250000000.0,
+            "formatted": "₹725.00 Cr"
+          },
+          "Change In Payable": {
+            "value": 398880000000.0,
+            "formatted": "₹39888.00 Cr"
+          },
+          "Change In Inventory": {
+            "value": -249830000000.0,
+            "formatted": "₹-24983.00 Cr"
+          },
+          "Change In Receivables": {
+            "value": -141800000000.0,
+            "formatted": "₹-14180.00 Cr"
+          },
+          "Other Non Cash Items": {
+            "value": 23360000000.0,
+            "formatted": "₹2336.00 Cr"
+          },
+          "Provisionand Write Offof Assets": {
+            "value": 360000000.0,
+            "formatted": "₹36.00 Cr"
+          },
+          "Deferred Tax": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Depreciation And Amortization": {
+            "value": 297820000000.0,
+            "formatted": "₹29782.00 Cr"
+          },
+          "Depreciation": {
+            "value": 297820000000.0,
+            "formatted": "₹29782.00 Cr"
+          },
+          "Gain Loss On Investment Securities": {
+            "value": -13930000000.0,
+            "formatted": "₹-1393.00 Cr"
+          },
+          "Net Foreign Currency Exchange Gain Loss": {
+            "value": 19500000000.0,
+            "formatted": "₹1950.00 Cr"
+          },
+          "Gain Loss On Sale Of PPE": {
+            "value": 400000000.0,
+            "formatted": "₹40.00 Cr"
+          },
+          "Gain Loss On Sale Of Business": {
+            "value": -28720000000.0,
+            "formatted": "₹-2872.00 Cr"
+          },
+          "Net Income From Continuing Operations": {
+            "value": 841420000000.0,
+            "formatted": "₹84142.00 Cr"
+          }
+        },
+        "2021-03-31": {
+          "Free Cash Flow": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Repayment Of Debt": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Issuance Of Debt": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Issuance Of Capital Stock": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Capital Expenditure": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "End Cash Position": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Cash Adjustment Outside Changein Cash": {
+            "value": 240000000.0,
+            "formatted": "₹24.00 Cr"
+          },
+          "Beginning Cash Position": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Changes In Cash": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Financing Cash Flow": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Other Financing Charges": {
+            "value": 1956820000000.0,
+            "formatted": "₹195682.00 Cr"
+          },
+          "Interest Paid Cff": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Cash Dividends Paid": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Common Stock Issuance": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Common Stock Issuance": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Issuance Payments Of Debt": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Short Term Debt Issuance": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Long Term Debt Issuance": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Long Term Debt Payments": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Long Term Debt Issuance": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Investing Cash Flow": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Other Investing Changes": {
+            "value": -20000000.0,
+            "formatted": "₹-2.00 Cr"
+          },
+          "Interest Received Cfi": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Dividends Received Cfi": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Investment Purchase And Sale": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Sale Of Investment": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Purchase Of Investment": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net PPE Purchase And Sale": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Sale Of PPE": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Purchase Of PPE": {
+            "value": -1058370000000.0,
+            "formatted": "₹-105837.00 Cr"
+          },
+          "Capital Expenditure Reported": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Operating Cash Flow": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Taxes Refund Paid": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Change In Working Capital": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Change In Payable": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Change In Inventory": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Change In Receivables": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Non Cash Items": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Provisionand Write Offof Assets": {
+            "value": 530000000.0,
+            "formatted": "₹53.00 Cr"
+          },
+          "Deferred Tax": {
+            "value": -155700000000.0,
+            "formatted": "₹-15570.00 Cr"
+          },
+          "Depreciation And Amortization": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Depreciation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Gain Loss On Investment Securities": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Foreign Currency Exchange Gain Loss": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Gain Loss On Sale Of PPE": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Gain Loss On Sale Of Business": {
+            "value": -8500000000.0,
+            "formatted": "₹-850.00 Cr"
+          },
+          "Net Income From Continuing Operations": {
+            "value": NaN,
+            "formatted": "₹nan"
+          }
+        }
+      }
+    },
+    "quarterly": {
+      "income_statement": {
+        "2025-03-31": {
+          "Tax Effect Of Unusual Items": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Tax Rate For Calcs": {
+            "value": 0.229152,
+            "formatted": "₹0.23"
+          },
+          "Normalized EBITDA": {
+            "value": 352580000000.0,
+            "formatted": "₹35258.00 Cr"
+          },
+          "Net Income From Continuing Operation Net Minority Interest": {
+            "value": 194070000000.0,
+            "formatted": "₹19407.00 Cr"
+          },
+          "Reconciled Cost Of Revenue": {
+            "value": 1838490000000.0,
+            "formatted": "₹183849.00 Cr"
+          },
+          "EBITDA": {
+            "value": 352580000000.0,
+            "formatted": "₹35258.00 Cr"
+          },
+          "EBIT": {
+            "value": 352580000000.0,
+            "formatted": "₹35258.00 Cr"
+          },
+          "Net Interest Income": {
+            "value": -61550000000.0,
+            "formatted": "₹-6155.00 Cr"
+          },
+          "Interest Expense": {
+            "value": 61550000000.0,
+            "formatted": "₹6155.00 Cr"
+          },
+          "Normalized Income": {
+            "value": 194070000000.0,
+            "formatted": "₹19407.00 Cr"
+          },
+          "Net Income From Continuing And Discontinued Operation": {
+            "value": 194070000000.0,
+            "formatted": "₹19407.00 Cr"
+          },
+          "Total Expenses": {
+            "value": 2310350000000.0,
+            "formatted": "₹231035.00 Cr"
+          },
+          "Diluted Average Shares": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Basic Average Shares": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Diluted EPS": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Basic EPS": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Diluted NI Availto Com Stockholders": {
+            "value": 194070000000.0,
+            "formatted": "₹19407.00 Cr"
+          },
+          "Net Income Common Stockholders": {
+            "value": 194070000000.0,
+            "formatted": "₹19407.00 Cr"
+          },
+          "Otherunder Preferred Stock Dividend": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income": {
+            "value": 194070000000.0,
+            "formatted": "₹19407.00 Cr"
+          },
+          "Minority Interests": {
+            "value": -32040000000.0,
+            "formatted": "₹-3204.00 Cr"
+          },
+          "Net Income Including Noncontrolling Interests": {
+            "value": 226110000000.0,
+            "formatted": "₹22611.00 Cr"
+          },
+          "Net Income Discontinuous Operations": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Continuous Operations": {
+            "value": 226110000000.0,
+            "formatted": "₹22611.00 Cr"
+          },
+          "Tax Provision": {
+            "value": 66690000000.0,
+            "formatted": "₹6669.00 Cr"
+          },
+          "Pretax Income": {
+            "value": 291030000000.0,
+            "formatted": "₹29103.00 Cr"
+          },
+          "Other Non Operating Income Expenses": {
+            "value": 49050000000.0,
+            "formatted": "₹4905.00 Cr"
+          },
+          "Net Non Operating Interest Income Expense": {
+            "value": -61550000000.0,
+            "formatted": "₹-6155.00 Cr"
+          },
+          "Interest Expense Non Operating": {
+            "value": 61550000000.0,
+            "formatted": "₹6155.00 Cr"
+          },
+          "Operating Income": {
+            "value": 303530000000.0,
+            "formatted": "₹30353.00 Cr"
+          },
+          "Operating Expense": {
+            "value": 471860000000.0,
+            "formatted": "₹47186.00 Cr"
+          },
+          "Other Operating Expenses": {
+            "value": 395020000000.0,
+            "formatted": "₹39502.00 Cr"
+          },
+          "Gross Profit": {
+            "value": 775390000000.0,
+            "formatted": "₹77539.00 Cr"
+          },
+          "Cost Of Revenue": {
+            "value": 1838490000000.0,
+            "formatted": "₹183849.00 Cr"
+          },
+          "Total Revenue": {
+            "value": 2613880000000.0,
+            "formatted": "₹261388.00 Cr"
+          },
+          "Operating Revenue": {
+            "value": 2613880000000.0,
+            "formatted": "₹261388.00 Cr"
+          }
+        },
+        "2024-12-31": {
+          "Tax Effect Of Unusual Items": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Tax Rate For Calcs": {
+            "value": 0.238767,
+            "formatted": "₹0.24"
+          },
+          "Normalized EBITDA": {
+            "value": 348220000000.0,
+            "formatted": "₹34822.00 Cr"
+          },
+          "Net Income From Continuing Operation Net Minority Interest": {
+            "value": 185400000000.0,
+            "formatted": "₹18540.00 Cr"
+          },
+          "Reconciled Cost Of Revenue": {
+            "value": 1661400000000.0,
+            "formatted": "₹166140.00 Cr"
+          },
+          "EBITDA": {
+            "value": 348220000000.0,
+            "formatted": "₹34822.00 Cr"
+          },
+          "EBIT": {
+            "value": 348220000000.0,
+            "formatted": "₹34822.00 Cr"
+          },
+          "Net Interest Income": {
+            "value": -61790000000.0,
+            "formatted": "₹-6179.00 Cr"
+          },
+          "Interest Expense": {
+            "value": 61790000000.0,
+            "formatted": "₹6179.00 Cr"
+          },
+          "Normalized Income": {
+            "value": 185400000000.0,
+            "formatted": "₹18540.00 Cr"
+          },
+          "Net Income From Continuing And Discontinued Operation": {
+            "value": 185400000000.0,
+            "formatted": "₹18540.00 Cr"
+          },
+          "Total Expenses": {
+            "value": 2093780000000.0,
+            "formatted": "₹209378.00 Cr"
+          },
+          "Diluted Average Shares": {
+            "value": 13532846715.0,
+            "formatted": "₹1353.28 Cr"
+          },
+          "Basic Average Shares": {
+            "value": 13532846715.0,
+            "formatted": "₹1353.28 Cr"
+          },
+          "Diluted EPS": {
+            "value": 13.7,
+            "formatted": "₹13.70"
+          },
+          "Basic EPS": {
+            "value": 13.7,
+            "formatted": "₹13.70"
+          },
+          "Diluted NI Availto Com Stockholders": {
+            "value": 185400000000.0,
+            "formatted": "₹18540.00 Cr"
+          },
+          "Net Income Common Stockholders": {
+            "value": 185400000000.0,
+            "formatted": "₹18540.00 Cr"
+          },
+          "Otherunder Preferred Stock Dividend": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income": {
+            "value": 185400000000.0,
+            "formatted": "₹18540.00 Cr"
+          },
+          "Minority Interests": {
+            "value": -33900000000.0,
+            "formatted": "₹-3390.00 Cr"
+          },
+          "Net Income Including Noncontrolling Interests": {
+            "value": 219300000000.0,
+            "formatted": "₹21930.00 Cr"
+          },
+          "Net Income Discontinuous Operations": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Continuous Operations": {
+            "value": 219300000000.0,
+            "formatted": "₹21930.00 Cr"
+          },
+          "Tax Provision": {
+            "value": 68390000000.0,
+            "formatted": "₹6839.00 Cr"
+          },
+          "Pretax Income": {
+            "value": 286430000000.0,
+            "formatted": "₹28643.00 Cr"
+          },
+          "Other Non Operating Income Expenses": {
+            "value": 42140000000.0,
+            "formatted": "₹4214.00 Cr"
+          },
+          "Net Non Operating Interest Income Expense": {
+            "value": -61790000000.0,
+            "formatted": "₹-6179.00 Cr"
+          },
+          "Interest Expense Non Operating": {
+            "value": 61790000000.0,
+            "formatted": "₹6179.00 Cr"
+          },
+          "Operating Income": {
+            "value": 306080000000.0,
+            "formatted": "₹30608.00 Cr"
+          },
+          "Operating Expense": {
+            "value": 432380000000.0,
+            "formatted": "₹43238.00 Cr"
+          },
+          "Other Operating Expenses": {
+            "value": 360830000000.0,
+            "formatted": "₹36083.00 Cr"
+          },
+          "Gross Profit": {
+            "value": 738460000000.0,
+            "formatted": "₹73846.00 Cr"
+          },
+          "Cost Of Revenue": {
+            "value": 1661400000000.0,
+            "formatted": "₹166140.00 Cr"
+          },
+          "Total Revenue": {
+            "value": 2399860000000.0,
+            "formatted": "₹239986.00 Cr"
+          },
+          "Operating Revenue": {
+            "value": 2399860000000.0,
+            "formatted": "₹239986.00 Cr"
+          }
+        },
+        "2024-09-30": {
+          "Tax Effect Of Unusual Items": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Tax Rate For Calcs": {
+            "value": 0.237089,
+            "formatted": "₹0.24"
+          },
+          "Normalized EBITDA": {
+            "value": 310540000000.0,
+            "formatted": "₹31054.00 Cr"
+          },
+          "Net Income From Continuing Operation Net Minority Interest": {
+            "value": 165630000000.0,
+            "formatted": "₹16563.00 Cr"
+          },
+          "Reconciled Cost Of Revenue": {
+            "value": 1657820000000.0,
+            "formatted": "₹165782.00 Cr"
+          },
+          "EBITDA": {
+            "value": 310540000000.0,
+            "formatted": "₹31054.00 Cr"
+          },
+          "EBIT": {
+            "value": 310540000000.0,
+            "formatted": "₹31054.00 Cr"
+          },
+          "Net Interest Income": {
+            "value": -60170000000.0,
+            "formatted": "₹-6017.00 Cr"
+          },
+          "Interest Expense": {
+            "value": 60170000000.0,
+            "formatted": "₹6017.00 Cr"
+          },
+          "Normalized Income": {
+            "value": 165630000000.0,
+            "formatted": "₹16563.00 Cr"
+          },
+          "Net Income From Continuing And Discontinued Operation": {
+            "value": 165630000000.0,
+            "formatted": "₹16563.00 Cr"
+          },
+          "Total Expenses": {
+            "value": 2053570000000.0,
+            "formatted": "₹205357.00 Cr"
+          },
+          "Diluted Average Shares": {
+            "value": 13531862745.0,
+            "formatted": "₹1353.19 Cr"
+          },
+          "Basic Average Shares": {
+            "value": 13531862745.0,
+            "formatted": "₹1353.19 Cr"
+          },
+          "Diluted EPS": {
+            "value": 12.24,
+            "formatted": "₹12.24"
+          },
+          "Basic EPS": {
+            "value": 12.24,
+            "formatted": "₹12.24"
+          },
+          "Diluted NI Availto Com Stockholders": {
+            "value": 165630000000.0,
+            "formatted": "₹16563.00 Cr"
+          },
+          "Net Income Common Stockholders": {
+            "value": 165630000000.0,
+            "formatted": "₹16563.00 Cr"
+          },
+          "Otherunder Preferred Stock Dividend": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income": {
+            "value": 165630000000.0,
+            "formatted": "₹16563.00 Cr"
+          },
+          "Minority Interests": {
+            "value": -27600000000.0,
+            "formatted": "₹-2760.00 Cr"
+          },
+          "Net Income Including Noncontrolling Interests": {
+            "value": 193230000000.0,
+            "formatted": "₹19323.00 Cr"
+          },
+          "Net Income Discontinuous Operations": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Continuous Operations": {
+            "value": 193230000000.0,
+            "formatted": "₹19323.00 Cr"
+          },
+          "Tax Provision": {
+            "value": 59360000000.0,
+            "formatted": "₹5936.00 Cr"
+          },
+          "Pretax Income": {
+            "value": 250370000000.0,
+            "formatted": "₹25037.00 Cr"
+          },
+          "Other Non Operating Income Expenses": {
+            "value": 48760000000.0,
+            "formatted": "₹4876.00 Cr"
+          },
+          "Net Non Operating Interest Income Expense": {
+            "value": -60170000000.0,
+            "formatted": "₹-6017.00 Cr"
+          },
+          "Interest Expense Non Operating": {
+            "value": 60170000000.0,
+            "formatted": "₹6017.00 Cr"
+          },
+          "Operating Income": {
+            "value": 261780000000.0,
+            "formatted": "₹26178.00 Cr"
+          },
+          "Operating Expense": {
+            "value": 395750000000.0,
+            "formatted": "₹39575.00 Cr"
+          },
+          "Other Operating Expenses": {
+            "value": 329260000000.0,
+            "formatted": "₹32926.00 Cr"
+          },
+          "Gross Profit": {
+            "value": 657530000000.0,
+            "formatted": "₹65753.00 Cr"
+          },
+          "Cost Of Revenue": {
+            "value": 1657820000000.0,
+            "formatted": "₹165782.00 Cr"
+          },
+          "Total Revenue": {
+            "value": 2315350000000.0,
+            "formatted": "₹231535.00 Cr"
+          },
+          "Operating Revenue": {
+            "value": 2315350000000.0,
+            "formatted": "₹231535.00 Cr"
+          }
+        },
+        "2024-06-30": {
+          "Tax Effect Of Unusual Items": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Tax Rate For Calcs": {
+            "value": 0.249032,
+            "formatted": "₹0.25"
+          },
+          "Normalized EBITDA": {
+            "value": 291520000000.0,
+            "formatted": "₹29152.00 Cr"
+          },
+          "Net Income From Continuing Operation Net Minority Interest": {
+            "value": 151380000000.0,
+            "formatted": "₹15138.00 Cr"
+          },
+          "Reconciled Cost Of Revenue": {
+            "value": 1670540000000.0,
+            "formatted": "₹167054.00 Cr"
+          },
+          "EBITDA": {
+            "value": 291520000000.0,
+            "formatted": "₹29152.00 Cr"
+          },
+          "EBIT": {
+            "value": 291520000000.0,
+            "formatted": "₹29152.00 Cr"
+          },
+          "Net Interest Income": {
+            "value": -59180000000.0,
+            "formatted": "₹-5918.00 Cr"
+          },
+          "Interest Expense": {
+            "value": 59180000000.0,
+            "formatted": "₹5918.00 Cr"
+          },
+          "Normalized Income": {
+            "value": 151380000000.0,
+            "formatted": "₹15138.00 Cr"
+          },
+          "Net Income From Continuing And Discontinued Operation": {
+            "value": 151380000000.0,
+            "formatted": "₹15138.00 Cr"
+          },
+          "Total Expenses": {
+            "value": 2066150000000.0,
+            "formatted": "₹206615.00 Cr"
+          },
+          "Diluted Average Shares": {
+            "value": 13534197586.0,
+            "formatted": "₹1353.42 Cr"
+          },
+          "Basic Average Shares": {
+            "value": 13534197586.0,
+            "formatted": "₹1353.42 Cr"
+          },
+          "Diluted EPS": {
+            "value": 11.185,
+            "formatted": "₹11.19"
+          },
+          "Basic EPS": {
+            "value": 11.185,
+            "formatted": "₹11.19"
+          },
+          "Diluted NI Availto Com Stockholders": {
+            "value": 151380000000.0,
+            "formatted": "₹15138.00 Cr"
+          },
+          "Net Income Common Stockholders": {
+            "value": 151380000000.0,
+            "formatted": "₹15138.00 Cr"
+          },
+          "Otherunder Preferred Stock Dividend": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income": {
+            "value": 151380000000.0,
+            "formatted": "₹15138.00 Cr"
+          },
+          "Minority Interests": {
+            "value": -23070000000.0,
+            "formatted": "₹-2307.00 Cr"
+          },
+          "Net Income Including Noncontrolling Interests": {
+            "value": 174450000000.0,
+            "formatted": "₹17445.00 Cr"
+          },
+          "Net Income Discontinuous Operations": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Continuous Operations": {
+            "value": 174450000000.0,
+            "formatted": "₹17445.00 Cr"
+          },
+          "Tax Provision": {
+            "value": 57860000000.0,
+            "formatted": "₹5786.00 Cr"
+          },
+          "Pretax Income": {
+            "value": 232340000000.0,
+            "formatted": "₹23234.00 Cr"
+          },
+          "Other Non Operating Income Expenses": {
+            "value": 39830000000.0,
+            "formatted": "₹3983.00 Cr"
+          },
+          "Net Non Operating Interest Income Expense": {
+            "value": -59180000000.0,
+            "formatted": "₹-5918.00 Cr"
+          },
+          "Interest Expense Non Operating": {
+            "value": 59180000000.0,
+            "formatted": "₹5918.00 Cr"
+          },
+          "Operating Income": {
+            "value": 251690000000.0,
+            "formatted": "₹25169.00 Cr"
+          },
+          "Operating Expense": {
+            "value": 395610000000.0,
+            "formatted": "₹39561.00 Cr"
+          },
+          "Other Operating Expenses": {
+            "value": 324900000000.0,
+            "formatted": "₹32490.00 Cr"
+          },
+          "Gross Profit": {
+            "value": 647300000000.0,
+            "formatted": "₹64730.00 Cr"
+          },
+          "Cost Of Revenue": {
+            "value": 1670540000000.0,
+            "formatted": "₹167054.00 Cr"
+          },
+          "Total Revenue": {
+            "value": 2317840000000.0,
+            "formatted": "₹231784.00 Cr"
+          },
+          "Operating Revenue": {
+            "value": 2317840000000.0,
+            "formatted": "₹231784.00 Cr"
+          }
+        },
+        "2024-03-31": {
+          "Tax Effect Of Unusual Items": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Tax Rate For Calcs": {
+            "value": 0.236413,
+            "formatted": "₹0.24"
+          },
+          "Normalized EBITDA": {
+            "value": 322350000000.0,
+            "formatted": "₹32235.00 Cr"
+          },
+          "Net Income From Continuing Operation Net Minority Interest": {
+            "value": 189510000000.0,
+            "formatted": "₹18951.00 Cr"
+          },
+          "Reconciled Cost Of Revenue": {
+            "value": 2054570000000.0,
+            "formatted": "₹205457.00 Cr"
+          },
+          "EBITDA": {
+            "value": 322350000000.0,
+            "formatted": "₹32235.00 Cr"
+          },
+          "EBIT": {
+            "value": 322350000000.0,
+            "formatted": "₹32235.00 Cr"
+          },
+          "Net Interest Income": {
+            "value": 61670000000.0,
+            "formatted": "₹6167.00 Cr"
+          },
+          "Interest Expense": {
+            "value": 44150000000.0,
+            "formatted": "₹4415.00 Cr"
+          },
+          "Normalized Income": {
+            "value": 189510000000.0,
+            "formatted": "₹18951.00 Cr"
+          },
+          "Net Income From Continuing And Discontinued Operation": {
+            "value": 189510000000.0,
+            "formatted": "₹18951.00 Cr"
+          },
+          "Total Expenses": {
+            "value": 2073210000000.0,
+            "formatted": "₹207321.00 Cr"
+          },
+          "Diluted Average Shares": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Basic Average Shares": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Diluted EPS": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Basic EPS": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Diluted NI Availto Com Stockholders": {
+            "value": 189510000000.0,
+            "formatted": "₹18951.00 Cr"
+          },
+          "Net Income Common Stockholders": {
+            "value": 189510000000.0,
+            "formatted": "₹18951.00 Cr"
+          },
+          "Otherunder Preferred Stock Dividend": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income": {
+            "value": 189510000000.0,
+            "formatted": "₹18951.00 Cr"
+          },
+          "Minority Interests": {
+            "value": -22920000000.0,
+            "formatted": "₹-2292.00 Cr"
+          },
+          "Net Income Including Noncontrolling Interests": {
+            "value": 212430000000.0,
+            "formatted": "₹21243.00 Cr"
+          },
+          "Net Income Discontinuous Operations": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income Continuous Operations": {
+            "value": 212430000000.0,
+            "formatted": "₹21243.00 Cr"
+          },
+          "Tax Provision": {
+            "value": 65770000000.0,
+            "formatted": "₹6577.00 Cr"
+          },
+          "Pretax Income": {
+            "value": 278200000000.0,
+            "formatted": "₹27820.00 Cr"
+          },
+          "Other Non Operating Income Expenses": {
+            "value": -82210000000.0,
+            "formatted": "₹-8221.00 Cr"
+          },
+          "Net Non Operating Interest Income Expense": {
+            "value": 61670000000.0,
+            "formatted": "₹6167.00 Cr"
+          },
+          "Interest Expense Non Operating": {
+            "value": 44150000000.0,
+            "formatted": "₹4415.00 Cr"
+          },
+          "Operating Income": {
+            "value": 292120000000.0,
+            "formatted": "₹29212.00 Cr"
+          },
+          "Operating Expense": {
+            "value": 18640000000.0,
+            "formatted": "₹1864.00 Cr"
+          },
+          "Other Operating Expenses": {
+            "value": -410290000000.0,
+            "formatted": "₹-41029.00 Cr"
+          },
+          "Gross Profit": {
+            "value": 310760000000.0,
+            "formatted": "₹31076.00 Cr"
+          },
+          "Cost Of Revenue": {
+            "value": 2054570000000.0,
+            "formatted": "₹205457.00 Cr"
+          },
+          "Total Revenue": {
+            "value": 2365330000000.0,
+            "formatted": "₹236533.00 Cr"
+          },
+          "Operating Revenue": {
+            "value": 2365330000000.0,
+            "formatted": "₹236533.00 Cr"
+          }
+        },
+        "2023-12-31": {
+          "Tax Effect Of Unusual Items": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Tax Rate For Calcs": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Normalized EBITDA": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income From Continuing Operation Net Minority Interest": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Reconciled Cost Of Revenue": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "EBITDA": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "EBIT": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Interest Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Interest Expense": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Normalized Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income From Continuing And Discontinued Operation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Expenses": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Diluted Average Shares": {
+            "value": 13530564263.0,
+            "formatted": "₹1353.06 Cr"
+          },
+          "Basic Average Shares": {
+            "value": 13530564263.0,
+            "formatted": "₹1353.06 Cr"
+          },
+          "Diluted EPS": {
+            "value": 12.76,
+            "formatted": "₹12.76"
+          },
+          "Basic EPS": {
+            "value": 12.76,
+            "formatted": "₹12.76"
+          },
+          "Diluted NI Availto Com Stockholders": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Common Stockholders": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Otherunder Preferred Stock Dividend": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Minority Interests": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Including Noncontrolling Interests": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Discontinuous Operations": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income Continuous Operations": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Tax Provision": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Pretax Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Non Operating Income Expenses": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Non Operating Interest Income Expense": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Interest Expense Non Operating": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Operating Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Operating Expense": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Operating Expenses": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Gross Profit": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Cost Of Revenue": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Revenue": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Operating Revenue": {
+            "value": NaN,
+            "formatted": "₹nan"
+          }
+        },
+        "2023-09-30": {
+          "Tax Effect Of Unusual Items": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Tax Rate For Calcs": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Normalized EBITDA": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income From Continuing Operation Net Minority Interest": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Reconciled Cost Of Revenue": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "EBITDA": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "EBIT": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Interest Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Interest Expense": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Normalized Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income From Continuing And Discontinued Operation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Expenses": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Diluted Average Shares": {
+            "value": 13530921820.0,
+            "formatted": "₹1353.09 Cr"
+          },
+          "Basic Average Shares": {
+            "value": 13530921820.0,
+            "formatted": "₹1353.09 Cr"
+          },
+          "Diluted EPS": {
+            "value": 12.855,
+            "formatted": "₹12.86"
+          },
+          "Basic EPS": {
+            "value": 12.855,
+            "formatted": "₹12.86"
+          },
+          "Diluted NI Availto Com Stockholders": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Common Stockholders": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Otherunder Preferred Stock Dividend": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Minority Interests": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Including Noncontrolling Interests": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Income Discontinuous Operations": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Net Income Continuous Operations": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Tax Provision": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Pretax Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Non Operating Income Expenses": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Net Non Operating Interest Income Expense": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Interest Expense Non Operating": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Operating Income": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Operating Expense": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Operating Expenses": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Gross Profit": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Cost Of Revenue": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Total Revenue": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Operating Revenue": {
+            "value": NaN,
+            "formatted": "₹nan"
+          }
+        }
+      },
+      "balance_sheet": {
+        "2025-03-31": {
+          "Ordinary Shares Number": {
+            "value": 13532971224.0,
+            "formatted": "₹1353.30 Cr"
+          },
+          "Share Issued": {
+            "value": 13532971224.0,
+            "formatted": "₹1353.30 Cr"
+          },
+          "Net Debt": {
+            "value": 2410280000000.0,
+            "formatted": "₹241028.00 Cr"
+          },
+          "Total Debt": {
+            "value": 3695750000000.0,
+            "formatted": "₹369575.00 Cr"
+          },
+          "Tangible Book Value": {
+            "value": 4342610000000.0,
+            "formatted": "₹434261.00 Cr"
+          },
+          "Invested Capital": {
+            "value": 11907300000000.0,
+            "formatted": "₹1190730.00 Cr"
+          },
+          "Working Capital": {
+            "value": 455330000000.0,
+            "formatted": "₹45533.00 Cr"
+          },
+          "Net Tangible Assets": {
+            "value": 4342610000000.0,
+            "formatted": "₹434261.00 Cr"
+          },
+          "Capital Lease Obligations": {
+            "value": 220450000000.0,
+            "formatted": "₹22045.00 Cr"
+          },
+          "Common Stock Equity": {
+            "value": 8432000000000.0,
+            "formatted": "₹843200.00 Cr"
+          },
+          "Total Capitalization": {
+            "value": 10800990000000.0,
+            "formatted": "₹1080099.00 Cr"
+          },
+          "Total Equity Gross Minority Interest": {
+            "value": 10096280000000.0,
+            "formatted": "₹1009628.00 Cr"
+          },
+          "Minority Interest": {
+            "value": 1664260000000.0,
+            "formatted": "₹166426.00 Cr"
+          },
+          "Stockholders Equity": {
+            "value": 8432000000000.0,
+            "formatted": "₹843200.00 Cr"
+          },
+          "Other Equity Interest": {
+            "value": 8296680000000.0,
+            "formatted": "₹829668.00 Cr"
+          },
+          "Retained Earnings": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Additional Paid In Capital": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Capital Stock": {
+            "value": 135320000000.0,
+            "formatted": "₹13532.00 Cr"
+          },
+          "Common Stock": {
+            "value": 135320000000.0,
+            "formatted": "₹13532.00 Cr"
+          },
+          "Total Liabilities Net Minority Interest": {
+            "value": 9404930000000.0,
+            "formatted": "₹940493.00 Cr"
+          },
+          "Total Non Current Liabilities Net Minority Interest": {
+            "value": 4867560000000.0,
+            "formatted": "₹486756.00 Cr"
+          },
+          "Other Non Current Liabilities": {
+            "value": 1100490000000.0,
+            "formatted": "₹110049.00 Cr"
+          },
+          "Tradeand Other Payables Non Current": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Non Current Deferred Taxes Liabilities": {
+            "value": 834530000000.0,
+            "formatted": "₹83453.00 Cr"
+          },
+          "Long Term Debt And Capital Lease Obligation": {
+            "value": 2540410000000.0,
+            "formatted": "₹254041.00 Cr"
+          },
+          "Long Term Capital Lease Obligation": {
+            "value": 171420000000.0,
+            "formatted": "₹17142.00 Cr"
+          },
+          "Long Term Debt": {
+            "value": 2368990000000.0,
+            "formatted": "₹236899.00 Cr"
+          },
+          "Long Term Provisions": {
+            "value": 283040000000.0,
+            "formatted": "₹28304.00 Cr"
+          },
+          "Current Liabilities": {
+            "value": 4537370000000.0,
+            "formatted": "₹453737.00 Cr"
+          },
+          "Other Current Liabilities": {
+            "value": 901240000000.0,
+            "formatted": "₹90124.00 Cr"
+          },
+          "Current Debt And Capital Lease Obligation": {
+            "value": 1155340000000.0,
+            "formatted": "₹115534.00 Cr"
+          },
+          "Current Capital Lease Obligation": {
+            "value": 49030000000.0,
+            "formatted": "₹4903.00 Cr"
+          },
+          "Current Debt": {
+            "value": 1106310000000.0,
+            "formatted": "₹110631.00 Cr"
+          },
+          "Current Provisions": {
+            "value": 41470000000.0,
+            "formatted": "₹4147.00 Cr"
+          },
+          "Payables": {
+            "value": 1867890000000.0,
+            "formatted": "₹186789.00 Cr"
+          },
+          "Other Payable": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Dividends Payable": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Accounts Payable": {
+            "value": 1867890000000.0,
+            "formatted": "₹186789.00 Cr"
+          },
+          "Total Assets": {
+            "value": 19501210000000.0,
+            "formatted": "₹1950121.00 Cr"
+          },
+          "Total Non Current Assets": {
+            "value": 14508510000000.0,
+            "formatted": "₹1450851.00 Cr"
+          },
+          "Other Non Current Assets": {
+            "value": 581900000000.0,
+            "formatted": "₹58190.00 Cr"
+          },
+          "Non Current Prepaid Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Non Current Deferred Taxes Assets": {
+            "value": 4080000000.0,
+            "formatted": "₹408.00 Cr"
+          },
+          "Investmentin Financial Assets": {
+            "value": 1297600000000.0,
+            "formatted": "₹129760.00 Cr"
+          },
+          "Available For Sale Securities": {
+            "value": 1297600000000.0,
+            "formatted": "₹129760.00 Cr"
+          },
+          "Financial Assets Designatedas Fair Value Through Profitor Loss Total": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Long Term Equity Investment": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Investmentsin Joint Venturesat Cost": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Investmentsin Associatesat Cost": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Goodwill And Other Intangible Assets": {
+            "value": 4089390000000.0,
+            "formatted": "₹408939.00 Cr"
+          },
+          "Other Intangible Assets": {
+            "value": 3844090000000.0,
+            "formatted": "₹384409.00 Cr"
+          },
+          "Goodwill": {
+            "value": 245300000000.0,
+            "formatted": "₹24530.00 Cr"
+          },
+          "Net PPE": {
+            "value": 8528120000000.0,
+            "formatted": "₹852812.00 Cr"
+          },
+          "Accumulated Depreciation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Gross PPE": {
+            "value": 8528120000000.0,
+            "formatted": "₹852812.00 Cr"
+          },
+          "Construction In Progress": {
+            "value": 1697100000000.0,
+            "formatted": "₹169710.00 Cr"
+          },
+          "Other Properties": {
+            "value": 6831020000000.0,
+            "formatted": "₹683102.00 Cr"
+          },
+          "Machinery Furniture Equipment": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Buildings And Improvements": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Land And Improvements": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Properties": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Current Assets": {
+            "value": 4992700000000.0,
+            "formatted": "₹499270.00 Cr"
+          },
+          "Other Current Assets": {
+            "value": 571480000000.0,
+            "formatted": "₹57148.00 Cr"
+          },
+          "Restricted Cash": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Prepaid Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Inventory": {
+            "value": 1460620000000.0,
+            "formatted": "₹146062.00 Cr"
+          },
+          "Other Inventories": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Finished Goods": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Work In Process": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Raw Materials": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Receivables": {
+            "value": 51820000000.0,
+            "formatted": "₹5182.00 Cr"
+          },
+          "Accounts Receivable": {
+            "value": 421210000000.0,
+            "formatted": "₹42121.00 Cr"
+          },
+          "Cash Cash Equivalents And Short Term Investments": {
+            "value": 2487570000000.0,
+            "formatted": "₹248757.00 Cr"
+          },
+          "Other Short Term Investments": {
+            "value": 1422550000000.0,
+            "formatted": "₹142255.00 Cr"
+          },
+          "Cash And Cash Equivalents": {
+            "value": 1065020000000.0,
+            "formatted": "₹106502.00 Cr"
+          },
+          "Cash Equivalents": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Cash Financial": {
+            "value": NaN,
+            "formatted": "₹nan"
+          }
+        },
+        "2024-09-30": {
+          "Ordinary Shares Number": {
+            "value": 13532458028.0,
+            "formatted": "₹1353.25 Cr"
+          },
+          "Share Issued": {
+            "value": 13532458028.0,
+            "formatted": "₹1353.25 Cr"
+          },
+          "Net Debt": {
+            "value": 2459840000000.0,
+            "formatted": "₹245984.00 Cr"
+          },
+          "Total Debt": {
+            "value": 3575250000000.0,
+            "formatted": "₹357525.00 Cr"
+          },
+          "Tangible Book Value": {
+            "value": 4529520000000.0,
+            "formatted": "₹452952.00 Cr"
+          },
+          "Invested Capital": {
+            "value": 11557900000000.0,
+            "formatted": "₹1155790.00 Cr"
+          },
+          "Working Capital": {
+            "value": 356520000000.0,
+            "formatted": "₹35652.00 Cr"
+          },
+          "Net Tangible Assets": {
+            "value": 4529520000000.0,
+            "formatted": "₹452952.00 Cr"
+          },
+          "Capital Lease Obligations": {
+            "value": 211880000000.0,
+            "formatted": "₹21188.00 Cr"
+          },
+          "Common Stock Equity": {
+            "value": 8194530000000.0,
+            "formatted": "₹819453.00 Cr"
+          },
+          "Total Capitalization": {
+            "value": 10233810000000.0,
+            "formatted": "₹1023381.00 Cr"
+          },
+          "Total Equity Gross Minority Interest": {
+            "value": 9543240000000.0,
+            "formatted": "₹954324.00 Cr"
+          },
+          "Minority Interest": {
+            "value": 1348710000000.0,
+            "formatted": "₹134871.00 Cr"
+          },
+          "Stockholders Equity": {
+            "value": 8194530000000.0,
+            "formatted": "₹819453.00 Cr"
+          },
+          "Other Equity Interest": {
+            "value": 8126870000000.0,
+            "formatted": "₹812687.00 Cr"
+          },
+          "Retained Earnings": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Additional Paid In Capital": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Capital Stock": {
+            "value": 67660000000.0,
+            "formatted": "₹6766.00 Cr"
+          },
+          "Common Stock": {
+            "value": 67660000000.0,
+            "formatted": "₹6766.00 Cr"
+          },
+          "Total Liabilities Net Minority Interest": {
+            "value": 8607990000000.0,
+            "formatted": "₹860799.00 Cr"
+          },
+          "Total Non Current Liabilities Net Minority Interest": {
+            "value": 4180390000000.0,
+            "formatted": "₹418039.00 Cr"
+          },
+          "Other Non Current Liabilities": {
+            "value": 1100330000000.0,
+            "formatted": "₹110033.00 Cr"
+          },
+          "Tradeand Other Payables Non Current": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Non Current Deferred Taxes Liabilities": {
+            "value": 773870000000.0,
+            "formatted": "₹77387.00 Cr"
+          },
+          "Long Term Debt And Capital Lease Obligation": {
+            "value": 2209060000000.0,
+            "formatted": "₹220906.00 Cr"
+          },
+          "Long Term Capital Lease Obligation": {
+            "value": 169780000000.0,
+            "formatted": "₹16978.00 Cr"
+          },
+          "Long Term Debt": {
+            "value": 2039280000000.0,
+            "formatted": "₹203928.00 Cr"
+          },
+          "Long Term Provisions": {
+            "value": 20630000000.0,
+            "formatted": "₹2063.00 Cr"
+          },
+          "Current Liabilities": {
+            "value": 4427600000000.0,
+            "formatted": "₹442760.00 Cr"
+          },
+          "Other Current Liabilities": {
+            "value": 632100000000.0,
+            "formatted": "₹63210.00 Cr"
+          },
+          "Current Debt And Capital Lease Obligation": {
+            "value": 1366190000000.0,
+            "formatted": "₹136619.00 Cr"
+          },
+          "Current Capital Lease Obligation": {
+            "value": 42100000000.0,
+            "formatted": "₹4210.00 Cr"
+          },
+          "Current Debt": {
+            "value": 1324090000000.0,
+            "formatted": "₹132409.00 Cr"
+          },
+          "Current Provisions": {
+            "value": 33250000000.0,
+            "formatted": "₹3325.00 Cr"
+          },
+          "Payables": {
+            "value": 1755760000000.0,
+            "formatted": "₹175576.00 Cr"
+          },
+          "Other Payable": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Dividends Payable": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Accounts Payable": {
+            "value": 1755760000000.0,
+            "formatted": "₹175576.00 Cr"
+          },
+          "Total Assets": {
+            "value": 18151230000000.0,
+            "formatted": "₹1815123.00 Cr"
+          },
+          "Total Non Current Assets": {
+            "value": 13367110000000.0,
+            "formatted": "₹1336711.00 Cr"
+          },
+          "Other Non Current Assets": {
+            "value": 448710000000.0,
+            "formatted": "₹44871.00 Cr"
+          },
+          "Non Current Prepaid Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Non Current Deferred Taxes Assets": {
+            "value": 6540000000.0,
+            "formatted": "₹654.00 Cr"
+          },
+          "Investmentin Financial Assets": {
+            "value": 1228160000000.0,
+            "formatted": "₹122816.00 Cr"
+          },
+          "Available For Sale Securities": {
+            "value": 1228160000000.0,
+            "formatted": "₹122816.00 Cr"
+          },
+          "Financial Assets Designatedas Fair Value Through Profitor Loss Total": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Long Term Equity Investment": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Investmentsin Joint Venturesat Cost": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Investmentsin Associatesat Cost": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Goodwill And Other Intangible Assets": {
+            "value": 3665010000000.0,
+            "formatted": "₹366501.00 Cr"
+          },
+          "Other Intangible Assets": {
+            "value": 3517380000000.0,
+            "formatted": "₹351738.00 Cr"
+          },
+          "Goodwill": {
+            "value": 147630000000.0,
+            "formatted": "₹14763.00 Cr"
+          },
+          "Net PPE": {
+            "value": 8011190000000.0,
+            "formatted": "₹801119.00 Cr"
+          },
+          "Accumulated Depreciation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Gross PPE": {
+            "value": 8011190000000.0,
+            "formatted": "₹801119.00 Cr"
+          },
+          "Construction In Progress": {
+            "value": 1988730000000.0,
+            "formatted": "₹198873.00 Cr"
+          },
+          "Other Properties": {
+            "value": 6022460000000.0,
+            "formatted": "₹602246.00 Cr"
+          },
+          "Machinery Furniture Equipment": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Buildings And Improvements": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Land And Improvements": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Properties": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Current Assets": {
+            "value": 4784120000000.0,
+            "formatted": "₹478412.00 Cr"
+          },
+          "Other Current Assets": {
+            "value": 500020000000.0,
+            "formatted": "₹50002.00 Cr"
+          },
+          "Restricted Cash": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Prepaid Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Inventory": {
+            "value": 1609500000000.0,
+            "formatted": "₹160950.00 Cr"
+          },
+          "Other Inventories": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Finished Goods": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Work In Process": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Raw Materials": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Receivables": {
+            "value": 46410000000.0,
+            "formatted": "₹4641.00 Cr"
+          },
+          "Accounts Receivable": {
+            "value": 301210000000.0,
+            "formatted": "₹30121.00 Cr"
+          },
+          "Cash Cash Equivalents And Short Term Investments": {
+            "value": 2326980000000.0,
+            "formatted": "₹232698.00 Cr"
+          },
+          "Other Short Term Investments": {
+            "value": 1423450000000.0,
+            "formatted": "₹142345.00 Cr"
+          },
+          "Cash And Cash Equivalents": {
+            "value": 903530000000.0,
+            "formatted": "₹90353.00 Cr"
+          },
+          "Cash Equivalents": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Cash Financial": {
+            "value": NaN,
+            "formatted": "₹nan"
+          }
+        },
+        "2024-03-31": {
+          "Ordinary Shares Number": {
+            "value": 13532218028.0,
+            "formatted": "₹1353.22 Cr"
+          },
+          "Share Issued": {
+            "value": 13532218028.0,
+            "formatted": "₹1353.22 Cr"
+          },
+          "Net Debt": {
+            "value": 2310820000000.0,
+            "formatted": "₹231082.00 Cr"
+          },
+          "Total Debt": {
+            "value": 3461420000000.0,
+            "formatted": "₹346142.00 Cr"
+          },
+          "Tangible Book Value": {
+            "value": 4331070000000.0,
+            "formatted": "₹433107.00 Cr"
+          },
+          "Invested Capital": {
+            "value": 11181030000000.0,
+            "formatted": "₹1118103.00 Cr"
+          },
+          "Working Capital": {
+            "value": 727330000000.0,
+            "formatted": "₹72733.00 Cr"
+          },
+          "Net Tangible Assets": {
+            "value": 4331070000000.0,
+            "formatted": "₹433107.00 Cr"
+          },
+          "Capital Lease Obligations": {
+            "value": 215200000000.0,
+            "formatted": "₹21520.00 Cr"
+          },
+          "Common Stock Equity": {
+            "value": 7934810000000.0,
+            "formatted": "₹793481.00 Cr"
+          },
+          "Total Capitalization": {
+            "value": 10161930000000.0,
+            "formatted": "₹1016193.00 Cr"
+          },
+          "Total Equity Gross Minority Interest": {
+            "value": 9257880000000.0,
+            "formatted": "₹925788.00 Cr"
+          },
+          "Minority Interest": {
+            "value": 1323070000000.0,
+            "formatted": "₹132307.00 Cr"
+          },
+          "Stockholders Equity": {
+            "value": 7934810000000.0,
+            "formatted": "₹793481.00 Cr"
+          },
+          "Other Equity Interest": {
+            "value": 7800000000.0,
+            "formatted": "₹780.00 Cr"
+          },
+          "Retained Earnings": {
+            "value": 3397870000000.0,
+            "formatted": "₹339787.00 Cr"
+          },
+          "Additional Paid In Capital": {
+            "value": 998460000000.0,
+            "formatted": "₹99846.00 Cr"
+          },
+          "Capital Stock": {
+            "value": 67660000000.0,
+            "formatted": "₹6766.00 Cr"
+          },
+          "Common Stock": {
+            "value": 67660000000.0,
+            "formatted": "₹6766.00 Cr"
+          },
+          "Total Liabilities Net Minority Interest": {
+            "value": 8301980000000.0,
+            "formatted": "₹830198.00 Cr"
+          },
+          "Total Non Current Liabilities Net Minority Interest": {
+            "value": 4328310000000.0,
+            "formatted": "₹432831.00 Cr"
+          },
+          "Other Non Current Liabilities": {
+            "value": 1127520000000.0,
+            "formatted": "₹112752.00 Cr"
+          },
+          "Tradeand Other Payables Non Current": {
+            "value": 56670000000.0,
+            "formatted": "₹5667.00 Cr"
+          },
+          "Non Current Deferred Taxes Liabilities": {
+            "value": 722410000000.0,
+            "formatted": "₹72241.00 Cr"
+          },
+          "Long Term Debt And Capital Lease Obligation": {
+            "value": 2401270000000.0,
+            "formatted": "₹240127.00 Cr"
+          },
+          "Long Term Capital Lease Obligation": {
+            "value": 174150000000.0,
+            "formatted": "₹17415.00 Cr"
+          },
+          "Long Term Debt": {
+            "value": 2227120000000.0,
+            "formatted": "₹222712.00 Cr"
+          },
+          "Long Term Provisions": {
+            "value": 20440000000.0,
+            "formatted": "₹2044.00 Cr"
+          },
+          "Current Liabilities": {
+            "value": 3973670000000.0,
+            "formatted": "₹397367.00 Cr"
+          },
+          "Other Current Liabilities": {
+            "value": 30000000.0,
+            "formatted": "₹3.00 Cr"
+          },
+          "Current Debt And Capital Lease Obligation": {
+            "value": 1060150000000.0,
+            "formatted": "₹106015.00 Cr"
+          },
+          "Current Capital Lease Obligation": {
+            "value": 41050000000.0,
+            "formatted": "₹4105.00 Cr"
+          },
+          "Current Debt": {
+            "value": 1019100000000.0,
+            "formatted": "₹101910.00 Cr"
+          },
+          "Current Provisions": {
+            "value": 21750000000.0,
+            "formatted": "₹2175.00 Cr"
+          },
+          "Payables": {
+            "value": 2613080000000.0,
+            "formatted": "₹261308.00 Cr"
+          },
+          "Other Payable": {
+            "value": 827590000000.0,
+            "formatted": "₹82759.00 Cr"
+          },
+          "Dividends Payable": {
+            "value": 1720000000.0,
+            "formatted": "₹172.00 Cr"
+          },
+          "Accounts Payable": {
+            "value": 1783770000000.0,
+            "formatted": "₹178377.00 Cr"
+          },
+          "Total Assets": {
+            "value": 17559860000000.0,
+            "formatted": "₹1755986.00 Cr"
+          },
+          "Total Non Current Assets": {
+            "value": 12858860000000.0,
+            "formatted": "₹1285886.00 Cr"
+          },
+          "Other Non Current Assets": {
+            "value": 267840000000.0,
+            "formatted": "₹26784.00 Cr"
+          },
+          "Non Current Prepaid Assets": {
+            "value": 77640000000.0,
+            "formatted": "₹7764.00 Cr"
+          },
+          "Non Current Deferred Taxes Assets": {
+            "value": 9380000000.0,
+            "formatted": "₹938.00 Cr"
+          },
+          "Investmentin Financial Assets": {
+            "value": 1035610000000.0,
+            "formatted": "₹103561.00 Cr"
+          },
+          "Available For Sale Securities": {
+            "value": 980240000000.0,
+            "formatted": "₹98024.00 Cr"
+          },
+          "Financial Assets Designatedas Fair Value Through Profitor Loss Total": {
+            "value": 55370000000.0,
+            "formatted": "₹5537.00 Cr"
+          },
+          "Long Term Equity Investment": {
+            "value": 180730000000.0,
+            "formatted": "₹18073.00 Cr"
+          },
+          "Investmentsin Joint Venturesat Cost": {
+            "value": 101410000000.0,
+            "formatted": "₹10141.00 Cr"
+          },
+          "Investmentsin Associatesat Cost": {
+            "value": 79320000000.0,
+            "formatted": "₹7932.00 Cr"
+          },
+          "Goodwill And Other Intangible Assets": {
+            "value": 3603740000000.0,
+            "formatted": "₹360374.00 Cr"
+          },
+          "Other Intangible Assets": {
+            "value": 3453850000000.0,
+            "formatted": "₹345385.00 Cr"
+          },
+          "Goodwill": {
+            "value": 149890000000.0,
+            "formatted": "₹14989.00 Cr"
+          },
+          "Net PPE": {
+            "value": 7674930000000.0,
+            "formatted": "₹767493.00 Cr"
+          },
+          "Accumulated Depreciation": {
+            "value": -2499930000000.0,
+            "formatted": "₹-249993.00 Cr"
+          },
+          "Gross PPE": {
+            "value": 10174860000000.0,
+            "formatted": "₹1017486.00 Cr"
+          },
+          "Construction In Progress": {
+            "value": 1614090000000.0,
+            "formatted": "₹161409.00 Cr"
+          },
+          "Other Properties": {
+            "value": 887600000000.0,
+            "formatted": "₹88760.00 Cr"
+          },
+          "Machinery Furniture Equipment": {
+            "value": 5979680000000.0,
+            "formatted": "₹597968.00 Cr"
+          },
+          "Buildings And Improvements": {
+            "value": 820620000000.0,
+            "formatted": "₹82062.00 Cr"
+          },
+          "Land And Improvements": {
+            "value": 872870000000.0,
+            "formatted": "₹87287.00 Cr"
+          },
+          "Properties": {
+            "value": 0.0,
+            "formatted": "₹0"
+          },
+          "Current Assets": {
+            "value": 4701000000000.0,
+            "formatted": "₹470100.00 Cr"
+          },
+          "Other Current Assets": {
+            "value": 146510000000.0,
+            "formatted": "₹14651.00 Cr"
+          },
+          "Restricted Cash": {
+            "value": 36850000000.0,
+            "formatted": "₹3685.00 Cr"
+          },
+          "Prepaid Assets": {
+            "value": 535390000000.0,
+            "formatted": "₹53539.00 Cr"
+          },
+          "Inventory": {
+            "value": 1527700000000.0,
+            "formatted": "₹152770.00 Cr"
+          },
+          "Other Inventories": {
+            "value": 102100000000.0,
+            "formatted": "₹10210.00 Cr"
+          },
+          "Finished Goods": {
+            "value": 528000000000.0,
+            "formatted": "₹52800.00 Cr"
+          },
+          "Work In Process": {
+            "value": 589360000000.0,
+            "formatted": "₹58936.00 Cr"
+          },
+          "Raw Materials": {
+            "value": 308240000000.0,
+            "formatted": "₹30824.00 Cr"
+          },
+          "Other Receivables": {
+            "value": 25170000000.0,
+            "formatted": "₹2517.00 Cr"
+          },
+          "Accounts Receivable": {
+            "value": 316280000000.0,
+            "formatted": "₹31628.00 Cr"
+          },
+          "Cash Cash Equivalents And Short Term Investments": {
+            "value": 2113100000000.0,
+            "formatted": "₹211310.00 Cr"
+          },
+          "Other Short Term Investments": {
+            "value": 1177700000000.0,
+            "formatted": "₹117770.00 Cr"
+          },
+          "Cash And Cash Equivalents": {
+            "value": 935400000000.0,
+            "formatted": "₹93540.00 Cr"
+          },
+          "Cash Equivalents": {
+            "value": 195280000000.0,
+            "formatted": "₹19528.00 Cr"
+          },
+          "Cash Financial": {
+            "value": 740120000000.0,
+            "formatted": "₹74012.00 Cr"
+          }
+        },
+        "2023-09-30": {
+          "Ordinary Shares Number": {
+            "value": 13532188028.0,
+            "formatted": "₹1353.22 Cr"
+          },
+          "Share Issued": {
+            "value": 13532188028.0,
+            "formatted": "₹1353.22 Cr"
+          },
+          "Net Debt": {
+            "value": 2268600000000.0,
+            "formatted": "₹226860.00 Cr"
+          },
+          "Total Debt": {
+            "value": 3166970000000.0,
+            "formatted": "₹316697.00 Cr"
+          },
+          "Tangible Book Value": {
+            "value": 4022020000000.0,
+            "formatted": "₹402202.00 Cr"
+          },
+          "Invested Capital": {
+            "value": 10469090000000.0,
+            "formatted": "₹1046909.00 Cr"
+          },
+          "Working Capital": {
+            "value": 622310000000.0,
+            "formatted": "₹62231.00 Cr"
+          },
+          "Net Tangible Assets": {
+            "value": 4022020000000.0,
+            "formatted": "₹402202.00 Cr"
+          },
+          "Capital Lease Obligations": {
+            "value": 210100000000.0,
+            "formatted": "₹21010.00 Cr"
+          },
+          "Common Stock Equity": {
+            "value": 7512220000000.0,
+            "formatted": "₹751222.00 Cr"
+          },
+          "Total Capitalization": {
+            "value": 9752400000000.0,
+            "formatted": "₹975240.00 Cr"
+          },
+          "Total Equity Gross Minority Interest": {
+            "value": 8772750000000.0,
+            "formatted": "₹877275.00 Cr"
+          },
+          "Minority Interest": {
+            "value": 1260530000000.0,
+            "formatted": "₹126053.00 Cr"
+          },
+          "Stockholders Equity": {
+            "value": 7512220000000.0,
+            "formatted": "₹751222.00 Cr"
+          },
+          "Other Equity Interest": {
+            "value": 7444560000000.0,
+            "formatted": "₹744456.00 Cr"
+          },
+          "Retained Earnings": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Additional Paid In Capital": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Capital Stock": {
+            "value": 67660000000.0,
+            "formatted": "₹6766.00 Cr"
+          },
+          "Common Stock": {
+            "value": 67660000000.0,
+            "formatted": "₹6766.00 Cr"
+          },
+          "Total Liabilities Net Minority Interest": {
+            "value": 8049400000000.0,
+            "formatted": "₹804940.00 Cr"
+          },
+          "Total Non Current Liabilities Net Minority Interest": {
+            "value": 4274270000000.0,
+            "formatted": "₹427427.00 Cr"
+          },
+          "Other Non Current Liabilities": {
+            "value": 1117670000000.0,
+            "formatted": "₹111767.00 Cr"
+          },
+          "Tradeand Other Payables Non Current": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Non Current Deferred Taxes Liabilities": {
+            "value": 655260000000.0,
+            "formatted": "₹65526.00 Cr"
+          },
+          "Long Term Debt And Capital Lease Obligation": {
+            "value": 2407910000000.0,
+            "formatted": "₹240791.00 Cr"
+          },
+          "Long Term Capital Lease Obligation": {
+            "value": 167730000000.0,
+            "formatted": "₹16773.00 Cr"
+          },
+          "Long Term Debt": {
+            "value": 2240180000000.0,
+            "formatted": "₹224018.00 Cr"
+          },
+          "Long Term Provisions": {
+            "value": 21010000000.0,
+            "formatted": "₹2101.00 Cr"
+          },
+          "Current Liabilities": {
+            "value": 3775130000000.0,
+            "formatted": "₹377513.00 Cr"
+          },
+          "Other Current Liabilities": {
+            "value": 552400000000.0,
+            "formatted": "₹55240.00 Cr"
+          },
+          "Current Debt And Capital Lease Obligation": {
+            "value": 759060000000.0,
+            "formatted": "₹75906.00 Cr"
+          },
+          "Current Capital Lease Obligation": {
+            "value": 42370000000.0,
+            "formatted": "₹4237.00 Cr"
+          },
+          "Current Debt": {
+            "value": 716690000000.0,
+            "formatted": "₹71669.00 Cr"
+          },
+          "Current Provisions": {
+            "value": 44000000000.0,
+            "formatted": "₹4400.00 Cr"
+          },
+          "Payables": {
+            "value": 1581010000000.0,
+            "formatted": "₹158101.00 Cr"
+          },
+          "Other Payable": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Dividends Payable": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Accounts Payable": {
+            "value": 1581010000000.0,
+            "formatted": "₹158101.00 Cr"
+          },
+          "Total Assets": {
+            "value": 16822150000000.0,
+            "formatted": "₹1682215.00 Cr"
+          },
+          "Total Non Current Assets": {
+            "value": 12424710000000.0,
+            "formatted": "₹1242471.00 Cr"
+          },
+          "Other Non Current Assets": {
+            "value": 412540000000.0,
+            "formatted": "₹41254.00 Cr"
+          },
+          "Non Current Prepaid Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Non Current Deferred Taxes Assets": {
+            "value": 9400000000.0,
+            "formatted": "₹940.00 Cr"
+          },
+          "Investmentin Financial Assets": {
+            "value": 1131190000000.0,
+            "formatted": "₹113119.00 Cr"
+          },
+          "Available For Sale Securities": {
+            "value": 1131190000000.0,
+            "formatted": "₹113119.00 Cr"
+          },
+          "Financial Assets Designatedas Fair Value Through Profitor Loss Total": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Long Term Equity Investment": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Investmentsin Joint Venturesat Cost": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Investmentsin Associatesat Cost": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Goodwill And Other Intangible Assets": {
+            "value": 3490200000000.0,
+            "formatted": "₹349020.00 Cr"
+          },
+          "Other Intangible Assets": {
+            "value": 3341160000000.0,
+            "formatted": "₹334116.00 Cr"
+          },
+          "Goodwill": {
+            "value": 149040000000.0,
+            "formatted": "₹14904.00 Cr"
+          },
+          "Net PPE": {
+            "value": 7365860000000.0,
+            "formatted": "₹736586.00 Cr"
+          },
+          "Accumulated Depreciation": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Gross PPE": {
+            "value": 7365860000000.0,
+            "formatted": "₹736586.00 Cr"
+          },
+          "Construction In Progress": {
+            "value": 1613440000000.0,
+            "formatted": "₹161344.00 Cr"
+          },
+          "Other Properties": {
+            "value": 5752420000000.0,
+            "formatted": "₹575242.00 Cr"
+          },
+          "Machinery Furniture Equipment": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Buildings And Improvements": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Land And Improvements": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Properties": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Current Assets": {
+            "value": 4397440000000.0,
+            "formatted": "₹439744.00 Cr"
+          },
+          "Other Current Assets": {
+            "value": 526120000000.0,
+            "formatted": "₹52612.00 Cr"
+          },
+          "Restricted Cash": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Prepaid Assets": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Inventory": {
+            "value": 1462580000000.0,
+            "formatted": "₹146258.00 Cr"
+          },
+          "Other Inventories": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Finished Goods": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Work In Process": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Raw Materials": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Other Receivables": {
+            "value": 22580000000.0,
+            "formatted": "₹2258.00 Cr"
+          },
+          "Accounts Receivable": {
+            "value": 369360000000.0,
+            "formatted": "₹36936.00 Cr"
+          },
+          "Cash Cash Equivalents And Short Term Investments": {
+            "value": 2016800000000.0,
+            "formatted": "₹201680.00 Cr"
+          },
+          "Other Short Term Investments": {
+            "value": 1328530000000.0,
+            "formatted": "₹132853.00 Cr"
+          },
+          "Cash And Cash Equivalents": {
+            "value": 688270000000.0,
+            "formatted": "₹68827.00 Cr"
+          },
+          "Cash Equivalents": {
+            "value": NaN,
+            "formatted": "₹nan"
+          },
+          "Cash Financial": {
+            "value": NaN,
+            "formatted": "₹nan"
+          }
+        }
+      },
+      "cash_flow": {}
+    }
+  },
+  "historical_prices": {},
+  "corporate_actions": {
+    "dividends": {
+      "2020-07-02": {
+        "amount": 281.23224,
+        "formatted": "₹281.23"
+      },
+      "2023-08-21": {
+        "amount": 389.3985,
+        "formatted": "₹389.40"
+      },
+      "2024-08-19": {
+        "amount": 432.66498,
+        "formatted": "₹432.66"
+      }
+    },
+    "splits": {
+      "1997-10-27": {
+        "ratio": 2.0,
+        "formatted": "1:2.0"
+      },
+      "2009-11-26": {
+        "ratio": 2.0,
+        "formatted": "1:2.0"
+      },
+      "2017-09-07": {
+        "ratio": 2.0,
+        "formatted": "1:2.0"
+      },
+      "2024-10-28": {
+        "ratio": 2.0,
+        "formatted": "1:2.0"
+      }
+    }
+  },
+  "valuation_metrics": {
+    "pe_ratio": 28.32588,
+    "forward_pe": 20.275576,
+    "peg_ratio": null,
+    "price_to_book": 2.3381827,
+    "price_to_sales": 2.0567503,
+    "enterprise_value": 22823462502400,
+    "enterprise_value_formatted": "₹2282346.25 Cr",
+    "ev_to_revenue": 2.366,
+    "ev_to_ebitda": 13.795
+  },
+  "financial_health": {
+    "return_on_equity": 0.08402,
+    "return_on_assets": 0.03788,
+    "debt_to_equity": 36.605,
+    "current_ratio": 1.1,
+    "quick_ratio": 0.589,
+    "gross_margin": 0.34726003,
+    "operating_margin": 0.11612,
+    "profit_margin": 0.0722,
+    "revenue_growth": 0.105,
+    "earnings_growth": 0.024
+  },
+  "earnings": {},
+  "data_summary": {
+    "annual_financial_periods": 5,
+    "quarterly_financial_periods": 7,
+    "historical_price_periods": 0,
+    "dividend_records": 3,
+    "split_records": 4
+  }
+}
