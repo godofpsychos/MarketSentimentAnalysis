@@ -1,0 +1,27 @@
+📊 FUNDAMENTAL ANALYSIS EXECUTION SUMMARY
+============================================================
+Execution Date: 2025-06-27 02:09:44
+Total Companies Analyzed: 51
+Total Execution Time: 0:00:03.148951
+
+📈 ANALYSIS RESULTS:
+-------------------------
+✅ Profitability: 50 companies
+✅ Valuation: 51 companies
+✅ Growth: 50 companies
+✅ Liquidity: 41 companies
+
+📁 OUTPUT DIRECTORIES:
+-------------------------
+📂 outputs/profitability/: 3 files
+📂 outputs/valuation/: 7 files
+📂 outputs/growth/: 9 files
+📂 outputs/liquidity/: 5 files
+
+🔍 NEXT STEPS:
+---------------
+1. Review individual analysis summaries in each output directory
+2. Examine CSV files for detailed metrics
+3. Use JSON files for programmatic analysis
+4. Run sector-specific analysis for deeper insights
+5. Generate company-specific reports using report_generator.py

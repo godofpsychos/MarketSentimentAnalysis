@@ -2,9 +2,9 @@
 > frontend@0.1.0 start
 > react-scripts start
 
-(node:254823) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:18261) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 (Use `node --trace-deprecation ...` to show where the warning was created)
-(node:254823) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:18261) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 Starting the development server...
 
 Compiled successfully!
@@ -18,3 +18,399 @@ Note that the development build is not optimized.
 To create a production build, use npm run build.
 
 webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:  'LineChart' is defined but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:  'LineChart' is defined but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:  'LineChart' is defined but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:  'LineChart' is defined but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:  'LineChart' is defined but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:  'LineChart' is defined but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:  'LineChart' is defined but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:  'LineChart' is defined but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:  'LineChart' is defined but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:  'LineChart' is defined but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1044:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1044:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1044:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1044:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 797:24:  'calculateGrowthQuality' is not defined  no-undef
+  Line 802:24:  'calculateGrowthQuality' is not defined  no-undef
+  Line 807:24:  'calculateGrowthQuality' is not defined  no-undef
+  Line 812:24:  'calculateGrowthQuality' is not defined  no-undef
+
+Search for the keywords to learn more about each error.
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1060:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+ERROR in [eslint] 
+src/FundamentalDashboard.js
+  Line 797:24:  'calculateGrowthQuality' is not defined  no-undef
+  Line 802:24:  'calculateGrowthQuality' is not defined  no-undef
+  Line 807:24:  'calculateGrowthQuality' is not defined  no-undef
+  Line 812:24:  'calculateGrowthQuality' is not defined  no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error and 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1076:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1076:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1077:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1077:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1089:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1089:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1089:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1089:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1103:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1103:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1109:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1109:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1160:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1160:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FundamentalDashboard.js
+  Line 5:18:    'LineChart' is defined but never used           no-unused-vars
+  Line 1172:9:  'liquidity' is assigned a value but never used  no-unused-vars
+
+webpack compiled with 1 warning

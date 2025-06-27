@@ -1,0 +1,51 @@
+symbol,days_sales_outstanding,days_inventory_outstanding,days_payable_outstanding,cash_conversion_cycle,ccc_interpretation,company_name,sector
+TCS,71.7,0.0,32.2,39.5,Good - Efficient,Tata Consultancy Services Limited,Technology
+JSWSTEEL,18.4,128.7,119.8,27.3,Excellent - Very efficient,JSW Steel Limited,Basic Materials
+M&M,19.0,77.5,117.6,-21.1,Excellent - Very efficient,Mahindra & Mahindra Limited,Consumer Cyclical
+WIPRO,48.2,0.4,13.0,35.7,Good - Efficient,Wipro Limited,Technology
+TECHM,45.1,0.4,45.4,0.1,Excellent - Very efficient,Tech Mahindra Limited,Technology
+CIPLA,74.0,230.6,116.0,188.7,Poor - Inefficient,Cipla Limited,Healthcare
+LTIM,56.3,0.0,20.8,35.6,Good - Efficient,LTIMindtree Limited,Technology
+SBIN,0.0,0.0,,0.0,Excellent - Very efficient,State Bank of India,Financial Services
+TATACONSUM,18.0,130.5,127.2,21.3,Excellent - Very efficient,Tata Consumer Products Limited,Consumer Defensive
+INFY,71.2,0.0,13.3,57.8,Good - Efficient,Infosys Limited,Technology
+BRITANNIA,9.3,42.6,60.3,-8.4,Excellent - Very efficient,Britannia Industries Limited,Consumer Defensive
+COALINDIA,36.6,254.5,205.9,85.2,Average,Coal India Limited,Energy
+ADANIPOWER,84.6,38.9,35.0,88.6,Average,Adani Power Limited,Utilities
+AXISBANK,0.0,0.0,,0.0,Excellent - Very efficient,Axis Bank Limited,Financial Services
+ITC,23.1,180.8,54.9,149.0,Poor - Inefficient,ITC Limited,Consumer Defensive
+ASIANPAINT,46.6,125.7,72.0,100.3,Below Average,Asian Paints Limited,Basic Materials
+ONGC,11.7,46.6,30.8,27.5,Excellent - Very efficient,Oil and Natural Gas Corporation Limited,Energy
+INDUSINDBK,0.0,0.0,,0.0,Excellent - Very efficient,IndusInd Bank Limited,Financial Services
+MARUTI,16.4,23.6,69.9,-29.9,Excellent - Very efficient,Maruti Suzuki India Limited,Consumer Cyclical
+TATASTEEL,8.9,171.3,112.6,67.5,Average,Tata Steel Limited,Basic Materials
+POWERGRID,63.5,,,63.5,Average,Power Grid Corporation of India Limited,Utilities
+NTPC,67.4,63.8,38.1,93.1,Below Average,NTPC Limited,Utilities
+SUNPHARMA,91.5,347.9,210.0,229.4,Poor - Inefficient,Sun Pharmaceutical Industries Limited,Healthcare
+HCLTECH,60.9,0.7,16.0,45.6,Good - Efficient,HCL Technologies Limited,Technology
+TITAN,6.8,216.8,15.1,208.5,Poor - Inefficient,Titan Company Limited,Consumer Cyclical
+ULTRACEMCO,28.3,254.7,248.4,34.6,Good - Efficient,UltraTech Cement Limited,Basic Materials
+BAJFINANCE,0.0,0.0,23.1,-23.1,Excellent - Very efficient,Bajaj Finance Limited,Financial Services
+BHARTIARTL,15.7,3.0,255.5,-236.7,Excellent - Very efficient,Bharti Airtel Limited,Communication Services
+ADANIGREEN,50.1,25.6,100.1,-24.4,Excellent - Very efficient,Adani Green Energy Limited,Utilities
+RELIANCE,15.9,78.1,99.8,-5.8,Excellent - Very efficient,Reliance Industries Limited,Energy
+GRASIM,22.5,70.1,69.3,23.3,Excellent - Very efficient,Grasim Industries Limited,Basic Materials
+HINDALCO,30.4,116.6,101.1,45.8,Good - Efficient,Hindalco Industries Limited,Basic Materials
+EICHERMOT,10.8,55.4,89.7,-23.4,Excellent - Very efficient,Eicher Motors Limited,Consumer Cyclical
+BAJAJFINSV,26.6,0.0,36.4,-9.8,Excellent - Very efficient,Bajaj Finserv Ltd.,Financial Services
+TATAMOTORS,11.1,63.5,130.8,-56.2,Excellent - Very efficient,Tata Motors Limited,Consumer Cyclical
+BPCL,7.7,42.1,28.5,21.3,Excellent - Very efficient,Bharat Petroleum Corporation Limited,Energy
+DRREDDY,101.4,192.0,54.2,239.2,Poor - Inefficient,Dr. Reddy's Laboratories Limited,Healthcare
+HINDUNILVR,22.4,52.7,135.1,-60.0,Excellent - Very efficient,Hindustan Unilever Limited,Consumer Defensive
+ICICIBANK,47.2,0.0,12.6,34.6,Good - Efficient,ICICI Bank Limited,Financial Services
+ADANIPORTS,53.1,13.2,68.7,-2.4,Excellent - Very efficient,Adani Ports and Special Economic Zone Limited,Industrials
+KOTAKBANK,0.0,0.0,,0.0,Excellent - Very efficient,Kotak Mahindra Bank Limited,Financial Services
+HDFCBANK,45.9,0.0,139.5,-93.6,Excellent - Very efficient,HDFC Bank Limited,Financial Services
+NESTLEIND,6.6,118.9,99.0,26.5,Excellent - Very efficient,Nestlé India Limited,Consumer Defensive
+LT,263.5,55.2,377.4,-58.7,Excellent - Very efficient,Larsen & Toubro Limited,Industrials
+HEROMOTOCO,30.2,27.3,77.3,-19.8,Excellent - Very efficient,Hero MotoCorp Limited,Consumer Cyclical
+APOLLOHOSP,50.5,15.5,72.3,-6.3,Excellent - Very efficient,Apollo Hospitals Enterprise Limited,Healthcare
+DIVISLAB,106.5,317.1,89.2,334.4,Poor - Inefficient,Divi's Laboratories Limited,Healthcare
+SHREECEM,26.5,127.1,70.8,82.8,Average,Shree Cement Limited,Basic Materials
+ADANIENT,35.9,64.0,129.8,-29.9,Excellent - Very efficient,Adani Enterprises Limited,Energy
+HDFCLIFE,,0.0,,0.0,Excellent - Very efficient,HDFC Life Insurance Company Limited,Financial Services

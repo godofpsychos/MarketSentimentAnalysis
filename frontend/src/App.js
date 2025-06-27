@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import FundamentalDashboard from './FundamentalDashboard';
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { format, parseISO } from 'date-fns';
 import StockFinancialChart from './StockFinancialChart';
+import FundamentalScoreCard from './FundamentalScoreCard';
 
 // Component for showing loading state
 const Loading = () => (
@@ -254,6 +256,7 @@ const StockSentiment = ({ data }) => (
     <div className="stock-content">
       <div className="sentiment-info">
         <SentimentMeter value={data.sentiment} />
+        <FundamentalScoreCard stockSymbol={data.stock} />
       </div>
       <div className="charts-section">
         <div className="live-price-chart">
@@ -290,6 +293,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [lastRefresh, setLastRefresh] = useState(new Date());
+  const [activeView, setActiveView] = useState('sentiment'); // 'sentiment' or 'fundamental'
   // const [overallSentiment, setOverallSentiment] = useState(0); // Currently not used
 
   // Fetch stocks list when component mounts
@@ -323,11 +327,14 @@ function App() {
   useEffect(() => {
     const fetchSentimentData = async () => {
       try {
-        // Build URL with optional stock parameter
-        let url = 'http://localhost:5000/api/sentiment';
-        if (selectedStock) {
-          url += `?stock=${selectedStock}`;
+        // Only fetch sentiment data if a stock is selected
+        if (!selectedStock) {
+          setStocksData([]);
+          return;
         }
+        
+        // Build URL with stock parameter
+        const url = `http://localhost:5000/api/sentiment?stock=${selectedStock}`;
         
         const response = await fetch(url);
         
@@ -422,12 +429,25 @@ function App() {
                 className="manual-refresh-btn"
                 onClick={() => {
                   setLastRefresh(new Date());
-                  fetchSentimentData();
-                  fetchNewsData();
+                  window.location.reload();
                 }}
                 title="Refresh now"
               >
                 Refresh Now
+              </button>
+            </div>
+            <div className="view-selector">
+              <button 
+                className={`view-btn ${activeView === 'sentiment' ? 'active' : ''}`}
+                onClick={() => setActiveView('sentiment')}
+              >
+                📊 Sentiment Analysis
+              </button>
+              <button 
+                className={`view-btn ${activeView === 'fundamental' ? 'active' : ''}`}
+                onClick={() => setActiveView('fundamental')}
+              >
+                📈 Fundamental Analysis
               </button>
             </div>
             <div className="stock-selector">
@@ -437,7 +457,7 @@ function App() {
                 value={selectedStock}
                 onChange={(e) => setSelectedStock(e.target.value)}
               >
-                <option value="">All Stocks</option>
+                <option value="">Choose a stock to analyze...</option>
                 {stocksList.map((stock) => (
                   <option key={stock} value={stock}>{stock}</option>
                 ))}
@@ -448,32 +468,41 @@ function App() {
       </header>
       
       <main className="content">
-        <div className="dashboard-grid">
-          <section className="sentiment-section">
-            <h2>{selectedStock ? `${selectedStock} Analysis` : 'Stock Analysis Dashboard'}</h2>
-            <div className="sentiment-container">
-              {stocksData.length > 0 ? (
-                stocksData.map((data, index) => (
-                  <StockSentiment key={index} data={data} />
-                ))
-              ) : (
-                <p className="no-data">No sentiment data available</p>
-              )}
-            </div>
-          </section>
-          
-          {/* Keep the news section if it exists in the API */}
-          {newsData.length > 0 && (
-            <section className="news-section">
-              <h2>Recent Market News</h2>
-              <div className="news-container">
-                {newsData.map((news, index) => (
-                  <NewsItem key={index} news={news} />
-                ))}
+        {activeView === 'sentiment' ? (
+          <div className="dashboard-grid">
+            <section className="sentiment-section">
+              <h2>{selectedStock ? `${selectedStock} Sentiment Analysis` : 'Stock Sentiment Analysis'}</h2>
+              <div className="sentiment-container">
+                {!selectedStock ? (
+                  <div className="no-selection">
+                    <h3>Select a stock to view sentiment analysis</h3>
+                    <p>Choose a stock from the dropdown above to see detailed sentiment metrics and market analysis.</p>
+                  </div>
+                ) : stocksData.length > 0 ? (
+                  stocksData.map((data, index) => (
+                    <StockSentiment key={index} data={data} />
+                  ))
+                ) : (
+                  <p className="no-data">No sentiment data available for {selectedStock}</p>
+                )}
               </div>
             </section>
-          )}
-        </div>
+            
+            {/* Keep the news section if it exists in the API */}
+            {newsData.length > 0 && (
+              <section className="news-section">
+                <h2>Recent Market News</h2>
+                <div className="news-container">
+                  {newsData.map((news, index) => (
+                    <NewsItem key={index} news={news} />
+                  ))}
+                </div>
+              </section>
+            )}
+          </div>
+        ) : (
+          <FundamentalDashboard selectedStock={selectedStock} />
+        )}
       </main>
     </div>
   );

@@ -1,0 +1,112 @@
+💰 VALUATION ANALYSIS SUMMARY
+==================================================
+Total companies analyzed: 51
+
+📉 CHEAPEST STOCKS BY P/E RATIO:
+-----------------------------------
+COALINDIA: 6.84 (Energy)
+ONGC: 8.73 (Energy)
+SBIN: 9.09 (Financial Services)
+HINDALCO: 9.20 (Basic Materials)
+BPCL: 10.04 (Energy)
+TATAMOTORS: 10.33 (Consumer Cyclical)
+AXISBANK: 13.46 (Financial Services)
+NTPC: 16.34 (Utilities)
+ADANIPOWER: 16.63 (Utilities)
+POWERGRID: 17.72 (Utilities)
+
+📈 MOST EXPENSIVE STOCKS BY P/E RATIO:
+----------------------------------------
+ADANIGREEN: 115.17 (Utilities)
+TITAN: 93.46 (Consumer Cyclical)
+HDFCLIFE: 92.05 (Financial Services)
+SHREECEM: 91.74 (Basic Materials)
+TATACONSUM: 84.75 (Consumer Defensive)
+DIVISLAB: 80.53 (Healthcare)
+NESTLEIND: 70.93 (Consumer Defensive)
+APOLLOHOSP: 69.44 (Healthcare)
+JSWSTEEL: 69.43 (Basic Materials)
+BRITANNIA: 61.73 (Consumer Defensive)
+
+💎 VALUE STOCKS (LOW P/B RATIO):
+-----------------------------------
+ONGC: 0.92 (Energy)
+INDUSINDBK: 1.01 (Financial Services)
+HINDALCO: 1.19 (Basic Materials)
+SBIN: 1.45 (Financial Services)
+BPCL: 1.65 (Energy)
+NTPC: 1.75 (Utilities)
+GRASIM: 1.88 (Basic Materials)
+TATASTEEL: 2.09 (Basic Materials)
+AXISBANK: 2.11 (Financial Services)
+TATAMOTORS: 2.13 (Consumer Cyclical)
+
+🔍 DCF ANALYSIS RESULTS:
+-------------------------
+Undervalued companies: 6
+Overvalued companies: 36
+
+🎯 TOP UNDERVALUED STOCKS (DCF):
+-----------------------------------
+INDUSINDBK: 2.83 - Significantly Undervalued
+ICICIBANK: 1.59 - Significantly Undervalued
+TATAMOTORS: 1.40 - Significantly Undervalued
+ONGC: 1.29 - Undervalued
+HDFCLIFE: 1.27 - Undervalued
+
+📊 SECTOR VALUATION MEDIANS:
+------------------------------
+Basic Materials:
+  P/E: 55.82
+  P/B: 3.07
+  P/S: 1.46
+
+Communication Services:
+  P/E: 34.60
+  P/B: 10.38
+  P/S: 6.71
+
+Consumer Cyclical:
+  P/E: 27.38
+  P/B: 4.47
+  P/S: 2.49
+
+Consumer Defensive:
+  P/E: 61.73
+  P/B: 10.82
+  P/S: 7.50
+
+Energy:
+  P/E: 10.04
+  P/B: 2.34
+  P/S: 1.91
+
+Financial Services:
+  P/E: 21.10
+  P/B: 2.86
+  P/S: 4.93
+
+Healthcare:
+  P/E: 36.44
+  P/B: 5.50
+  P/S: 4.66
+
+Industrials:
+  P/E: 29.57
+  P/B: 4.88
+  P/S: 5.77
+
+N/A:
+  P/E: N/A
+  P/B: N/A
+  P/S: N/A
+
+Technology:
+  P/E: 25.93
+  P/B: 9.96
+  P/S: 4.48
+
+Utilities:
+  P/E: 17.17
+  P/B: 3.29
+  P/S: 4.80

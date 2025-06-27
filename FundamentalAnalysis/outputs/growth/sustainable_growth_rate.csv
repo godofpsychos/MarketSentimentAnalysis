@@ -1,0 +1,51 @@
+symbol,roe_percent,payout_ratio_percent,retention_ratio_percent,sustainable_growth_rate_percent,total_dividends,interpretation,company_name,sector
+TCS,52.16,0.0,100.0,52.16,3461.31996,High growth potential,Tata Consultancy Services Limited,Technology
+JSWSTEEL,4.32,0.0,100.0,4.32,0.0,Limited growth potential,JSW Steel Limited,Basic Materials
+M&M,16.89,0.0,100.0,16.89,0.0,High growth potential,Mahindra & Mahindra Limited,Consumer Cyclical
+WIPRO,16.71,0.0,100.0,16.71,519.198,High growth potential,Wipro Limited,Technology
+TECHM,15.48,0.0,100.0,15.48,0.0,High growth potential,Tech Mahindra Limited,Technology
+CIPLA,18.14,0.0,100.0,18.14,0.0,High growth potential,Cipla Limited,Healthcare
+LTIM,21.54,0.0,100.0,21.54,45.0,High growth potential,LTIMindtree Limited,Technology
+SBIN,17.21,0.0,100.0,17.21,1375.8746,High growth potential,State Bank of India,Financial Services
+TATACONSUM,6.63,0.0,100.0,6.63,713.8972,Limited growth potential,Tata Consumer Products Limited,Consumer Defensive
+INFY,28.93,0.0,100.0,28.93,3547.8529,High growth potential,Infosys Limited,Technology
+BRITANNIA,52.18,0.0,100.0,52.18,0.0,High growth potential,Britannia Industries Limited,Consumer Defensive
+COALINDIA,38.47,0.0,100.0,38.47,484.58478,High growth potential,Coal India Limited,Energy
+ADANIPOWER,25.29,0.0,100.0,25.29,0.0,High growth potential,Adani Power Limited,Utilities
+AXISBANK,16.32,0.0,100.0,16.32,0.0,High growth potential,Axis Bank Limited,Financial Services
+ITC,27.58,0.0,100.0,27.58,1241.7485000000001,High growth potential,ITC Limited,Consumer Defensive
+ASIANPAINT,18.79,0.0,100.0,18.79,1778.253,High growth potential,Asian Paints Limited,Basic Materials
+ONGC,10.37,0.0,100.0,10.37,432.66498,Moderate growth potential,Oil and Natural Gas Corporation Limited,Energy
+INDUSINDBK,4.02,0.0,100.0,4.02,0.0,Limited growth potential,IndusInd Bank Limited,Financial Services
+MARUTI,15.95,0.0,100.0,15.94,0.0,High growth potential,Maruti Suzuki India Limited,Consumer Cyclical
+TATASTEEL,3.45,0.0,100.0,3.45,311.51877,Limited growth potential,Tata Steel Limited,Basic Materials
+POWERGRID,17.26,0.0,100.0,17.26,281.23224,High growth potential,Power Grid Corporation of India Limited,Utilities
+NTPC,13.45,0.0,100.0,13.45,216.33249,Moderate growth potential,NTPC Limited,Utilities
+SUNPHARMA,15.71,0.0,100.0,15.71,908.5965,High growth potential,Sun Pharmaceutical Industries Limited,Healthcare
+HCLTECH,25.0,0.0,100.0,25.0,2595.99,High growth potential,HCL Technologies Limited,Technology
+TITAN,31.75,0.0,100.0,31.76,0.0,High growth potential,Titan Company Limited,Consumer Cyclical
+ULTRACEMCO,9.0,0.0,100.0,9.0,0.0,Moderate growth potential,UltraTech Cement Limited,Basic Materials
+BAJFINANCE,19.11,0.0,100.0,19.11,380.7452,High growth potential,Bajaj Finance Limited,Financial Services
+BHARTIARTL,28.94,0.0,100.0,28.94,0.0,High growth potential,Bharti Airtel Limited,Communication Services
+ADANIGREEN,10.0,0.0,100.0,10.0,0.0,Moderate growth potential,Adani Green Energy Limited,Utilities
+RELIANCE,8.4,0.0,100.0,8.4,0.0,Moderate growth potential,Reliance Industries Limited,Energy
+GRASIM,5.23,0.0,100.0,5.23,0.0,Limited growth potential,Grasim Industries Limited,Basic Materials
+HINDALCO,13.92,0.0,100.0,13.92,0.0,Moderate growth potential,Hindalco Industries Limited,Basic Materials
+EICHERMOT,24.07,0.0,100.0,24.07,0.0,High growth potential,Eicher Motors Limited,Consumer Cyclical
+BAJAJFINSV,15.12,0.0,100.0,15.12,0.0,High growth potential,Bajaj Finserv Ltd.,Financial Services
+TATAMOTORS,21.08,0.0,100.0,21.08,519.198,High growth potential,Tata Motors Limited,Consumer Cyclical
+BPCL,16.99,0.0,100.0,16.99,432.66498,High growth potential,Bharat Petroleum Corporation Limited,Energy
+DRREDDY,18.53,0.0,100.0,18.53,0.0,High growth potential,Dr. Reddy's Laboratories Limited,Healthcare
+HINDUNILVR,21.12,0.0,100.0,21.12,2076.792,High growth potential,Hindustan Unilever Limited,Consumer Defensive
+ICICIBANK,18.23,0.0,100.0,18.23,865.32996,High growth potential,ICICI Bank Limited,Financial Services
+ADANIPORTS,18.51,0.0,100.0,18.51,605.73096,High growth potential,Adani Ports and Special Economic Zone Limited,Industrials
+KOTAKBANK,15.39,0.0,100.0,15.39,0.0,High growth potential,Kotak Mahindra Bank Limited,Financial Services
+HDFCBANK,14.57,0.0,100.0,14.57,19.5,Moderate growth potential,HDFC Bank Limited,Financial Services
+NESTLEIND,87.27,0.0,100.0,87.27,1233.0952,High growth potential,Nestlé India Limited,Consumer Defensive
+LT,15.78,0.0,100.0,15.78,2942.1218,High growth potential,Larsen & Toubro Limited,Industrials
+HEROMOTOCO,23.5,0.0,100.0,23.5,8653.3,High growth potential,Hero MotoCorp Limited,Consumer Cyclical
+APOLLOHOSP,18.84,0.0,100.0,18.84,778.797,High growth potential,Apollo Hospitals Enterprise Limited,Healthcare
+DIVISLAB,15.35,0.0,100.0,15.35,0.0,High growth potential,Divi's Laboratories Limited,Healthcare
+SHREECEM,5.31,0.0,100.0,5.31,4326.65,Limited growth potential,Shree Cement Limited,Basic Materials
+ADANIENT,15.93,0.0,100.0,15.93,112.49289,High growth potential,Adani Enterprises Limited,Energy
+HDFCLIFE,11.75,0.0,100.0,11.75,181.71928,Moderate growth potential,HDFC Life Insurance Company Limited,Financial Services

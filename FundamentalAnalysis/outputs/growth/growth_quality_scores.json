@@ -1,0 +1,402 @@
+[
+  {
+    "symbol": "TCS",
+    "growth_quality_score": 70,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 10/25; Consistency: 25/25; Recent Performance: 15/25",
+    "company_name": "Tata Consultancy Services Limited",
+    "sector": "Technology"
+  },
+  {
+    "symbol": "JSWSTEEL",
+    "growth_quality_score": 15,
+    "quality_interpretation": "Poor Growth Quality",
+    "score_breakdown": "Revenue Growth: 15/25; Earnings Growth: 0/25; Consistency: 0/25; Recent Performance: 0/25",
+    "company_name": "JSW Steel Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "M&M",
+    "growth_quality_score": 95,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25",
+    "company_name": "Mahindra & Mahindra Limited",
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "symbol": "WIPRO",
+    "growth_quality_score": 50,
+    "quality_interpretation": "Average Growth Quality",
+    "score_breakdown": "Revenue Growth: 10/25; Earnings Growth: 10/25; Consistency: 20/25; Recent Performance: 10/25",
+    "company_name": "Wipro Limited",
+    "sector": "Technology"
+  },
+  {
+    "symbol": "TECHM",
+    "growth_quality_score": 40,
+    "quality_interpretation": "Below Average Growth Quality",
+    "score_breakdown": "Revenue Growth: 15/25; Earnings Growth: 0/25; Consistency: 10/25; Recent Performance: 15/25",
+    "company_name": "Tech Mahindra Limited",
+    "sector": "Technology"
+  },
+  {
+    "symbol": "CIPLA",
+    "growth_quality_score": 85,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 15/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25",
+    "company_name": "Cipla Limited",
+    "sector": "Healthcare"
+  },
+  {
+    "symbol": "LTIM",
+    "growth_quality_score": 70,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 10/25; Consistency: 25/25; Recent Performance: 15/25",
+    "company_name": "LTIMindtree Limited",
+    "sector": "Technology"
+  },
+  {
+    "symbol": "SBIN",
+    "growth_quality_score": 95,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25",
+    "company_name": "State Bank of India",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "TATACONSUM",
+    "growth_quality_score": 80,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 15/25; Consistency: 25/25; Recent Performance: 20/25",
+    "company_name": "Tata Consumer Products Limited",
+    "sector": "Consumer Defensive"
+  },
+  {
+    "symbol": "INFY",
+    "growth_quality_score": 70,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 10/25; Consistency: 25/25; Recent Performance: 15/25",
+    "company_name": "Infosys Limited",
+    "sector": "Technology"
+  },
+  {
+    "symbol": "BRITANNIA",
+    "growth_quality_score": 70,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 15/25; Earnings Growth: 15/25; Consistency: 20/25; Recent Performance: 20/25",
+    "company_name": "Britannia Industries Limited",
+    "sector": "Consumer Defensive"
+  },
+  {
+    "symbol": "COALINDIA",
+    "growth_quality_score": 75,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 15/25; Earnings Growth: 25/25; Consistency: 10/25; Recent Performance: 25/25",
+    "company_name": "Coal India Limited",
+    "sector": "Energy"
+  },
+  {
+    "symbol": "ADANIPOWER",
+    "growth_quality_score": 85,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 10/25; Recent Performance: 25/25",
+    "company_name": "Adani Power Limited",
+    "sector": "Utilities"
+  },
+  {
+    "symbol": "AXISBANK",
+    "growth_quality_score": 85,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 10/25; Recent Performance: 25/25",
+    "company_name": "Axis Bank Limited",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "ITC",
+    "growth_quality_score": 80,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 15/25; Earnings Growth: 25/25; Consistency: 15/25; Recent Performance: 25/25",
+    "company_name": "ITC Limited",
+    "sector": "Consumer Defensive"
+  },
+  {
+    "symbol": "ASIANPAINT",
+    "growth_quality_score": 55,
+    "quality_interpretation": "Average Growth Quality",
+    "score_breakdown": "Revenue Growth: 15/25; Earnings Growth: 10/25; Consistency: 15/25; Recent Performance: 15/25",
+    "company_name": "Asian Paints Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "ONGC",
+    "growth_quality_score": 45,
+    "quality_interpretation": "Below Average Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 0/25; Consistency: 15/25; Recent Performance: 10/25",
+    "company_name": "Oil and Natural Gas Corporation Limited",
+    "sector": "Energy"
+  },
+  {
+    "symbol": "INDUSINDBK",
+    "growth_quality_score": 35,
+    "quality_interpretation": "Below Average Growth Quality",
+    "score_breakdown": "Revenue Growth: 15/25; Earnings Growth: 0/25; Consistency: 10/25; Recent Performance: 10/25",
+    "company_name": "IndusInd Bank Limited",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "MARUTI",
+    "growth_quality_score": 85,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 10/25; Recent Performance: 25/25",
+    "company_name": "Maruti Suzuki India Limited",
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "symbol": "TATASTEEL",
+    "growth_quality_score": 15,
+    "quality_interpretation": "Poor Growth Quality",
+    "score_breakdown": "Revenue Growth: 0/25; Earnings Growth: 0/25; Consistency: 15/25; Recent Performance: 0/25",
+    "company_name": "Tata Steel Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "POWERGRID",
+    "growth_quality_score": 45,
+    "quality_interpretation": "Below Average Growth Quality",
+    "score_breakdown": "Revenue Growth: 10/25; Earnings Growth: 0/25; Consistency: 25/25; Recent Performance: 10/25",
+    "company_name": "Power Grid Corporation of India Limited",
+    "sector": "Utilities"
+  },
+  {
+    "symbol": "NTPC",
+    "growth_quality_score": 75,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 15/25; Consistency: 20/25; Recent Performance: 20/25",
+    "company_name": "NTPC Limited",
+    "sector": "Utilities"
+  },
+  {
+    "symbol": "SUNPHARMA",
+    "growth_quality_score": 80,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 25/25; Consistency: 10/25; Recent Performance: 25/25",
+    "company_name": "Sun Pharmaceutical Industries Limited",
+    "sector": "Healthcare"
+  },
+  {
+    "symbol": "HCLTECH",
+    "growth_quality_score": 70,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 10/25; Consistency: 25/25; Recent Performance: 15/25",
+    "company_name": "HCL Technologies Limited",
+    "sector": "Technology"
+  },
+  {
+    "symbol": "TITAN",
+    "growth_quality_score": 85,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 20/25; Consistency: 15/25; Recent Performance: 25/25",
+    "company_name": "Titan Company Limited",
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "symbol": "ULTRACEMCO",
+    "growth_quality_score": 50,
+    "quality_interpretation": "Average Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 0/25; Consistency: 15/25; Recent Performance: 15/25",
+    "company_name": "UltraTech Cement Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "growth_quality_score": 95,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25",
+    "company_name": "Bajaj Finance Limited",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "growth_quality_score": 70,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 25/25; Consistency: 0/25; Recent Performance: 25/25",
+    "company_name": "Bharti Airtel Limited",
+    "sector": "Communication Services"
+  },
+  {
+    "symbol": "ADANIGREEN",
+    "growth_quality_score": 85,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 10/25; Recent Performance: 25/25",
+    "company_name": "Adani Green Energy Limited",
+    "sector": "Utilities"
+  },
+  {
+    "symbol": "RELIANCE",
+    "growth_quality_score": 70,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 10/25; Consistency: 25/25; Recent Performance: 15/25",
+    "company_name": "Reliance Industries Limited",
+    "sector": "Energy"
+  },
+  {
+    "symbol": "GRASIM",
+    "growth_quality_score": 50,
+    "quality_interpretation": "Average Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 0/25; Consistency: 25/25; Recent Performance: 0/25",
+    "company_name": "Grasim Industries Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "HINDALCO",
+    "growth_quality_score": 55,
+    "quality_interpretation": "Average Growth Quality",
+    "score_breakdown": "Revenue Growth: 15/25; Earnings Growth: 10/25; Consistency: 15/25; Recent Performance: 15/25",
+    "company_name": "Hindalco Industries Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "EICHERMOT",
+    "growth_quality_score": 90,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 15/25; Recent Performance: 25/25",
+    "company_name": "Eicher Motors Limited",
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "symbol": "BAJAJFINSV",
+    "growth_quality_score": 95,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25",
+    "company_name": "Bajaj Finserv Ltd.",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "TATAMOTORS",
+    "growth_quality_score": 75,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 0/25; Recent Performance: 25/25",
+    "company_name": "Tata Motors Limited",
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "symbol": "BPCL",
+    "growth_quality_score": 50,
+    "quality_interpretation": "Average Growth Quality",
+    "score_breakdown": "Revenue Growth: 15/25; Earnings Growth: 10/25; Consistency: 0/25; Recent Performance: 25/25",
+    "company_name": "Bharat Petroleum Corporation Limited",
+    "sector": "Energy"
+  },
+  {
+    "symbol": "DRREDDY",
+    "growth_quality_score": 85,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 25/25; Consistency: 15/25; Recent Performance: 25/25",
+    "company_name": "Dr. Reddy's Laboratories Limited",
+    "sector": "Healthcare"
+  },
+  {
+    "symbol": "HINDUNILVR",
+    "growth_quality_score": 65,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 15/25; Earnings Growth: 10/25; Consistency: 25/25; Recent Performance: 15/25",
+    "company_name": "Hindustan Unilever Limited",
+    "sector": "Consumer Defensive"
+  },
+  {
+    "symbol": "ICICIBANK",
+    "growth_quality_score": 95,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 25/25; Consistency: 25/25; Recent Performance: 25/25",
+    "company_name": "ICICI Bank Limited",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "ADANIPORTS",
+    "growth_quality_score": 95,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25",
+    "company_name": "Adani Ports and Special Economic Zone Limited",
+    "sector": "Industrials"
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "growth_quality_score": 100,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 25/25; Recent Performance: 25/25",
+    "company_name": "Kotak Mahindra Bank Limited",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "HDFCBANK",
+    "growth_quality_score": 95,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25",
+    "company_name": "HDFC Bank Limited",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "NESTLEIND",
+    "growth_quality_score": 80,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 15/25; Consistency: 20/25; Recent Performance: 25/25",
+    "company_name": "Nestlé India Limited",
+    "sector": "Consumer Defensive"
+  },
+  {
+    "symbol": "LT",
+    "growth_quality_score": 10,
+    "quality_interpretation": "Poor Growth Quality",
+    "score_breakdown": "Revenue Growth: 0/25; Earnings Growth: 0/25; Consistency: 10/25; Recent Performance: 0/25",
+    "company_name": "Larsen & Toubro Limited",
+    "sector": "Industrials"
+  },
+  {
+    "symbol": "HEROMOTOCO",
+    "growth_quality_score": 95,
+    "quality_interpretation": "Excellent Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 25/25; Consistency: 25/25; Recent Performance: 25/25",
+    "company_name": "Hero MotoCorp Limited",
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "symbol": "APOLLOHOSP",
+    "growth_quality_score": 75,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 15/25; Consistency: 15/25; Recent Performance: 25/25",
+    "company_name": "Apollo Hospitals Enterprise Limited",
+    "sector": "Healthcare"
+  },
+  {
+    "symbol": "DIVISLAB",
+    "growth_quality_score": 25,
+    "quality_interpretation": "Poor Growth Quality",
+    "score_breakdown": "Revenue Growth: 10/25; Earnings Growth: 0/25; Consistency: 15/25; Recent Performance: 0/25",
+    "company_name": "Divi's Laboratories Limited",
+    "sector": "Healthcare"
+  },
+  {
+    "symbol": "SHREECEM",
+    "growth_quality_score": 35,
+    "quality_interpretation": "Below Average Growth Quality",
+    "score_breakdown": "Revenue Growth: 15/25; Earnings Growth: 0/25; Consistency: 10/25; Recent Performance: 10/25",
+    "company_name": "Shree Cement Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "ADANIENT",
+    "growth_quality_score": 70,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 25/25; Consistency: 0/25; Recent Performance: 25/25",
+    "company_name": "Adani Enterprises Limited",
+    "sector": "Energy"
+  },
+  {
+    "symbol": "HDFCLIFE",
+    "growth_quality_score": 75,
+    "quality_interpretation": "Good Growth Quality",
+    "score_breakdown": "Revenue Growth: 20/25; Earnings Growth: 15/25; Consistency: 20/25; Recent Performance: 20/25",
+    "company_name": "HDFC Life Insurance Company Limited",
+    "sector": "Financial Services"
+  }
+]

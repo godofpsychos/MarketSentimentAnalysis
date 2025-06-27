@@ -1,0 +1,12 @@
+{
+  "total_companies_processed": 51,
+  "successful_analyses": 51,
+  "success_rate_percent": 100.0,
+  "generated_at": "2025-06-26T04:34:07.635583",
+  "score_distribution": {
+    "mean": 12.45,
+    "min": 0.0,
+    "max": 61.8,
+    "count": 51
+  }
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "symbol": "TCS",
+    "days_sales_outstanding": 71.7,
+    "days_inventory_outstanding": 0.0,
+    "days_payable_outstanding": 32.2,
+    "cash_conversion_cycle": 39.5,
+    "ccc_interpretation": "Good - Efficient",
+    "company_name": "Tata Consultancy Services Limited",
+    "sector": "Technology"
+  },
+  {
+    "symbol": "JSWSTEEL",
+    "days_sales_outstanding": 18.4,
+    "days_inventory_outstanding": 128.7,
+    "days_payable_outstanding": 119.8,
+    "cash_conversion_cycle": 27.3,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "JSW Steel Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "M&M",
+    "days_sales_outstanding": 19.0,
+    "days_inventory_outstanding": 77.5,
+    "days_payable_outstanding": 117.6,
+    "cash_conversion_cycle": -21.1,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Mahindra & Mahindra Limited",
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "symbol": "WIPRO",
+    "days_sales_outstanding": 48.2,
+    "days_inventory_outstanding": 0.4,
+    "days_payable_outstanding": 13.0,
+    "cash_conversion_cycle": 35.7,
+    "ccc_interpretation": "Good - Efficient",
+    "company_name": "Wipro Limited",
+    "sector": "Technology"
+  },
+  {
+    "symbol": "TECHM",
+    "days_sales_outstanding": 45.1,
+    "days_inventory_outstanding": 0.4,
+    "days_payable_outstanding": 45.4,
+    "cash_conversion_cycle": 0.1,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Tech Mahindra Limited",
+    "sector": "Technology"
+  },
+  {
+    "symbol": "CIPLA",
+    "days_sales_outstanding": 74.0,
+    "days_inventory_outstanding": 230.6,
+    "days_payable_outstanding": 116.0,
+    "cash_conversion_cycle": 188.7,
+    "ccc_interpretation": "Poor - Inefficient",
+    "company_name": "Cipla Limited",
+    "sector": "Healthcare"
+  },
+  {
+    "symbol": "LTIM",
+    "days_sales_outstanding": 56.3,
+    "days_inventory_outstanding": 0.0,
+    "days_payable_outstanding": 20.8,
+    "cash_conversion_cycle": 35.6,
+    "ccc_interpretation": "Good - Efficient",
+    "company_name": "LTIMindtree Limited",
+    "sector": "Technology"
+  },
+  {
+    "symbol": "SBIN",
+    "days_sales_outstanding": 0.0,
+    "days_inventory_outstanding": 0.0,
+    "days_payable_outstanding": NaN,
+    "cash_conversion_cycle": 0.0,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "State Bank of India",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "TATACONSUM",
+    "days_sales_outstanding": 18.0,
+    "days_inventory_outstanding": 130.5,
+    "days_payable_outstanding": 127.2,
+    "cash_conversion_cycle": 21.3,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Tata Consumer Products Limited",
+    "sector": "Consumer Defensive"
+  },
+  {
+    "symbol": "INFY",
+    "days_sales_outstanding": 71.2,
+    "days_inventory_outstanding": 0.0,
+    "days_payable_outstanding": 13.3,
+    "cash_conversion_cycle": 57.8,
+    "ccc_interpretation": "Good - Efficient",
+    "company_name": "Infosys Limited",
+    "sector": "Technology"
+  },
+  {
+    "symbol": "BRITANNIA",
+    "days_sales_outstanding": 9.3,
+    "days_inventory_outstanding": 42.6,
+    "days_payable_outstanding": 60.3,
+    "cash_conversion_cycle": -8.4,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Britannia Industries Limited",
+    "sector": "Consumer Defensive"
+  },
+  {
+    "symbol": "COALINDIA",
+    "days_sales_outstanding": 36.6,
+    "days_inventory_outstanding": 254.5,
+    "days_payable_outstanding": 205.9,
+    "cash_conversion_cycle": 85.2,
+    "ccc_interpretation": "Average",
+    "company_name": "Coal India Limited",
+    "sector": "Energy"
+  },
+  {
+    "symbol": "ADANIPOWER",
+    "days_sales_outstanding": 84.6,
+    "days_inventory_outstanding": 38.9,
+    "days_payable_outstanding": 35.0,
+    "cash_conversion_cycle": 88.6,
+    "ccc_interpretation": "Average",
+    "company_name": "Adani Power Limited",
+    "sector": "Utilities"
+  },
+  {
+    "symbol": "AXISBANK",
+    "days_sales_outstanding": 0.0,
+    "days_inventory_outstanding": 0.0,
+    "days_payable_outstanding": NaN,
+    "cash_conversion_cycle": 0.0,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Axis Bank Limited",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "ITC",
+    "days_sales_outstanding": 23.1,
+    "days_inventory_outstanding": 180.8,
+    "days_payable_outstanding": 54.9,
+    "cash_conversion_cycle": 149.0,
+    "ccc_interpretation": "Poor - Inefficient",
+    "company_name": "ITC Limited",
+    "sector": "Consumer Defensive"
+  },
+  {
+    "symbol": "ASIANPAINT",
+    "days_sales_outstanding": 46.6,
+    "days_inventory_outstanding": 125.7,
+    "days_payable_outstanding": 72.0,
+    "cash_conversion_cycle": 100.3,
+    "ccc_interpretation": "Below Average",
+    "company_name": "Asian Paints Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "ONGC",
+    "days_sales_outstanding": 11.7,
+    "days_inventory_outstanding": 46.6,
+    "days_payable_outstanding": 30.8,
+    "cash_conversion_cycle": 27.5,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Oil and Natural Gas Corporation Limited",
+    "sector": "Energy"
+  },
+  {
+    "symbol": "INDUSINDBK",
+    "days_sales_outstanding": 0.0,
+    "days_inventory_outstanding": 0.0,
+    "days_payable_outstanding": NaN,
+    "cash_conversion_cycle": 0.0,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "IndusInd Bank Limited",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "MARUTI",
+    "days_sales_outstanding": 16.4,
+    "days_inventory_outstanding": 23.6,
+    "days_payable_outstanding": 69.9,
+    "cash_conversion_cycle": -29.9,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Maruti Suzuki India Limited",
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "symbol": "TATASTEEL",
+    "days_sales_outstanding": 8.9,
+    "days_inventory_outstanding": 171.3,
+    "days_payable_outstanding": 112.6,
+    "cash_conversion_cycle": 67.5,
+    "ccc_interpretation": "Average",
+    "company_name": "Tata Steel Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "POWERGRID",
+    "days_sales_outstanding": 63.5,
+    "days_inventory_outstanding": NaN,
+    "days_payable_outstanding": NaN,
+    "cash_conversion_cycle": 63.5,
+    "ccc_interpretation": "Average",
+    "company_name": "Power Grid Corporation of India Limited",
+    "sector": "Utilities"
+  },
+  {
+    "symbol": "NTPC",
+    "days_sales_outstanding": 67.4,
+    "days_inventory_outstanding": 63.8,
+    "days_payable_outstanding": 38.1,
+    "cash_conversion_cycle": 93.1,
+    "ccc_interpretation": "Below Average",
+    "company_name": "NTPC Limited",
+    "sector": "Utilities"
+  },
+  {
+    "symbol": "SUNPHARMA",
+    "days_sales_outstanding": 91.5,
+    "days_inventory_outstanding": 347.9,
+    "days_payable_outstanding": 210.0,
+    "cash_conversion_cycle": 229.4,
+    "ccc_interpretation": "Poor - Inefficient",
+    "company_name": "Sun Pharmaceutical Industries Limited",
+    "sector": "Healthcare"
+  },
+  {
+    "symbol": "HCLTECH",
+    "days_sales_outstanding": 60.9,
+    "days_inventory_outstanding": 0.7,
+    "days_payable_outstanding": 16.0,
+    "cash_conversion_cycle": 45.6,
+    "ccc_interpretation": "Good - Efficient",
+    "company_name": "HCL Technologies Limited",
+    "sector": "Technology"
+  },
+  {
+    "symbol": "TITAN",
+    "days_sales_outstanding": 6.8,
+    "days_inventory_outstanding": 216.8,
+    "days_payable_outstanding": 15.1,
+    "cash_conversion_cycle": 208.5,
+    "ccc_interpretation": "Poor - Inefficient",
+    "company_name": "Titan Company Limited",
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "symbol": "ULTRACEMCO",
+    "days_sales_outstanding": 28.3,
+    "days_inventory_outstanding": 254.7,
+    "days_payable_outstanding": 248.4,
+    "cash_conversion_cycle": 34.6,
+    "ccc_interpretation": "Good - Efficient",
+    "company_name": "UltraTech Cement Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "days_sales_outstanding": 0.0,
+    "days_inventory_outstanding": 0.0,
+    "days_payable_outstanding": 23.1,
+    "cash_conversion_cycle": -23.1,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Bajaj Finance Limited",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "days_sales_outstanding": 15.7,
+    "days_inventory_outstanding": 3.0,
+    "days_payable_outstanding": 255.5,
+    "cash_conversion_cycle": -236.7,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Bharti Airtel Limited",
+    "sector": "Communication Services"
+  },
+  {
+    "symbol": "ADANIGREEN",
+    "days_sales_outstanding": 50.1,
+    "days_inventory_outstanding": 25.6,
+    "days_payable_outstanding": 100.1,
+    "cash_conversion_cycle": -24.4,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Adani Green Energy Limited",
+    "sector": "Utilities"
+  },
+  {
+    "symbol": "RELIANCE",
+    "days_sales_outstanding": 15.9,
+    "days_inventory_outstanding": 78.1,
+    "days_payable_outstanding": 99.8,
+    "cash_conversion_cycle": -5.8,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Reliance Industries Limited",
+    "sector": "Energy"
+  },
+  {
+    "symbol": "GRASIM",
+    "days_sales_outstanding": 22.5,
+    "days_inventory_outstanding": 70.1,
+    "days_payable_outstanding": 69.3,
+    "cash_conversion_cycle": 23.3,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Grasim Industries Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "HINDALCO",
+    "days_sales_outstanding": 30.4,
+    "days_inventory_outstanding": 116.6,
+    "days_payable_outstanding": 101.1,
+    "cash_conversion_cycle": 45.8,
+    "ccc_interpretation": "Good - Efficient",
+    "company_name": "Hindalco Industries Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "EICHERMOT",
+    "days_sales_outstanding": 10.8,
+    "days_inventory_outstanding": 55.4,
+    "days_payable_outstanding": 89.7,
+    "cash_conversion_cycle": -23.4,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Eicher Motors Limited",
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "symbol": "BAJAJFINSV",
+    "days_sales_outstanding": 26.6,
+    "days_inventory_outstanding": 0.0,
+    "days_payable_outstanding": 36.4,
+    "cash_conversion_cycle": -9.8,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Bajaj Finserv Ltd.",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "TATAMOTORS",
+    "days_sales_outstanding": 11.1,
+    "days_inventory_outstanding": 63.5,
+    "days_payable_outstanding": 130.8,
+    "cash_conversion_cycle": -56.2,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Tata Motors Limited",
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "symbol": "BPCL",
+    "days_sales_outstanding": 7.7,
+    "days_inventory_outstanding": 42.1,
+    "days_payable_outstanding": 28.5,
+    "cash_conversion_cycle": 21.3,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Bharat Petroleum Corporation Limited",
+    "sector": "Energy"
+  },
+  {
+    "symbol": "DRREDDY",
+    "days_sales_outstanding": 101.4,
+    "days_inventory_outstanding": 192.0,
+    "days_payable_outstanding": 54.2,
+    "cash_conversion_cycle": 239.2,
+    "ccc_interpretation": "Poor - Inefficient",
+    "company_name": "Dr. Reddy's Laboratories Limited",
+    "sector": "Healthcare"
+  },
+  {
+    "symbol": "HINDUNILVR",
+    "days_sales_outstanding": 22.4,
+    "days_inventory_outstanding": 52.7,
+    "days_payable_outstanding": 135.1,
+    "cash_conversion_cycle": -60.0,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Hindustan Unilever Limited",
+    "sector": "Consumer Defensive"
+  },
+  {
+    "symbol": "ICICIBANK",
+    "days_sales_outstanding": 47.2,
+    "days_inventory_outstanding": 0.0,
+    "days_payable_outstanding": 12.6,
+    "cash_conversion_cycle": 34.6,
+    "ccc_interpretation": "Good - Efficient",
+    "company_name": "ICICI Bank Limited",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "ADANIPORTS",
+    "days_sales_outstanding": 53.1,
+    "days_inventory_outstanding": 13.2,
+    "days_payable_outstanding": 68.7,
+    "cash_conversion_cycle": -2.4,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Adani Ports and Special Economic Zone Limited",
+    "sector": "Industrials"
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "days_sales_outstanding": 0.0,
+    "days_inventory_outstanding": 0.0,
+    "days_payable_outstanding": NaN,
+    "cash_conversion_cycle": 0.0,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Kotak Mahindra Bank Limited",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "HDFCBANK",
+    "days_sales_outstanding": 45.9,
+    "days_inventory_outstanding": 0.0,
+    "days_payable_outstanding": 139.5,
+    "cash_conversion_cycle": -93.6,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "HDFC Bank Limited",
+    "sector": "Financial Services"
+  },
+  {
+    "symbol": "NESTLEIND",
+    "days_sales_outstanding": 6.6,
+    "days_inventory_outstanding": 118.9,
+    "days_payable_outstanding": 99.0,
+    "cash_conversion_cycle": 26.5,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Nestlé India Limited",
+    "sector": "Consumer Defensive"
+  },
+  {
+    "symbol": "LT",
+    "days_sales_outstanding": 263.5,
+    "days_inventory_outstanding": 55.2,
+    "days_payable_outstanding": 377.4,
+    "cash_conversion_cycle": -58.7,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Larsen & Toubro Limited",
+    "sector": "Industrials"
+  },
+  {
+    "symbol": "HEROMOTOCO",
+    "days_sales_outstanding": 30.2,
+    "days_inventory_outstanding": 27.3,
+    "days_payable_outstanding": 77.3,
+    "cash_conversion_cycle": -19.8,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Hero MotoCorp Limited",
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "symbol": "APOLLOHOSP",
+    "days_sales_outstanding": 50.5,
+    "days_inventory_outstanding": 15.5,
+    "days_payable_outstanding": 72.3,
+    "cash_conversion_cycle": -6.3,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Apollo Hospitals Enterprise Limited",
+    "sector": "Healthcare"
+  },
+  {
+    "symbol": "DIVISLAB",
+    "days_sales_outstanding": 106.5,
+    "days_inventory_outstanding": 317.1,
+    "days_payable_outstanding": 89.2,
+    "cash_conversion_cycle": 334.4,
+    "ccc_interpretation": "Poor - Inefficient",
+    "company_name": "Divi's Laboratories Limited",
+    "sector": "Healthcare"
+  },
+  {
+    "symbol": "SHREECEM",
+    "days_sales_outstanding": 26.5,
+    "days_inventory_outstanding": 127.1,
+    "days_payable_outstanding": 70.8,
+    "cash_conversion_cycle": 82.8,
+    "ccc_interpretation": "Average",
+    "company_name": "Shree Cement Limited",
+    "sector": "Basic Materials"
+  },
+  {
+    "symbol": "ADANIENT",
+    "days_sales_outstanding": 35.9,
+    "days_inventory_outstanding": 64.0,
+    "days_payable_outstanding": 129.8,
+    "cash_conversion_cycle": -29.9,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "Adani Enterprises Limited",
+    "sector": "Energy"
+  },
+  {
+    "symbol": "HDFCLIFE",
+    "days_sales_outstanding": NaN,
+    "days_inventory_outstanding": 0.0,
+    "days_payable_outstanding": NaN,
+    "cash_conversion_cycle": 0.0,
+    "ccc_interpretation": "Excellent - Very efficient",
+    "company_name": "HDFC Life Insurance Company Limited",
+    "sector": "Financial Services"
+  }
+]

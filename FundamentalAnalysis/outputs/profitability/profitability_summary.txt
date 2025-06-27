@@ -1,0 +1,81 @@
+📊 PROFITABILITY ANALYSIS SUMMARY
+==================================================
+Total companies analyzed: 50
+
+🏆 TOP 10 COMPANIES BY ROE:
+------------------------------
+NESTLEIND: 87.27% (Consumer Defensive)
+BRITANNIA: 52.18% (Consumer Defensive)
+TCS: 52.16% (Technology)
+COALINDIA: 38.47% (Energy)
+TITAN: 31.75% (Consumer Cyclical)
+BHARTIARTL: 28.94% (Communication Services)
+INFY: 28.93% (Technology)
+ITC: 27.58% (Consumer Defensive)
+ADANIPOWER: 25.29% (Utilities)
+HCLTECH: 25.00% (Technology)
+
+💰 TOP 10 COMPANIES BY NET MARGIN:
+-----------------------------------
+ITC: 46.13% (Consumer Defensive)
+BAJFINANCE: 44.98% (Financial Services)
+AXISBANK: 36.57% (Financial Services)
+ADANIPORTS: 36.40% (Industrials)
+POWERGRID: 33.89% (Utilities)
+KOTAKBANK: 31.19% (Financial Services)
+COALINDIA: 27.85% (Energy)
+HDFCBANK: 25.95% (Financial Services)
+ICICIBANK: 25.43% (Financial Services)
+EICHERMOT: 23.47% (Consumer Cyclical)
+
+📈 SECTOR AVERAGES:
+--------------------
+Basic Materials:
+  ROE: 8.57%
+  ROA: 4.72%
+  Net Margin: 5.35%
+
+Communication Services:
+  ROE: 28.94%
+  ROA: 6.20%
+  Net Margin: 19.40%
+
+Consumer Cyclical:
+  ROE: 22.21%
+  ROA: 8.88%
+  Net Margin: 10.58%
+
+Consumer Defensive:
+  ROE: 38.96%
+  ROA: 14.92%
+  Net Margin: 19.66%
+
+Energy:
+  ROE: 18.03%
+  ROA: 5.36%
+  Net Margin: 10.16%
+
+Financial Services:
+  ROE: 14.64%
+  ROA: 2.15%
+  Net Margin: 23.17%
+
+Healthcare:
+  ROE: 17.31%
+  ROA: 9.52%
+  Net Margin: 17.51%
+
+Industrials:
+  ROE: 17.14%
+  ROA: 5.75%
+  Net Margin: 21.09%
+
+Technology:
+  ROE: 26.64%
+  ROA: 13.39%
+  Net Margin: 14.17%
+
+Utilities:
+  ROE: 16.50%
+  ROA: 6.36%
+  Net Margin: 20.52%

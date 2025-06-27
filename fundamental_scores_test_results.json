@@ -1,0 +1,461 @@
+{
+  "ADANIGREEN": {
+    "reliability_score": null,
+    "growth_scope": null,
+    "valuation_attractiveness": {
+      "symbol": "ADANIGREEN",
+      "valuation_score": 8,
+      "valuation_grade": "Overvalued",
+      "valuation_description": "Overvalued",
+      "valuation_factors": [
+        "Very high P/E ratio",
+        "Very high P/B ratio",
+        "Very high P/S ratio"
+      ],
+      "calculated_at": "2025-06-26T04:28:01.439577"
+    },
+    "overall_investment_grade": {
+      "symbol": "ADANIGREEN",
+      "overall_score": 2.0,
+      "overall_grade": "D-",
+      "investment_recommendation": "Sell",
+      "risk_level": "High",
+      "risk_factors": [
+        "Very high debt levels",
+        "Poor liquidity"
+      ],
+      "component_scores": {
+        "reliability": 0,
+        "growth": 0,
+        "valuation": 8
+      },
+      "detailed_analysis": {
+        "reliability": {
+          "reliability_score": 0,
+          "reliability_grade": "F",
+          "reliability_description": "Data Unavailable"
+        },
+        "growth": {
+          "growth_scope_score": 0,
+          "growth_scope_grade": "Poor",
+          "growth_scope_description": "Data Unavailable"
+        },
+        "valuation": {
+          "symbol": "ADANIGREEN",
+          "valuation_score": 8,
+          "valuation_grade": "Overvalued",
+          "valuation_description": "Overvalued",
+          "valuation_factors": [
+            "Very high P/E ratio",
+            "Very high P/B ratio",
+            "Very high P/S ratio"
+          ],
+          "calculated_at": "2025-06-26T04:28:01.464106"
+        }
+      },
+      "calculated_at": "2025-06-26T04:28:01.473427"
+    },
+    "frontend_summary": {
+      "symbol": "ADANIGREEN",
+      "reliability_score": 0,
+      "growth_scope": 0,
+      "valuation_score": 8,
+      "overall_score": 2.0,
+      "overall_grade": "D-",
+      "recommendation": "Sell",
+      "risk_level": "High",
+      "key_highlights": [
+        "Reliability: 0/100",
+        "Growth Potential: 0/100",
+        "Valuation: 8/100",
+        "Risk: High"
+      ]
+    },
+    "success": true
+  },
+  "TCS": {
+    "reliability_score": null,
+    "growth_scope": null,
+    "valuation_attractiveness": {
+      "symbol": "TCS",
+      "valuation_score": 21,
+      "valuation_grade": "Overvalued",
+      "valuation_description": "Overvalued",
+      "valuation_factors": [
+        "High P/E ratio",
+        "Very high P/B ratio",
+        "High P/S ratio",
+        "Significantly overvalued (DCF)"
+      ],
+      "calculated_at": "2025-06-26T04:28:01.532040"
+    },
+    "overall_investment_grade": {
+      "symbol": "TCS",
+      "overall_score": 5.2,
+      "overall_grade": "D-",
+      "investment_recommendation": "Sell",
+      "risk_level": "Medium",
+      "risk_factors": [
+        "Very high debt levels"
+      ],
+      "component_scores": {
+        "reliability": 0,
+        "growth": 0,
+        "valuation": 21
+      },
+      "detailed_analysis": {
+        "reliability": {
+          "reliability_score": 0,
+          "reliability_grade": "F",
+          "reliability_description": "Data Unavailable"
+        },
+        "growth": {
+          "growth_scope_score": 0,
+          "growth_scope_grade": "Poor",
+          "growth_scope_description": "Data Unavailable"
+        },
+        "valuation": {
+          "symbol": "TCS",
+          "valuation_score": 21,
+          "valuation_grade": "Overvalued",
+          "valuation_description": "Overvalued",
+          "valuation_factors": [
+            "High P/E ratio",
+            "Very high P/B ratio",
+            "High P/S ratio",
+            "Significantly overvalued (DCF)"
+          ],
+          "calculated_at": "2025-06-26T04:28:01.553687"
+        }
+      },
+      "calculated_at": "2025-06-26T04:28:01.562915"
+    },
+    "frontend_summary": {
+      "symbol": "TCS",
+      "reliability_score": 0,
+      "growth_scope": 0,
+      "valuation_score": 21,
+      "overall_score": 5.2,
+      "overall_grade": "D-",
+      "recommendation": "Sell",
+      "risk_level": "Medium",
+      "key_highlights": [
+        "Reliability: 0/100",
+        "Growth Potential: 0/100",
+        "Valuation: 21/100",
+        "Risk: Medium"
+      ]
+    },
+    "success": true
+  },
+  "RELIANCE": {
+    "reliability_score": null,
+    "growth_scope": null,
+    "valuation_attractiveness": {
+      "symbol": "RELIANCE",
+      "valuation_score": 38,
+      "valuation_grade": "Overvalued",
+      "valuation_description": "Overvalued",
+      "valuation_factors": [
+        "High P/E ratio",
+        "Moderate P/B ratio",
+        "Fair P/S ratio",
+        "Significantly overvalued (DCF)"
+      ],
+      "calculated_at": "2025-06-26T04:28:01.619932"
+    },
+    "overall_investment_grade": {
+      "symbol": "RELIANCE",
+      "overall_score": 9.5,
+      "overall_grade": "D-",
+      "investment_recommendation": "Sell",
+      "risk_level": "High",
+      "risk_factors": [
+        "Very high debt levels",
+        "Weak liquidity"
+      ],
+      "component_scores": {
+        "reliability": 0,
+        "growth": 0,
+        "valuation": 38
+      },
+      "detailed_analysis": {
+        "reliability": {
+          "reliability_score": 0,
+          "reliability_grade": "F",
+          "reliability_description": "Data Unavailable"
+        },
+        "growth": {
+          "growth_scope_score": 0,
+          "growth_scope_grade": "Poor",
+          "growth_scope_description": "Data Unavailable"
+        },
+        "valuation": {
+          "symbol": "RELIANCE",
+          "valuation_score": 38,
+          "valuation_grade": "Overvalued",
+          "valuation_description": "Overvalued",
+          "valuation_factors": [
+            "High P/E ratio",
+            "Moderate P/B ratio",
+            "Fair P/S ratio",
+            "Significantly overvalued (DCF)"
+          ],
+          "calculated_at": "2025-06-26T04:28:01.643897"
+        }
+      },
+      "calculated_at": "2025-06-26T04:28:01.654093"
+    },
+    "frontend_summary": {
+      "symbol": "RELIANCE",
+      "reliability_score": 0,
+      "growth_scope": 0,
+      "valuation_score": 38,
+      "overall_score": 9.5,
+      "overall_grade": "D-",
+      "recommendation": "Sell",
+      "risk_level": "High",
+      "key_highlights": [
+        "Reliability: 0/100",
+        "Growth Potential: 0/100",
+        "Valuation: 38/100",
+        "Risk: High"
+      ]
+    },
+    "success": true
+  },
+  "HDFCBANK": {
+    "reliability_score": {
+      "symbol": "HDFCBANK",
+      "reliability_score": 41,
+      "reliability_grade": "C",
+      "reliability_description": "Average Reliability",
+      "key_factors": [
+        "Good ROE (10-15%)",
+        "High profit margins",
+        "Very high leverage",
+        "Poor interest coverage",
+        "Positive revenue growth"
+      ],
+      "calculated_at": "2025-06-26T04:28:01.700226"
+    },
+    "growth_scope": {
+      "symbol": "HDFCBANK",
+      "growth_scope_score": 68,
+      "growth_scope_grade": "Good",
+      "growth_scope_description": "Good Growth Potential",
+      "key_growth_factors": [
+        "Exceptional revenue growth",
+        "Strong earnings growth",
+        "High debt constrains growth"
+      ],
+      "calculated_at": "2025-06-26T04:28:01.714970"
+    },
+    "valuation_attractiveness": {
+      "symbol": "HDFCBANK",
+      "valuation_score": 48,
+      "valuation_grade": "Expensive",
+      "valuation_description": "Expensive Valuation",
+      "valuation_factors": [
+        "Fair P/E ratio",
+        "Moderate P/B ratio",
+        "High P/S ratio",
+        "Overvalued (DCF)"
+      ],
+      "calculated_at": "2025-06-26T04:28:01.719373"
+    },
+    "overall_investment_grade": {
+      "symbol": "HDFCBANK",
+      "overall_score": 52.2,
+      "overall_grade": "C+",
+      "investment_recommendation": "Hold",
+      "risk_level": "Low",
+      "risk_factors": [
+        "Limited financial data available"
+      ],
+      "component_scores": {
+        "reliability": 41,
+        "growth": 68,
+        "valuation": 48
+      },
+      "detailed_analysis": {
+        "reliability": {
+          "symbol": "HDFCBANK",
+          "reliability_score": 41,
+          "reliability_grade": "C",
+          "reliability_description": "Average Reliability",
+          "key_factors": [
+            "Good ROE (10-15%)",
+            "High profit margins",
+            "Very high leverage",
+            "Poor interest coverage",
+            "Positive revenue growth"
+          ],
+          "calculated_at": "2025-06-26T04:28:01.730959"
+        },
+        "growth": {
+          "symbol": "HDFCBANK",
+          "growth_scope_score": 68,
+          "growth_scope_grade": "Good",
+          "growth_scope_description": "Good Growth Potential",
+          "key_growth_factors": [
+            "Exceptional revenue growth",
+            "Strong earnings growth",
+            "High debt constrains growth"
+          ],
+          "calculated_at": "2025-06-26T04:28:01.746244"
+        },
+        "valuation": {
+          "symbol": "HDFCBANK",
+          "valuation_score": 48,
+          "valuation_grade": "Expensive",
+          "valuation_description": "Expensive Valuation",
+          "valuation_factors": [
+            "Fair P/E ratio",
+            "Moderate P/B ratio",
+            "High P/S ratio",
+            "Overvalued (DCF)"
+          ],
+          "calculated_at": "2025-06-26T04:28:01.750451"
+        }
+      },
+      "calculated_at": "2025-06-26T04:28:01.756698"
+    },
+    "frontend_summary": {
+      "symbol": "HDFCBANK",
+      "reliability_score": 41,
+      "growth_scope": 68,
+      "valuation_score": 48,
+      "overall_score": 52.2,
+      "overall_grade": "C+",
+      "recommendation": "Hold",
+      "risk_level": "Low",
+      "key_highlights": [
+        "Reliability: 41/100",
+        "Growth Potential: 68/100",
+        "Valuation: 48/100",
+        "Risk: Low"
+      ]
+    },
+    "success": true
+  },
+  "INFY": {
+    "reliability_score": {
+      "symbol": "INFY",
+      "reliability_score": 84,
+      "reliability_grade": "A",
+      "reliability_description": "Highly Reliable",
+      "key_factors": [
+        "Excellent ROE (15%+)",
+        "High profit margins",
+        "Excellent liquidity",
+        "Very high leverage",
+        "No interest burden"
+      ],
+      "calculated_at": "2025-06-26T04:28:01.812783"
+    },
+    "growth_scope": {
+      "symbol": "INFY",
+      "growth_scope_score": 62,
+      "growth_scope_grade": "Good",
+      "growth_scope_description": "Good Growth Potential",
+      "key_growth_factors": [
+        "Good revenue growth",
+        "Moderate earnings growth",
+        "High ROE indicates strong growth capacity",
+        "Excellent asset utilization",
+        "High debt constrains growth"
+      ],
+      "calculated_at": "2025-06-26T04:28:01.833542"
+    },
+    "valuation_attractiveness": {
+      "symbol": "INFY",
+      "valuation_score": 26,
+      "valuation_grade": "Overvalued",
+      "valuation_description": "Overvalued",
+      "valuation_factors": [
+        "Fair P/E ratio",
+        "Very high P/B ratio",
+        "Very high P/S ratio",
+        "Significantly overvalued (DCF)"
+      ],
+      "calculated_at": "2025-06-26T04:28:01.837685"
+    },
+    "overall_investment_grade": {
+      "symbol": "INFY",
+      "overall_score": 61.8,
+      "overall_grade": "B",
+      "investment_recommendation": "Hold",
+      "risk_level": "Medium",
+      "risk_factors": [
+        "Very high debt levels"
+      ],
+      "component_scores": {
+        "reliability": 84,
+        "growth": 62,
+        "valuation": 26
+      },
+      "detailed_analysis": {
+        "reliability": {
+          "symbol": "INFY",
+          "reliability_score": 84,
+          "reliability_grade": "A",
+          "reliability_description": "Highly Reliable",
+          "key_factors": [
+            "Excellent ROE (15%+)",
+            "High profit margins",
+            "Excellent liquidity",
+            "Very high leverage",
+            "No interest burden"
+          ],
+          "calculated_at": "2025-06-26T04:28:01.852857"
+        },
+        "growth": {
+          "symbol": "INFY",
+          "growth_scope_score": 62,
+          "growth_scope_grade": "Good",
+          "growth_scope_description": "Good Growth Potential",
+          "key_growth_factors": [
+            "Good revenue growth",
+            "Moderate earnings growth",
+            "High ROE indicates strong growth capacity",
+            "Excellent asset utilization",
+            "High debt constrains growth"
+          ],
+          "calculated_at": "2025-06-26T04:28:01.873339"
+        },
+        "valuation": {
+          "symbol": "INFY",
+          "valuation_score": 26,
+          "valuation_grade": "Overvalued",
+          "valuation_description": "Overvalued",
+          "valuation_factors": [
+            "Fair P/E ratio",
+            "Very high P/B ratio",
+            "Very high P/S ratio",
+            "Significantly overvalued (DCF)"
+          ],
+          "calculated_at": "2025-06-26T04:28:01.877520"
+        }
+      },
+      "calculated_at": "2025-06-26T04:28:01.885025"
+    },
+    "frontend_summary": {
+      "symbol": "INFY",
+      "reliability_score": 84,
+      "growth_scope": 62,
+      "valuation_score": 26,
+      "overall_score": 61.8,
+      "overall_grade": "B",
+      "recommendation": "Hold",
+      "risk_level": "Medium",
+      "key_highlights": [
+        "Reliability: 84/100",
+        "Growth Potential: 62/100",
+        "Valuation: 26/100",
+        "Risk: Medium"
+      ]
+    },
+    "success": true
+  }
+}

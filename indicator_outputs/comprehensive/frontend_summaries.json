@@ -1,0 +1,818 @@
+[
+  {
+    "symbol": "TCS",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 21,
+    "overall_score": 5.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 21/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "JSWSTEEL",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 31,
+    "overall_score": 7.8,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 31/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "M&M",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 28,
+    "overall_score": 7.0,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 28/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "WIPRO",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 46,
+    "overall_score": 11.5,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 46/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "TECHM",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 21,
+    "overall_score": 5.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 21/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "CIPLA",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 36,
+    "overall_score": 9.0,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Low",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 36/100",
+      "Risk: Low"
+    ]
+  },
+  {
+    "symbol": "LTIM",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 21,
+    "overall_score": 5.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 21/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "SBIN",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 63,
+    "overall_score": 15.8,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Low",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 63/100",
+      "Risk: Low"
+    ]
+  },
+  {
+    "symbol": "TATACONSUM",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 16,
+    "overall_score": 4.0,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 16/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "INFY",
+    "reliability_score": 84,
+    "growth_scope": 62,
+    "valuation_score": 26,
+    "overall_score": 61.8,
+    "overall_grade": "B",
+    "recommendation": "Hold",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 84/100",
+      "Growth Potential: 62/100",
+      "Valuation: 26/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "BRITANNIA",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 16,
+    "overall_score": 4.0,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 16/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "COALINDIA",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 75,
+    "overall_score": 18.8,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 75/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "ADANIPOWER",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 46,
+    "overall_score": 11.5,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 46/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "AXISBANK",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 70,
+    "overall_score": 17.5,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Low",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 70/100",
+      "Risk: Low"
+    ]
+  },
+  {
+    "symbol": "ITC",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 21,
+    "overall_score": 5.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Low",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 21/100",
+      "Risk: Low"
+    ]
+  },
+  {
+    "symbol": "SBI",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 0,
+    "overall_score": 0.0,
+    "overall_grade": "N/A",
+    "recommendation": "Data Unavailable",
+    "risk_level": "Low",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 0/100",
+      "Risk: Low"
+    ]
+  },
+  {
+    "symbol": "ASIANPAINT",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 16,
+    "overall_score": 4.0,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 16/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "ONGC",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 95,
+    "overall_score": 23.8,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 95/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "INDUSINDBK",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 65,
+    "overall_score": 16.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Low",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 65/100",
+      "Risk: Low"
+    ]
+  },
+  {
+    "symbol": "MARUTI",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 31,
+    "overall_score": 7.8,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 31/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "TATASTEEL",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 43,
+    "overall_score": 10.8,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 43/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "POWERGRID",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 48,
+    "overall_score": 12.0,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 48/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "NTPC",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 63,
+    "overall_score": 15.8,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 63/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "SUNPHARMA",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 16,
+    "overall_score": 4.0,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 16/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "HCLTECH",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 16,
+    "overall_score": 4.0,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 16/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "TITAN",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 13,
+    "overall_score": 3.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 13/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "ULTRACEMCO",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 21,
+    "overall_score": 5.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 21/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 13,
+    "overall_score": 3.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 13/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 21,
+    "overall_score": 5.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 21/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "ADANIGREEN",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 8,
+    "overall_score": 2.0,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 8/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "RELIANCE",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 38,
+    "overall_score": 9.5,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 38/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "GRASIM",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 40,
+    "overall_score": 10.0,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 40/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "HINDALCO",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 73,
+    "overall_score": 18.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 73/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "EICHERMOT",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 21,
+    "overall_score": 5.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 21/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "BAJAJFINSV",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 23,
+    "overall_score": 5.8,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 23/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "TATAMOTORS",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 90,
+    "overall_score": 22.5,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 90/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "BPCL",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 78,
+    "overall_score": 19.5,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 78/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "DRREDDY",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 46,
+    "overall_score": 11.5,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 46/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "HINDUNILVR",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 11,
+    "overall_score": 2.8,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 11/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "ICICIBANK",
+    "reliability_score": 46,
+    "growth_scope": 64,
+    "valuation_score": 63,
+    "overall_score": 56.5,
+    "overall_grade": "B",
+    "recommendation": "Hold",
+    "risk_level": "Low",
+    "key_highlights": [
+      "Reliability: 46/100",
+      "Growth Potential: 64/100",
+      "Valuation: 63/100",
+      "Risk: Low"
+    ]
+  },
+  {
+    "symbol": "ADANIPORTS",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 21,
+    "overall_score": 5.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 21/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 48,
+    "overall_score": 12.0,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Low",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 48/100",
+      "Risk: Low"
+    ]
+  },
+  {
+    "symbol": "HDFCBANK",
+    "reliability_score": 41,
+    "growth_scope": 68,
+    "valuation_score": 48,
+    "overall_score": 52.2,
+    "overall_grade": "C+",
+    "recommendation": "Hold",
+    "risk_level": "Low",
+    "key_highlights": [
+      "Reliability: 41/100",
+      "Growth Potential: 68/100",
+      "Valuation: 48/100",
+      "Risk: Low"
+    ]
+  },
+  {
+    "symbol": "NESTLEIND",
+    "reliability_score": 63,
+    "growth_scope": 65,
+    "valuation_score": 11,
+    "overall_score": 50.7,
+    "overall_grade": "C+",
+    "recommendation": "Hold",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 63/100",
+      "Growth Potential: 65/100",
+      "Valuation: 11/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "LT",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 31,
+    "overall_score": 7.8,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 31/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "HEROMOTOCO",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 46,
+    "overall_score": 11.5,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 46/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "APOLLOHOSP",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 16,
+    "overall_score": 4.0,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 16/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "DIVISLAB",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 11,
+    "overall_score": 2.8,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Low",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 11/100",
+      "Risk: Low"
+    ]
+  },
+  {
+    "symbol": "SHREECEM",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 21,
+    "overall_score": 5.2,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 21/100",
+      "Risk: Medium"
+    ]
+  },
+  {
+    "symbol": "ADANIENT",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 18,
+    "overall_score": 4.5,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "High",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 18/100",
+      "Risk: High"
+    ]
+  },
+  {
+    "symbol": "HDFCLIFE",
+    "reliability_score": 0,
+    "growth_scope": 0,
+    "valuation_score": 43,
+    "overall_score": 10.8,
+    "overall_grade": "D-",
+    "recommendation": "Sell",
+    "risk_level": "Medium",
+    "key_highlights": [
+      "Reliability: 0/100",
+      "Growth Potential: 0/100",
+      "Valuation: 43/100",
+      "Risk: Medium"
+    ]
+  }
+]

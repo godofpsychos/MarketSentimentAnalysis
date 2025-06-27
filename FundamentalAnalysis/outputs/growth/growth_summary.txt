@@ -1,0 +1,55 @@
+📈 GROWTH ANALYSIS SUMMARY
+==================================================
+Companies analyzed: 50
+
+🚀 TOP REVENUE GROWERS (CAGR):
+------------------------------
+ADANIGREEN: 29.74% (Utilities)
+HDFCBANK: 28.48% (Financial Services)
+BAJFINANCE: 28.13% (Financial Services)
+ADANIPOWER: 26.66% (Utilities)
+TITAN: 25.74% (Consumer Cyclical)
+BAJAJFINSV: 22.82% (Financial Services)
+EICHERMOT: 22.32% (Consumer Cyclical)
+M&M: 21.53% (Consumer Cyclical)
+ADANIPORTS: 21.52% (Industrials)
+MARUTI: 19.43% (Consumer Cyclical)
+
+💰 TOP EARNINGS GROWERS (CAGR):
+------------------------------
+TATAMOTORS: 239.23% (Consumer Cyclical)
+ADANIENT: 109.06% (Energy)
+BHARTIARTL: 99.02% (Communication Services)
+MARUTI: 55.18% (Consumer Cyclical)
+SUNPHARMA: 49.46% (Healthcare)
+ADANIGREEN: 43.46% (Utilities)
+EICHERMOT: 41.33% (Consumer Cyclical)
+ADANIPOWER: 37.42% (Utilities)
+ICICIBANK: 34.01% (Financial Services)
+DRREDDY: 33.86% (Healthcare)
+
+⭐ BEST GROWTH QUALITY:
+-------------------------
+KOTAKBANK: 100/100 - Excellent Growth Quality
+M&M: 95/100 - Excellent Growth Quality
+SBIN: 95/100 - Excellent Growth Quality
+BAJFINANCE: 95/100 - Excellent Growth Quality
+BAJAJFINSV: 95/100 - Excellent Growth Quality
+ICICIBANK: 95/100 - Excellent Growth Quality
+ADANIPORTS: 95/100 - Excellent Growth Quality
+HDFCBANK: 95/100 - Excellent Growth Quality
+HEROMOTOCO: 95/100 - Excellent Growth Quality
+EICHERMOT: 90/100 - Excellent Growth Quality
+
+📊 SECTOR AVERAGE REVENUE GROWTH:
+-----------------------------------
+Basic Materials: 7.62%
+Communication Services: 14.07%
+Consumer Cyclical: 19.64%
+Consumer Defensive: 8.95%
+Energy: 10.17%
+Financial Services: 17.88%
+Healthcare: 9.99%
+Industrials: -0.14%
+Technology: 9.21%
+Utilities: 18.27%

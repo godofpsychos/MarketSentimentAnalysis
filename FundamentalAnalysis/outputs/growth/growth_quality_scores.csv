@@ -1,0 +1,51 @@
+symbol,growth_quality_score,quality_interpretation,score_breakdown,company_name,sector
+TCS,70,Good Growth Quality,Revenue Growth: 20/25; Earnings Growth: 10/25; Consistency: 25/25; Recent Performance: 15/25,Tata Consultancy Services Limited,Technology
+JSWSTEEL,15,Poor Growth Quality,Revenue Growth: 15/25; Earnings Growth: 0/25; Consistency: 0/25; Recent Performance: 0/25,JSW Steel Limited,Basic Materials
+M&M,95,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25,Mahindra & Mahindra Limited,Consumer Cyclical
+WIPRO,50,Average Growth Quality,Revenue Growth: 10/25; Earnings Growth: 10/25; Consistency: 20/25; Recent Performance: 10/25,Wipro Limited,Technology
+TECHM,40,Below Average Growth Quality,Revenue Growth: 15/25; Earnings Growth: 0/25; Consistency: 10/25; Recent Performance: 15/25,Tech Mahindra Limited,Technology
+CIPLA,85,Excellent Growth Quality,Revenue Growth: 15/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25,Cipla Limited,Healthcare
+LTIM,70,Good Growth Quality,Revenue Growth: 20/25; Earnings Growth: 10/25; Consistency: 25/25; Recent Performance: 15/25,LTIMindtree Limited,Technology
+SBIN,95,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25,State Bank of India,Financial Services
+TATACONSUM,80,Excellent Growth Quality,Revenue Growth: 20/25; Earnings Growth: 15/25; Consistency: 25/25; Recent Performance: 20/25,Tata Consumer Products Limited,Consumer Defensive
+INFY,70,Good Growth Quality,Revenue Growth: 20/25; Earnings Growth: 10/25; Consistency: 25/25; Recent Performance: 15/25,Infosys Limited,Technology
+BRITANNIA,70,Good Growth Quality,Revenue Growth: 15/25; Earnings Growth: 15/25; Consistency: 20/25; Recent Performance: 20/25,Britannia Industries Limited,Consumer Defensive
+COALINDIA,75,Good Growth Quality,Revenue Growth: 15/25; Earnings Growth: 25/25; Consistency: 10/25; Recent Performance: 25/25,Coal India Limited,Energy
+ADANIPOWER,85,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 10/25; Recent Performance: 25/25,Adani Power Limited,Utilities
+AXISBANK,85,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 10/25; Recent Performance: 25/25,Axis Bank Limited,Financial Services
+ITC,80,Excellent Growth Quality,Revenue Growth: 15/25; Earnings Growth: 25/25; Consistency: 15/25; Recent Performance: 25/25,ITC Limited,Consumer Defensive
+ASIANPAINT,55,Average Growth Quality,Revenue Growth: 15/25; Earnings Growth: 10/25; Consistency: 15/25; Recent Performance: 15/25,Asian Paints Limited,Basic Materials
+ONGC,45,Below Average Growth Quality,Revenue Growth: 20/25; Earnings Growth: 0/25; Consistency: 15/25; Recent Performance: 10/25,Oil and Natural Gas Corporation Limited,Energy
+INDUSINDBK,35,Below Average Growth Quality,Revenue Growth: 15/25; Earnings Growth: 0/25; Consistency: 10/25; Recent Performance: 10/25,IndusInd Bank Limited,Financial Services
+MARUTI,85,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 10/25; Recent Performance: 25/25,Maruti Suzuki India Limited,Consumer Cyclical
+TATASTEEL,15,Poor Growth Quality,Revenue Growth: 0/25; Earnings Growth: 0/25; Consistency: 15/25; Recent Performance: 0/25,Tata Steel Limited,Basic Materials
+POWERGRID,45,Below Average Growth Quality,Revenue Growth: 10/25; Earnings Growth: 0/25; Consistency: 25/25; Recent Performance: 10/25,Power Grid Corporation of India Limited,Utilities
+NTPC,75,Good Growth Quality,Revenue Growth: 20/25; Earnings Growth: 15/25; Consistency: 20/25; Recent Performance: 20/25,NTPC Limited,Utilities
+SUNPHARMA,80,Excellent Growth Quality,Revenue Growth: 20/25; Earnings Growth: 25/25; Consistency: 10/25; Recent Performance: 25/25,Sun Pharmaceutical Industries Limited,Healthcare
+HCLTECH,70,Good Growth Quality,Revenue Growth: 20/25; Earnings Growth: 10/25; Consistency: 25/25; Recent Performance: 15/25,HCL Technologies Limited,Technology
+TITAN,85,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 20/25; Consistency: 15/25; Recent Performance: 25/25,Titan Company Limited,Consumer Cyclical
+ULTRACEMCO,50,Average Growth Quality,Revenue Growth: 20/25; Earnings Growth: 0/25; Consistency: 15/25; Recent Performance: 15/25,UltraTech Cement Limited,Basic Materials
+BAJFINANCE,95,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25,Bajaj Finance Limited,Financial Services
+BHARTIARTL,70,Good Growth Quality,Revenue Growth: 20/25; Earnings Growth: 25/25; Consistency: 0/25; Recent Performance: 25/25,Bharti Airtel Limited,Communication Services
+ADANIGREEN,85,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 10/25; Recent Performance: 25/25,Adani Green Energy Limited,Utilities
+RELIANCE,70,Good Growth Quality,Revenue Growth: 20/25; Earnings Growth: 10/25; Consistency: 25/25; Recent Performance: 15/25,Reliance Industries Limited,Energy
+GRASIM,50,Average Growth Quality,Revenue Growth: 25/25; Earnings Growth: 0/25; Consistency: 25/25; Recent Performance: 0/25,Grasim Industries Limited,Basic Materials
+HINDALCO,55,Average Growth Quality,Revenue Growth: 15/25; Earnings Growth: 10/25; Consistency: 15/25; Recent Performance: 15/25,Hindalco Industries Limited,Basic Materials
+EICHERMOT,90,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 15/25; Recent Performance: 25/25,Eicher Motors Limited,Consumer Cyclical
+BAJAJFINSV,95,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25,Bajaj Finserv Ltd.,Financial Services
+TATAMOTORS,75,Good Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 0/25; Recent Performance: 25/25,Tata Motors Limited,Consumer Cyclical
+BPCL,50,Average Growth Quality,Revenue Growth: 15/25; Earnings Growth: 10/25; Consistency: 0/25; Recent Performance: 25/25,Bharat Petroleum Corporation Limited,Energy
+DRREDDY,85,Excellent Growth Quality,Revenue Growth: 20/25; Earnings Growth: 25/25; Consistency: 15/25; Recent Performance: 25/25,Dr. Reddy's Laboratories Limited,Healthcare
+HINDUNILVR,65,Good Growth Quality,Revenue Growth: 15/25; Earnings Growth: 10/25; Consistency: 25/25; Recent Performance: 15/25,Hindustan Unilever Limited,Consumer Defensive
+ICICIBANK,95,Excellent Growth Quality,Revenue Growth: 20/25; Earnings Growth: 25/25; Consistency: 25/25; Recent Performance: 25/25,ICICI Bank Limited,Financial Services
+ADANIPORTS,95,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25,Adani Ports and Special Economic Zone Limited,Industrials
+KOTAKBANK,100,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 25/25; Recent Performance: 25/25,Kotak Mahindra Bank Limited,Financial Services
+HDFCBANK,95,Excellent Growth Quality,Revenue Growth: 25/25; Earnings Growth: 25/25; Consistency: 20/25; Recent Performance: 25/25,HDFC Bank Limited,Financial Services
+NESTLEIND,80,Excellent Growth Quality,Revenue Growth: 20/25; Earnings Growth: 15/25; Consistency: 20/25; Recent Performance: 25/25,Nestlé India Limited,Consumer Defensive
+LT,10,Poor Growth Quality,Revenue Growth: 0/25; Earnings Growth: 0/25; Consistency: 10/25; Recent Performance: 0/25,Larsen & Toubro Limited,Industrials
+HEROMOTOCO,95,Excellent Growth Quality,Revenue Growth: 20/25; Earnings Growth: 25/25; Consistency: 25/25; Recent Performance: 25/25,Hero MotoCorp Limited,Consumer Cyclical
+APOLLOHOSP,75,Good Growth Quality,Revenue Growth: 20/25; Earnings Growth: 15/25; Consistency: 15/25; Recent Performance: 25/25,Apollo Hospitals Enterprise Limited,Healthcare
+DIVISLAB,25,Poor Growth Quality,Revenue Growth: 10/25; Earnings Growth: 0/25; Consistency: 15/25; Recent Performance: 0/25,Divi's Laboratories Limited,Healthcare
+SHREECEM,35,Below Average Growth Quality,Revenue Growth: 15/25; Earnings Growth: 0/25; Consistency: 10/25; Recent Performance: 10/25,Shree Cement Limited,Basic Materials
+ADANIENT,70,Good Growth Quality,Revenue Growth: 20/25; Earnings Growth: 25/25; Consistency: 0/25; Recent Performance: 25/25,Adani Enterprises Limited,Energy
+HDFCLIFE,75,Good Growth Quality,Revenue Growth: 20/25; Earnings Growth: 15/25; Consistency: 20/25; Recent Performance: 20/25,HDFC Life Insurance Company Limited,Financial Services
