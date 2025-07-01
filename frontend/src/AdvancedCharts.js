@@ -12,7 +12,12 @@ import {
   RadialLinearScale,
   ArcElement,
   ScatterController,
-  BubbleController
+  BubbleController,
+  DoughnutController,
+  RadarController,
+  LineController,
+  BarController,
+  Filler
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 
@@ -29,8 +34,43 @@ ChartJS.register(
   RadialLinearScale,
   ArcElement,
   ScatterController,
-  BubbleController
+  BubbleController,
+  DoughnutController,
+  RadarController,
+  LineController,
+  BarController,
+  Filler
 );
+
+// Global chart cleanup function
+const cleanupChart = (chartRef) => {
+  if (chartRef.current && chartRef.current.chartInstance) {
+    try {
+      chartRef.current.chartInstance.destroy();
+      chartRef.current.chartInstance = null;
+    } catch (error) {
+      console.warn('Error destroying chart:', error);
+    }
+  }
+};
+
+// Enhanced chart component wrapper
+const ChartWrapper = ({ type, data, options, chartRef, title, ...props }) => {
+  const uniqueId = React.useMemo(() => `${type}-${title}-${Math.random().toString(36).substr(2, 9)}`, [type, title]);
+
+  useEffect(() => {
+    return () => {
+      cleanupChart(chartRef);
+    };
+  }, [chartRef]);
+
+  // Cleanup chart when data changes
+  useEffect(() => {
+    cleanupChart(chartRef);
+  }, [data, type, chartRef]);
+
+  return <Chart ref={chartRef} type={type} data={data} options={options} id={uniqueId} {...props} />;
+};
 
 // Color palette
 const CHART_COLORS = {
@@ -51,17 +91,46 @@ const CHART_COLORS = {
 export const StockHeatmap = ({ data, title = "Stock Performance Heatmap" }) => {
   const chartRef = useRef();
 
+  // Cleanup chart on unmount
+  useEffect(() => {
+    return () => {
+      cleanupChart(chartRef);
+    };
+  }, []);
+
+  // Cleanup chart when data changes
+  useEffect(() => {
+    cleanupChart(chartRef);
+  }, [data]);
+
+  // Safety check for data
+  if (!data || !Array.isArray(data) || data.length === 0) {
+    return (
+      <div style={{ 
+        height: '300px', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: 'rgba(255,255,255,0.05)',
+        borderRadius: '8px',
+        border: '1px solid rgba(255,255,255,0.1)'
+      }}>
+        <p>No data available for heatmap</p>
+      </div>
+    );
+  }
+
   const heatmapData = {
-    labels: data?.map(d => d.symbol) || [],
+    labels: data.map(d => d.symbol || 'Unknown') || [],
     datasets: [{
       label: 'Performance Score',
-      data: data?.map(d => ({
-        x: d.symbol,
+      data: data.map(d => ({
+        x: d.symbol || 'Unknown',
         y: d.performance_score || 0,
         v: d.market_cap || 0
       })) || [],
       backgroundColor: (ctx) => {
-        const value = ctx.parsed.y;
+        const value = ctx.parsed?.y || 0;
         if (value > 80) return 'rgba(16, 185, 129, 0.8)'; // Excellent
         if (value > 60) return 'rgba(132, 204, 22, 0.8)'; // Good
         if (value > 40) return 'rgba(245, 158, 11, 0.8)'; // Average
@@ -80,10 +149,10 @@ export const StockHeatmap = ({ data, title = "Stock Performance Heatmap" }) => {
       legend: { display: false },
       tooltip: {
         callbacks: {
-          title: (context) => `${context[0].label}`,
+          title: (context) => `${context[0]?.label || 'Unknown'}`,
           label: (context) => [
-            `Performance Score: ${context.parsed.y}`,
-            `Market Cap: ₹${(context.raw.v / 1000000000).toFixed(2)}B`
+            `Performance Score: ${context.parsed?.y || 0}`,
+            `Market Cap: ₹${((context.raw?.v || 0) / 1000000000).toFixed(2)}B`
           ]
         }
       }
@@ -99,11 +168,20 @@ export const StockHeatmap = ({ data, title = "Stock Performance Heatmap" }) => {
     }
   };
 
-  return <Chart ref={chartRef} type="scatter" data={heatmapData} options={options} />;
+  return <ChartWrapper type="scatter" data={heatmapData} options={options} chartRef={chartRef} title={title} />;
 };
 
 // Bubble Chart for Risk vs Return
 export const RiskReturnBubbleChart = ({ data, title = "Risk vs Return Analysis" }) => {
+  const chartRef = useRef();
+
+  // Cleanup chart on unmount
+  useEffect(() => {
+    return () => {
+      cleanupChart(chartRef);
+    };
+  }, []);
+
   const bubbleData = {
     datasets: [{
       label: 'Stocks',
@@ -161,11 +239,20 @@ export const RiskReturnBubbleChart = ({ data, title = "Risk vs Return Analysis" 
     }
   };
 
-  return <Chart type="bubble" data={bubbleData} options={options} />;
+  return <ChartWrapper type="bubble" data={bubbleData} options={options} chartRef={chartRef} title={title} />;
 };
 
 // Multi-axis Financial Metrics Chart
 export const MultiAxisFinancialChart = ({ data, title = "Financial Metrics Overview" }) => {
+  const chartRef = useRef();
+
+  // Cleanup chart on unmount
+  useEffect(() => {
+    return () => {
+      cleanupChart(chartRef);
+    };
+  }, []);
+
   const chartData = {
     labels: data?.map(d => d.symbol) || [],
     datasets: [
@@ -238,11 +325,20 @@ export const MultiAxisFinancialChart = ({ data, title = "Financial Metrics Overv
     }
   };
 
-  return <Chart data={chartData} options={options} />;
+  return <ChartWrapper type="bar" data={chartData} options={options} chartRef={chartRef} title={title} />;
 };
 
 // Sector Comparison Radar Chart
 export const SectorRadarChart = ({ data, title = "Sector Analysis" }) => {
+  const chartRef = useRef();
+
+  // Cleanup chart on unmount
+  useEffect(() => {
+    return () => {
+      cleanupChart(chartRef);
+    };
+  }, []);
+
   const radarData = {
     labels: [
       'Profitability',
@@ -289,11 +385,20 @@ export const SectorRadarChart = ({ data, title = "Sector Analysis" }) => {
     }
   };
 
-  return <Chart type="radar" data={radarData} options={options} />;
+  return <ChartWrapper type="radar" data={radarData} options={options} chartRef={chartRef} title={title} />;
 };
 
 // Trend Analysis Line Chart with Annotations
 export const TrendAnalysisChart = ({ data, title = "Performance Trends" }) => {
+  const chartRef = useRef();
+
+  // Cleanup chart on unmount
+  useEffect(() => {
+    return () => {
+      cleanupChart(chartRef);
+    };
+  }, []);
+
   const trendData = {
     labels: data?.periods || [],
     datasets: [
@@ -310,10 +415,11 @@ export const TrendAnalysisChart = ({ data, title = "Performance Trends" }) => {
       {
         label: 'Volume (M)',
         data: data?.volume_trend?.map(v => v / 1000000) || [],
-        type: 'bar',
-        backgroundColor: 'rgba(16, 185, 129, 0.5)',
         borderColor: 'rgb(16, 185, 129)',
-        borderWidth: 1,
+        backgroundColor: 'rgba(16, 185, 129, 0.3)',
+        borderWidth: 2,
+        fill: false,
+        tension: 0.4,
         yAxisID: 'y1'
       },
       {
@@ -338,39 +444,7 @@ export const TrendAnalysisChart = ({ data, title = "Performance Trends" }) => {
     },
     plugins: {
       title: { display: true, text: title },
-      legend: { position: 'top' },
-      annotation: {
-        annotations: {
-          line1: {
-            type: 'line',
-            yMin: 70,
-            yMax: 70,
-            yScaleID: 'y2',
-            borderColor: 'rgb(239, 68, 68)',
-            borderWidth: 2,
-            borderDash: [5, 5],
-            label: {
-              content: 'Overbought',
-              enabled: true,
-              position: 'end'
-            }
-          },
-          line2: {
-            type: 'line',
-            yMin: 30,
-            yMax: 30,
-            yScaleID: 'y2',
-            borderColor: 'rgb(16, 185, 129)',
-            borderWidth: 2,
-            borderDash: [5, 5],
-            label: {
-              content: 'Oversold',
-              enabled: true,
-              position: 'end'
-            }
-          }
-        }
-      }
+      legend: { position: 'top' }
     },
     scales: {
       x: { display: true, title: { display: true, text: 'Time Period' } },
@@ -396,11 +470,20 @@ export const TrendAnalysisChart = ({ data, title = "Performance Trends" }) => {
     }
   };
 
-  return <Chart data={trendData} options={options} />;
+  return <ChartWrapper type="line" data={trendData} options={options} chartRef={chartRef} title={title} />;
 };
 
 // Financial Health Score Gauge
 export const FinancialHealthGauge = ({ score, title = "Financial Health Score" }) => {
+  const chartRef = useRef();
+
+  // Cleanup chart on unmount
+  useEffect(() => {
+    return () => {
+      cleanupChart(chartRef);
+    };
+  }, []);
+
   const gaugeData = {
     datasets: [{
       data: [score, 100 - score],
@@ -430,7 +513,7 @@ export const FinancialHealthGauge = ({ score, title = "Financial Health Score" }
 
   return (
     <div style={{ position: 'relative', height: '200px' }}>
-      <Chart type="doughnut" data={gaugeData} options={options} />
+      <ChartWrapper type="doughnut" data={gaugeData} options={options} chartRef={chartRef} title={title} />
       <div style={{
         position: 'absolute',
         top: '60%',
@@ -447,11 +530,14 @@ export const FinancialHealthGauge = ({ score, title = "Financial Health Score" }
   );
 };
 
-export default {
+// Create a default export object with all chart components
+const AdvancedCharts = {
   StockHeatmap,
   RiskReturnBubbleChart,
   MultiAxisFinancialChart,
   SectorRadarChart,
   TrendAnalysisChart,
   FinancialHealthGauge
-}; 
+};
+
+export default AdvancedCharts; 

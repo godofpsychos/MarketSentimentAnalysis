@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-  BarChart, Bar, LineChart, Line, PieChart, Pie, Cell,
+  BarChart, Bar, Line, PieChart, Pie, Cell,
   RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar,
   ResponsiveContainer, ComposedChart
 } from 'recharts';
 import './FundamentalDashboard.css';
+import { StockPriceChart, RevenueExpenseProfitChart } from './StockFinancialChart';
 
 // Color palette for different metrics
 const COLORS = {
@@ -378,6 +379,14 @@ const OverviewTab = ({ data, sectorData }) => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* New: Price and Financials Charts, each in its own row */}
+      <div className="chart-row">
+        <StockPriceChart stockSymbol={data.company_info?.symbol} />
+      </div>
+      <div className="chart-row">
+        <RevenueExpenseProfitChart stockSymbol={data.company_info?.symbol} />
       </div>
 
       {sectorData && (
@@ -1169,7 +1178,6 @@ const LeverageTab = ({ data, sectorData }) => {
   }
 
   const profitability = data.profitability || {};
-  const liquidity = data.liquidity || {};
   
   // Helper function to safely get numeric values
   const safeValue = (value) => {

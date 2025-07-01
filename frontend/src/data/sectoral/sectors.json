@@ -1,0 +1,241 @@
+{
+  "lastUpdated": "2024-12-30T01:59:41Z",
+  "timeframe": "1d",
+  "sectors": [
+    {
+      "id": "technology",
+      "name": "Technology",
+      "performance": 2.45,
+      "sentiment": 0.72,
+      "volume": 1542000000,
+      "market_cap": 45000000000000,
+      "description": "Software, hardware, and digital services companies",
+      "top_stocks": [
+        {
+          "symbol": "TCS",
+          "name": "Tata Consultancy Services",
+          "price": 3850.50,
+          "change": 1.25,
+          "sentiment": 0.78,
+          "volume": 1250000,
+          "market_cap": 14500000000000
+        },
+        {
+          "symbol": "INFY",
+          "name": "Infosys",
+          "price": 1520.75,
+          "change": -0.85,
+          "sentiment": 0.65,
+          "volume": 980000,
+          "market_cap": 6200000000000
+        },
+        {
+          "symbol": "WIPRO",
+          "name": "Wipro",
+          "price": 485.20,
+          "change": 0.95,
+          "sentiment": 0.71,
+          "volume": 750000,
+          "market_cap": 2650000000000
+        }
+      ]
+    },
+    {
+      "id": "banking",
+      "name": "Banking & Finance",
+      "performance": -0.85,
+      "sentiment": 0.58,
+      "volume": 2890000000,
+      "market_cap": 38000000000000,
+      "description": "Banks, financial services, and insurance companies",
+      "top_stocks": [
+        {
+          "symbol": "HDFCBANK",
+          "name": "HDFC Bank",
+          "price": 1650.80,
+          "change": -1.20,
+          "sentiment": 0.62,
+          "volume": 2100000,
+          "market_cap": 9200000000000
+        },
+        {
+          "symbol": "ICICIBANK",
+          "name": "ICICI Bank",
+          "price": 985.45,
+          "change": 0.35,
+          "sentiment": 0.55,
+          "volume": 1850000,
+          "market_cap": 6800000000000
+        },
+        {
+          "symbol": "SBIN",
+          "name": "State Bank of India",
+          "price": 685.30,
+          "change": -0.45,
+          "sentiment": 0.48,
+          "volume": 3200000,
+          "market_cap": 6100000000000
+        }
+      ]
+    },
+    {
+      "id": "pharmaceuticals",
+      "name": "Pharmaceuticals",
+      "performance": 1.85,
+      "sentiment": 0.68,
+      "volume": 890000000,
+      "market_cap": 18000000000000,
+      "description": "Drug manufacturers and healthcare companies",
+      "top_stocks": [
+        {
+          "symbol": "SUNPHARMA",
+          "name": "Sun Pharmaceutical",
+          "price": 1250.60,
+          "change": 2.15,
+          "sentiment": 0.75,
+          "volume": 680000,
+          "market_cap": 3000000000000
+        },
+        {
+          "symbol": "DRREDDY",
+          "name": "Dr. Reddy's Laboratories",
+          "price": 5850.25,
+          "change": 1.45,
+          "sentiment": 0.69,
+          "volume": 420000,
+          "market_cap": 9800000000000
+        },
+        {
+          "symbol": "CIPLA",
+          "name": "Cipla",
+          "price": 1250.80,
+          "change": 0.85,
+          "sentiment": 0.61,
+          "volume": 520000,
+          "market_cap": 10100000000000
+        }
+      ]
+    },
+    {
+      "id": "automobile",
+      "name": "Automobile",
+      "performance": -1.25,
+      "sentiment": 0.42,
+      "volume": 1250000000,
+      "market_cap": 12000000000000,
+      "description": "Vehicle manufacturers and auto components",
+      "top_stocks": [
+        {
+          "symbol": "MARUTI",
+          "name": "Maruti Suzuki India",
+          "price": 9850.75,
+          "change": -2.15,
+          "sentiment": 0.38,
+          "volume": 450000,
+          "market_cap": 3100000000000
+        },
+        {
+          "symbol": "TATAMOTORS",
+          "name": "Tata Motors",
+          "price": 785.45,
+          "change": -1.85,
+          "sentiment": 0.45,
+          "volume": 850000,
+          "market_cap": 2600000000000
+        },
+        {
+          "symbol": "M&M",
+          "name": "Mahindra & Mahindra",
+          "price": 1850.30,
+          "change": 0.25,
+          "sentiment": 0.52,
+          "volume": 380000,
+          "market_cap": 2300000000000
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "name": "Energy & Oil",
+      "performance": 0.95,
+      "sentiment": 0.55,
+      "volume": 1680000000,
+      "market_cap": 15000000000000,
+      "description": "Oil, gas, and renewable energy companies",
+      "top_stocks": [
+        {
+          "symbol": "RELIANCE",
+          "name": "Reliance Industries",
+          "price": 2850.60,
+          "change": 1.85,
+          "sentiment": 0.58,
+          "volume": 1200000,
+          "market_cap": 19200000000000
+        },
+        {
+          "symbol": "ONGC",
+          "name": "Oil & Natural Gas Corporation",
+          "price": 185.45,
+          "change": 0.65,
+          "sentiment": 0.52,
+          "volume": 2500000,
+          "market_cap": 2350000000000
+        },
+        {
+          "symbol": "IOC",
+          "name": "Indian Oil Corporation",
+          "price": 125.80,
+          "change": -0.25,
+          "sentiment": 0.48,
+          "volume": 1800000,
+          "market_cap": 1150000000000
+        }
+      ]
+    },
+    {
+      "id": "consumer_goods",
+      "name": "Consumer Goods",
+      "performance": 0.65,
+      "sentiment": 0.62,
+      "volume": 980000000,
+      "market_cap": 8500000000000,
+      "description": "FMCG and consumer products companies",
+      "top_stocks": [
+        {
+          "symbol": "HINDUNILVR",
+          "name": "Hindustan Unilever",
+          "price": 2850.75,
+          "change": 0.95,
+          "sentiment": 0.68,
+          "volume": 320000,
+          "market_cap": 6700000000000
+        },
+        {
+          "symbol": "ITC",
+          "name": "ITC",
+          "price": 485.25,
+          "change": 0.35,
+          "sentiment": 0.55,
+          "volume": 850000,
+          "market_cap": 6100000000000
+        },
+        {
+          "symbol": "NESTLEIND",
+          "name": "Nestle India",
+          "price": 2850.50,
+          "change": 0.75,
+          "sentiment": 0.62,
+          "volume": 180000,
+          "market_cap": 2750000000000
+        }
+      ]
+    }
+  ],
+  "market_summary": {
+    "total_market_cap": 142500000000000,
+    "total_volume": 8230000000,
+    "overall_sentiment": 0.60,
+    "top_performer": "Technology",
+    "worst_performer": "Automobile"
+  }
+} 

@@ -1,11 +1,12 @@
 /* Fundamental Score Card Component */
 .fundamental-score-card {
-  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 1rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 1.5rem;
   margin-top: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -22,8 +23,9 @@
 }
 
 .fundamental-score-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Header */
@@ -33,14 +35,14 @@
   align-items: center;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .score-header h4 {
   margin: 0;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #2d3748;
+  color: #ffffff;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -54,7 +56,8 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
 }
 
 /* Score Grid */
@@ -74,7 +77,7 @@
 .score-label {
   font-size: 0.8rem;
   font-weight: 500;
-  color: #4a5568;
+  color: rgba(255, 255, 255, 0.8);
   min-width: 70px;
   text-align: left;
 }
@@ -82,10 +85,11 @@
 .score-bar {
   flex: 1;
   height: 8px;
-  background: #e2e8f0;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
   overflow: hidden;
   position: relative;
+  backdrop-filter: blur(10px);
 }
 
 .score-fill {
@@ -117,14 +121,14 @@
 .score-value {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #2d3748;
+  color: #ffffff;
   min-width: 45px;
   text-align: right;
 }
 
 /* Summary Section */
 .score-summary {
-  border-top: 1px solid #f1f5f9;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 0.75rem;
   display: flex;
   flex-direction: column;
@@ -139,13 +143,14 @@
 
 .summary-label {
   font-size: 0.8rem;
-  color: #4a5568;
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
 
 .summary-value {
   font-size: 0.8rem;
   font-weight: 600;
+  color: #ffffff;
 }
 
 .summary-value.overall-score {
@@ -166,7 +171,7 @@
 
 /* Loading State */
 .fundamental-score-card.loading {
-  background: #f8fafc;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
 }
 
 .loading-content {
@@ -181,7 +186,7 @@
 .loading-content .mini-spinner {
   width: 20px;
   height: 20px;
-  border: 2px solid #f3f3f3;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-top: 2px solid #667eea;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -191,92 +196,102 @@
 .loading-content p {
   margin: 0;
   font-size: 0.8rem;
-  color: #718096;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Error State */
 .fundamental-score-card.error {
-  background: #fef2f2;
-  border-color: #fecaca;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+  border-color: rgba(239, 68, 68, 0.3);
 }
 
 .error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
   text-align: center;
-  padding: 1rem 0;
 }
 
 .error-content p {
-  margin: 0 0 0.25rem 0;
+  margin: 0;
   font-size: 0.8rem;
-  color: #dc2626;
+  color: #fca5a5;
   font-weight: 500;
 }
 
 .error-detail {
-  font-size: 0.7rem;
-  color: #7f1d1d;
-  opacity: 0.8;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.25rem;
 }
 
 /* No Data State */
 .fundamental-score-card.no-data {
-  background: #f8fafc;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
 }
 
 .no-data-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
   text-align: center;
-  padding: 1rem 0;
 }
 
 .no-data-content p {
   margin: 0;
   font-size: 0.8rem;
-  color: #718096;
-  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .fundamental-score-card {
-    padding: 0.75rem;
+    padding: 1.25rem;
+    border-radius: 16px;
   }
-  
+
   .score-header h4 {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
-  
+
   .overall-grade {
+    font-size: 0.75rem;
     padding: 0.2rem 0.6rem;
-    font-size: 0.7rem;
   }
-  
+
   .score-grid {
     gap: 0.6rem;
   }
-  
+
   .score-label {
     font-size: 0.75rem;
     min-width: 60px;
   }
-  
+
   .score-value {
     font-size: 0.7rem;
     min-width: 40px;
   }
-  
+
   .summary-label,
   .summary-value {
     font-size: 0.75rem;
   }
 }
 
-/* Animation for score bars */
+/* Score Bar Animation */
 .score-bar .score-fill {
   animation: fillAnimation 1.5s ease-out;
 }
 
 @keyframes fillAnimation {
   from { width: 0; }
+  to { width: var(--fill-width); }
 }
 
 @keyframes spin {

@@ -3,16 +3,19 @@
   max-width: 1400px;
   margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: #ffffff;
+  background: transparent;
 }
 
 .dashboard-header {
   margin-bottom: 30px;
   text-align: center;
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border: 1px solid #475569;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  backdrop-filter: blur(25px);
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .dashboard-header h2 {
@@ -21,7 +24,7 @@
   font-weight: 800;
   margin-bottom: 20px;
   text-align: center;
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -29,7 +32,7 @@
   letter-spacing: -0.025em;
   line-height: 1.2;
   padding: 10px 0;
-  border-bottom: 3px solid #fbbf24;
+  border-bottom: 3px solid #667eea;
   margin-bottom: 30px;
 }
 
@@ -43,9 +46,10 @@
 
 .tab-btn {
   padding: 12px 24px;
-  border: 2px solid #e5e7eb;
-  background: white;
-  color: #6b7280;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  backdrop-filter: blur(15px);
+  color: rgba(255, 255, 255, 0.9);
   border-radius: 25px;
   cursor: pointer;
   font-weight: 600;
@@ -55,18 +59,18 @@
 }
 
 .tab-btn:hover {
-  border-color: #4f46e5;
-  color: #4f46e5;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .tab-btn.active {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-  border-color: #4f46e5;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .tab-content {
@@ -81,25 +85,56 @@
   justify-content: center;
   min-height: 400px;
   text-align: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 3rem;
+  color: #ffffff;
 }
 
-.loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid #f3f4f6;
-  border-top: 4px solid #4f46e5;
+.loading-container .spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top: 3px solid #667eea;
   border-radius: 50%;
-  margin-bottom: 20px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
 }
 
 .error-container h3 {
-  color: #ef4444;
-  margin-bottom: 10px;
+  color: #fca5a5;
+  margin-bottom: 0.5rem;
 }
 
-.no-selection h3 {
-  color: #6b7280;
-  margin-bottom: 10px;
+.error-container p,
+.no-selection p,
+.loading-container p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.retry-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Overview Tab Styles */
@@ -138,17 +173,20 @@
 }
 
 .metric-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 24px;
-  border: 2px solid #f3f4f6;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .metric-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .metric-header {
@@ -160,7 +198,7 @@
 
 .metric-header h4 {
   margin: 0;
-  color: #374151;
+  color: #e0e7ff;
   font-size: 1rem;
   font-weight: 600;
 }
@@ -169,10 +207,11 @@
   font-size: 2rem;
   font-weight: 700;
   text-align: right;
+  color: #ffffff;
 }
 
 .metric-description {
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.875rem;
   margin-bottom: 16px;
   line-height: 1.4;
@@ -180,7 +219,7 @@
 
 .metric-bar {
   height: 8px;
-  background: #f3f4f6;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   overflow: hidden;
   position: relative;
@@ -199,16 +238,17 @@
 }
 
 .summary-section {
-  background: white;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border: 1px solid #f3f4f6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .summary-section h4 {
   margin: 0 0 20px 0;
-  color: #1f2937;
+  color: #e0e7ff;
   font-size: 1.25rem;
   font-weight: 600;
   text-align: center;
@@ -225,35 +265,36 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px;
-  background: #f9fafb;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   border-left: 4px solid #4f46e5;
 }
 
 .summary-label {
-  color: #374151;
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   font-size: 0.875rem;
 }
 
 .summary-value {
-  color: #1f2937;
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.875rem;
 }
 
 .sector-comparison {
-  background: white;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border: 1px solid #f3f4f6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 20px;
 }
 
 .sector-comparison h4 {
   margin: 0 0 20px 0;
-  color: #1f2937;
+  color: #e0e7ff;
   font-size: 1.25rem;
   font-weight: 600;
   text-align: center;
@@ -268,29 +309,30 @@
 .sector-metric {
   text-align: center;
   padding: 16px;
-  background: #f9fafb;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .sector-metric span {
-  color: #374151;
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   font-size: 0.875rem;
 }
 
 /* Chart Container Styles */
 .chart-container {
-  background: white;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border: 1px solid #f3f4f6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .chart-container h3 {
   margin: 0 0 20px 0;
-  color: #1f2937;
+  color: #e0e7ff;
   font-size: 1.25rem;
   font-weight: 600;
   text-align: center;
@@ -316,7 +358,7 @@
 }
 
 .metrics-overview h3 {
-  color: #1f2937;
+  color: #e0e7ff;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 20px;
@@ -334,19 +376,19 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px;
-  background: #f9fafb;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   border-left: 4px solid #4f46e5;
 }
 
 .financial-summary .summary-label {
-  color: #374151;
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   font-size: 0.875rem;
 }
 
 .financial-summary .summary-value {
-  color: #1f2937;
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.875rem;
 }
@@ -354,12 +396,12 @@
 .no-data {
   text-align: center;
   padding: 40px;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .no-data h3 {
   margin-bottom: 10px;
-  color: #374151;
+  color: #e0e7ff;
 }
 
 @keyframes fadeInUp {

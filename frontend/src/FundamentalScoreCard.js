@@ -9,7 +9,6 @@ const FundamentalScoreCard = ({ stockSymbol }) => {
   // Mock data for demonstration purposes
   const getMockData = (symbol) => {
     // Normalize symbol for lookup (handle both with and without .NS suffix)
-    const normalizedSymbol = symbol.includes('.') ? symbol : symbol + '.NS';
     const baseSymbol = symbol.replace('.NS', '');
     
     const mockDataMap = {

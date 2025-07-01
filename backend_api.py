@@ -10,9 +10,27 @@ import json
 import glob
 import numpy as np
 import math
+import jwt
+import bcrypt
+import secrets
+import requests
+from functools import wraps
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app, supports_credentials=True)  # Enable CORS for all routes with credentials
+
+# JWT Configuration
+app.config['SECRET_KEY'] = 'your-secret-key-change-this-in-production'  # Change this in production
+app.config['JWT_ALGORITHM'] = 'HS256'
+app.config['JWT_EXPIRATION_HOURS'] = 24
+
+# Google OAuth Configuration
+GOOGLE_CLIENT_ID = 'your-google-client-id'  # Replace with your Google OAuth client ID
+GOOGLE_CLIENT_SECRET = 'your-google-client-secret'  # Replace with your Google OAuth client secret
+GOOGLE_REDIRECT_URI = 'http://localhost:3000/auth/google/callback'
+
+# For development, we'll use a fallback approach
+DEVELOPMENT_MODE = True  # Set to False in production
 
 def sanitize_for_json(obj):
     """Convert NaN and infinity values to None for JSON serialization"""
@@ -29,6 +47,103 @@ def sanitize_for_json(obj):
     return obj
 
 DB_PATH = "/home/tarun/MarketSentimentAnalysis/Sentiment_Analysis/sentiment_analysis.db"
+AUTH_DB_PATH = "/home/tarun/MarketSentimentAnalysis/db/auth.db"
+
+# Initialize auth database
+def init_auth_db():
+    """Initialize the authentication database with users table"""
+    os.makedirs(os.path.dirname(AUTH_DB_PATH), exist_ok=True)
+    conn = sqlite3.connect(AUTH_DB_PATH)
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            email TEXT UNIQUE NOT NULL,
+            password_hash TEXT,
+            google_id TEXT UNIQUE,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+    
+    # Add test users for development/testing
+    test_users = [
+        {
+            'name': 'Test User',
+            'email': 'test@example.com',
+            'password': 'password123'
+        },
+        {
+            'name': 'Demo User',
+            'email': 'user@test.com',
+            'password': 'testpass123'
+        },
+        {
+            'name': 'Admin User',
+            'email': 'demo@marketsentiment.ai',
+            'password': 'demo123'
+        }
+    ]
+    
+    for user in test_users:
+        # Check if user already exists
+        cursor.execute('SELECT id FROM users WHERE email = ?', (user['email'],))
+        if not cursor.fetchone():
+            # Hash the password
+            password_hash = bcrypt.hashpw(user['password'].encode('utf-8'), bcrypt.gensalt())
+            cursor.execute('''
+                INSERT INTO users (name, email, password_hash)
+                VALUES (?, ?, ?)
+            ''', (user['name'], user['email'], password_hash.decode('utf-8')))
+    
+    conn.commit()
+    conn.close()
+
+# Initialize the auth database on startup
+init_auth_db()
+
+def generate_token(user_id, email):
+    """Generate JWT token for user"""
+    payload = {
+        'user_id': user_id,
+        'email': email,
+        'exp': datetime.utcnow() + timedelta(hours=app.config['JWT_EXPIRATION_HOURS']),
+        'iat': datetime.utcnow()
+    }
+    return jwt.encode(payload, app.config['SECRET_KEY'], algorithm=app.config['JWT_ALGORITHM'])
+
+def verify_token(token):
+    """Verify JWT token and return payload"""
+    try:
+        payload = jwt.decode(token, app.config['SECRET_KEY'], algorithms=[app.config['JWT_ALGORITHM']])
+        return payload
+    except jwt.ExpiredSignatureError:
+        return None
+    except jwt.InvalidTokenError:
+        return None
+
+def require_auth(f):
+    """Decorator to require authentication"""
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        token = request.headers.get('Authorization')
+        
+        if not token:
+            return jsonify({'error': 'No token provided'}), 401
+        
+        if token.startswith('Bearer '):
+            token = token[7:]
+        
+        payload = verify_token(token)
+        if not payload:
+            return jsonify({'error': 'Invalid or expired token'}), 401
+        
+        request.user = payload
+        return f(*args, **kwargs)
+    
+    return decorated_function
 
 # Complete Mapping of all 50 Nifty 50 stocks to Yahoo Finance tickers
 STOCK_TICKER_MAP = {
@@ -752,11 +867,11 @@ def get_fundamental_summary():
                         "sector": item['sector'],
                         "company_name": item['company_name']
                     }
-                    summary_data.append(key_metrics)
-                    
-                except Exception as e:
+                summary_data.append(key_metrics)
+                
+            except Exception as e:
                     print(f"Error processing {symbol}: {e}")
-                    continue
+                continue
         
         return jsonify({
             "summary": summary_data,
@@ -1257,6 +1372,314 @@ def determine_risk_level(profitability_data, liquidity_data):
         return "Medium"
     else:
         return "Low"
+
+# Authentication Routes
+@app.route('/api/auth/signup', methods=['POST'])
+def signup():
+    """User registration endpoint"""
+    try:
+        data = request.get_json()
+        name = data.get('name')
+        email = data.get('email')
+        password = data.get('password')
+        
+        if not all([name, email, password]):
+            return jsonify({'error': 'All fields are required'}), 400
+        
+        # Hash password
+        password_hash = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+        
+        conn = sqlite3.connect(AUTH_DB_PATH)
+        cursor = conn.cursor()
+        
+        # Check if user already exists
+        cursor.execute('SELECT id FROM users WHERE email = ?', (email,))
+        if cursor.fetchone():
+            conn.close()
+            return jsonify({'error': 'User already exists'}), 409
+        
+        # Create new user
+        cursor.execute('''
+            INSERT INTO users (name, email, password_hash)
+            VALUES (?, ?, ?)
+        ''', (name, email, password_hash))
+        
+        user_id = cursor.lastrowid
+        conn.commit()
+        conn.close()
+        
+        # Generate token
+        token = generate_token(user_id, email)
+        
+        return jsonify({
+            'token': token,
+            'user': {
+                'id': user_id,
+                'name': name,
+                'email': email
+            }
+        }), 201
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/auth/signin', methods=['POST'])
+def signin():
+    """User login endpoint"""
+    try:
+        data = request.get_json()
+        email = data.get('email')
+        password = data.get('password')
+        
+        if not all([email, password]):
+            return jsonify({'error': 'Email and password are required'}), 400
+        
+        conn = sqlite3.connect(AUTH_DB_PATH)
+        cursor = conn.cursor()
+        
+        # Get user by email
+        cursor.execute('SELECT id, name, email, password_hash FROM users WHERE email = ?', (email,))
+        user = cursor.fetchone()
+        conn.close()
+        
+        if not user:
+            return jsonify({'error': 'Invalid credentials'}), 401
+        
+        user_id, name, user_email, password_hash = user
+        
+        # Verify password
+        if not bcrypt.checkpw(password.encode('utf-8'), password_hash.encode('utf-8')):
+            return jsonify({'error': 'Invalid credentials'}), 401
+        
+        # Generate token
+        token = generate_token(user_id, user_email)
+        
+        return jsonify({
+            'token': token,
+            'user': {
+                'id': user_id,
+                'name': name,
+                'email': user_email
+            }
+        })
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/auth/google/url', methods=['GET'])
+def get_google_auth_url():
+    """Get Google OAuth URL"""
+    try:
+        if DEVELOPMENT_MODE and (GOOGLE_CLIENT_ID == 'your-google-client-id' or GOOGLE_CLIENT_SECRET == 'your-google-client-secret'):
+            # In development mode with placeholder credentials, return a mock response
+            return jsonify({
+                'error': 'Google OAuth not configured for development',
+                'message': 'Please use email/password login for testing',
+                'development_mode': True
+            }), 400
+        
+        state = secrets.token_urlsafe(32)
+        
+        auth_url = f"https://accounts.google.com/o/oauth2/v2/auth?" \
+                  f"client_id={GOOGLE_CLIENT_ID}&" \
+                  f"redirect_uri={GOOGLE_REDIRECT_URI}&" \
+                  f"scope=openid%20email%20profile&" \
+                  f"response_type=code&" \
+                  f"state={state}"
+        
+        return jsonify({'authUrl': auth_url, 'state': state})
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/auth/google/callback', methods=['POST'])
+def google_auth_callback():
+    """Handle Google OAuth callback"""
+    try:
+        data = request.get_json()
+        code = data.get('code')
+        state = data.get('state')
+        
+        if not code:
+            return jsonify({'error': 'Authorization code is required'}), 400
+        
+        # Exchange code for tokens
+        token_url = 'https://oauth2.googleapis.com/token'
+        token_data = {
+            'client_id': GOOGLE_CLIENT_ID,
+            'client_secret': GOOGLE_CLIENT_SECRET,
+            'code': code,
+            'grant_type': 'authorization_code',
+            'redirect_uri': GOOGLE_REDIRECT_URI
+        }
+        
+        response = requests.post(token_url, data=token_data)
+        if not response.ok:
+            return jsonify({'error': 'Failed to exchange code for tokens'}), 400
+        
+        tokens = response.json()
+        access_token = tokens.get('access_token')
+        
+        # Get user info from Google
+        user_info_url = 'https://www.googleapis.com/oauth2/v2/userinfo'
+        headers = {'Authorization': f'Bearer {access_token}'}
+        user_response = requests.get(user_info_url, headers=headers)
+        
+        if not user_response.ok:
+            return jsonify({'error': 'Failed to get user info'}), 400
+        
+        user_info = user_response.json()
+        google_id = user_info.get('id')
+        email = user_info.get('email')
+        name = user_info.get('name')
+        
+        conn = sqlite3.connect(AUTH_DB_PATH)
+        cursor = conn.cursor()
+        
+        # Check if user exists
+        cursor.execute('SELECT id, name, email FROM users WHERE google_id = ? OR email = ?', (google_id, email))
+        user = cursor.fetchone()
+        
+        if user:
+            # User exists, update google_id if needed
+            user_id, user_name, user_email = user
+            if not user.get('google_id'):
+                cursor.execute('UPDATE users SET google_id = ? WHERE id = ?', (google_id, user_id))
+                conn.commit()
+        else:
+            # Create new user
+            cursor.execute('''
+                INSERT INTO users (name, email, google_id)
+                VALUES (?, ?, ?)
+            ''', (name, email, google_id))
+            user_id = cursor.lastrowid
+            conn.commit()
+        
+        conn.close()
+        
+        # Generate token
+        token = generate_token(user_id, email)
+        
+        return jsonify({
+            'token': token,
+            'user': {
+                'id': user_id,
+                'name': name,
+                'email': email
+            }
+        })
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/auth/verify', methods=['GET'])
+@require_auth
+def verify_auth():
+    """Verify authentication token"""
+    return jsonify({
+        'valid': True,
+        'user': request.user
+    })
+
+@app.route('/api/auth/logout', methods=['POST'])
+@require_auth
+def logout():
+    """Logout endpoint (client should remove token)"""
+    return jsonify({'message': 'Logged out successfully'})
+
+@app.route('/api/sectoral-analysis', methods=['GET'])
+def get_sectoral_analysis():
+    """Get sectoral analysis data"""
+    try:
+        # Sample sector data - in production, this would come from a database
+        sector_data = {
+            'sectors': [
+                {
+                    'name': 'Technology',
+                    'performance': 2.5,
+                    'sentiment': 0.7,
+                    'volume': 1250000,
+                    'market_cap': 85000000000,
+                    'top_stocks': [
+                        {'symbol': 'TCS', 'name': 'Tata Consultancy Services', 'price': 3850.50, 'change': 1.2},
+                        {'symbol': 'INFY', 'name': 'Infosys Limited', 'price': 1450.75, 'change': 0.8},
+                        {'symbol': 'HCLTECH', 'name': 'HCL Technologies', 'price': 1250.25, 'change': 1.5}
+                    ]
+                },
+                {
+                    'name': 'Banking & Financial',
+                    'performance': 1.8,
+                    'sentiment': 0.6,
+                    'volume': 980000,
+                    'market_cap': 120000000000,
+                    'top_stocks': [
+                        {'symbol': 'HDFCBANK', 'name': 'HDFC Bank', 'price': 1650.00, 'change': 0.9},
+                        {'symbol': 'ICICIBANK', 'name': 'ICICI Bank', 'price': 950.50, 'change': 1.1},
+                        {'symbol': 'SBIN', 'name': 'State Bank of India', 'price': 650.75, 'change': 0.7}
+                    ]
+                },
+                {
+                    'name': 'Automobiles',
+                    'performance': -0.5,
+                    'sentiment': 0.4,
+                    'volume': 750000,
+                    'market_cap': 45000000000,
+                    'top_stocks': [
+                        {'symbol': 'MARUTI', 'name': 'Maruti Suzuki', 'price': 10500.00, 'change': -0.3},
+                        {'symbol': 'TATAMOTORS', 'name': 'Tata Motors', 'price': 850.25, 'change': 0.5},
+                        {'symbol': 'M&M', 'name': 'Mahindra & Mahindra', 'price': 1850.50, 'change': -0.8}
+                    ]
+                },
+                {
+                    'name': 'Oil & Gas',
+                    'performance': 3.2,
+                    'sentiment': 0.8,
+                    'volume': 650000,
+                    'market_cap': 35000000000,
+                    'top_stocks': [
+                        {'symbol': 'RELIANCE', 'name': 'Reliance Industries', 'price': 2850.75, 'change': 2.1},
+                        {'symbol': 'ONGC', 'name': 'Oil & Natural Gas Corp', 'price': 185.50, 'change': 1.8},
+                        {'symbol': 'IOC', 'name': 'Indian Oil Corporation', 'price': 95.25, 'change': 1.2}
+                    ]
+                },
+                {
+                    'name': 'Pharmaceuticals',
+                    'performance': 1.2,
+                    'sentiment': 0.5,
+                    'volume': 450000,
+                    'market_cap': 28000000000,
+                    'top_stocks': [
+                        {'symbol': 'SUNPHARMA', 'name': 'Sun Pharmaceutical', 'price': 1250.00, 'change': 0.6},
+                        {'symbol': 'DRREDDY', 'name': 'Dr. Reddy\'s Laboratories', 'price': 5850.75, 'change': 0.9},
+                        {'symbol': 'CIPLA', 'name': 'Cipla Limited', 'price': 1250.50, 'change': 0.4}
+                    ]
+                },
+                {
+                    'name': 'Consumer Goods',
+                    'performance': 0.8,
+                    'sentiment': 0.6,
+                    'volume': 380000,
+                    'market_cap': 22000000000,
+                    'top_stocks': [
+                        {'symbol': 'HINDUNILVR', 'name': 'Hindustan Unilever', 'price': 2850.25, 'change': 0.3},
+                        {'symbol': 'ITC', 'name': 'ITC Limited', 'price': 485.75, 'change': 0.7},
+                        {'symbol': 'NESTLEIND', 'name': 'Nestle India', 'price': 2850.00, 'change': 0.5}
+                    ]
+                }
+            ],
+            'market_summary': {
+                'total_market_cap': 335000000000,
+                'total_volume': 4460000,
+                'overall_sentiment': 0.6,
+                'top_performing_sector': 'Oil & Gas',
+                'worst_performing_sector': 'Automobiles'
+            }
+        }
+        
+        return jsonify(sector_data)
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=False, port=5000)
