@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
+import config from '../../config/config';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ const SignUp = () => {
     setError('');
     
     try {
-      const response = await fetch('http://localhost:5000/api/auth/google/url', {
+      const response = await fetch(`${config.backendUrl}/api/auth/google/url`, {
         method: 'GET',
         credentials: 'include'
       });
@@ -66,7 +67,7 @@ const SignUp = () => {
     }
     
     try {
-      const response = await fetch('http://localhost:5000/api/auth/signup', {
+      const response = await fetch(`${config.backendUrl}/api/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

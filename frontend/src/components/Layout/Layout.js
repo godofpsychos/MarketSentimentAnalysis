@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Layout.css';
 import Dashboard from '../Dashboard/Dashboard';
+import config from '../../config/config';
 
 const Layout = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -43,7 +44,7 @@ const Layout = ({ children }) => {
     // Fetch stocks for dropdown
     const fetchStocks = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/stocks');
+        const response = await fetch(`${config.backendUrl}/api/stocks`);
         if (response.ok) {
           const data = await response.json();
           setStocks(data.stocks || []);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './FundamentalScoreCard.css';
+import config from './config/config';
 
 const FundamentalScoreCard = ({ stockSymbol }) => {
   const [scores, setScores] = useState(null);
@@ -250,7 +251,7 @@ const FundamentalScoreCard = ({ stockSymbol }) => {
         // Try with .NS suffix for API call if not already present
         const apiSymbol = stockSymbol.includes('.') ? stockSymbol : stockSymbol + '.NS';
         console.log(`FundamentalScoreCard: Fetching scores for ${stockSymbol}, API call with ${apiSymbol}`);
-        const response = await fetch(`http://localhost:5000/api/fundamental-scores/${apiSymbol}`);
+        const response = await fetch(`${config.backendUrl}/api/fundamental-scores/${apiSymbol}`);
         
         if (!response.ok) {
           throw new Error('Failed to fetch fundamental scores');

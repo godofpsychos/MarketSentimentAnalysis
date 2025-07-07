@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
+import config from '../../config/config';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ const SignIn = () => {
     // Check if Google OAuth is available
     const checkGoogleAuth = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/auth/google/url', {
+        const response = await fetch(`${config.backendUrl}/api/auth/google/url`, {
           method: 'GET',
           credentials: 'include'
         });
@@ -40,7 +41,7 @@ const SignIn = () => {
     
     try {
       // Initialize Google OAuth
-      const response = await fetch('http://localhost:5000/api/auth/google/url', {
+      const response = await fetch(`${config.backendUrl}/api/auth/google/url`, {
         method: 'GET',
         credentials: 'include'
       });
@@ -70,7 +71,7 @@ const SignIn = () => {
     setError('');
     
     try {
-      const response = await fetch('http://localhost:5000/api/auth/signin', {
+      const response = await fetch(`${config.backendUrl}/api/auth/signin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

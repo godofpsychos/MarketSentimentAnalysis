@@ -1,0 +1,25 @@
+[Unit]
+Description=Market Sentiment Analysis API
+After=network.target
+
+[Service]
+Type=exec
+User=tarun
+Group=tarun
+Environment=BASE_DIR=/home/tarun/MarketSentimentAnalysis
+WorkingDirectory=${BASE_DIR}
+Environment=PATH=${BASE_DIR}/.venv/bin
+ExecStart=${BASE_DIR}/.venv/bin/gunicorn --config gunicorn.conf.py wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=always
+RestartSec=3
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=${BASE_DIR}/logs ${BASE_DIR}/db ${BASE_DIR}/Sentiment_Analysis
+
+[Install]
+WantedBy=multi-user.target 

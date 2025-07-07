@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Route /backend/ requests to the Python backend
+RewriteCond %{REQUEST_URI} ^/backend/
+RewriteRule ^backend/(.*)$ /backend/$1 [L]
+
+# For all other requests, serve the React app
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L] 

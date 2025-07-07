@@ -1,5 +1,6 @@
 import sectorsData from './sectors.json';
 import sectorsData1W from './sectors-1w.json';
+import config from '../../config/config';
 
 class SectoralDataService {
   constructor() {
@@ -133,7 +134,7 @@ class SectoralDataService {
   async updateData() {
     try {
       // This would fetch fresh data from your API
-      const response = await fetch('http://localhost:5000/api/sectoral-analysis');
+      const response = await fetch(`${config.backendUrl}/api/sectoral-analysis`);
       if (response.ok) {
         const freshData = await response.json();
         this.data = freshData;

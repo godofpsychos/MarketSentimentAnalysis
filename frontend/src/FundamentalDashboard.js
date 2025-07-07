@@ -8,6 +8,7 @@ import {
 } from 'recharts';
 import './FundamentalDashboard.css';
 import { StockPriceChart, RevenueExpenseProfitChart } from './StockFinancialChart';
+import config from './config/config';
 
 // Color palette for different metrics
 const COLORS = {
@@ -40,7 +41,7 @@ const FundamentalDashboard = ({ selectedStock }) => {
       console.log('Fetching fundamental data for:', selectedStock);
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:5000/api/fundamental-analysis/${selectedStock}`);
+        const response = await fetch(`${config.backendUrl}/api/fundamental-analysis/${selectedStock}`);
         if (!response.ok) throw new Error('Failed to fetch fundamental data');
         
         const data = await response.json();
@@ -49,7 +50,7 @@ const FundamentalDashboard = ({ selectedStock }) => {
         
         // Fetch sector data for comparison
         if (data.company_info?.sector) {
-          const sectorResponse = await fetch(`http://localhost:5000/api/sector-analysis/${data.company_info.sector}`);
+          const sectorResponse = await fetch(`${config.backendUrl}/api/sector-analysis/${data.company_info.sector}`);
           if (sectorResponse.ok) {
             const sectorData = await sectorResponse.json();
             setSectorData(sectorData);

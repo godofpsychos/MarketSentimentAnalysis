@@ -15,22 +15,37 @@ import bcrypt
 import secrets
 import requests
 from functools import wraps
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True)  # Enable CORS for all routes with credentials
+
+# CORS Configuration with environment variables
+ALLOWED_ORIGINS = os.getenv('ALLOWED_ORIGINS', 'https://yourstock.ai,https://www.yourstock.ai,http://localhost:3000,http://127.0.0.1:3000').split(',')
+FRONTEND_URL = os.getenv('FRONTEND_URL', 'https://yourstock.ai')
+
+CORS(app, 
+     origins=ALLOWED_ORIGINS,
+     supports_credentials=True,
+     methods=['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+     allow_headers=['Content-Type', 'Authorization'])
+
+
 
 # JWT Configuration
-app.config['SECRET_KEY'] = 'your-secret-key-change-this-in-production'  # Change this in production
-app.config['JWT_ALGORITHM'] = 'HS256'
-app.config['JWT_EXPIRATION_HOURS'] = 24
+app.config['SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'your-secret-key-change-this-in-production')
+app.config['JWT_ALGORITHM'] = os.getenv('JWT_ALGORITHM', 'HS256')
+app.config['JWT_EXPIRATION_HOURS'] = int(os.getenv('JWT_EXPIRATION_HOURS', '24'))
 
 # Google OAuth Configuration
-GOOGLE_CLIENT_ID = 'your-google-client-id'  # Replace with your Google OAuth client ID
-GOOGLE_CLIENT_SECRET = 'your-google-client-secret'  # Replace with your Google OAuth client secret
-GOOGLE_REDIRECT_URI = 'http://localhost:3000/auth/google/callback'
+GOOGLE_CLIENT_ID = os.getenv('GOOGLE_CLIENT_ID', 'your-google-client-id')
+GOOGLE_CLIENT_SECRET = os.getenv('GOOGLE_CLIENT_SECRET', 'your-google-client-secret')
+GOOGLE_REDIRECT_URI = os.getenv('GOOGLE_REDIRECT_URI', f'{FRONTEND_URL}/auth/google/callback')
 
 # For development, we'll use a fallback approach
-DEVELOPMENT_MODE = True  # Set to False in production
+DEVELOPMENT_MODE = os.getenv('DEVELOPMENT_MODE', 'True').lower() == 'true'
 
 def sanitize_for_json(obj):
     """Convert NaN and infinity values to None for JSON serialization"""
@@ -46,8 +61,27 @@ def sanitize_for_json(obj):
         return None
     return obj
 
-DB_PATH = "/home/tarun/MarketSentimentAnalysis/Sentiment_Analysis/sentiment_analysis.db"
-AUTH_DB_PATH = "/home/tarun/MarketSentimentAnalysis/db/auth.db"
+# Base directory and paths from environment variables
+BASE_DIR = os.getenv('BASE_DIR', '/home/tarun/MarketSentimentAnalysis')
+DB_PATH = os.getenv('SENTIMENT_DB_PATH', os.path.join(BASE_DIR, 'Sentiment_Analysis', 'sentiment_analysis.db'))
+AUTH_DB_PATH = os.getenv('AUTH_DB_PATH', os.path.join(BASE_DIR, 'db', 'auth.db'))
+
+# Fundamental Analysis paths
+FUNDAMENTAL_BASE_DIR = os.getenv('FUNDAMENTAL_BASE_DIR', os.path.join(BASE_DIR, 'FundamentalAnalysis'))
+PROFITABILITY_FILE = os.getenv('PROFITABILITY_FILE', os.path.join(FUNDAMENTAL_BASE_DIR, 'outputs', 'profitability', 'profitability_ratios.json'))
+VALUATION_FILE = os.getenv('VALUATION_FILE', os.path.join(FUNDAMENTAL_BASE_DIR, 'outputs', 'valuation', 'basic_valuation_ratios.json'))
+GROWTH_FILE = os.getenv('GROWTH_FILE', os.path.join(FUNDAMENTAL_BASE_DIR, 'outputs', 'growth', 'revenue_growth.json'))
+LIQUIDITY_FILE = os.getenv('LIQUIDITY_FILE', os.path.join(FUNDAMENTAL_BASE_DIR, 'outputs', 'liquidity', 'basic_liquidity_ratios.json'))
+CCC_FILE = os.getenv('CCC_FILE', os.path.join(FUNDAMENTAL_BASE_DIR, 'outputs', 'liquidity', 'cash_conversion_cycle.json'))
+
+# Report and data files
+REPORT_CSV_PATH = os.getenv('REPORT_CSV_PATH', os.path.join(BASE_DIR, 'report.csv'))
+STOCKS_LIST_PATH = os.getenv('STOCKS_LIST_PATH', os.path.join(BASE_DIR, 'stocksList.csv'))
+
+# News and sentiment files
+NEWS_JSON_PATH = os.getenv('NEWS_JSON_PATH', os.path.join(BASE_DIR, 'news.json'))
+RECENT_NEWS_PATH = os.getenv('RECENT_NEWS_PATH', os.path.join(BASE_DIR, 'insightGen', 'recent_news.json'))
+SENTIMENT_RESULTS_PATH = os.getenv('SENTIMENT_RESULTS_PATH', os.path.join(BASE_DIR, 'Sentiment_Analysis', 'sentiment_analysis_results.json'))
 
 # Initialize auth database
 def init_auth_db():
@@ -761,7 +795,7 @@ def get_financial_data():
     """Get financial data from the CSV report"""
     try:
         # Path to the CSV file
-        csv_file_path = "/home/tarun/MarketSentimentAnalysis/report.csv"
+        csv_file_path = REPORT_CSV_PATH
         
         if not os.path.exists(csv_file_path):
             return jsonify({"error": "Financial data file not found"}), 404
@@ -842,7 +876,7 @@ def get_fundamental_summary():
         summary_data = []
         
         # Load profitability data to get list of companies
-        profitability_file = "/home/tarun/MarketSentimentAnalysis/FundamentalAnalysis/outputs/profitability/profitability_ratios.json"
+        profitability_file = PROFITABILITY_FILE
         if os.path.exists(profitability_file):
             with open(profitability_file, 'r') as f:
                 profitability_data = json.load(f)
@@ -867,11 +901,11 @@ def get_fundamental_summary():
                         "sector": item['sector'],
                         "company_name": item['company_name']
                     }
-                summary_data.append(key_metrics)
+                    summary_data.append(key_metrics)
                 
-            except Exception as e:
+                except Exception as e:
                     print(f"Error processing {symbol}: {e}")
-                continue
+                    continue
         
         return jsonify({
             "summary": summary_data,
@@ -891,9 +925,9 @@ def run_fundamental_analysis():
         import subprocess
         
         result = subprocess.run([
-            'python', '/home/tarun/MarketSentimentAnalysis/FundamentalAnalysis/run_all_indicators.py',
+            'python', os.path.join(FUNDAMENTAL_BASE_DIR, 'run_all_indicators.py'),
             '--output-format', 'json'
-        ], capture_output=True, text=True, cwd='/home/tarun/MarketSentimentAnalysis')
+        ], capture_output=True, text=True, cwd=BASE_DIR)
         
         if result.returncode == 0:
             return jsonify({
@@ -1041,7 +1075,7 @@ def get_fundamental_scores(stock_symbol):
 def load_profitability_data(symbol):
     """Load profitability data for a specific symbol"""
     try:
-        file_path = "/home/tarun/MarketSentimentAnalysis/FundamentalAnalysis/outputs/profitability/profitability_ratios.json"
+        file_path = PROFITABILITY_FILE
         with open(file_path, 'r') as f:
             data = json.load(f)
         
@@ -1059,7 +1093,7 @@ def load_profitability_data(symbol):
 def load_valuation_data(symbol):
     """Load valuation data for a specific symbol"""
     try:
-        file_path = "/home/tarun/MarketSentimentAnalysis/FundamentalAnalysis/outputs/valuation/basic_valuation_ratios.json"
+        file_path = VALUATION_FILE
         with open(file_path, 'r') as f:
             data = json.load(f)
         
@@ -1078,7 +1112,7 @@ def load_growth_data(symbol):
     """Load growth data for a specific symbol"""
     try:
         # Try revenue growth first
-        file_path = "/home/tarun/MarketSentimentAnalysis/FundamentalAnalysis/outputs/growth/revenue_growth.json"
+        file_path = GROWTH_FILE
         with open(file_path, 'r') as f:
             data = json.load(f)
         
@@ -1110,7 +1144,7 @@ def load_liquidity_data(symbol):
     """Load liquidity data for a specific symbol"""
     try:
         # Load basic liquidity ratios
-        file_path = "/home/tarun/MarketSentimentAnalysis/FundamentalAnalysis/outputs/liquidity/basic_liquidity_ratios.json"
+        file_path = LIQUIDITY_FILE
         with open(file_path, 'r') as f:
             data = json.load(f)
         
@@ -1125,7 +1159,7 @@ def load_liquidity_data(symbol):
             raise ValueError(f"Liquidity data not found for symbol: {symbol}")
         
         # Load cash conversion cycle data
-        ccc_file_path = "/home/tarun/MarketSentimentAnalysis/FundamentalAnalysis/outputs/liquidity/cash_conversion_cycle.json"
+        ccc_file_path = CCC_FILE
         ccc_data = None
         try:
             with open(ccc_file_path, 'r') as f:
@@ -1682,4 +1716,7 @@ def get_sectoral_analysis():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=False, port=5000)
+    host = os.getenv('HOST', '0.0.0.0')
+    port = int(os.getenv('PORT', 5000))
+    debug = os.getenv('DEBUG', 'False').lower() == 'true'
+    app.run(debug=debug, host=host, port=port)

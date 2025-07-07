@@ -103,7 +103,7 @@ def test_api_endpoints():
     """Test if API endpoints are working"""
     print("\n🌐 Testing API endpoints...")
     
-    base_url = "http://localhost:5000"
+    base_url = os.getenv('BACKEND_URL', "http://localhost:5000")
     endpoints = [
         "/api/stocks",
         "/api/available-sectors",

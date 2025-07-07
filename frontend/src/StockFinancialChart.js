@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { format, subDays, subMonths, subYears, isAfter } from 'date-fns';
+import config from './config/config';
 
 // Shared fetch logic
 const useStockFinancialData = (stockSymbol) => {
@@ -13,7 +14,7 @@ const useStockFinancialData = (stockSymbol) => {
       try {
         setLoading(true);
         setError(null);
-        const response = await fetch('http://localhost:5000/api/financial-data');
+        const response = await fetch(`${config.backendUrl}/api/financial-data`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -103,7 +104,7 @@ export const StockPriceChart = ({ stockSymbol }) => {
     if (!stockSymbol) return;
     setLoading(true);
     setError(null);
-    fetch(`http://localhost:5000/api/stock-data/${stockSymbol}?period=${period}`)
+    fetch(`${config.backendUrl}/api/stock-data/${stockSymbol}?period=${period}`)
       .then(res => res.json())
       .then(result => {
         if (result.error) throw new Error(result.error);
