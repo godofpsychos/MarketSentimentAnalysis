@@ -71,6 +71,7 @@ const SignIn = () => {
     setError('');
     
     try {
+      console.log('🔐 Attempting email sign-in...');
       const response = await fetch(`${config.backendUrl}/api/auth/signin`, {
         method: 'POST',
         headers: {
@@ -82,18 +83,73 @@ const SignIn = () => {
       
       if (response.ok) {
         const data = await response.json();
+        console.log('✅ Sign-in successful:', data);
+        
+        // Store authentication data
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
-        navigate('/dashboard');
+        
+        // Dispatch storage event to notify other components
+        window.dispatchEvent(new StorageEvent('storage', {
+          key: 'token',
+          newValue: data.token
+        }));
+        
+        console.log('🚀 Redirecting to dashboard...');
+        navigate('/dashboard', { replace: true });
+        
+        // Fallback: if navigation doesn't work, reload the page after a short delay
+        setTimeout(() => {
+          if (window.location.pathname !== '/dashboard') {
+            console.log('🔄 Navigation failed, reloading page...');
+            window.location.href = '/dashboard';
+          }
+        }, 1000);
       } else {
         const errorData = await response.json();
+        console.error('❌ Sign-in failed:', errorData);
         throw new Error(errorData.message || 'Sign in failed');
       }
     } catch (err) {
+      console.error('❌ Sign-in error:', err);
       setError(err.message);
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleDevMode = () => {
+    console.log('🚀 Entering dev mode...');
+    
+    // Fake user & token for local development/demo
+    const fakeUser = {
+      id: 'dev-user',
+      name: 'Developer',
+      email: 'dev@example.com',
+      role: 'developer',
+      devMode: true
+    };
+
+    localStorage.setItem('token', 'dev-token');
+    localStorage.setItem('user', JSON.stringify(fakeUser));
+    localStorage.setItem('devMode', 'true');
+
+    // Dispatch storage event to notify other components
+    window.dispatchEvent(new StorageEvent('storage', {
+      key: 'token',
+      newValue: 'dev-token'
+    }));
+
+    console.log('🚀 Redirecting to dashboard in dev mode...');
+    navigate('/dashboard', { replace: true });
+    
+    // Fallback: if navigation doesn't work, reload the page after a short delay
+    setTimeout(() => {
+      if (window.location.pathname !== '/dashboard') {
+        console.log('🔄 Navigation failed, reloading page...');
+        window.location.href = '/dashboard';
+      }
+    }, 1000);
   };
 
   return (
@@ -163,6 +219,18 @@ const SignIn = () => {
           >
             {loading ? 'Signing In...' : 'Sign In'}
           </button>
+
+          {/* Dev Mode button – visible only when not in production */}
+          {true && (
+            <button
+              type="button"
+              className="auth-btn secondary dev-btn"
+              onClick={handleDevMode}
+              title="Bypass login and enter dev mode"
+            >
+              Enter Dev Mode 🚀
+            </button>
+          )}
         </form>
         
         <div className="auth-divider">

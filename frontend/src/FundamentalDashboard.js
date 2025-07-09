@@ -389,23 +389,6 @@ const OverviewTab = ({ data, sectorData }) => {
       <div className="chart-row">
         <RevenueExpenseProfitChart stockSymbol={data.company_info?.symbol} />
       </div>
-
-      {sectorData && (
-        <div className="sector-comparison">
-          <h4>Sector Comparison</h4>
-          <div className="sector-metrics">
-            <div className="sector-metric">
-              <span>Avg P/E: {sectorData.avg_pe}</span>
-            </div>
-            <div className="sector-metric">
-              <span>Avg ROE: {sectorData.avg_roe}%</span>
-            </div>
-            <div className="sector-metric">
-              <span>Avg Debt/Equity: {sectorData.avg_debt_equity}</span>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
@@ -570,22 +553,6 @@ const ProfitabilityTab = ({ data, sectorData }) => {
           </div>
         </div>
       </div>
-
-      {sectorData && (
-        <div className="sector-comparison">
-          <h3>Sector Comparison</h3>
-          <div className="sector-metrics">
-            <div className="sector-metric">
-              <span>Company ROE: {safeValue(profitability.roe_percent).toFixed(2)}%</span>
-              <span>Sector Avg: {sectorData.avg_roe}%</span>
-            </div>
-            <div className="sector-metric">
-              <span>Company Net Margin: {safeValue(profitability.net_margin_percent).toFixed(2)}%</span>
-              <span>Sector Avg: {sectorData.avg_net_margin || 'N/A'}%</span>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
@@ -753,22 +720,6 @@ const ValuationTab = ({ data, sectorData }) => {
           </div>
         </div>
       </div>
-
-      {sectorData && (
-        <div className="sector-comparison">
-          <h3>Sector Comparison</h3>
-          <div className="sector-metrics">
-            <div className="sector-metric">
-              <span>Company P/E: {safeValue(valuation.pe_ratio).toFixed(2)}x</span>
-              <span>Sector Avg: {sectorData.avg_pe}x</span>
-            </div>
-            <div className="sector-metric">
-              <span>Company P/B: {safeValue(valuation.pb_ratio).toFixed(2)}x</span>
-              <span>Sector Avg: {sectorData.avg_pb}x</span>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
@@ -960,22 +911,6 @@ const GrowthTab = ({ data, sectorData }) => {
           </div>
         </div>
       </div>
-
-      {sectorData && (
-        <div className="sector-comparison">
-          <h3>Sector Comparison</h3>
-          <div className="sector-metrics">
-            <div className="sector-metric">
-              <span>Company Revenue Growth: {safeValue(growth.revenue_growth_percent).toFixed(2)}%</span>
-              <span>Sector Avg: {sectorData.sector_growth}%</span>
-            </div>
-            <div className="sector-metric">
-              <span>Company Earnings Growth: {safeValue(growth.earnings_growth_percent).toFixed(2)}%</span>
-              <span>Sector Avg: {sectorData.avg_earnings_growth || 'N/A'}%</span>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
@@ -1145,22 +1080,6 @@ const LiquidityTab = ({ data, sectorData }) => {
           </div>
         </div>
       </div>
-
-      {sectorData && (
-        <div className="sector-comparison">
-          <h3>Sector Comparison</h3>
-          <div className="sector-metrics">
-            <div className="sector-metric">
-              <span>Company Current Ratio: {safeValue(liquidity.current_ratio).toFixed(2)}x</span>
-              <span>Sector Avg: {sectorData.avg_current_ratio}x</span>
-            </div>
-            <div className="sector-metric">
-              <span>Company Quick Ratio: {safeValue(liquidity.quick_ratio).toFixed(2)}x</span>
-              <span>Sector Avg: {sectorData.avg_quick_ratio || 'N/A'}x</span>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
@@ -1332,22 +1251,6 @@ const LeverageTab = ({ data, sectorData }) => {
           </div>
         </div>
       </div>
-
-      {sectorData && (
-        <div className="sector-comparison">
-          <h3>Sector Comparison</h3>
-          <div className="sector-metrics">
-            <div className="sector-metric">
-              <span>Company Debt/Equity: {debtEquityRatio.toFixed(2)}x</span>
-              <span>Sector Avg: {sectorData.avg_debt_equity || 'N/A'}x</span>
-            </div>
-            <div className="sector-metric">
-              <span>Company ROE: {safeValue(profitability.roe_percent).toFixed(2)}%</span>
-              <span>Sector Avg: {sectorData.avg_roe}%</span>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

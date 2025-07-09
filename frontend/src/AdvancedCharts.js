@@ -17,9 +17,11 @@ import {
   RadarController,
   LineController,
   BarController,
+  PolarAreaController,
   Filler
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
+import PlotlyChart from 'react-plotly.js';
 
 // Register Chart.js components
 ChartJS.register(
@@ -39,6 +41,7 @@ ChartJS.register(
   RadarController,
   LineController,
   BarController,
+  PolarAreaController,
   Filler
 );
 
@@ -55,7 +58,7 @@ const cleanupChart = (chartRef) => {
 };
 
 // Enhanced chart component wrapper
-const ChartWrapper = ({ type, data, options, chartRef, title, ...props }) => {
+const ChartWrapper = ({ type, data, options, chartRef, title, height = 300, ...props }) => {
   const uniqueId = React.useMemo(() => `${type}-${title}-${Math.random().toString(36).substr(2, 9)}`, [type, title]);
 
   useEffect(() => {
@@ -69,7 +72,7 @@ const ChartWrapper = ({ type, data, options, chartRef, title, ...props }) => {
     cleanupChart(chartRef);
   }, [data, type, chartRef]);
 
-  return <Chart ref={chartRef} type={type} data={data} options={options} id={uniqueId} {...props} />;
+  return <Chart ref={chartRef} type={type} data={data} options={options} id={uniqueId} height={height} {...props} />;
 };
 
 // Color palette
@@ -358,7 +361,10 @@ export const SectorRadarChart = ({ data, title = "Sector Analysis" }) => {
         sector.financial_health || 0,
         sector.market_position || 0
       ],
-      backgroundColor: `${Object.values(CHART_COLORS)[index % Object.keys(CHART_COLORS).length]}20`,
+      // Convert base RGB color to RGBA with 0.1 opacity for better transparency
+      backgroundColor: Object.values(CHART_COLORS)[index % Object.keys(CHART_COLORS).length]
+        .replace('rgb(', 'rgba(')
+        .replace(')', ', 0.1)'),
       borderColor: Object.values(CHART_COLORS)[index % Object.keys(CHART_COLORS).length],
       borderWidth: 2,
       pointBackgroundColor: Object.values(CHART_COLORS)[index % Object.keys(CHART_COLORS).length],
@@ -373,7 +379,7 @@ export const SectorRadarChart = ({ data, title = "Sector Analysis" }) => {
     maintainAspectRatio: false,
     plugins: {
       title: { display: true, text: title },
-      legend: { position: 'top' }
+      legend: { position: 'right' }
     },
     scales: {
       r: {
@@ -530,6 +536,392 @@ export const FinancialHealthGauge = ({ score, title = "Financial Health Score" }
   );
 };
 
+// Horizontal "thermometer" bar chart for sector scores
+export const SectorThermometerBarChart = ({ data, title = "Sector Performance (Thermometer)" }) => {
+  const chartRef = useRef();
+
+  useEffect(() => () => cleanupChart(chartRef), []);
+  useEffect(() => cleanupChart(chartRef), [data]);
+
+  if (!Array.isArray(data) || data.length === 0) return <p>No data</p>;
+
+  const labels = data.map(d => d.name);
+  const scores = data.map(d => d.performance_score || d.score || d.value || 0);
+
+  const datasetColors = scores.map(v => {
+    if (v > 75) return 'rgba(16, 185, 129, 0.8)'; // green
+    if (v > 50) return 'rgba(234, 179, 8, 0.8)'; // yellow
+    if (v > 25) return 'rgba(245, 158, 11, 0.8)'; // orange
+    return 'rgba(239, 68, 68, 0.8)'; // red
+  });
+
+  const barData = {
+    labels,
+    datasets: [{
+      label: 'Score',
+      data: scores,
+      backgroundColor: datasetColors,
+      borderRadius: 6,
+      borderWidth: 1,
+    }]
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    indexAxis: 'y',
+    plugins: {
+      title: { display: true, text: title },
+      legend: { display: false }
+    },
+    scales: {
+      x: { suggestedMin: 0, suggestedMax: 100 },
+      y: { ticks: { autoSkip: false } }
+    }
+  };
+
+  return <ChartWrapper type="bar" data={barData} options={options} chartRef={chartRef} title={title} />;
+};
+
+// Bullseye / Polar Area chart showing sector scores
+export const SectorBullseyeChart = ({ data, title = "Sector Bullseye" }) => {
+  const chartRef = useRef();
+  useEffect(() => () => cleanupChart(chartRef), []);
+  useEffect(() => cleanupChart(chartRef), [data]);
+
+  if (!Array.isArray(data) || data.length === 0) return <p>No data</p>;
+
+  const labels = data.map(d => d.name);
+  const scores = data.map(d => d.performance_score || d.score || d.value || 0);
+  const bgColors = scores.map(v => {
+    if (v > 75) return 'rgba(16, 185, 129, 0.6)';
+    if (v > 50) return 'rgba(234, 179, 8, 0.6)';
+    if (v > 25) return 'rgba(245, 158, 11, 0.6)';
+    return 'rgba(239, 68, 68, 0.6)';
+  });
+  const borderColors = bgColors.map(c => c.replace(/0\.6\)/, '1)'));
+
+  const polarData = {
+    labels,
+    datasets: [{
+      data: scores,
+      backgroundColor: bgColors,
+      borderColor: borderColors,
+      borderWidth: 1
+    }]
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      title: { display: true, text: title },
+      legend: { position: 'right' }
+    },
+    scales: {
+      r: { suggestedMin: 0, suggestedMax: 100 }
+    }
+  };
+
+  return <ChartWrapper type="polarArea" data={polarData} options={options} chartRef={chartRef} title={title} />;
+};
+
+// Band Scatter (Traffic-Light Zones)
+export const RiskReturnBandChart = ({ data, title = "Risk vs Return (Bands)" }) => {
+  const chartRef = useRef();
+  useEffect(() => () => cleanupChart(chartRef), []);
+  useEffect(() => cleanupChart(chartRef), [data]);
+
+  const scatterData = {
+    datasets: [{
+      label: 'Stocks',
+      data: data?.map(d => ({ x: d.risk_score || 0, y: d.return_potential || 0 })) || [],
+      pointBackgroundColor: 'rgba(59, 130, 246, 0.8)',
+      pointRadius: 6,
+    }]
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      title: { display: true, text: title },
+      legend: { display: false },
+      // custom background bands
+      beforeDraw: (chart) => {
+        const { ctx, chartArea } = chart;
+        if (!chartArea) return;
+        const { left, top, width, height } = chartArea;
+        const thirds = width / 3;
+        const bands = [
+          { x: left, width: thirds, color: 'rgba(16,185,129,0.05)' }, // good zone
+          { x: left + thirds, width: thirds, color: 'rgba(252,211,77,0.05)' }, // mid
+          { x: left + thirds * 2, width: thirds, color: 'rgba(239,68,68,0.05)' } // bad
+        ];
+        ctx.save();
+        bands.forEach(b => {
+          ctx.fillStyle = b.color;
+          ctx.fillRect(b.x, top, b.width, height);
+        });
+        ctx.restore();
+      }
+    },
+    scales: {
+      x: { min: 0, max: 100, title: { display: true, text: 'Risk Score' } },
+      y: { min: 0, max: 100, title: { display: true, text: 'Return Potential' } }
+    }
+  };
+
+  return <ChartWrapper type="scatter" data={scatterData} options={options} chartRef={chartRef} title={title} height={300} />;
+};
+
+// Arrow Scatter (momentum)
+export const RiskReturnArrowScatter = ({ data, title = "Risk vs Return (Arrows)" }) => {
+  const chartRef = useRef();
+  useEffect(() => () => cleanupChart(chartRef), []);
+  useEffect(() => cleanupChart(chartRef), [data]);
+
+  const scatterData = {
+    datasets: [{
+      label: 'Stocks',
+      data: data?.map(d => ({ x: d.risk_score || 0, y: d.return_potential || 0 })) || [],
+      pointStyle: 'triangle',
+      rotation: 90,
+      pointBackgroundColor: 'rgba(99,102,241,0.8)',
+      pointRadius: 8,
+    }]
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      title: { display: true, text: title },
+      legend: { display: false }
+    },
+    scales: {
+      x: { min: 0, max: 100, title: { display: true, text: 'Risk' } },
+      y: { min: 0, max: 100, title: { display: true, text: 'Return' } }
+    }
+  };
+
+  return <ChartWrapper type="scatter" data={scatterData} options={options} chartRef={chartRef} title={title} height={300} />;
+};
+
+// Quadrant scatter chart
+export const RiskReturnQuadrantChart = ({ data, title = "Risk vs Return (Quadrants)" }) => {
+  const chartRef = useRef();
+  useEffect(() => () => cleanupChart(chartRef), []);
+  useEffect(() => cleanupChart(chartRef), [data]);
+
+  const scatterData = {
+    datasets: [{
+      label: 'Stocks',
+      data: data?.map(d => ({ x: d.risk_score || 0, y: d.return_potential || 0 })) || [],
+      pointBackgroundColor: 'rgba(99,102,241,0.9)',
+      pointRadius: 6,
+    }]
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      title: { display: true, text: title },
+      legend: { display: false },
+      beforeDraw: (chart) => {
+        const { ctx, chartArea } = chart;
+        if (!chartArea) return;
+        const { left, top, width, height } = chartArea;
+        const midX = left + width / 2;
+        const midY = top + height / 2;
+        const quadrants = [
+          { x: left,   y: midY, w: width/2, h: height/2, color: 'rgba(16,185,129,0.06)' }, // top-left good
+          { x: midX,   y: midY, w: width/2, h: height/2, color: 'rgba(245,158,11,0.06)' }, // top-right mid-high risk
+          { x: left,   y: top,  w: width/2, h: height/2, color: 'rgba(234,179,8,0.06)' }, // bottom-left low everything
+          { x: midX,   y: top,  w: width/2, h: height/2, color: 'rgba(239,68,68,0.06)' }  // bottom-right worst
+        ];
+        ctx.save();
+        quadrants.forEach(q => {
+          ctx.fillStyle = q.color;
+          ctx.fillRect(q.x, q.y, q.w, q.h);
+        });
+        ctx.restore();
+      }
+    },
+    scales: {
+      x: { min: 0, max: 100, title: { display: true, text: 'Risk' } },
+      y: { min: 0, max: 100, title: { display: true, text: 'Return' } }
+    }
+  };
+
+  return <ChartWrapper type="scatter" data={scatterData} options={options} chartRef={chartRef} title={title} height={300} />;
+};
+
+// Animated Risk-Return Bubble Chart (Story Mode)
+export const RiskReturnAnimatedChart = ({ frames = [], title = "Risk vs Return Over Time" }) => {
+  const chartRef = useRef();
+
+  // Use Plotly for easier animation
+  useEffect(() => {
+    return () => cleanupChart(chartRef);
+  }, []);
+
+  if (!frames || frames.length === 0) {
+    return <p>No data</p>;
+  }
+
+  // Build Plotly frame structure
+  const firstFrame = frames[0];
+  const trace0 = {
+    x: firstFrame.map(p => p.risk),
+    y: firstFrame.map(p => p.return),
+    mode: 'markers',
+    marker: {
+      size: firstFrame.map(p => Math.sqrt(p.market_cap || 1e9) / 1e3 + 5),
+      color: 'rgba(59,130,246,0.8)'
+    },
+    text: firstFrame.map(p => p.symbol)
+  };
+
+  const plotFrames = frames.map((frameData, idx) => ({
+    name: `frame${idx}`,
+    data: [{
+      x: frameData.map(p => p.risk),
+      y: frameData.map(p => p.return),
+      marker: {
+        size: frameData.map(p => Math.sqrt(p.market_cap || 1e9) / 1e3 + 5)
+      },
+      text: frameData.map(p => p.symbol)
+    }]
+  }));
+
+  const layout = {
+    title,
+    xaxis: { title: 'Risk', range: [0, 100] },
+    yaxis: { title: 'Return', range: [0, 100] },
+    updatemenus: [{
+      type: 'buttons',
+      x: 0.05,
+      y: 1.15,
+      buttons: [{
+        label: 'Play',
+        method: 'animate',
+        args: [null, { fromcurrent: true, frame: { duration: 600, redraw: false }, transition: { duration: 0 } }]
+      }]
+    }]
+  };
+
+  const config = { responsive: true };
+
+  return (
+    <div style={{ width: '100%', height: '300px' }}>
+      <PlotlyChart data={[trace0]} layout={layout} frames={plotFrames} config={config} />
+    </div>
+  );
+};
+
+// Violin + Strip chart using Plotly
+export const RiskReturnViolinStripChart = ({ data = [], title = "Risk / Return Distribution" }) => {
+  if (!Array.isArray(data) || data.length === 0) return <p>No data</p>;
+
+  const riskValues = data.map(d => d.risk_score || 0);
+  const returnValues = data.map(d => d.return_potential || 0);
+
+  const plotData = [
+    {
+      type: 'violin',
+      y: riskValues,
+      name: 'Risk',
+      box: { visible: true },
+      meanline: { visible: true },
+      points: 'all',
+      jitter: 0.3,
+      scalemode: 'width',
+      fillcolor: 'rgba(99,102,241,0.6)'
+    },
+    {
+      type: 'violin',
+      y: returnValues,
+      name: 'Return',
+      box: { visible: true },
+      meanline: { visible: true },
+      points: 'all',
+      jitter: 0.3,
+      scalemode: 'width',
+      fillcolor: 'rgba(16,185,129,0.6)'
+    }
+  ];
+
+  const layout = {
+    title,
+    yaxis: { range: [0, 100] },
+    violingap: 0.3,
+    violingroupgap: 0.2,
+    violinmode: 'group',
+    height: 300,
+    paper_bgcolor: 'transparent',
+    plot_bgcolor: 'transparent'
+  };
+
+  return (
+    <div style={{ width: '100%', height: '300px' }}>
+      <PlotlyChart data={plotData} layout={layout} config={{ responsive: true }} />
+    </div>
+  );
+};
+
+// Gauge dials for each stock (risk needle, return band)
+export const RiskReturnGaugeChart = ({ data = [], title = 'Risk Gauge Board' }) => {
+  if (!Array.isArray(data) || data.length === 0) return <p>No data</p>;
+  const colsBase=3;
+  const rows=Math.ceil(data.length/colsBase);
+  const width=1/colsBase;
+  const traces=data.map((d,i)=>{
+    const row=Math.floor(i/colsBase);
+    const gaugesInRow = row===rows-1 ? data.length - row*colsBase : colsBase;
+    const offset=(colsBase-gaugesInRow)*width/2;
+    const colIndex=i%colsBase;
+    const xStart=offset+colIndex*width;
+    const xEnd = xStart+width;
+    const yStart = 1 - (row+1)/rows;
+    const yEnd = yStart + 1/rows;
+    return {
+      type:'indicator',mode:'gauge+number',value:d.risk_score||0,
+      title:{text:d.symbol||`S${i+1}`,font:{color:'#e0e7ff'}},
+      gauge:{axis:{range:[0,100],tickcolor:'#6b7280'},bar:{color:'rgba(99,102,241,1)'},steps:[{range:[0,100],color:'rgba(255,255,255,0.06)'}]},
+      domain:{x:[xStart,xEnd],y:[yStart,yEnd]}
+    };});
+  const layout={title,height:rows*350,margin:{t:40},paper_bgcolor:'transparent',plot_bgcolor:'transparent',font:{color:'#e0e7ff'}};
+  return <PlotlyChart data={traces} layout={layout} config={{responsive:true}} />;
+};
+
+// Waffle matrix 10x10
+export const RiskReturnWaffleChart = ({ percentageGood=25,title='Risk Waffle' }) => {
+  const total=100;const good=Math.round(total*percentageGood/100);
+  const arr=[...Array(total)].map((_,i)=>({x:i%10,y:9-Math.floor(i/10),good:i<good}));
+  const data=[{x:arr.map(a=>a.x),y:arr.map(a=>a.y),mode:'markers',marker:{symbol:'square',size:20,color:arr.map(a=>a.good?'rgba(16,185,129,0.8)':'rgba(239,68,68,0.3)')},hoverinfo:'skip'}];
+  const layout={title,height:300,xaxis:{visible:false},yaxis:{visible:false},paper_bgcolor:'transparent',plot_bgcolor:'transparent'};
+  return <PlotlyChart data={data} layout={layout} config={{responsive:true}} />;
+};
+
+// Parallel coordinates
+export const RiskReturnParallelChart = ({ data=[], title='Risk vs Return Parallel' }) => {
+  if(data.length===0) return <p>No data</p>;
+  const trace={type:'parcoords',dimensions:[{label:'Risk',values:data.map(d=>d.risk_score||0)},{label:'Return',values:data.map(d=>d.return_potential||0)}],line:{color:'rgba(59,130,246,0.6)'}};
+  const layout={title,height:300,paper_bgcolor:'transparent',plot_bgcolor:'transparent'};
+  return <PlotlyChart data={[trace]} layout={layout} config={{responsive:true}} />;
+};
+
+// Swarm plot horizontally
+export const RiskReturnSwarmChart = ({ data=[], title='Risk Swarm' }) => {
+  if(data.length===0) return <p>No data</p>;
+  const jittered=data.map(d=>({x:d.risk_score||0,y:(Math.random()-0.5)*0.5}));
+  const trace={type:'scatter',mode:'markers',x:jittered.map(p=>p.x),y:jittered.map(p=>p.y),marker:{size:8,color:'rgba(99,102,241,0.8)'},hoverinfo:'x'};
+  const layout={title,height:200,yaxis:{visible:false},xaxis:{range:[0,100],title:'Risk'},paper_bgcolor:'transparent',plot_bgcolor:'transparent'};
+  return <PlotlyChart data={[trace]} layout={layout} config={{responsive:true}} />;
+};
+
 // Create a default export object with all chart components
 const AdvancedCharts = {
   StockHeatmap,
@@ -537,7 +929,18 @@ const AdvancedCharts = {
   MultiAxisFinancialChart,
   SectorRadarChart,
   TrendAnalysisChart,
-  FinancialHealthGauge
+  FinancialHealthGauge,
+  SectorThermometerBarChart,
+  SectorBullseyeChart,
+  RiskReturnBandChart,
+  RiskReturnArrowScatter,
+  RiskReturnQuadrantChart,
+  RiskReturnAnimatedChart,
+  RiskReturnViolinStripChart,
+  RiskReturnGaugeChart,
+  RiskReturnWaffleChart,
+  RiskReturnParallelChart,
+  RiskReturnSwarmChart
 };
 
 export default AdvancedCharts; 

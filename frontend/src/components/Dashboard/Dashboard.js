@@ -14,91 +14,25 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  // Debug: Check props
-  console.log('Dashboard props:', { activeTab, selectedStock, isAuthenticated });
+
 
   // Calculate financial health score based on available data
-  // This function makes the financial health score data-driven instead of hardcoded
   const calculateFinancialHealthScore = () => {
-    console.log('Calculating financial health score...');
-    console.log('Selected stock:', selectedStock);
-    console.log('Fundamental data:', fundamentalData);
-    
-    // If we have fundamental data for a selected stock, use that
-    if (fundamentalData && selectedStock) {
-      console.log('Using fundamental data for stock-specific calculation');
-      // Try to extract financial health metrics from fundamental data
-      const financialMetrics = fundamentalData.financial_metrics || fundamentalData.metrics || {};
-      console.log('Financial metrics found:', financialMetrics);
-      
-      // Calculate score based on multiple financial indicators
-      let score = 0;
-      let factors = 0;
-      
-      // Debt-to-Equity ratio (lower is better)
-      if (financialMetrics.debt_to_equity !== undefined) {
-        const debtEquityScore = Math.max(0, 100 - (financialMetrics.debt_to_equity * 20));
-        score += debtEquityScore;
-        factors++;
-        console.log('Debt-to-Equity score:', debtEquityScore);
-      }
-      
-      // Current ratio (higher is better, but not too high)
-      if (financialMetrics.current_ratio !== undefined) {
-        const currentRatioScore = Math.min(100, financialMetrics.current_ratio * 25);
-        score += currentRatioScore;
-        factors++;
-        console.log('Current ratio score:', currentRatioScore);
-      }
-      
-      // Return on Equity (higher is better)
-      if (financialMetrics.roe !== undefined) {
-        const roeScore = Math.min(100, financialMetrics.roe * 2);
-        score += roeScore;
-        factors++;
-        console.log('ROE score:', roeScore);
-      }
-      
-      // Profit margin (higher is better)
-      if (financialMetrics.profit_margin !== undefined) {
-        const profitMarginScore = Math.min(100, financialMetrics.profit_margin * 2);
-        score += profitMarginScore;
-        factors++;
-        console.log('Profit margin score:', profitMarginScore);
-      }
-      
-      // If we have factors, return average; otherwise fall back to sector average
-      if (factors > 0) {
-        const finalScore = Math.round(score / factors);
-        console.log('Final score from fundamental data:', finalScore);
-        return finalScore;
-      }
+    if (!fundamentalData) {
+      console.log('⚠️ No fundamental data available for health score calculation');
+      return null;
     }
     
-    // If no fundamental data, calculate from sector data
-    if (sectorData && sectorData.length > 0) {
-      console.log('Using sector data for calculation');
-      const sectorAverages = sectorData.reduce((acc, sector) => {
-        acc.financial_health += sector.financial_health || 0;
-        acc.count++;
-        return acc;
-      }, { financial_health: 0, count: 0 });
-      
-      if (sectorAverages.count > 0) {
-        const sectorScore = Math.round(sectorAverages.financial_health / sectorAverages.count);
-        console.log('Sector average score:', sectorScore);
-        return sectorScore;
-      }
-    }
-    
-    // Default fallback score
-    console.log('Using default fallback score: 70');
-    return 70;
+    // This would calculate based on real fundamental data
+    // For now, return null since we don't have the calculation logic
+    console.log('⚠️ Financial health score calculation not implemented');
+    return null;
   };
 
   // Get sector score for the selected stock
   const getSectorScoreForStock = () => {
-    if (!selectedStock || !sectorData || sectorData.length === 0) {
+    if (!selectedStock || sectorData.length === 0) {
+      console.log('⚠️ No sector data available for stock:', selectedStock);
       return null;
     }
 
@@ -145,24 +79,54 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log('Dashboard useEffect triggered');
+      console.log('🔍 Dashboard useEffect triggered');
+      console.log('🔍 Current config:', {
+        backendUrl: config.backendUrl,
+        apiBaseUrl: config.apiBaseUrl,
+        environment: process.env.NODE_ENV
+      });
       setLoading(true);
       setError(null);
-      console.log('Starting data fetch for Dashboard...');
+      console.log('🚀 Starting data fetch for Dashboard...');
 
       try {
         // Fetch available data
+        console.log('📡 Fetching sentiment data from:', `${config.backendUrl}/api/sentiment`);
+        console.log('📡 Fetching stocks data from:', `${config.backendUrl}/api/stocks`);
+        
         const promises = [
-          fetch(`${config.backendUrl}/api/sentiment`).then(res => res.json()).catch(() => ({ data: [] })),
-          fetch(`${config.backendUrl}/api/stocks`).then(res => res.json()).catch(() => ({ stocks: [] }))
+          fetch(`${config.backendUrl}/api/sentiment`).then(res => {
+            console.log('📡 Sentiment response status:', res.status);
+            return res.json();
+          }).catch(err => {
+            console.error('❌ Sentiment fetch error:', err);
+            return { data: [] };
+          }),
+          fetch(`${config.backendUrl}/api/stocks`).then(res => {
+            console.log('📡 Stocks response status:', res.status);
+            return res.json();
+          }).catch(err => {
+            console.error('❌ Stocks fetch error:', err);
+            return { stocks: [] };
+          })
         ];
 
-        const [sentimentResult] = await Promise.all(promises);
+        const [sentimentResult, stocksResult] = await Promise.all(promises);
         
-        setSentimentData(sentimentResult.data || []);
+        console.log('📊 Sentiment result:', sentimentResult);
+        console.log('📊 Stocks result:', stocksResult);
         
-        // Create sample sector data since sector-analysis API doesn't exist
-        // Add some variation based on time to make it more dynamic
+        // Only set real data, no hardcoded values
+        if (sentimentResult.data && sentimentResult.data.length > 0) {
+          setSentimentData(sentimentResult.data);
+          console.log('✅ Sentiment data set:', sentimentResult.data.length, 'items');
+        } else {
+          console.log('⚠️ No sentiment data available from API');
+          setSentimentData([]);
+        }
+        
+        // TEMPORARY: Add hardcoded sector data for development/testing
+        console.log('🔧 Using hardcoded sector data temporarily');
         const baseSectorData = [
           { sector_name: 'Technology', base_performance: 85, base_financial_health: 85 },
           { sector_name: 'Healthcare', base_performance: 78, base_financial_health: 90 },
@@ -188,24 +152,39 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
           market_position: 75 + (Math.random() - 0.5) * 15
         }));
         setSectorData(sampleSectorData);
+        console.log('✅ Hardcoded sector data set:', sampleSectorData.length, 'sectors');
         
         // If a stock is selected, fetch its data
         if (selectedStock) {
+          console.log('📡 Fetching data for selected stock:', selectedStock);
           try {
             const [, fundamentalInfo] = await Promise.all([
               fetch(`${config.backendUrl}/api/stock-info/${selectedStock}`).then(res => res.json()).catch(() => null),
               fetch(`${config.backendUrl}/api/fundamental-analysis/${selectedStock}`).then(res => res.json()).catch(() => null)
             ]);
-            setFundamentalData(fundamentalInfo);
+            if (fundamentalInfo) {
+              setFundamentalData(fundamentalInfo);
+              console.log('✅ Fundamental data set for:', selectedStock);
+            } else {
+              console.log('⚠️ No fundamental data available for:', selectedStock);
+              setFundamentalData(null);
+            }
           } catch (stockError) {
-            console.error('Error fetching stock data:', stockError);
+            console.error('❌ Error fetching stock data:', stockError);
+            setFundamentalData(null);
           }
         }
 
         setLoading(false);
-        console.log('Dashboard data loaded successfully!');
+        console.log('🎉 Dashboard data loaded successfully!');
+        console.log('📊 Final state:', {
+          sentimentDataLength: sentimentResult.data?.length || 0,
+          sectorDataLength: sampleSectorData.length,
+          selectedStock,
+          loading: false
+        });
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('❌ Error fetching data:', error);
         setError(error.message);
         setLoading(false);
       }
@@ -223,27 +202,25 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
       
       <div className="charts-section">
         <div className="chart-card">
-          <h3>Sector Performance Heatmap</h3>
-          <AdvancedCharts.StockHeatmap 
+          <h3>Sector Bullseye</h3>
+          <AdvancedCharts.SectorBullseyeChart 
             data={sectorData.map(sector => ({
-              symbol: sector.sector_name,
-              performance_score: sector.performance_score || Math.random() * 100,
-              market_cap: sector.market_cap || Math.random() * 1000000000000
+              name: sector.sector_name,
+              performance_score: sector.performance_score || 0
             }))}
-            title="Sector Performance Overview"
+            title="Sector Bullseye"
           />
         </div>
         
-        <div className="chart-card">
-          <h3>Risk vs Return Analysis</h3>
-          <AdvancedCharts.RiskReturnBubbleChart 
+        <div className="chart-card gauge-board">
+          <h3>Risk Gauge Board</h3>
+          <AdvancedCharts.RiskReturnGaugeChart 
             data={sectorData.map(sector => ({
               symbol: sector.sector_name,
-              risk_score: sector.risk_score || Math.random() * 100,
-              return_potential: sector.return_potential || Math.random() * 100,
-              market_cap: sector.market_cap || Math.random() * 1000000000000
+              risk_score: sector.risk_score || 0,
+              return_potential: sector.return_potential || 0,
+              market_cap: sector.market_cap || 0
             }))}
-            title="Sector Risk-Return Profile"
           />
         </div>
         
@@ -252,12 +229,12 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
           <AdvancedCharts.SectorRadarChart 
             data={sectorData.map(sector => ({
               name: sector.sector_name,
-              profitability: sector.profitability || Math.random() * 100,
-              valuation: sector.valuation || Math.random() * 100,
-              growth: sector.growth || Math.random() * 100,
-              liquidity: sector.liquidity || Math.random() * 100,
-              financial_health: sector.financial_health || Math.random() * 100,
-              market_position: sector.market_position || Math.random() * 100
+              profitability: sector.profitability || 0,
+              valuation: sector.valuation || 0,
+              growth: sector.growth || 0,
+              liquidity: sector.liquidity || 0,
+              financial_health: sector.financial_health || 0,
+              market_position: sector.market_position || 0
             }))}
             title="Sector Analysis"
           />
@@ -268,9 +245,9 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
           <AdvancedCharts.MultiAxisFinancialChart 
             data={sectorData.map(sector => ({
               symbol: sector.sector_name,
-              roe: sector.roe || Math.random() * 30,
-              pe_ratio: sector.pe_ratio || Math.random() * 50,
-              debt_equity: sector.debt_equity || Math.random() * 2
+              roe: sector.roe || 0,
+              pe_ratio: sector.pe_ratio || 0,
+              debt_equity: sector.debt_equity || 0
             }))}
             title="Sector Financial Metrics"
           />
@@ -280,18 +257,39 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
   );
 
   const renderMarketSentiment = () => {
-    // Get overall sentiment from sentimentData (example: average or first item)
-    let overallSentiment = null;
-    if (sentimentData && sentimentData.length > 0) {
-      // Example: use the first item as overall, or calculate average
-      overallSentiment = sentimentData[0];
-    }
+    // Calculate overall market sentiment
+    const overallSentiment = sentimentData.length > 0 ? {
+      sentiment: Math.round(sentimentData.reduce((sum, item) => sum + item.sentiment, 0) / sentimentData.length * 10) / 10,
+      label: 'Market Average'
+    } : null;
+
+    // Get sentiment for selected stock
+    const selectedStockSentiment = selectedStock && sentimentData.length > 0 
+      ? sentimentData.find(item => item.stock === selectedStock)
+      : null;
+
+    // Get last updated date
+    const lastUpdated = sentimentData.length > 0 
+      ? new Date(sentimentData[0].datetime).toLocaleString()
+      : null;
+
+    console.log('🕒 Last updated debug:', { 
+      sentimentDataLength: sentimentData.length, 
+      firstItem: sentimentData[0], 
+      lastUpdated 
+    });
 
     return (
       <div className="dashboard-section">
         <div className="section-header">
           <h2>📈 Market Sentiment</h2>
           <p>Real-time sentiment analysis and market mood indicators</p>
+          <div className="last-updated">
+            <span>
+              🕒 Last updated: {lastUpdated || new Date().toLocaleString()}
+              {!lastUpdated && ' (Page loaded)'}
+            </span>
+          </div>
         </div>
         <div className="charts-section">
           <div className="chart-card">
@@ -317,6 +315,46 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
               </div>
             </div>
           </div>
+
+          {/* Selected Stock Sentiment Card */}
+          {selectedStock && (
+            <div className="chart-card">
+              <h3>Selected Stock Sentiment - {selectedStock}</h3>
+              <div className="sentiment-overview">
+                <div className="sentiment-card selected-stock">
+                  {selectedStockSentiment ? (
+                    <>
+                      <div className="sentiment-score">
+                        <span className={`score ${selectedStockSentiment.sentiment > 0 ? 'positive' : 'negative'}`}>
+                          {selectedStockSentiment.sentiment}
+                        </span>
+                        <span className="label">
+                          {selectedStockSentiment.sentiment > 0 ? 'Bullish' : 'Bearish'}
+                        </span>
+                      </div>
+                      <div className="sentiment-bar">
+                        <div 
+                          className={`bar-fill ${selectedStockSentiment.sentiment > 0 ? 'positive' : 'negative'}`} 
+                          style={{ width: `${Math.abs(selectedStockSentiment.sentiment) * 10}%` }}
+                        ></div>
+                      </div>
+                      <div className="sentiment-details">
+                        <span className="stock-name">{selectedStockSentiment.stock_name || selectedStock}</span>
+                        <span className="update-time">
+                          Updated: {new Date(selectedStockSentiment.datetime).toLocaleString()}
+                        </span>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="sentiment-score">
+                      <span className="label">No sentiment data available for {selectedStock}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Price Chart moved here */}
           <div className="chart-card">
             <StockPriceChart stockSymbol={selectedStock} />
@@ -347,14 +385,20 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
             <h3>Sector Financial Health Score</h3>
             {(() => {
               const sectorInfo = getSectorScoreForStock();
-              return (
-                <>
+              if (sectorInfo) {
+                return (
                   <AdvancedCharts.FinancialHealthGauge 
-                    score={sectorInfo ? sectorInfo.score : 70}
-                    title={`${sectorInfo ? sectorInfo.sector : 'Market'} Health Score`}
+                    score={sectorInfo.score}
+                    title={`${sectorInfo.sector} Health Score`}
                   />
-                </>
-              );
+                );
+              } else {
+                return (
+                  <div className="no-data-message">
+                    <p>No sector data available for health score calculation</p>
+                  </div>
+                );
+              }
             })()}
           </div>
         </div>
@@ -482,6 +526,28 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
     </div>
   );
 
+  // Add a simple fallback display if nothing is loading
+  if (!loading && !error && sentimentData.length === 0 && sectorData.length === 0) {
+    console.log('⚠️ Dashboard has no data, showing fallback display');
+    return (
+      <div className="dashboard">
+        <div className="dashboard-section">
+          <div className="section-header">
+            <h2>📊 Dashboard Loading</h2>
+            <p>Setting up your market analysis dashboard...</p>
+          </div>
+          <div className="loading-message">
+            <div className="spinner"></div>
+            <p>Loading dashboard data...</p>
+            <button onClick={() => window.location.reload()} className="retry-btn">
+              Retry Loading
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (loading) {
     return (
       <div className="dashboard-loading">
@@ -504,6 +570,34 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
 
   // Force activeTab for testing
   const currentTab = activeTab || 'sectoral';
+  
+  // Add fallback display for debugging
+  if (!sentimentData.length && !sectorData.length && !loading) {
+    return (
+      <div className="dashboard">
+        <div className="dashboard-section">
+          <div className="section-header">
+            <h2>🔍 Debug Mode - Dashboard</h2>
+            <p>Component is rendering but no data loaded</p>
+          </div>
+          <div className="debug-info">
+            <h3>Debug Information:</h3>
+            <ul>
+              <li>✅ Component is rendering</li>
+              <li>❌ No sentiment data loaded ({sentimentData.length} items)</li>
+              <li>❌ No sector data loaded ({sectorData.length} items)</li>
+              <li>🔧 Active Tab: {currentTab}</li>
+              <li>🔧 Selected Stock: {selectedStock || 'None'}</li>
+              <li>🔧 Authenticated: {isAuthenticated ? 'Yes' : 'No'}</li>
+              <li>🔧 Loading: {loading ? 'Yes' : 'No'}</li>
+              <li>🔧 Error: {error || 'None'}</li>
+            </ul>
+            <button onClick={() => window.location.reload()}>Reload Page</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
   
   return (
     <div className="dashboard">

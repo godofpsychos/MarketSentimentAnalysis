@@ -4,109 +4,94 @@ import './Layout.css';
 import Dashboard from '../Dashboard/Dashboard';
 import config from '../../config/config';
 
-const Layout = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+const Layout = ({ 
+  children, 
+  isAuthenticated: authFromProps, 
+  activeTab: activeTabProp, 
+  selectedStock: selectedStockProp,
+  onTabChange,
+  onStockChange
+}) => {
   const [user, setUser] = useState(null);
-  const [activeTab, setActiveTab] = useState('sectoral');
-  const [selectedStock, setSelectedStock] = useState('');
   const [stocks, setStocks] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Use authentication state from props instead of managing it here
+  const isAuthenticated = authFromProps;
+
   useEffect(() => {
-    const checkAuth = () => {
-      const token = localStorage.getItem('token');
+    if (isAuthenticated) {
+      // Load user data when authenticated
       const userData = localStorage.getItem('user');
-      
-      console.log('Layout checkAuth:', { token: !!token, userData: !!userData });
-      
-      if (token && userData) {
-        setIsAuthenticated(true);
-        setUser(JSON.parse(userData));
-        // Set initial active tab to sectoral when authenticated
-        setActiveTab('sectoral');
-        // Open sidebar by default when authenticated
-        setSidebarOpen(true);
-        console.log('User authenticated, setting activeTab to sectoral');
-      } else {
-        setIsAuthenticated(false);
-        setUser(null);
-        setSidebarOpen(false);
-        console.log('User not authenticated');
+      if (userData) {
+        try {
+          setUser(JSON.parse(userData));
+          setSidebarOpen(true);
+          console.log('✅ User loaded from storage:', JSON.parse(userData));
+        } catch (error) {
+          console.error('❌ Error parsing user data:', error);
+        }
       }
-    };
-
-    checkAuth();
-  }, []);
+    } else {
+      // Clear user data when not authenticated
+      setUser(null);
+      setSidebarOpen(false);
+      console.log('🚫 User not authenticated, clearing data');
+      
+      // If we're on a protected route, redirect to home
+      if (location.pathname === '/dashboard') {
+        console.log('🔄 Redirecting to home after logout');
+        navigate('/', { replace: true });
+      }
+    }
+  }, [isAuthenticated, location.pathname, navigate]);
 
   useEffect(() => {
-    // Fetch stocks for dropdown
+    // Fetch stocks for dropdown only when authenticated
     const fetchStocks = async () => {
+      if (!isAuthenticated) return;
+      
       try {
+        console.log('📡 Fetching stocks for dropdown...');
         const response = await fetch(`${config.backendUrl}/api/stocks`);
         if (response.ok) {
           const data = await response.json();
           setStocks(data.stocks || []);
+          console.log('✅ Stocks loaded:', data.stocks?.length || 0, 'items');
+        } else {
+          console.error('❌ Failed to fetch stocks:', response.status);
         }
       } catch (error) {
-        console.error('Error fetching stocks:', error);
+        console.error('❌ Error fetching stocks:', error);
       }
     };
 
-    if (isAuthenticated) {
-      fetchStocks();
-    }
+    fetchStocks();
   }, [isAuthenticated]);
-
-  // Update active tab when location changes
-  useEffect(() => {
-    if (isAuthenticated && location.pathname === '/dashboard') {
-      // Keep the current active tab when on dashboard
-    }
-  }, [location.pathname, isAuthenticated]);
-
-  // Listen for authentication state changes
-  useEffect(() => {
-    const handleStorageChange = (e) => {
-      if (e.key === 'token' || e.key === 'user') {
-        const token = localStorage.getItem('token');
-        const userData = localStorage.getItem('user');
-        
-        if (token && userData) {
-          setIsAuthenticated(true);
-          setUser(JSON.parse(userData));
-          setActiveTab('sectoral');
-          setSidebarOpen(true);
-        } else {
-          setIsAuthenticated(false);
-          setUser(null);
-          setSidebarOpen(false);
-        }
-      }
-    };
-
-    window.addEventListener('storage', handleStorageChange);
-    return () => window.removeEventListener('storage', handleStorageChange);
-  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    setIsAuthenticated(false);
     setUser(null);
     setSidebarOpen(false);
-    navigate('/');
+    console.log('🚪 User logged out');
+    
+    // Dispatch custom logout event
+    window.dispatchEvent(new Event('logout'));
+    
+    // Navigate to home page
+    navigate('/', { replace: true });
   };
 
   const handleTabChange = (tab) => {
-    setActiveTab(tab);
-    // Navigate to dashboard when switching tabs
+    onTabChange(tab);
     navigate('/dashboard');
   };
 
   const handleStockChange = (event) => {
-    setSelectedStock(event.target.value);
+    onStockChange(event.target.value);
   };
 
   const toggleSidebar = () => {
@@ -150,14 +135,14 @@ const Layout = ({ children }) => {
     return (
       <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-header">
-          <h3>Market Sentiment</h3>
+          <h3>Dashboard</h3>
         </div>
         
         <div className="stock-selector">
           <label htmlFor="stock-select">Select Stock:</label>
           <select 
             id="stock-select" 
-            value={selectedStock} 
+            value={selectedStockProp} 
             onChange={handleStockChange}
             className="stock-dropdown"
           >
@@ -172,7 +157,7 @@ const Layout = ({ children }) => {
           {tabs.map(tab => (
             <button
               key={tab.key}
-              className={`sidebar-tab ${activeTab === tab.key ? 'active' : ''}`}
+              className={`sidebar-tab ${activeTabProp === tab.key ? 'active' : ''}`}
               onClick={() => handleTabChange(tab.key)}
             >
               <span className="tab-icon">{tab.icon}</span>
@@ -185,31 +170,14 @@ const Layout = ({ children }) => {
   };
 
   const renderContent = () => {
-    console.log('Layout renderContent:', { 
+    console.log('🔍 Layout renderContent:', { 
       isAuthenticated, 
       pathname: location.pathname, 
-      activeTab, 
-      selectedStock 
+      activeTab: activeTabProp, 
+      selectedStock: selectedStockProp 
     });
 
-    // If not authenticated, show the children (Home, SignIn, SignUp)
-    if (!isAuthenticated) {
-      return children;
-    }
-
-    // If authenticated and on dashboard route, show Dashboard with props
-    if (location.pathname === '/dashboard') {
-      console.log('Rendering Dashboard with props:', { activeTab, selectedStock, isAuthenticated });
-      return (
-        <Dashboard 
-          activeTab={activeTab} 
-          selectedStock={selectedStock} 
-          isAuthenticated={isAuthenticated} 
-        />
-      );
-    }
-
-    // For other authenticated routes, just show children
+    // Always render children - the App component handles routing
     return children;
   };
 
@@ -219,7 +187,7 @@ const Layout = ({ children }) => {
         <div className="header-content">
           <div className="header-left">
             <div className="logo">
-              <h1>Market Sentiment Analysis</h1>
+              <h1>Stock Analysis</h1>
             </div>
           </div>
           <div className="header-right">

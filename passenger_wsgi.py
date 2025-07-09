@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Passenger WSGI file for cPanel deployment
-This file is used by cPanel's Passenger application server
+WSGI entry point for Market Sentiment Analysis API
+This file is used by WSGI servers like Gunicorn or uWSGI
 """
 
 import os
@@ -10,15 +10,15 @@ import sys
 # Add the current directory to Python path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# Set environment variables for cPanel
-os.environ.setdefault('FLASK_ENV', 'production')
-os.environ.setdefault('BASE_DIR', os.path.dirname(os.path.abspath(__file__)))
-
-# Import the Flask app
+# Import the Flask app from backend_api
 from backend_api import app
 
-# For Passenger
+# For WSGI servers
 application = app
 
-if __name__ == '__main__':
-    app.run() 
+if __name__ == "__main__":
+    # For development
+    host = os.getenv('HOST', '0.0.0.0')
+    port = int(os.getenv('PORT', 5000))
+    debug = os.getenv('DEBUG', 'False').lower() == 'true'
+    application.run(debug=debug, host=host, port=port) 

@@ -60,7 +60,8 @@
 /* Charts Section */
 .charts-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  /* Force single-column layout so each card gets its own row */
+  grid-template-columns: 1fr;
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -72,7 +73,9 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
-  min-height: 400px;
+  min-height: 300px;
+  max-height: 500px;
+  /* Remove overflow clipping to ensure full chart visible */
 }
 
 .chart-card:hover {
@@ -101,6 +104,11 @@
   height: 2px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 1px;
+}
+
+.chart-card.gauge-board {
+  max-height: none;
+  min-height: 700px;
 }
 
 /* Sentiment Overview */
@@ -445,4 +453,61 @@
   .chart-card h3 {
     font-size: 1.1rem;
   }
-} 
+}
+
+/* Make Plotly svg container fill its parent */
+.gauge-board .svg-container {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Last updated indicator */
+.last-updated {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.last-updated span {
+  background: rgba(79, 70, 229, 0.1);
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(79, 70, 229, 0.3);
+  color: #4F46E5;
+  font-weight: 500;
+  font-style: normal;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Selected stock sentiment card */
+.sentiment-card.selected-stock {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(16, 185, 129, 0.1));
+  border: 2px solid rgba(79, 70, 229, 0.3);
+}
+
+.sentiment-details {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.sentiment-details .stock-name {
+  font-weight: 600;
+  color: #4F46E5;
+}
+
+.sentiment-details .update-time {
+  color: #666;
+  font-size: 12px;
+  font-style: italic;
+}
+
+ 

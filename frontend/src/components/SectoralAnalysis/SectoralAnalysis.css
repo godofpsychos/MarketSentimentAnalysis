@@ -227,7 +227,8 @@
 /* Sectoral Grid */
 .sectoral-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  /* Force single-column layout so each card gets its own row */
+  grid-template-columns: 1fr;
   gap: 2.5rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -244,8 +245,8 @@
     0 30px 60px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.1);
   position: relative;
-  overflow: hidden;
   transition: all 0.3s ease;
+  max-height: 500px;
 }
 
 .sector-card:hover {

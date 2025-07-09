@@ -20,7 +20,9 @@
     "react-router-dom": "^7.6.3",
     "react-scripts": "5.0.1",
     "recharts": "^2.15.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "plotly.js-dist-min": "^2.29.0",
+    "react-plotly.js": "^2.5.1"
   },
   "scripts": {
     "start": "react-scripts start",

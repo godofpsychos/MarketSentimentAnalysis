@@ -1,11 +1,1 @@
-RewriteEngine On
-
-# Route /backend/ requests to the Python backend via Passenger
-# Strip the /backend prefix so Flask receives /api/... instead of /backend/api/...
-RewriteCond %{REQUEST_URI} ^/backend/
-RewriteRule ^backend/(.*)$ /passenger_wsgi.py/$1 [L]
-
-# For all other requests, serve the React app
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L] 
+# Main .htaccess file - cleared to avoid conflicts
