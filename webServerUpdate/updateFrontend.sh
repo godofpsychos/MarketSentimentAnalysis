@@ -17,3 +17,4 @@ scp /home/tarun/MarketSentimentAnalysis/frontend/.htaccess yz4vjeb32sbi@184.168.
 
 # ssh yz4vjeb32sbi@184.168.109.166
 
+/home/tarun/MarketSentimentAnalysis/webServerUpdate/updateHtaccess.sh
