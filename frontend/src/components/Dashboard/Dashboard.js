@@ -201,6 +201,61 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
       </div>
       
       <div className="charts-section">
+        {/* Moved Market Sentiment Overview here */}
+        <div className="chart-card">
+          <h3>Market Sentiment Overview</h3>
+          <div className="sentiment-overview">
+            <div className="sentiment-card overall">
+              <h3>Overall Market Sentiment</h3>
+              {sentimentData.length > 0 ? (
+                (() => {
+                  const overallSentiment = {
+                    sentiment: Math.round(sentimentData.reduce((sum, item) => sum + item.sentiment, 0) / sentimentData.length * 10) / 10,
+                    label: 'Market Average'
+                  };
+                  return (
+                    <>
+                      <div className="sentiment-score">
+                        <span className={`score ${overallSentiment.sentiment > 0 ? 'positive' : 'negative'}`}>{overallSentiment.sentiment}</span>
+                        <span className="label">{overallSentiment.label || (overallSentiment.sentiment > 0 ? 'Bullish' : 'Bearish')}</span>
+                      </div>
+                      <div className="sentiment-bar">
+                        <div className={`bar-fill ${overallSentiment.sentiment > 0 ? 'positive' : 'negative'}`} style={{ width: `${Math.abs(overallSentiment.sentiment) * 10}%` }}></div>
+                      </div>
+                    </>
+                  );
+                })()
+              ) : (
+                <div className="sentiment-score">
+                  <span className="label">No sentiment data available</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        {/* Top Stocks by Sentiment */}
+        <div className="chart-card">
+          <h3>Top Stocks by Sentiment</h3>
+          <div className="stock-sentiment-list">
+            {sentimentData && sentimentData.length > 0 ? (
+              sentimentData.slice(0, 10).map((item, index) => (
+                <div key={index} className="stock-sentiment-item">
+                  <div className="stock-info">
+                    <span className="stock-symbol">{item.stock}</span>
+                    <span className="stock-name">{item.stock_name || item.stock}</span>
+                  </div>
+                  <div className="sentiment-indicator">
+                    <span className={`sentiment-value ${item.sentiment > 0 ? 'positive' : 'negative'}`}>{item.sentiment}</span>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="stock-sentiment-item">
+                <span className="label">No sentiment data available</span>
+              </div>
+            )}
+          </div>
+        </div>
         <div className="chart-card">
           <h3>Sector Bullseye</h3>
           <AdvancedCharts.SectorBullseyeChart 
@@ -292,30 +347,6 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
           </div>
         </div>
         <div className="charts-section">
-          <div className="chart-card">
-            <h3>Market Sentiment Overview</h3>
-            <div className="sentiment-overview">
-              <div className="sentiment-card overall">
-                <h3>Overall Market Sentiment</h3>
-                {overallSentiment ? (
-                  <>
-                    <div className="sentiment-score">
-                      <span className={`score ${overallSentiment.sentiment > 0 ? 'positive' : 'negative'}`}>{overallSentiment.sentiment}</span>
-                      <span className="label">{overallSentiment.label || (overallSentiment.sentiment > 0 ? 'Bullish' : 'Bearish')}</span>
-                    </div>
-                    <div className="sentiment-bar">
-                      <div className={`bar-fill ${overallSentiment.sentiment > 0 ? 'positive' : 'negative'}`} style={{ width: `${Math.abs(overallSentiment.sentiment) * 10}%` }}></div>
-                    </div>
-                  </>
-                ) : (
-                  <div className="sentiment-score">
-                    <span className="label">No sentiment data available</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
           {/* Selected Stock Sentiment Card */}
           {selectedStock && (
             <div className="chart-card">
@@ -358,28 +389,6 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated }) => {
           {/* Price Chart moved here */}
           <div className="chart-card">
             <StockPriceChart stockSymbol={selectedStock} />
-          </div>
-          <div className="chart-card">
-            <h3>Top Stocks by Sentiment</h3>
-            <div className="stock-sentiment-list">
-              {sentimentData && sentimentData.length > 0 ? (
-                sentimentData.slice(0, 10).map((item, index) => (
-                  <div key={index} className="stock-sentiment-item">
-                    <div className="stock-info">
-                      <span className="stock-symbol">{item.stock}</span>
-                      <span className="stock-name">{item.stock_name || item.stock}</span>
-                    </div>
-                    <div className="sentiment-indicator">
-                      <span className={`sentiment-value ${item.sentiment > 0 ? 'positive' : 'negative'}`}>{item.sentiment}</span>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div className="stock-sentiment-item">
-                  <span className="label">No sentiment data available</span>
-                </div>
-              )}
-            </div>
           </div>
           <div className="chart-card">
             <h3>Sector Financial Health Score</h3>

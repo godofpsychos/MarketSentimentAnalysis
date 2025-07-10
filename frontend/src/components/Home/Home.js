@@ -24,8 +24,8 @@ const Home = () => {
               <span className="title-line">Analysis</span>
             </h1>
             <p className="hero-subtitle">
-              Unlock the power of AI-driven market insights. Analyze sentiment, track trends, 
-              and make informed investment decisions with our advanced analytics platform.
+            AI Eyes on Your Investments
+            Let AI monitor your portfolio and deliver smart, timely investment suggestions.
             </p>
             <div className="hero-buttons">
               <Link to="/signup" className="cta-button primary">

@@ -103,6 +103,9 @@ const Layout = ({
       return (
         <div className="auth-buttons">
           <span className="user-name">Hi, {user?.name || 'User'}</span>
+          <button className="settings-btn" onClick={() => handleTabChange('settings')} title="User Settings">
+            <span role="img" aria-label="settings">⚙️</span>
+          </button>
           <button className="logout-btn" onClick={handleLogout}>
             Logout
           </button>
@@ -128,8 +131,8 @@ const Layout = ({
     const tabs = [
       { key: 'sectoral', label: 'Sector View', icon: '📊' },
       { key: 'market', label: 'Market Sentiment', icon: '📈' },
-      { key: 'fundamental', label: 'Fundamental Analysis', icon: '📋' },
-      { key: 'settings', label: 'User Settings', icon: '⚙️' }
+      { key: 'fundamental', label: 'Fundamental Analysis', icon: '📋' }
+      // Removed settings tab
     ];
 
     return (
@@ -137,7 +140,6 @@ const Layout = ({
         <div className="sidebar-header">
           <h3>Dashboard</h3>
         </div>
-        
         <div className="stock-selector">
           <label htmlFor="stock-select">Select Stock:</label>
           <select 
@@ -152,7 +154,6 @@ const Layout = ({
             ))}
           </select>
         </div>
-
         <nav className="sidebar-nav">
           {tabs.map(tab => (
             <button
@@ -176,7 +177,6 @@ const Layout = ({
       activeTab: activeTabProp, 
       selectedStock: selectedStockProp 
     });
-
     // Always render children - the App component handles routing
     return children;
   };
@@ -186,8 +186,8 @@ const Layout = ({
       <header className="header">
         <div className="header-content">
           <div className="header-left">
-            <div className="logo">
-              <h1>Stock Analysis</h1>
+            <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <img src="/FullLogo_NoBuffer.png" alt="Logo" style={{ height: '68px', width: 'auto', maxWidth: '300px' }} />
             </div>
           </div>
           <div className="header-right">
@@ -204,7 +204,6 @@ const Layout = ({
           </div>
         </div>
       </header>
-
       <div className="main-content">
         {renderSidebar()}
         <main className={`content ${sidebarOpen && isAuthenticated ? 'with-sidebar' : ''}`}>
@@ -215,4 +214,4 @@ const Layout = ({
   );
 };
 
-export default Layout; 
+export default Layout;

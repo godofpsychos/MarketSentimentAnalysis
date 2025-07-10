@@ -10,7 +10,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 function App() {
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [activeTab, setActiveTab] = useState('sectoral');
+  const [activeTab, setActiveTab] = useState('market');
   const [selectedStock, setSelectedStock] = useState('');
 
   useEffect(() => {
