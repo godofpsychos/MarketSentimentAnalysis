@@ -1,5 +1,6 @@
 #!/bin/bash
 # Start the scrapper service
+source /home/tarun/MarketSentimentAnalysis/.venv/bin/activate
 cd "$(dirname "$0")" || exit 1
 mkdir -p LOGS_APP
 echo "Starting web scrapper service..."
@@ -35,6 +36,8 @@ python3 saveResults.py > ../LOGS_APP/output_save_results.txt 2>&1 &
 SAVE_RESULTS_PID=$!
 echo "Save results service started with PID: $SAVE_RESULTS_PID"
 wait $SAVE_RESULTS_PID  
+
+/home/tarun/MarketSentimentAnalysis/webServerUpdate/updateDB.sh
 
 echo "All services ran successfully!"
 echo "Log files:"

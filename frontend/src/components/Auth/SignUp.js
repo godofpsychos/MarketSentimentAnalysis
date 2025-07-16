@@ -121,7 +121,7 @@ const SignUp = () => {
           </div>
         )}
         
-        <form onSubmit={handleEmailSignUp} className="auth-form">
+        <form onSubmit={handleEmailSignUp} className="auth-form" autoComplete="on">
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
             <input
@@ -131,6 +131,7 @@ const SignUp = () => {
               value={formData.name}
               onChange={handleInputChange}
               placeholder="Enter your full name"
+              autoComplete="name"
               required
             />
           </div>
@@ -144,6 +145,7 @@ const SignUp = () => {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Enter your email"
+              autoComplete="username"
               required
             />
           </div>
@@ -158,6 +160,7 @@ const SignUp = () => {
                 value={formData.password}
                 onChange={handleInputChange}
                 placeholder="Create a password (min 8 characters)"
+                autoComplete="new-password"
                 required
               />
               <button
@@ -181,6 +184,7 @@ const SignUp = () => {
                 value={formData.confirmPassword}
                 onChange={handleInputChange}
                 placeholder="Confirm your password"
+                autoComplete="new-password"
                 required
               />
               <button

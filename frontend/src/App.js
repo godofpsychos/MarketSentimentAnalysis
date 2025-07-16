@@ -10,7 +10,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 function App() {
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [activeTab, setActiveTab] = useState('market');
+  const [activeTab, setActiveTab] = useState('portfolio');
   const [selectedStock, setSelectedStock] = useState('');
 
   useEffect(() => {
@@ -58,6 +58,7 @@ function App() {
   // Handle stock selection from Layout
   const handleStockChange = (stock) => {
     setSelectedStock(stock);
+    handleTabChange('market');
   };
 
   // Protected Route Component
@@ -146,6 +147,8 @@ function App() {
                   activeTab={activeTab}
                   selectedStock={selectedStock}
                   isAuthenticated={isAuthenticated}
+                  onTabChange={handleTabChange}
+                  onStockChange={handleStockChange}
                 />
               </ProtectedRoute>
             } 

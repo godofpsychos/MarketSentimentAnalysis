@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2024-12-30T01:59:41Z",
   "timeframe": "1w",
+  "lastFetched": "{db_last_updated_timestamp}",
   "sectors": [
     {
       "id": "technology",

@@ -17,6 +17,9 @@ import requests
 from functools import wraps
 from dotenv import load_dotenv
 
+# Import portfolio API
+from db.portfolio_api import portfolio_api
+
 # Load environment variables
 load_dotenv()
 
@@ -82,6 +85,11 @@ STOCKS_LIST_PATH = os.getenv('STOCKS_LIST_PATH', os.path.join(BASE_DIR, 'stocksL
 NEWS_JSON_PATH = os.getenv('NEWS_JSON_PATH', os.path.join(BASE_DIR, 'news.json'))
 RECENT_NEWS_PATH = os.getenv('RECENT_NEWS_PATH', os.path.join(BASE_DIR, 'insightGen', 'recent_news.json'))
 SENTIMENT_RESULTS_PATH = os.getenv('SENTIMENT_RESULTS_PATH', os.path.join(BASE_DIR, 'Sentiment_Analysis', 'sentiment_analysis_results.json'))
+
+# Stock News Database Configuration
+STOCK_NEWS_DB_PATH = os.getenv('STOCK_NEWS_DB_PATH', os.path.join(BASE_DIR, 'db', 'stock_news.db'))
+
+
 
 # Initialize auth database
 def init_auth_db():
@@ -320,6 +328,34 @@ def get_sentiment():
         
         conn.close()
         return jsonify({"data": results})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/sentiment-db-timestamp', methods=['GET'])
+def get_sentiment_db_timestamp():
+    """Get the timestamp of when the sentiment analysis database was last modified"""
+    try:
+        # Check if the database file exists
+        if not os.path.exists(DB_PATH):
+            return jsonify({"error": "Sentiment analysis database not found"}), 404
+        
+        # Get the file modification time
+        modification_time = os.path.getmtime(DB_PATH)
+        
+        # Convert to datetime object
+        modification_datetime = datetime.fromtimestamp(modification_time)
+        
+        # Format the timestamp
+        formatted_timestamp = modification_datetime.isoformat()
+        
+        return jsonify({
+            "database_path": DB_PATH,
+            "last_modified": formatted_timestamp,
+            "unix_timestamp": modification_time,
+            "human_readable": modification_datetime.strftime("%Y-%m-%d %H:%M:%S"),
+            "timezone": "UTC"
+        })
+        
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -1712,6 +1748,486 @@ def get_sectoral_analysis():
         
         return jsonify(sector_data)
         
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/stock-news/<stock_symbol>', methods=['GET'])
+def get_stock_news(stock_symbol):
+    """Get latest news for a specific stock from database, sorted by timestamp in sets of 5"""
+    try:
+        # Get pagination parameters
+        page = int(request.args.get('page', 1))
+        per_page = int(request.args.get('per_page', 5))
+        
+        # Calculate offset
+        offset = (page - 1) * per_page
+        
+        # Get company name for display
+        company_name = get_company_name(stock_symbol)
+        
+        # Check if database exists
+        if not os.path.exists(STOCK_NEWS_DB_PATH):
+            return jsonify({
+                'error': 'Stock news database not found',
+                'message': 'Please ensure the stock_news.db file exists in the db directory'
+            }), 404
+        
+        # Connect to stock news database
+        conn = sqlite3.connect(STOCK_NEWS_DB_PATH)
+        cursor = conn.cursor()
+        
+        # Get table info to understand the structure
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        tables = cursor.fetchall()
+        
+        if not tables:
+            conn.close()
+            return jsonify({
+                'error': 'No tables found in stock news database',
+                'message': 'Please ensure the database contains news tables'
+            }), 404
+        
+        # Try to find the news table (common table names)
+        news_table = None
+        for table in tables:
+            table_name = table[0].lower()
+            if 'news' in table_name or 'article' in table_name or 'stock' in table_name:
+                news_table = table[0]
+                break
+        
+        if not news_table:
+            conn.close()
+            return jsonify({
+                'error': 'News table not found',
+                'available_tables': [table[0] for table in tables],
+                'message': 'Please ensure the database contains a news table'
+            }), 404
+        
+        # Get column info for the news table
+        cursor.execute(f"PRAGMA table_info({news_table});")
+        columns = [col[1] for col in cursor.fetchall()]
+        
+        # Determine the correct column names based on common patterns
+        stock_col = None
+        title_col = None
+        description_col = None
+        url_col = None
+        source_col = None
+        timestamp_col = None
+        
+        for col in columns:
+            col_lower = col.lower()
+            if 'stock' in col_lower or 'symbol' in col_lower:
+                stock_col = col
+            elif 'title' in col_lower or 'headline' in col_lower:
+                title_col = col
+            elif 'description' in col_lower or 'content' in col_lower or 'summary' in col_lower:
+                description_col = col
+            elif 'url' in col_lower or 'link' in col_lower or 'source_link' in col_lower:
+                url_col = col
+            elif 'source' in col_lower or 'publisher' in col_lower:
+                source_col = col
+            elif 'timestamp' in col_lower or 'date' in col_lower or 'time' in col_lower or 'published' in col_lower or 'datetime' in col_lower:
+                timestamp_col = col
+        # Robust mapping for your table structure
+        if set(['datetime', 'stock', 'description']).issubset(set(columns)):
+            stock_col = 'stock'
+            title_col = 'description'
+            description_col = 'description'
+            timestamp_col = 'datetime'
+            if 'source_link' in columns:
+                url_col = 'source_link'
+        
+        # Validate required columns
+        if not all([stock_col, title_col, timestamp_col]):
+            conn.close()
+            return jsonify({
+                'error': 'Required columns not found in news table',
+                'available_columns': columns,
+                'message': 'News table must contain stock symbol, title, and timestamp columns'
+            }), 400
+        
+        # Get total count of articles for this stock
+        cursor.execute(f'''
+            SELECT COUNT(*) FROM {news_table} 
+            WHERE {stock_col} = ?
+        ''', (stock_symbol.upper(),))
+        total_articles = cursor.fetchone()[0]
+        
+        # Build the SELECT query based on available columns
+        select_columns = [stock_col, title_col]
+        if description_col:
+            select_columns.append(description_col)
+        if url_col:
+            select_columns.append(url_col)
+        if source_col:
+            select_columns.append(source_col)
+        select_columns.append(timestamp_col)
+        # Filter out any None values to avoid join errors
+        select_columns = [col for col in select_columns if col]
+        
+        # Get latest 5 news articles sorted by timestamp (newest first)
+        query = f'''
+            SELECT {', '.join(select_columns)}
+            FROM {news_table} 
+            WHERE {stock_col} = ?
+            ORDER BY {timestamp_col} DESC
+            LIMIT ? OFFSET ?
+        '''
+        
+        cursor.execute(query, (stock_symbol.upper(), per_page, offset))
+        articles = cursor.fetchall()
+        conn.close()
+        
+        # Format articles
+        formatted_articles = []
+        for article in articles:
+            article_data = {}
+            col_index = 0
+            
+            article_data['stock_symbol'] = article[col_index]
+            col_index += 1
+            
+            article_data['title'] = article[col_index]
+            col_index += 1
+            
+            if description_col:
+                article_data['description'] = article[col_index] or 'No description available'
+                col_index += 1
+            else:
+                article_data['description'] = 'No description available'
+            
+            if url_col:
+                article_data['url'] = article[col_index] or '#'
+                col_index += 1
+            else:
+                article_data['url'] = '#'
+            
+            if source_col:
+                article_data['source'] = article[col_index] or 'Unknown'
+                col_index += 1
+            else:
+                article_data['source'] = 'Unknown'
+            
+            article_data['published_at'] = article[col_index]
+            
+            formatted_articles.append(article_data)
+        
+        # Calculate pagination info
+        total_pages = (total_articles + per_page - 1) // per_page
+        
+        return jsonify({
+            'stock_symbol': stock_symbol,
+            'company_name': company_name,
+            'articles': formatted_articles,
+            'pagination': {
+                'current_page': page,
+                'per_page': per_page,
+                'total_articles': total_articles,
+                'total_pages': total_pages,
+                'has_next': page < total_pages,
+                'has_prev': page > 1
+            },
+            'database_info': {
+                'table_name': news_table,
+                'total_articles_found': total_articles
+            },
+            'last_updated': datetime.now().isoformat()
+        })
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/stock-news/all', methods=['GET'])
+def get_all_stock_news():
+    """Get all latest news from database, sorted by timestamp in sets of 5"""
+    try:
+        # Get pagination parameters
+        page = int(request.args.get('page', 1))
+        per_page = int(request.args.get('per_page', 5))
+        stock_filter = request.args.get('stock', None)
+        
+        # Calculate offset
+        offset = (page - 1) * per_page
+        
+        # Check if database exists
+        if not os.path.exists(STOCK_NEWS_DB_PATH):
+            return jsonify({
+                'error': 'Stock news database not found',
+                'message': 'Please ensure the stock_news.db file exists in the db directory'
+            }), 404
+        
+        # Connect to stock news database
+        conn = sqlite3.connect(STOCK_NEWS_DB_PATH)
+        cursor = conn.cursor()
+        
+        # Get table info to understand the structure
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        tables = cursor.fetchall()
+        
+        if not tables:
+            conn.close()
+            return jsonify({
+                'error': 'No tables found in stock news database',
+                'message': 'Please ensure the database contains news tables'
+            }), 404
+        
+        # Try to find the news table (common table names)
+        news_table = None
+        for table in tables:
+            table_name = table[0].lower()
+            if 'news' in table_name or 'article' in table_name or 'stock' in table_name:
+                news_table = table[0]
+                break
+        
+        if not news_table:
+            conn.close()
+            return jsonify({
+                'error': 'News table not found',
+                'available_tables': [table[0] for table in tables],
+                'message': 'Please ensure the database contains a news table'
+            }), 404
+        
+        # Get column info for the news table
+        cursor.execute(f"PRAGMA table_info({news_table});")
+        columns = [col[1] for col in cursor.fetchall()]
+        
+        # Determine the correct column names based on common patterns
+        stock_col = None
+        title_col = None
+        description_col = None
+        url_col = None
+        source_col = None
+        timestamp_col = None
+        
+        for col in columns:
+            col_lower = col.lower()
+            if 'stock' in col_lower or 'symbol' in col_lower:
+                stock_col = col
+            elif 'title' in col_lower or 'headline' in col_lower:
+                title_col = col
+            elif 'description' in col_lower or 'content' in col_lower or 'summary' in col_lower:
+                description_col = col
+            elif 'url' in col_lower or 'link' in col_lower or 'source_link' in col_lower:
+                url_col = col
+            elif 'source' in col_lower or 'publisher' in col_lower:
+                source_col = col
+            elif 'timestamp' in col_lower or 'date' in col_lower or 'time' in col_lower or 'published' in col_lower or 'datetime' in col_lower:
+                timestamp_col = col
+        # Robust mapping for your table structure
+        if set(['datetime', 'stock', 'description']).issubset(set(columns)):
+            stock_col = 'stock'
+            title_col = 'description'
+            description_col = 'description'
+            timestamp_col = 'datetime'
+            if 'source_link' in columns:
+                url_col = 'source_link'
+        
+        # Validate required columns
+        if not all([stock_col, title_col, timestamp_col]):
+            conn.close()
+            return jsonify({
+                'error': 'Required columns not found in news table',
+                'available_columns': columns,
+                'message': 'News table must contain stock symbol, title, and timestamp columns'
+            }), 400
+        
+        # Build the SELECT query based on available columns
+        select_columns = [stock_col, title_col]
+        if description_col:
+            select_columns.append(description_col)
+        if url_col:
+            select_columns.append(url_col)
+        if source_col:
+            select_columns.append(source_col)
+        select_columns.append(timestamp_col)
+        # Filter out any None values to avoid join errors
+        select_columns = [col for col in select_columns if col]
+        
+        # Build query based on filters
+        if stock_filter:
+            # Get total count for specific stock
+            cursor.execute(f'''
+                SELECT COUNT(*) FROM {news_table} 
+                WHERE {stock_col} = ?
+            ''', (stock_filter.upper(),))
+            total_articles = cursor.fetchone()[0]
+            
+            # Get articles for specific stock
+            query = f'''
+                SELECT {', '.join(select_columns)}
+                FROM {news_table} 
+                WHERE {stock_col} = ?
+                ORDER BY {timestamp_col} DESC
+                LIMIT ? OFFSET ?
+            '''
+            cursor.execute(query, (stock_filter.upper(), per_page, offset))
+        else:
+            # Get total count for all articles
+            cursor.execute(f'SELECT COUNT(*) FROM {news_table}')
+            total_articles = cursor.fetchone()[0]
+            
+            # Get all articles
+            query = f'''
+                SELECT {', '.join(select_columns)}
+                FROM {news_table} 
+                ORDER BY {timestamp_col} DESC
+                LIMIT ? OFFSET ?
+            '''
+            cursor.execute(query, (per_page, offset))
+        
+        articles = cursor.fetchall()
+        conn.close()
+        
+        # Format articles
+        formatted_articles = []
+        for article in articles:
+            article_data = {}
+            col_index = 0
+            
+            article_data['stock_symbol'] = article[col_index]
+            col_index += 1
+            
+            article_data['title'] = article[col_index]
+            col_index += 1
+            
+            if description_col:
+                article_data['description'] = article[col_index] or 'No description available'
+                col_index += 1
+            else:
+                article_data['description'] = 'No description available'
+            
+            if url_col:
+                article_data['url'] = article[col_index] or '#'
+                col_index += 1
+            else:
+                article_data['url'] = '#'
+            
+            if source_col:
+                article_data['source'] = article[col_index] or 'Unknown'
+                col_index += 1
+            else:
+                article_data['source'] = 'Unknown'
+            
+            article_data['published_at'] = article[col_index]
+            article_data['company_name'] = get_company_name(article_data['stock_symbol'])
+            
+            formatted_articles.append(article_data)
+        
+        # Calculate pagination info
+        total_pages = (total_articles + per_page - 1) // per_page
+        
+        return jsonify({
+            'articles': formatted_articles,
+            'pagination': {
+                'current_page': page,
+                'per_page': per_page,
+                'total_articles': total_articles,
+                'total_pages': total_pages,
+                'has_next': page < total_pages,
+                'has_prev': page > 1
+            },
+            'filters': {
+                'stock': stock_filter
+            },
+            'database_info': {
+                'table_name': news_table,
+                'total_articles_found': total_articles
+            },
+            'last_updated': datetime.now().isoformat()
+        })
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+def get_company_name(stock_symbol):
+    """Get company name from stock symbol"""
+    company_names = {
+        'RELIANCE': 'Reliance Industries',
+        'TCS': 'Tata Consultancy Services',
+        'HDFCBANK': 'HDFC Bank',
+        'BHARTIARTL': 'Bharti Airtel',
+        'ICICIBANK': 'ICICI Bank',
+        'INFY': 'Infosys',
+        'HINDUNILVR': 'Hindustan Unilever',
+        'ITC': 'ITC Limited',
+        'SBIN': 'State Bank of India',
+        'LT': 'Larsen & Toubro',
+        'KOTAKBANK': 'Kotak Mahindra Bank',
+        'AXISBANK': 'Axis Bank',
+        'BAJFINANCE': 'Bajaj Finance',
+        'BAJAJFINSV': 'Bajaj Finserv',
+        'HDFCLIFE': 'HDFC Life Insurance',
+        'SBILIFE': 'SBI Life Insurance',
+        'INDUSINDBK': 'IndusInd Bank',
+        'SHRIRAMFIN': 'Shriram Finance',
+        'JIOFINANCE': 'Jio Financial Services',
+        'HCLTECH': 'HCL Technologies',
+        'WIPRO': 'Wipro',
+        'TECHM': 'Tech Mahindra',
+        'MARUTI': 'Maruti Suzuki',
+        'TATAMOTORS': 'Tata Motors',
+        'M&M': 'Mahindra & Mahindra',
+        'BAJAJ-AUTO': 'Bajaj Auto',
+        'EICHERMOT': 'Eicher Motors',
+        'HEROMOTOCO': 'Hero MotoCorp',
+        'ONGC': 'Oil and Natural Gas Corporation',
+        'NTPC': 'NTPC Limited',
+        'POWERGRID': 'Power Grid Corporation',
+        'COALINDIA': 'Coal India',
+        'IOC': 'Indian Oil Corporation',
+        'BPCL': 'Bharat Petroleum',
+        'SUNPHARMA': 'Sun Pharmaceutical',
+        'DRREDDY': 'Dr. Reddy\'s Laboratories',
+        'CIPLA': 'Cipla',
+        'APOLLOHOSP': 'Apollo Hospitals',
+        'DIVISLAB': 'Divi\'s Laboratories',
+        'NESTLEIND': 'Nestle India',
+        'ASIANPAINT': 'Asian Paints',
+        'TATACONSUMR': 'Tata Consumer Products',
+        'BRITANNIA': 'Britannia Industries',
+        'JSWSTEEL': 'JSW Steel',
+        'TATASTEEL': 'Tata Steel',
+        'HINDALCO': 'Hindalco Industries',
+        'TITAN': 'Titan Company',
+        'TRENT': 'Trent',
+        'ULTRACEMCO': 'UltraTech Cement',
+        'GRASIM': 'Grasim Industries',
+        'BEL': 'Bharat Electronics',
+        'ADANIENT': 'Adani Enterprises',
+        'ADANIPORTS': 'Adani Ports',
+        'ADANIGREEN': 'Adani Green Energy',
+        'ADANIPOWER': 'Adani Power'
+    }
+    
+    return company_names.get(stock_symbol.upper(), stock_symbol)
+
+
+
+# Register portfolio API Blueprint
+app.register_blueprint(portfolio_api)
+
+@app.route('/api/ai-fundamental-analysis/<stock_symbol>', methods=['GET'])
+def get_ai_fundamental_analysis(stock_symbol):
+    """Get AI-powered fundamental analysis indicators for a stock"""
+    try:
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        financial_db_path = os.path.join(BASE_DIR, 'financial_reports', 'financial_data.db')
+        conn = sqlite3.connect(financial_db_path)
+        cursor = conn.cursor()
+        # Normalize symbol: uppercase and strip .NS if present
+        symbol = stock_symbol.upper().replace('.NS', '')
+        cursor.execute('''
+            SELECT * FROM ai_fundamental_analysis WHERE symbol = ?
+        ''', (symbol,))
+        row = cursor.fetchone()
+        if not row:
+            return jsonify({'error': 'No AI analysis found for this stock'}), 404
+
+        columns = [desc[0] for desc in cursor.description]
+        result = dict(zip(columns, row))
+        conn.close()
+        return jsonify(result)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

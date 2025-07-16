@@ -118,40 +118,6 @@ const SignIn = () => {
     }
   };
 
-  const handleDevMode = () => {
-    console.log('🚀 Entering dev mode...');
-    
-    // Fake user & token for local development/demo
-    const fakeUser = {
-      id: 'dev-user',
-      name: 'Developer',
-      email: 'dev@example.com',
-      role: 'developer',
-      devMode: true
-    };
-
-    localStorage.setItem('token', 'dev-token');
-    localStorage.setItem('user', JSON.stringify(fakeUser));
-    localStorage.setItem('devMode', 'true');
-
-    // Dispatch storage event to notify other components
-    window.dispatchEvent(new StorageEvent('storage', {
-      key: 'token',
-      newValue: 'dev-token'
-    }));
-
-    console.log('🚀 Redirecting to dashboard in dev mode...');
-    navigate('/dashboard', { replace: true });
-    
-    // Fallback: if navigation doesn't work, reload the page after a short delay
-    setTimeout(() => {
-      if (window.location.pathname !== '/dashboard') {
-        console.log('🔄 Navigation failed, reloading page...');
-        window.location.href = '/dashboard';
-      }
-    }, 1000);
-  };
-
   return (
     <div className="auth-container">
       <div className="auth-card">
@@ -177,15 +143,17 @@ const SignIn = () => {
           </div>
         )}
         
-        <form onSubmit={handleEmailSignIn} className="auth-form">
+        <form onSubmit={handleEmailSignIn} className="auth-form" autoComplete="on">
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
               type="email"
               id="email"
+              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
+              autoComplete="username"
               required
             />
           </div>
@@ -196,9 +164,11 @@ const SignIn = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
+                name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
+                autoComplete="current-password"
                 required
               />
               <button
@@ -219,18 +189,6 @@ const SignIn = () => {
           >
             {loading ? 'Signing In...' : 'Sign In'}
           </button>
-
-          {/* Dev Mode button – visible only when not in production */}
-          {true && (
-            <button
-              type="button"
-              className="auth-btn secondary dev-btn"
-              onClick={handleDevMode}
-              title="Bypass login and enter dev mode"
-            >
-              Enter Dev Mode 🚀
-            </button>
-          )}
         </form>
         
         <div className="auth-divider">

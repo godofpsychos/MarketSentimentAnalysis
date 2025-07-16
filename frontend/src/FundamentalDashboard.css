@@ -735,3 +735,21 @@
     padding: 16px;
   }
 } 
+
+.ai-indicator-card {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ff 100%);
+  border: 2px solid #6366f1;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.08);
+}
+.ai-indicator-card h3 {
+  color: #4f46e5;
+  margin-bottom: 0.75rem;
+}
+.ai-indicator-content {
+  color: #1e293b;
+  font-size: 1.1rem;
+} 

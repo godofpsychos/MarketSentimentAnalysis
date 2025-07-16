@@ -7,6 +7,7 @@ import {
   formatVolume, 
   getSentimentColor
 } from '../../data/sectoral';
+import { formatToIST } from '../../utils/dateUtils';
 import './SectoralAnalysis.css';
 
 const SectoralAnalysis = () => {
@@ -184,7 +185,7 @@ const SectoralAnalysis = () => {
 
         {dataInfo && (
           <div className="data-info">
-            <span>Last updated: {dataInfo.lastUpdated?.toLocaleString()}</span>
+            <span>Last updated: {dataInfo.lastUpdated ? formatToIST(dataInfo.lastUpdated) : ''}</span>
             <span>• {dataInfo.totalSectors} sectors</span>
             <span>• {dataInfo.totalStocks} stocks</span>
             <button className="refresh-btn" onClick={handleRefresh}>

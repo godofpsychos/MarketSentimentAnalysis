@@ -20,11 +20,11 @@ const Home = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              <span className="title-line">Market Sentiment</span>
-              <span className="title-line">Analysis</span>
+              {/* <span className="title-line">Market Sentiment</span> */}
+              <span className="title-line">AI Eyes on Your Investments</span>
             </h1>
             <p className="hero-subtitle">
-            AI Eyes on Your Investments
+
             Let AI monitor your portfolio and deliver smart, timely investment suggestions.
             </p>
             <div className="hero-buttons">

@@ -1,1 +1,9 @@
-# Main .htaccess file - cleared to avoid conflicts
+
+# Do not rewrite API/backend requests
+RewriteCond %{REQUEST_URI} ^/v1/
+RewriteRule ^ - [L]
+
+# SPA fallback: serve index.html for all other requests
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
