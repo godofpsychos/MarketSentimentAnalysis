@@ -6,6 +6,7 @@ import { StockPriceChart } from '../../StockFinancialChart';
 import './Dashboard.css';
 import config from '../../config/config';
 import { formatToIST, formatDateOnly } from '../../utils/dateUtils';
+import { PieChart, Pie, Cell } from 'recharts';
 
 const Dashboard = ({ activeTab, selectedStock, isAuthenticated, onTabChange, onStockChange }) => {
   const [sentimentData, setSentimentData] = useState([]);
@@ -424,7 +425,7 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated, onTabChange, onS
       
       <div className="charts-section">
         {/* Market Sentiment Overview */}
-        <div className="chart-card gauge-board">
+        {/* <div className="chart-card gauge-board">
           <div className="chart-header">
             <h3>Market Sentiment Overview</h3>
             <div className="info-tooltip" title="Shows the overall mood of the entire stock market. Positive numbers mean investors are optimistic (bullish), negative numbers mean they're worried (bearish). The bar shows how strong this feeling is.">
@@ -459,7 +460,92 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated, onTabChange, onS
               )}
             </div>
           </div>
+        </div> */}
+
+      <div className="chart-card gauge-board">
+      <div className="chart-header">
+        <h3>Market Sentiment Overview</h3>
+        <div className="info-tooltip" title="Shows the overall mood of the entire stock market. Positive numbers mean investors are optimistic (bullish), negative numbers mean they're worried (bearish). The bar shows how strong this feeling is.">
+          ℹ️
         </div>
+      </div>
+      <div className="sentiment-overview">
+        <div className="sentiment-card overall">
+          <h3>Overall Market Sentiment</h3>
+          {sentimentData.length > 0 ? (() => {
+           const min = -10, max = 10;
+           const overallSentiment = Math.round(sentimentData.reduce((sum, item) => sum + item.sentiment, 0) / sentimentData.length * 10) / 10;
+           const gaugePercent = (overallSentiment - min) / (max - min);
+         
+           // Section values
+           const redRange = 0 - min;    // 10
+           const yellowRange = 5 - 0;   // 5
+           const greenRange = max - 5;  // 5
+           const totalRange = max - min; // 20
+         
+           const sections = [
+             { value: redRange / totalRange, color: "#EA4228" },    // 0.5
+             { value: yellowRange / totalRange, color: "#F5CD19" }, // 0.25
+             { value: greenRange / totalRange, color: "#5BE12C" },  // 0.25
+           ];
+         
+           // Arc and needle center at the bottom of the SVG
+           const centerX = 110;
+           const centerY = 120; // BOTTOM of the SVG!
+           const radius = 80;
+           const angle = Math.PI - gaugePercent * Math.PI;
+           const needleX = centerX + radius * Math.cos(angle);
+           const needleY = centerY + radius * Math.sin(angle);
+         
+           return (
+             <div style={{ marginTop:'50px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+               <PieChart width={220} height={180}>
+                  <Pie
+                    data={sections}
+                    startAngle={180}
+                    endAngle={0}
+                    innerRadius={60}
+                    outerRadius={100}
+                    cx={110}
+                    cy={110}
+                    dataKey="value"
+                    stroke="none"
+                  >
+                    {sections.map((entry, idx) => (
+                      <Cell key={`cell-${idx}`} fill={entry.color} />
+                    ))}
+                  </Pie>
+                  {/* Needle */}
+                  <g>
+                    <line
+                      x1={110}
+                      y1={110}
+                      x2={110 + 80 * Math.cos(Math.PI * (1 - gaugePercent))}
+                      y2={110 - 80 * Math.sin(Math.PI * (1 - gaugePercent))}
+                      stroke="#222"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                    />
+                    <circle cx={110} cy={110} r={7} fill="#222" />
+                  </g>
+                  {/* Value label */}
+                  <text x={110} y={100} textAnchor="middle" fontSize={22} fill="#222" fontWeight="bold">
+                    {overallSentiment}
+                  </text>
+                </PieChart>
+               <div className="sentiment-score" style={{ textAlign: 'center' }}>
+                 <span className={`score ${overallSentiment > 0 ? 'positive' : 'negative'}`}>{overallSentiment > 0 ? 'Bullish' : 'Bearish'}</span>
+               </div>
+             </div>
+            );
+            })() : (
+              <div className="sentiment-score">
+                <span className="label">No sentiment data available</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
 
         {/* Top Stocks by Sentiment */}
         <div className="chart-card gauge-board">
@@ -741,7 +827,7 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated, onTabChange, onS
     });
 
     return (
-      <div className="dashboard-section">
+      <div className="dashboard-section stock-sentiment-dashboard">
         <div className="charts-section">
           {/* Selected Stock Sentiment Card */}
           {selectedStock && (
@@ -869,7 +955,7 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated, onTabChange, onS
   const renderFundamentalAnalysis = () => {
     if (selectedStock && fundamentalData) {
       return (
-        <div className="dashboard-section">
+        <div className="dashboard-section fundamental-dashboard">
           <FundamentalDashboard selectedStock={selectedStock} />
         </div>
       );
@@ -979,60 +1065,162 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated, onTabChange, onS
     </div>
   );
 
-  const renderOverallPortfolioSentiment = () => {
-    if (portfolioLoading || portfolio.length === 0) {
-      return null;
-    }
+  // const renderOverallPortfolioSentiment = () => {
+  //   if (portfolioLoading || portfolio.length === 0) {
+  //     return null;
+  //   }
 
-    // Get sentiment data for portfolio stocks
-    const portfolioSentiments = portfolio.map(item => {
-      const sentiment = sentimentData.find(s => s.stock === item.stock_symbol);
-      return {
-        ...item,
-        sentiment: sentiment ? sentiment.sentiment : 0,
-        sentiment_data: sentiment
-      };
-    });
+  //   // Get sentiment data for portfolio stocks
+  //   const portfolioSentiments = portfolio.map(item => {
+  //     const sentiment = sentimentData.find(s => s.stock === item.stock_symbol);
+  //     return {
+  //       ...item,
+  //       sentiment: sentiment ? sentiment.sentiment : 0,
+  //       sentiment_data: sentiment
+  //     };
+  //   });
 
-    // Calculate overall portfolio sentiment
-    const overallPortfolioSentiment = portfolioSentiments.length > 0 
-      ? Math.round(portfolioSentiments.reduce((sum, item) => sum + item.sentiment, 0) / portfolioSentiments.length * 10) / 10
-      : 0;
+  //   // Calculate overall portfolio sentiment
+  //   const overallPortfolioSentiment = portfolioSentiments.length > 0 
+  //     ? Math.round(portfolioSentiments.reduce((sum, item) => sum + item.sentiment, 0) / portfolioSentiments.length * 10) / 10
+  //     : 0;
 
-    return (
-      <div className="chart-card portfolio-overall-sentiment-section">
-        <div className="chart-header">
-          <h3>Overall Portfolio Sentiment</h3>
-          <div className="info-tooltip" title="Shows the overall sentiment for your entire portfolio. This score tells you if your portfolio is generally performing well (positive) or poorly (negative). A higher positive score means your portfolio is doing well overall.">
-            ℹ️
-          </div>
-        </div>
+  //   return (
+  //     <div className="chart-card portfolio-overall-sentiment-section">
+  //       <div className="chart-header">
+  //         <h3>Overall Portfolio Sentiment</h3>
+  //         <div className="info-tooltip" title="Shows the overall sentiment for your entire portfolio. This score tells you if your portfolio is generally performing well (positive) or poorly (negative). A higher positive score means your portfolio is doing well overall.">
+  //           ℹ️
+  //         </div>
+  //       </div>
         
-        <div className="sentiment-overview">
-          <div className="sentiment-card portfolio-overall">
-            <div className="sentiment-score">
-              <span className={`score ${overallPortfolioSentiment > 0 ? 'positive' : 'negative'}`}>
-                {overallPortfolioSentiment}
-              </span>
-              <span className="label">
-                {overallPortfolioSentiment > 0 ? 'Bullish Portfolio' : 'Bearish Portfolio'}
-              </span>
-            </div>
-            <div className="sentiment-bar">
-              <div 
-                className={`bar-fill ${getSentimentClass(overallPortfolioSentiment)}`} 
-                style={{ width: `${(overallPortfolioSentiment / 10) * 100}%` }}
-              ></div>
-            </div>
-            <div className="powered-by-ai">Powered by AI</div>
-            <div className="portfolio-summary">
-              <p>Portfolio contains {portfolio.length} stocks with an average sentiment of {overallPortfolioSentiment}</p>
-            </div>
-          </div>
+  //       <div className="sentiment-overview">
+  //         <div className="sentiment-card portfolio-overall">
+  //           <div className="sentiment-score">
+  //             <span className={`score ${overallPortfolioSentiment > 0 ? 'positive' : 'negative'}`}>
+  //               {overallPortfolioSentiment}
+  //             </span>
+  //             <span className="label">
+  //               {overallPortfolioSentiment > 0 ? 'Bullish Portfolio' : 'Bearish Portfolio'}
+  //             </span>
+  //           </div>
+  //           <div className="sentiment-bar">
+  //             <div 
+  //               className={`bar-fill ${getSentimentClass(overallPortfolioSentiment)}`} 
+  //               style={{ width: `${(overallPortfolioSentiment / 10) * 100}%` }}
+  //             ></div>
+  //           </div>
+  //           <div className="powered-by-ai">Powered by AI</div>
+  //           <div className="portfolio-summary">
+  //             <p>Portfolio contains {portfolio.length} stocks with an average sentiment of {overallPortfolioSentiment}</p>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
+
+
+const renderOverallPortfolioSentiment = () => {
+  if (portfolioLoading || portfolio.length === 0) {
+    return null;
+  }
+
+  // Get sentiment data for portfolio stocks
+  const portfolioSentiments = portfolio.map(item => {
+    const sentiment = sentimentData.find(s => s.stock === item.stock_symbol);
+    return {
+      ...item,
+      sentiment: sentiment ? sentiment.sentiment : 0,
+      sentiment_data: sentiment
+    };
+  });
+
+  // Calculate overall portfolio sentiment
+  const overallPortfolioSentiment = portfolioSentiments.length > 0 
+    ? Math.round(portfolioSentiments.reduce((sum, item) => sum + item.sentiment, 0) / portfolioSentiments.length * 10) / 10
+    : 0;
+
+  // Convert sentiment to a value between 0 and 1 for the gauge
+  // Assuming -10 (very bearish) to +10 (very bullish)
+  // const gaugePercent = (overallPortfolioSentiment + 10) / 20;
+
+  const min = -10, max = 10;
+  const gaugePercent = (overallPortfolioSentiment - min) / (max - min);
+
+  const redRange = 0 - min;    // 10
+  const yellowRange = 5 - 0;   // 5
+  const greenRange = max - 5;  // 5
+  const totalRange = max - min; // 20
+         
+  const sections = [
+    { value: redRange / totalRange, color: "#EA4228" },    // 0.5
+    { value: yellowRange / totalRange, color: "#F5CD19" }, // 0.25
+    { value: greenRange / totalRange, color: "#5BE12C" },  // 0.25
+  ];
+  // Gauge data for PieChart
+  // const data = [
+  //   { value: gaugePercent, color: gaugePercent > 0.6 ? "#5BE12C" : gaugePercent > 0.4 ? "#F5CD19" : "#EA4228" },
+  //   { value: 1 - gaugePercent, color: "#eee" }
+  // ];
+  
+
+  return (
+    <div className="chart-card portfolio-overall-sentiment-section">
+      <div className="chart-header">
+        <h3>Overall Portfolio Sentiment</h3>
+        <div className="info-tooltip" title="Shows the overall sentiment for your entire portfolio. This score tells you if your portfolio is generally performing well (positive) or poorly (negative). A higher positive score means your portfolio is doing well overall.">
+          ℹ️
         </div>
       </div>
-    );
-  };
+      <div className="sentiment-overview" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <PieChart width={220} height={120}>
+          <Pie
+            data={sections}
+            startAngle={180}
+            endAngle={0}
+            innerRadius={60}
+            outerRadius={100}
+            cx={110}
+            cy={110}
+            dataKey="value"
+            stroke="none"
+          >
+            {sections.map((entry, idx) => (
+              <Cell key={`cell-${idx}`} fill={entry.color} />
+            ))}
+          </Pie>
+          {/* Needle */}
+          <g>
+            <line
+              x1={110}
+              y1={110}
+              x2={110 + 80 * Math.cos(Math.PI * (1 - gaugePercent))}
+              y2={110 - 80 * Math.sin(Math.PI * (1 - gaugePercent))}
+              stroke="#222"
+              strokeWidth="4"
+              strokeLinecap="round"
+            />
+            <circle cx={110} cy={110} r={7} fill="#222" />
+          </g>
+          {/* Value label */}
+          <text x={110} y={100} textAnchor="middle" fontSize={22} fill="#222" fontWeight="bold">
+            {overallPortfolioSentiment}
+          </text>
+        </PieChart>
+        <div className="sentiment-score" style={{ textAlign: 'center' }}>
+          <span className={`score ${overallPortfolioSentiment > 0 ? 'positive' : 'negative'}`}>
+            {overallPortfolioSentiment > 0 ? 'Bullish Portfolio' : 'Bearish Portfolio'}
+          </span>
+        </div>
+        <div className="powered-by-ai">Powered by AI</div>
+        <div className="portfolio-summary" style={{ fontSize: '0.95em', color: '#aaa' }}>
+          Portfolio contains {portfolio.length} stocks with an average sentiment of {overallPortfolioSentiment}
+        </div>
+      </div>
+    </div>
+  );
+};
 
   const renderIndividualStockSentiments = () => {
     if (portfolioLoading || portfolio.length === 0) {

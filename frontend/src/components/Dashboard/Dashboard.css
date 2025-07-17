@@ -394,7 +394,7 @@ html::-webkit-scrollbar-thumb:active {
 .sentiment-overview {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 .sentiment-card {
@@ -1988,6 +1988,20 @@ html::-webkit-scrollbar-thumb:active {
     font-size: 1.1rem !important;
   }
 }
+/* portfolio section */
+/* 
+.portfolio-overall-sentiment-section .sentiment-score .score {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #5BE12C;
+}
+.portfolio-overall-sentiment-section .sentiment-score .score.negative {
+  color: #EA4228;
+} */
+.recharts-wrapper {
+  margin-right: 20px;
+  height: 180px !important;
+}
 
 
 /* sector view css */
@@ -2009,4 +2023,285 @@ html::-webkit-scrollbar-thumb:active {
 }
 .sector-view .multiAxis-financial-chart{
   height: 500px;
+}
+
+/* fundamental dashboard */
+.fundamental-dashboard{
+  width: 1740px;
+  margin: 0;
+}
+
+
+.fundamental-header{
+  width: inherit;
+}
+
+.fundamental-tab .chart-row{
+  margin: 30px 0px 30px 0px;
+}
+
+.overview-tab{
+  gap: 0;
+  display: block;
+}
+
+.stock-financial-chart{
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: rgba(80, 80, 160, 0.07) 0px 2px 16px;
+}
+
+.stock-financial-chart h4{
+  font-weight: 700; 
+  font-size: 22px; 
+  color: rgb(103, 58, 183);
+}
+
+.ai-indicator-card h4{
+  font-weight: 700; 
+  font-size: 22px; 
+  color: rgb(103, 58, 183);
+}
+
+.ai-indicator-content p{
+  color: #1e293b !important;
+  font-size: 1.1rem;
+}
+/* stock sentiment */
+.stock-sentiment-dashboard{
+  width: 1750px;
+}
+
+.stock-sentiment-dashboard.full-width{
+  width: 2050px;
+}
+
+
+select {
+  width: 100%;
+  padding: 0.7em 2.5em 0.7em 1em; /* right padding for the arrow */
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #444;
+  background: #18191c;
+  color: #fff;
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  line-height: 1.4;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 250px;
+}
+
+.select-wrapper select {
+  /* ...your select styles above... */
+}
+
+.select-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1.2em;
+  width: 0.8em;
+  height: 0.5em;
+  pointer-events: none;
+  background: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 20 12" xmlns="http://www.w3.org/2000/svg"><path d="M2 2l8 8 8-8" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/></svg>') no-repeat center/contain;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 600px) {
+  .portfolio-section,
+  .portfolio-overview-card,
+  .portfolio-details-card {
+    max-width: 100vw;
+    padding: 0.7rem 0.3rem 1rem 0.3rem;
+    border-radius: 10px;
+    margin: 0 0 1rem 0;
+  }
+  .portfolio-overview-stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .portfolio-overview-stat {
+    min-width: 90px;
+    padding: 0.7rem 0.2rem;
+    font-size: 0.98rem;
+  }
+  .portfolio-details-tabs {
+    flex-direction: row;
+    gap: 0.3rem;
+    overflow-x: auto;
+    margin-bottom: 0.7rem;
+  }
+  .portfolio-details-tabs button {
+    min-width: 80px;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.3rem;
+  }
+  .portfolio-list,
+  .portfolio-stock-list {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .portfolio-item{
+    width: 360px;
+    margin-bottom: 5px;
+  }
+  .portfolio-item,
+  .portfolio-stock-card {
+    padding: 0.7rem 0.3rem;
+    border-radius: 8px;
+  }
+  .powered-by-ai{
+    font-size: 12px;
+    margin-right: 5px;
+  }
+  .portfolio-item .stock-info,
+  .portfolio-stock-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  .remove-btn,
+  .portfolio-stock-remove-btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+  .info-tooltip {
+    width: 1.3em;
+    height: 1.3em;
+    font-size: 1em;
+  }
+
+  .portfolio-summary-section .summary-stats .stat-item{
+    padding: 4px;
+  }
+  
+  .portfolio-summary-section .summary-stats .stat-item .stat-label{
+    padding-top: 2px;
+    font-size: 14px;
+  }
+  .portfolio-summary-section .summary-stats .stat-item .stat-value{
+    font-size: 15px;
+  }
+  .stock-sentiment-item{
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .sentiment-indicator{
+    align-self: center;
+  }
+  .sector-radar-chart{
+    height: 388px!important;
+  }
+  .multiAxis-financial-chart{
+    height:388px;
+  }
+  .stock-sentiment-dashboard{
+    width: 340px !important;
+  }
+  .fundamental-dashboard{
+    width: 340px !important;
+  }
+  .chart-container{
+    width:324px;
+  }
+  .charts-row .summary-section{
+    width: 324px;
+  }
+  .summary-grid{
+    display: block;
+  }
+  .summary-item{
+    margin-bottom:10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .chart-card,
+  .stock-financial-chart {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+    padding: 0.7rem 0.3rem !important;
+    border-radius: 12px;
+    margin: 0 auto 1rem auto;
+    overflow-x: auto;
+  }
+  .stock-financial-chart > div:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    font-size: 1rem;
+    word-break: break-word;
+  }
+  .stock-financial-chart {
+    padding: 0.7rem 0.3rem !important;
+  }
+  .stock-financial-chart button {
+    min-width: 2.5rem;
+    font-size: 0.95rem;
+    padding: 0.3rem 0.7rem;
+    margin-bottom: 0.2rem;
+  }
+  .stock-financial-chart > div:nth-child(2) {
+    display: flex;
+    gap: 0.3rem;
+    overflow-x: auto;
+    width: 100%;
+  }
+}
+
+/* Custom scrollbar for news list and all scrollable areas */
+.news-list, .portfolio-list, .chart-card, .stock-financial-chart {
+  scrollbar-width: thin;
+  scrollbar-color: #7b61ff #23235b; /* thumb color, track color */
+}
+
+/* For Webkit browsers (Chrome, Edge, Safari) */
+.news-list::-webkit-scrollbar,
+.portfolio-list::-webkit-scrollbar,
+.chart-card::-webkit-scrollbar,
+.stock-financial-chart::-webkit-scrollbar {
+  height: 6px;   /* horizontal scrollbar height */
+  width: 6px;    /* vertical scrollbar width */
+  background: #23235b; /* track color */
+  border-radius: 8px;
+}
+
+.news-list::-webkit-scrollbar-thumb,
+.portfolio-list::-webkit-scrollbar-thumb,
+.chart-card::-webkit-scrollbar-thumb,
+.stock-financial-chart::-webkit-scrollbar-thumb {
+  background: #7b61ff; /* thumb color */
+  border-radius: 8px;
+  border: 2px solid #23235b;
+}
+
+.news-list::-webkit-scrollbar-thumb:hover,
+.portfolio-list::-webkit-scrollbar-thumb:hover,
+.chart-card::-webkit-scrollbar-thumb:hover,
+.stock-financial-chart::-webkit-scrollbar-thumb:hover {
+  background: #a18aff;
+}
+
+/* Optional: Hide scrollbar on mobile for a cleaner look */
+@media (max-width: 600px) {
+  .news-list::-webkit-scrollbar,
+  .portfolio-list::-webkit-scrollbar,
+  .chart-card::-webkit-scrollbar,
+  .stock-financial-chart::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
 }

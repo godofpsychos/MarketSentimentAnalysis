@@ -209,21 +209,24 @@ const Layout = ({
         </div>
         <div className="stock-selector">
           <label htmlFor="stock-select">Select Stock:</label>
-          <select 
-            id="stock-select" 
-            value={selectedStockProp} 
-            onChange={handleStockChange}
-            className="stock-dropdown"
-          >
-            <option value="">Choose a stock...</option>
-            {stocks.map(stock => (
-              <option key={stock} value={stock}>{stock}</option>
-            ))}
-          </select>
+          <div className='select-wrapper'>
+            <select 
+              id="stock-select" 
+              value={selectedStockProp} 
+              onChange={handleStockChange}
+              className="stock-dropdown"
+            >
+              <option value="">Choose a stock...</option>
+              {stocks.map(stock => (
+                <option key={stock} value={stock}>{stock}</option>
+              ))}
+            </select>
+          </div>
         </div>
         {portfolio.length > 0 && (
           <div className="portfolio-selector">
             <label htmlFor="portfolio-select">Portfolio Stock:</label>
+            <div className='select-wrapper'>
             <select 
               id="portfolio-select" 
               value={selectedPortfolioStock} 
@@ -237,6 +240,7 @@ const Layout = ({
                 </option>
               ))}
             </select>
+            </div>
           </div>
         )}
         <nav className="sidebar-nav">

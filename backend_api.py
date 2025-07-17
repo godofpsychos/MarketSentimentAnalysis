@@ -873,33 +873,147 @@ def get_financial_data():
 
 @app.route('/api/fundamental-analysis/<stock_symbol>', methods=['GET'])
 def get_fundamental_analysis(stock_symbol):
-    """Get comprehensive fundamental analysis for a specific stock"""
+    """Get comprehensive fundamental analysis for a specific stock from DB (using actual schema, with frontend-aligned keys/units and dynamic computation for missing metrics)"""
     try:
-        # Clean the stock symbol (remove .NS if present)
         clean_symbol = stock_symbol.replace('.NS', '').upper()
-        
-        # Load pre-calculated data from outputs directory
-        profitability_data = load_profitability_data(clean_symbol)
-        valuation_data = load_valuation_data(clean_symbol)
-        growth_data = load_growth_data(clean_symbol)
-        liquidity_data = load_liquidity_data(clean_symbol)
-        
-        # Create comprehensive analysis result
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        financial_db_path = os.path.join(BASE_DIR, 'financial_reports', 'financial_data.db')
+        conn = sqlite3.connect(financial_db_path)
+        cursor = conn.cursor()
+
+        # Fetch company info
+        cursor.execute("SELECT symbol, name, sector FROM companies WHERE symbol = ?", (clean_symbol,))
+        company_row = cursor.fetchone()
+        if not company_row:
+            raise ValueError(f"Company info not found for symbol: {clean_symbol}")
+        company_info = {
+            "symbol": company_row[0],
+            "company_name": company_row[1],
+            "sector": company_row[2]
+        }
+
+        # Fetch financial health (profitability, growth, liquidity)
+        cursor.execute("SELECT * FROM financial_health WHERE symbol = ?", (clean_symbol,))
+        fh_row = cursor.fetchone()
+        if not fh_row:
+            raise ValueError(f"Financial health data not found for symbol: {clean_symbol}")
+        fh_columns = [desc[0] for desc in cursor.description]
+        fh_data = dict(zip(fh_columns, fh_row))
+
+        # Fetch valuation metrics
+        cursor.execute("SELECT * FROM valuation_metrics WHERE symbol = ?", (clean_symbol,))
+        val_row = cursor.fetchone()
+        if not val_row:
+            raise ValueError(f"Valuation data not found for symbol: {clean_symbol}")
+        val_columns = [desc[0] for desc in cursor.description]
+        val_data = dict(zip(val_columns, val_row))
+
+        # Helper to get latest value from annual tables
+        def get_latest_value(table, field):
+            cursor.execute(f"SELECT value FROM {table} WHERE symbol = ? AND field_name = ? ORDER BY period_date DESC LIMIT 1", (clean_symbol, field))
+            row = cursor.fetchone()
+            return row[0] if row else None
+
+        # Debt to Equity
+        debt_to_equity = fh_data.get("debt_to_equity")
+        if debt_to_equity is None:
+            total_debt = get_latest_value("annual_balance_sheets", "Total Debt")
+            shareholders_equity = get_latest_value("annual_balance_sheets", "Stockholders Equity")
+            if total_debt is not None and shareholders_equity not in (None, 0):
+                debt_to_equity = total_debt / shareholders_equity
+
+        # Interest Coverage Ratio
+        interest_coverage_ratio = None
+        ebit = get_latest_value("annual_income_statements", "EBIT")
+        interest_expense = get_latest_value("annual_income_statements", "Interest Expense")
+        if ebit is not None and interest_expense not in (None, 0):
+            interest_coverage_ratio = ebit / interest_expense
+
+        # Net Profit Margin
+        net_margin_percent = fh_data.get("profit_margin")
+        if net_margin_percent is not None:
+            net_margin_percent = net_margin_percent * 100
+        else:
+            # Try to compute from financial_data
+            cursor.execute("SELECT net_profit, total_revenue FROM financial_data WHERE symbol = ? ORDER BY period_date DESC LIMIT 1", (clean_symbol,))
+            row = cursor.fetchone()
+            if row and row[1] not in (None, 0):
+                net_margin_percent = (row[0] / row[1]) * 100
+            else:
+                net_margin_percent = None
+
+        # Compute current_ratio if missing
+        current_ratio = fh_data.get("current_ratio")
+        if current_ratio is None:
+            current_assets = get_latest_value("annual_balance_sheets", "Current Assets")
+            current_liabilities = get_latest_value("annual_balance_sheets", "Current Liabilities")
+            if current_assets is not None and current_liabilities not in (None, 0):
+                current_ratio = current_assets / current_liabilities
+
+        # Fetch latest revenue, net_income, total_assets, shareholders_equity
+        revenue = get_latest_value("annual_income_statements", "Total Revenue")
+        net_income = get_latest_value("annual_income_statements", "Net Income")
+        total_assets = get_latest_value("annual_balance_sheets", "Total Assets")
+        shareholders_equity = get_latest_value("annual_balance_sheets", "Stockholders Equity")
+
+        # Map to frontend structure with correct keys and units
+        profitability = {
+            "roe_percent": fh_data["return_on_equity"] * 100 if fh_data.get("return_on_equity") is not None else None,
+            "net_margin_percent": net_margin_percent,
+            "operating_margin_percent": fh_data["operating_margin"] * 100 if fh_data.get("operating_margin") is not None else None,
+            "gross_margin_percent": fh_data["gross_margin"] * 100 if fh_data.get("gross_margin") is not None else None,
+            "return_on_assets_percent": fh_data["return_on_assets"] * 100 if fh_data.get("return_on_assets") is not None else None,
+            "revenue": revenue,
+            "net_income": net_income,
+            "total_assets": total_assets,
+            "shareholders_equity": shareholders_equity
+        }
+        growth = {
+            "revenue_growth_percent": fh_data["revenue_growth"] * 100 if fh_data.get("revenue_growth") is not None else None,
+            "earnings_growth_percent": fh_data["earnings_growth"] * 100 if fh_data.get("earnings_growth") is not None else None
+        }
+        liquidity = {
+            "current_ratio": current_ratio,
+            "quick_ratio": fh_data.get("quick_ratio"),
+            "debt_to_equity": debt_to_equity,
+            "interest_coverage_ratio": interest_coverage_ratio
+        }
+        # Compute EV/EBITDA if missing
+        ev_to_ebitda = val_data.get("ev_to_ebitda")
+        if ev_to_ebitda is None:
+            enterprise_value = val_data.get("enterprise_value")
+            ebitda = get_latest_value("annual_income_statements", "EBITDA")
+            if enterprise_value is not None and ebitda not in (None, 0):
+                ev_to_ebitda = enterprise_value / ebitda
+
+        valuation = {
+            "pe_ratio": val_data.get("pe_ratio"),
+            "forward_pe": val_data.get("forward_pe"),
+            "peg_ratio": val_data.get("peg_ratio"),
+            "price_to_book_ratio": val_data.get("price_to_book"),
+            "price_to_sales_ratio": val_data.get("price_to_sales"),
+            "ev_to_revenue": val_data.get("ev_to_revenue"),
+            "ev_ebitda": ev_to_ebitda
+        }
+
+        # Add leverage object for frontend compatibility
+        leverage = {
+            "debt_to_equity": debt_to_equity
+        }
+
         analysis_result = {
-            "company_info": {
-                "symbol": clean_symbol,
-                "sector": profitability_data['sector'],
-                "company_name": profitability_data['company_name']
-            },
-            "profitability": profitability_data,
-            "valuation": valuation_data,
-            "growth": growth_data,
-            "liquidity": liquidity_data,
+            "company_info": company_info,
+            "profitability": profitability,
+            "valuation": valuation,
+            "growth": growth,
+            "liquidity": liquidity,
+            "leverage": leverage,
             "analysis_date": datetime.now().isoformat()
         }
-        
+
+        conn.close()
         return jsonify(analysis_result)
-        
+
     except ValueError as e:
         return jsonify({"error": str(e)}), 404
     except Exception as e:
@@ -1026,25 +1140,160 @@ def get_available_sectors():
 
 @app.route('/api/fundamental-scores/<stock_symbol>', methods=['GET'])
 def get_fundamental_scores(stock_symbol):
-    """Get comprehensive fundamental analysis scores for a stock using pre-calculated data"""
+    """Get comprehensive fundamental analysis scores for a stock using DB data"""
     try:
-        # Clean the stock symbol (remove .NS if present)
         clean_symbol = stock_symbol.replace('.NS', '').upper()
-        
-        # Load pre-calculated data from outputs directory
-        profitability_data = load_profitability_data(clean_symbol)
-        valuation_data = load_valuation_data(clean_symbol)
-        growth_data = load_growth_data(clean_symbol)
-        liquidity_data = load_liquidity_data(clean_symbol)
-        
-        # Calculate scores based on the loaded data
-        reliability_score = calculate_reliability_score_from_data(profitability_data, liquidity_data)
-        growth_score = calculate_growth_score_from_data(growth_data)
-        valuation_score = calculate_valuation_score_from_data(valuation_data)
-        
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        financial_db_path = os.path.join(BASE_DIR, 'financial_reports', 'financial_data.db')
+        conn = sqlite3.connect(financial_db_path)
+        cursor = conn.cursor()
+
+        # Fetch financial health (profitability, growth, liquidity)
+        cursor.execute("SELECT * FROM financial_health WHERE symbol = ?", (clean_symbol,))
+        fh_row = cursor.fetchone()
+        if not fh_row:
+            raise ValueError(f"Financial health data not found for symbol: {clean_symbol}")
+        fh_columns = [desc[0] for desc in cursor.description]
+        fh_data = dict(zip(fh_columns, fh_row))
+
+        # Fetch valuation metrics
+        cursor.execute("SELECT * FROM valuation_metrics WHERE symbol = ?", (clean_symbol,))
+        val_row = cursor.fetchone()
+        if not val_row:
+            raise ValueError(f"Valuation data not found for symbol: {clean_symbol}")
+        val_columns = [desc[0] for desc in cursor.description]
+        val_data = dict(zip(val_columns, val_row))
+
+        # Calculate scores based on available data
+        # Reliability score: based on ROE, profit margin, current ratio, quick ratio
+        reliability_score = 0
+        roe = fh_data.get('return_on_equity')
+        profit_margin = fh_data.get('profit_margin')
+        current_ratio = fh_data.get('current_ratio')
+        quick_ratio = fh_data.get('quick_ratio')
+        if roe is not None:
+            if roe >= 0.15:
+                reliability_score += 40
+            elif roe >= 0.10:
+                reliability_score += 30
+            elif roe >= 0.05:
+                reliability_score += 20
+            elif roe > 0:
+                reliability_score += 10
+        if profit_margin is not None:
+            if profit_margin >= 0.15:
+                reliability_score += 20
+            elif profit_margin >= 0.08:
+                reliability_score += 15
+            elif profit_margin >= 0.03:
+                reliability_score += 10
+            elif profit_margin > 0:
+                reliability_score += 5
+        if current_ratio is not None:
+            if current_ratio >= 2.0:
+                reliability_score += 20
+            elif current_ratio >= 1.5:
+                reliability_score += 15
+            elif current_ratio >= 1.0:
+                reliability_score += 10
+            elif current_ratio >= 0.8:
+                reliability_score += 5
+        if quick_ratio is not None:
+            if quick_ratio >= 1.5:
+                reliability_score += 20
+            elif quick_ratio >= 1.0:
+                reliability_score += 15
+            elif quick_ratio >= 0.8:
+                reliability_score += 10
+            elif quick_ratio >= 0.5:
+                reliability_score += 5
+        reliability_score = min(reliability_score, 100)
+
+        # Growth score: based on revenue_growth and earnings_growth
+        growth_score = 0
+        revenue_growth = fh_data.get('revenue_growth')
+        earnings_growth = fh_data.get('earnings_growth')
+        if revenue_growth is not None:
+            if revenue_growth >= 0.20:
+                growth_score += 40
+            elif revenue_growth >= 0.15:
+                growth_score += 35
+            elif revenue_growth >= 0.10:
+                growth_score += 30
+            elif revenue_growth >= 0.05:
+                growth_score += 25
+            elif revenue_growth >= 0:
+                growth_score += 20
+            elif revenue_growth >= -0.05:
+                growth_score += 10
+        if earnings_growth is not None:
+            if earnings_growth >= 0.20:
+                growth_score += 30
+            elif earnings_growth >= 0.15:
+                growth_score += 25
+            elif earnings_growth >= 0.10:
+                growth_score += 20
+            elif earnings_growth >= 0.05:
+                growth_score += 15
+            elif earnings_growth >= 0:
+                growth_score += 10
+            elif earnings_growth >= -0.05:
+                growth_score += 5
+        growth_score = min(growth_score, 100)
+
+        # Valuation score: based on pe_ratio, price_to_book, price_to_sales
+        valuation_score = 0
+        pe_ratio = val_data.get('pe_ratio')
+        price_to_book = val_data.get('price_to_book')
+        price_to_sales = val_data.get('price_to_sales')
+        if pe_ratio is not None:
+            if pe_ratio <= 10:
+                valuation_score += 40
+            elif pe_ratio <= 15:
+                valuation_score += 35
+            elif pe_ratio <= 20:
+                valuation_score += 30
+            elif pe_ratio <= 25:
+                valuation_score += 25
+            elif pe_ratio <= 30:
+                valuation_score += 20
+            elif pe_ratio <= 40:
+                valuation_score += 15
+            elif pe_ratio <= 50:
+                valuation_score += 10
+            elif pe_ratio <= 100:
+                valuation_score += 5
+        if price_to_book is not None:
+            if price_to_book <= 1:
+                valuation_score += 30
+            elif price_to_book <= 2:
+                valuation_score += 25
+            elif price_to_book <= 3:
+                valuation_score += 20
+            elif price_to_book <= 5:
+                valuation_score += 15
+            elif price_to_book <= 8:
+                valuation_score += 10
+            elif price_to_book <= 15:
+                valuation_score += 5
+        if price_to_sales is not None:
+            if price_to_sales <= 1:
+                valuation_score += 30
+            elif price_to_sales <= 2:
+                valuation_score += 25
+            elif price_to_sales <= 3:
+                valuation_score += 20
+            elif price_to_sales <= 5:
+                valuation_score += 15
+            elif price_to_sales <= 8:
+                valuation_score += 10
+            elif price_to_sales <= 15:
+                valuation_score += 5
+        valuation_score = min(valuation_score, 100)
+
         # Calculate overall score (weights: Reliability 40%, Growth 35%, Valuation 25%)
         overall_score = (reliability_score * 0.40 + growth_score * 0.35 + valuation_score * 0.25)
-        
+
         # Determine overall grade
         if overall_score >= 85:
             overall_grade = "A+"
@@ -1073,10 +1322,16 @@ def get_fundamental_scores(stock_symbol):
         else:
             overall_grade = "N/A"
             recommendation = "Data Unavailable"
-        
-        # Determine risk level
-        risk_level = determine_risk_level(profitability_data, liquidity_data)
-        
+
+        # Determine risk level (simple version)
+        risk_level = "Low"
+        if roe is not None and roe < 0.05:
+            risk_level = "High"
+        elif current_ratio is not None and current_ratio < 1.0:
+            risk_level = "High"
+        elif profit_margin is not None and profit_margin < 0.03:
+            risk_level = "Medium"
+
         # Create frontend summary
         frontend_summary = {
             'symbol': clean_symbol,
@@ -1094,14 +1349,15 @@ def get_fundamental_scores(stock_symbol):
                 f"Risk: {risk_level}"
             ]
         }
-        
+
+        conn.close()
         return jsonify({
             "success": True,
             "stock_symbol": clean_symbol,
             "frontend_summary": frontend_summary,
             "calculated_at": datetime.now().isoformat()
         })
-        
+
     except ValueError as e:
         return jsonify({"error": str(e)}), 404
     except Exception as e:

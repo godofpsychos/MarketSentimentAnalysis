@@ -309,7 +309,7 @@
 .sidebar-header {
   background: none;
   color: white;
-  padding: 0 2rem 2rem;
+  padding: 0.5rem 2rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 2rem;
 }
@@ -408,12 +408,13 @@
 }
 
 .sidebar-tab {
-  width: 100%;
+  /* width: 92%; */
+  width: 250px;
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  margin-bottom: 0.75rem;
+  margin: 0px 0px 2rem 12px;
   border: none;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.05);
@@ -432,14 +433,14 @@
   position: absolute;
   top: 0;
   left: -100%;
-  width: 100%;
+  width: 248px;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   transition: left 0.5s;
 }
 
 .sidebar-tab:hover::before {
-  left: 100%;
+  /* left: 100%; */
 }
 
 .sidebar-tab:hover {
@@ -453,7 +454,7 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-  transform: translateX(5px);
+  transform: translateX(1px);
 }
 
 
@@ -466,6 +467,7 @@
 }
 
 .tab-label {
+  margin-top: 4px;
   flex: 1;
   font-weight: 600;
 }

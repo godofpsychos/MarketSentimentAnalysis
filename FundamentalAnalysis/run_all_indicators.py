@@ -133,6 +133,15 @@ def run_all_fundamental_analysis():
     print(f"⏱️  Total execution time: {execution_time}")
     print(f"📁 Results saved in: {output_base.absolute()}")
 
+    # Run comprehensive fundamental score calculation
+    try:
+        from indicators.fundamental_score_calculator import main as run_fundamental_score
+        print("\n🧮 Running Comprehensive Fundamental Score Calculation...")
+        run_fundamental_score()
+        print("✅ Fundamental score calculation completed!")
+    except Exception as e:
+        print(f"❌ Error running fundamental score calculation: {e}")
+
 def generate_execution_summary(results_summary, execution_time, total_companies):
     """Generate and save execution summary"""
     summary = []

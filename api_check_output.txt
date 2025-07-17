@@ -1,0 +1,2446 @@
+\n==== /api/stocks ====
+{
+  "stocks": [
+    "ADANIGREEN",
+    "ADANIPORTS",
+    "ADANIPOWER",
+    "APOLLOHOSP",
+    "ASIANPAINT",
+    "AXISBANK",
+    "BHARTIARTL",
+    "BPCL",
+    "BRITANNIA",
+    "CIPLA",
+    "COALINDIA",
+    "DIVISLAB",
+    "DRREDDY",
+    "EICHERMOT",
+    "GRASIM",
+    "HCLTECH",
+    "HDFCBANK",
+    "HDFCLIFE",
+    "HINDALCO",
+    "HINDUNILVR",
+    "ICICIBANK",
+    "INDUSINDBK",
+    "INFY",
+    "ITC",
+    "JSWSTEEL",
+    "KOTAKBANK",
+    "LT",
+    "M&M",
+    "MARUTI",
+    "NTPC",
+    "ONGC",
+    "POWERGRID",
+    "RELIANCE",
+    "SBI",
+    "SBIN",
+    "SHREECEM",
+    "SUNPHARMA",
+    "TATACONSUM",
+    "TATAMOTORS",
+    "TATASTEEL",
+    "TCS",
+    "TECHM",
+    "TITAN",
+    "ULTRACEMCO",
+    "WIPRO"
+  ]
+}
+\n==== /api/sentiment ====
+{
+  "data": [
+    {
+      "datetime": "2025-07-15T12:18:10.301151",
+      "sentiment": 5.0,
+      "stock": "ADANIGREEN"
+    },
+    {
+      "datetime": "2025-07-15T08:13:58.531472",
+      "sentiment": 5.0,
+      "stock": "ADANIPORTS"
+    },
+    {
+      "datetime": "2025-07-09T02:49:48.522370",
+      "sentiment": 9.0,
+      "stock": "ADANIPOWER"
+    },
+    {
+      "datetime": "2025-06-17T03:41:40.581906",
+      "sentiment": 8.0,
+      "stock": "APOLLOHOSP"
+    },
+    {
+      "datetime": "2025-06-23T08:00:03.465336",
+      "sentiment": 7.0,
+      "stock": "ASIANPAINT"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 8.0,
+      "stock": "AXISBANK"
+    },
+    {
+      "datetime": "2025-07-15T12:18:10.301151",
+      "sentiment": 5.0,
+      "stock": "BHARTIARTL"
+    },
+    {
+      "datetime": "2025-07-15T12:18:10.301151",
+      "sentiment": 5.0,
+      "stock": "BPCL"
+    },
+    {
+      "datetime": "2025-07-09T02:49:48.522370",
+      "sentiment": 7.0,
+      "stock": "BRITANNIA"
+    },
+    {
+      "datetime": "2025-07-15T12:18:10.301151",
+      "sentiment": 5.0,
+      "stock": "CIPLA"
+    },
+    {
+      "datetime": "2025-07-15T08:13:58.531472",
+      "sentiment": 5.0,
+      "stock": "COALINDIA"
+    },
+    {
+      "datetime": "2025-07-15T12:18:10.301151",
+      "sentiment": 5.0,
+      "stock": "DIVISLAB"
+    },
+    {
+      "datetime": "2025-06-20T01:31:39.671617",
+      "sentiment": 4.0,
+      "stock": "DRREDDY"
+    },
+    {
+      "datetime": "2025-06-20T01:31:39.671617",
+      "sentiment": 5.0,
+      "stock": "EICHERMOT"
+    },
+    {
+      "datetime": "2025-07-15T12:18:10.301151",
+      "sentiment": 5.0,
+      "stock": "GRASIM"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 6.0,
+      "stock": "HCLTECH"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 8.0,
+      "stock": "HDFCBANK"
+    },
+    {
+      "datetime": "2025-07-15T12:18:10.301151",
+      "sentiment": 5.0,
+      "stock": "HDFCLIFE"
+    },
+    {
+      "datetime": "2025-07-15T12:18:10.301151",
+      "sentiment": 5.0,
+      "stock": "HINDALCO"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 8.0,
+      "stock": "HINDUNILVR"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 8.0,
+      "stock": "ICICIBANK"
+    },
+    {
+      "datetime": "2025-07-15T08:13:58.531472",
+      "sentiment": 5.0,
+      "stock": "INDUSINDBK"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 7.0,
+      "stock": "INFY"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 8.0,
+      "stock": "ITC"
+    },
+    {
+      "datetime": "2025-07-09T02:49:48.522370",
+      "sentiment": 8.0,
+      "stock": "JSWSTEEL"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 6.0,
+      "stock": "KOTAKBANK"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 5.0,
+      "stock": "LT"
+    },
+    {
+      "datetime": "2025-07-15T12:18:10.301151",
+      "sentiment": 5.0,
+      "stock": "M&M"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 6.0,
+      "stock": "MARUTI"
+    },
+    {
+      "datetime": "2025-07-15T12:18:10.301151",
+      "sentiment": 5.0,
+      "stock": "NTPC"
+    },
+    {
+      "datetime": "2025-07-15T08:13:58.531472",
+      "sentiment": 5.0,
+      "stock": "ONGC"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 4.0,
+      "stock": "POWERGRID"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 6.0,
+      "stock": "RELIANCE"
+    },
+    {
+      "datetime": "2025-07-15T08:13:58.531472",
+      "sentiment": 5.0,
+      "stock": "SBI"
+    },
+    {
+      "datetime": "2025-07-15T08:13:58.531472",
+      "sentiment": 5.0,
+      "stock": "SBIN"
+    },
+    {
+      "datetime": "2025-07-15T08:13:58.531472",
+      "sentiment": 5.0,
+      "stock": "SHREECEM"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 7.0,
+      "stock": "SUNPHARMA"
+    },
+    {
+      "datetime": "2025-06-20T01:31:39.671617",
+      "sentiment": 5.0,
+      "stock": "TATACONSUM"
+    },
+    {
+      "datetime": "2025-07-15T08:13:58.531472",
+      "sentiment": 5.0,
+      "stock": "TATAMOTORS"
+    },
+    {
+      "datetime": "2025-07-15T08:13:58.531472",
+      "sentiment": 5.0,
+      "stock": "TATASTEEL"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 6.0,
+      "stock": "TCS"
+    },
+    {
+      "datetime": "2025-07-15T08:13:58.531472",
+      "sentiment": 5.0,
+      "stock": "TECHM"
+    },
+    {
+      "datetime": "2025-07-17T07:35:13.246748",
+      "sentiment": 6.0,
+      "stock": "TITAN"
+    },
+    {
+      "datetime": "2025-07-09T02:49:48.522370",
+      "sentiment": 7.0,
+      "stock": "ULTRACEMCO"
+    },
+    {
+      "datetime": "2025-07-15T08:13:58.531472",
+      "sentiment": 5.0,
+      "stock": "WIPRO"
+    }
+  ]
+}
+\n==== /api/fundamental-analysis/AXISBANK ====
+{
+  "analysis_date": "2025-07-16T19:37:36.428393",
+  "company_info": {
+    "company_name": "Axis Bank Limited",
+    "sector": "Financial Services",
+    "symbol": "AXISBANK"
+  },
+  "growth": {
+    "earnings_growth": -0.066,
+    "revenue_growth": 0.866
+  },
+  "liquidity": {
+    "current_ratio": null,
+    "debt_to_equity": null,
+    "quick_ratio": null
+  },
+  "profitability": {
+    "gross_margin": 0.0,
+    "net_margin": 0.36571,
+    "operating_margin": 0.48773998,
+    "return_on_assets": 0.017760001,
+    "return_on_equity": 0.16324
+  },
+  "valuation": {
+    "ev_to_ebitda": null,
+    "ev_to_revenue": 7.071,
+    "forward_pe": 11.649115,
+    "pe_ratio": 13.458596,
+    "peg_ratio": null,
+    "price_to_book": 2.108365,
+    "price_to_sales": 4.932306
+  }
+}
+\n==== /api/ai-fundamental-analysis/AXISBANK ====
+{
+  "created_at": "2025-07-16 03:03:01",
+  "growth_earnings_growth": -0.066,
+  "growth_revenue_growth": 0.866,
+  "growth_score": 70.0,
+  "growth_summary": "The company shows impressive revenue growth, although earnings growth has declined.",
+  "leverage_debt_to_equity": null,
+  "leverage_score": 0.0,
+  "leverage_summary": "Debt to equity information is not provided, making it difficult to assess leverage risk.",
+  "liquidity_current_ratio": null,
+  "liquidity_score": 0.0,
+  "liquidity_summary": "Current liquidity metrics are unavailable, indicating a potential area of concern.",
+  "overview_grade": "B",
+  "overview_score": 57.0,
+  "overview_summary": "Overall, the company is performing well but has areas needing improvement, particularly in liquidity and leverage.",
+  "profitability_profit_margin": 0.36571,
+  "profitability_roe": 0.16324,
+  "profitability_score": 85.0,
+  "profitability_summary": "The company demonstrates strong profitability with a high return on equity and profit margin.",
+  "symbol": "AXISBANK",
+  "valuation_pe_ratio": 13.458596,
+  "valuation_score": 75.0,
+  "valuation_summary": "The company's price-to-earnings ratio suggests it may be undervalued compared to industry peers."
+}
+\n==== /api/fundamental-scores/AXISBANK ====
+{
+  "error": "Liquidity data not found for symbol: AXISBANK"
+}
+\n==== /api/stock-info/AXISBANK ====
+{
+  "currency": "INR",
+  "current_price": 1168.4,
+  "day_high": 1174.0,
+  "day_low": 1157.1,
+  "fifty_two_week_high": 1318.6,
+  "fifty_two_week_low": 933.5,
+  "market_cap": 3653294620672,
+  "name": "Axis Bank Limited",
+  "previous_close": 1165.9,
+  "symbol": "AXISBANK",
+  "ticker": "AXISBANK.NS"
+}
+\n==== /api/financial-data ====
+{
+  "companies": [
+    "SHREECEM",
+    "AXISBANK",
+    "HDFCBANK",
+    "INFY",
+    "WIPRO",
+    "EICHERMOT",
+    "KOTAKBANK",
+    "RELIANCE",
+    "TCS",
+    "ADANIGREEN",
+    "HINDUNILVR",
+    "ADANIPORTS",
+    "BAJFINANCE",
+    "HDFCLIFE",
+    "INDUSINDBK",
+    "CIPLA",
+    "JSWSTEEL",
+    "MARUTI",
+    "SUNPHARMA",
+    "HINDALCO",
+    "NTPC",
+    "ADANIENT",
+    "BHARTIARTL",
+    "HCLTECH",
+    "POWERGRID",
+    "TATASTEEL",
+    "DRREDDY",
+    "ADANIPOWER",
+    "ULTRACEMCO",
+    "HEROMOTOCO",
+    "LT",
+    "ITC",
+    "COALINDIA",
+    "BAJAJFINSV",
+    "SBIN",
+    "ONGC",
+    "DIVISLAB",
+    "TATACONSUM",
+    "ASIANPAINT",
+    "APOLLOHOSP",
+    "TATAMOTORS",
+    "TECHM",
+    "GRASIM",
+    "TITAN",
+    "NESTLEIND",
+    "ICICIBANK",
+    "BRITANNIA",
+    "M&M",
+    "BPCL",
+    "LTIM"
+  ],
+  "data": [
+    {
+      "company_name": "Adani Enterprises Limited",
+      "net_profit": 70990000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "ADANIENT",
+      "total_expenditure": 287935900000.0,
+      "total_revenue": 978947500000.0
+    },
+    {
+      "company_name": "Adani Enterprises Limited",
+      "net_profit": 32407800000.0,
+      "period_date": "2024-03-31",
+      "symbol": "ADANIENT",
+      "total_expenditure": 319194200000.0,
+      "total_revenue": 964209800000.0
+    },
+    {
+      "company_name": "Adani Enterprises Limited",
+      "net_profit": 24639800000.0,
+      "period_date": "2023-03-31",
+      "symbol": "ADANIENT",
+      "total_expenditure": 158968300000.0,
+      "total_revenue": 1273896500000.0
+    },
+    {
+      "company_name": "Adani Enterprises Limited",
+      "net_profit": 7765600000.0,
+      "period_date": "2022-03-31",
+      "symbol": "ADANIENT",
+      "total_expenditure": 49903100000.0,
+      "total_revenue": 693043600000.0
+    },
+    {
+      "company_name": "Adani Green Energy Limited",
+      "net_profit": 14440000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "ADANIGREEN",
+      "total_expenditure": 33930000000.0,
+      "total_revenue": 112120000000.0
+    },
+    {
+      "company_name": "Adani Green Energy Limited",
+      "net_profit": 11000000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "ADANIGREEN",
+      "total_expenditure": 26180000000.0,
+      "total_revenue": 92200000000.0
+    },
+    {
+      "company_name": "Adani Green Energy Limited",
+      "net_profit": 9740000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "ADANIGREEN",
+      "total_expenditure": 15200000000.0,
+      "total_revenue": 77750000000.0
+    },
+    {
+      "company_name": "Adani Green Energy Limited",
+      "net_profit": 4890000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "ADANIGREEN",
+      "total_expenditure": 10070000000.0,
+      "total_revenue": 51330000000.0
+    },
+    {
+      "company_name": "Adani Ports and Special Economic Zone Limited",
+      "net_profit": 110923100000.0,
+      "period_date": "2025-03-31",
+      "symbol": "ADANIPORTS",
+      "total_expenditure": 19755500000.0,
+      "total_revenue": 304753300000.0
+    },
+    {
+      "company_name": "Adani Ports and Special Economic Zone Limited",
+      "net_profit": 81106400000.0,
+      "period_date": "2024-03-31",
+      "symbol": "ADANIPORTS",
+      "total_expenditure": 18339000000.0,
+      "total_revenue": 267105600000.0
+    },
+    {
+      "company_name": "Adani Ports and Special Economic Zone Limited",
+      "net_profit": 53088500000.0,
+      "period_date": "2023-03-31",
+      "symbol": "ADANIPORTS",
+      "total_expenditure": 22774000000.0,
+      "total_revenue": 208519100000.0
+    },
+    {
+      "company_name": "Adani Ports and Special Economic Zone Limited",
+      "net_profit": 48860300000.0,
+      "period_date": "2022-03-31",
+      "symbol": "ADANIPORTS",
+      "total_expenditure": 24638100000.0,
+      "total_revenue": 169790800000.0
+    },
+    {
+      "company_name": "Adani Power Limited",
+      "net_profit": 127496100000.0,
+      "period_date": "2025-03-31",
+      "symbol": "ADANIPOWER",
+      "total_expenditure": 81172000000.0,
+      "total_revenue": 562030900000.0
+    },
+    {
+      "company_name": "Adani Power Limited",
+      "net_profit": 208287900000.0,
+      "period_date": "2024-03-31",
+      "symbol": "ADANIPOWER",
+      "total_expenditure": 69229900000.0,
+      "total_revenue": 503512500000.0
+    },
+    {
+      "company_name": "Adani Power Limited",
+      "net_profit": 107266400000.0,
+      "period_date": "2023-03-31",
+      "symbol": "ADANIPOWER",
+      "total_expenditure": 42880600000.0,
+      "total_revenue": 387174800000.0
+    },
+    {
+      "company_name": "Adani Power Limited",
+      "net_profit": 49115800000.0,
+      "period_date": "2022-03-31",
+      "symbol": "ADANIPOWER",
+      "total_expenditure": 36593600000.0,
+      "total_revenue": 276549000000.0
+    },
+    {
+      "company_name": "Apollo Hospitals Enterprise Limited",
+      "net_profit": 14459000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "APOLLOHOSP",
+      "total_expenditure": 82197000000.0,
+      "total_revenue": 217940000000.0
+    },
+    {
+      "company_name": "Apollo Hospitals Enterprise Limited",
+      "net_profit": 8986000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "APOLLOHOSP",
+      "total_expenditure": 75500000000.0,
+      "total_revenue": 190592000000.0
+    },
+    {
+      "company_name": "Apollo Hospitals Enterprise Limited",
+      "net_profit": 8191000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "APOLLOHOSP",
+      "total_expenditure": 64213000000.0,
+      "total_revenue": 164448000000.0
+    },
+    {
+      "company_name": "Apollo Hospitals Enterprise Limited",
+      "net_profit": 10556000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "APOLLOHOSP",
+      "total_expenditure": 53743000000.0,
+      "total_revenue": 145362000000.0
+    },
+    {
+      "company_name": "Asian Paints Limited",
+      "net_profit": 36672300000.0,
+      "period_date": "2025-03-31",
+      "symbol": "ASIANPAINT",
+      "total_expenditure": 93017100000.0,
+      "total_revenue": 337973600000.0
+    },
+    {
+      "company_name": "Asian Paints Limited",
+      "net_profit": 54602300000.0,
+      "period_date": "2024-03-31",
+      "symbol": "ASIANPAINT",
+      "total_expenditure": 85599300000.0,
+      "total_revenue": 353821200000.0
+    },
+    {
+      "company_name": "Asian Paints Limited",
+      "net_profit": 41064500000.0,
+      "period_date": "2023-03-31",
+      "symbol": "ASIANPAINT",
+      "total_expenditure": 76563600000.0,
+      "total_revenue": 343887100000.0
+    },
+    {
+      "company_name": "Asian Paints Limited",
+      "net_profit": 30305700000.0,
+      "period_date": "2022-03-31",
+      "symbol": "ASIANPAINT",
+      "total_expenditure": 66281400000.0,
+      "total_revenue": 289413500000.0
+    },
+    {
+      "company_name": "Axis Bank Limited",
+      "net_profit": 280551100000.0,
+      "period_date": "2025-03-31",
+      "symbol": "AXISBANK",
+      "total_expenditure": 399920400000.0,
+      "total_revenue": 848805500000.0
+    },
+    {
+      "company_name": "Axis Bank Limited",
+      "net_profit": 263862000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "AXISBANK",
+      "total_expenditure": 372425500000.0,
+      "total_revenue": 765986200000.0
+    },
+    {
+      "company_name": "Axis Bank Limited",
+      "net_profit": 108184500000.0,
+      "period_date": "2023-03-31",
+      "symbol": "AXISBANK",
+      "total_expenditure": 405520500000.0,
+      "total_revenue": 624158400000.0
+    },
+    {
+      "company_name": "Axis Bank Limited",
+      "net_profit": 141192900000.0,
+      "period_date": "2022-03-31",
+      "symbol": "AXISBANK",
+      "total_expenditure": 257051400000.0,
+      "total_revenue": 511976400000.0
+    },
+    {
+      "company_name": "Bajaj Finserv Ltd.",
+      "net_profit": 88723100000.0,
+      "period_date": "2025-03-31",
+      "symbol": "BAJAJFINSV",
+      "total_expenditure": 0,
+      "total_revenue": 1139988900000.0
+    },
+    {
+      "company_name": "Bajaj Finserv Ltd.",
+      "net_profit": 81477900000.0,
+      "period_date": "2024-03-31",
+      "symbol": "BAJAJFINSV",
+      "total_expenditure": 0,
+      "total_revenue": 961851900000.0
+    },
+    {
+      "company_name": "Bajaj Finserv Ltd.",
+      "net_profit": 64172800000.0,
+      "period_date": "2023-03-31",
+      "symbol": "BAJAJFINSV",
+      "total_expenditure": 0,
+      "total_revenue": 738459200000.0
+    },
+    {
+      "company_name": "Bajaj Finserv Ltd.",
+      "net_profit": 45567700000.0,
+      "period_date": "2022-03-31",
+      "symbol": "BAJAJFINSV",
+      "total_expenditure": 0,
+      "total_revenue": 615160000000.0
+    },
+    {
+      "company_name": "Bajaj Finance Limited",
+      "net_profit": 166378200000.0,
+      "period_date": "2025-03-31",
+      "symbol": "BAJFINANCE",
+      "total_expenditure": 123284800000.0,
+      "total_revenue": 423563300000.0
+    },
+    {
+      "company_name": "Bajaj Finance Limited",
+      "net_profit": 144511700000.0,
+      "period_date": "2024-03-31",
+      "symbol": "BAJFINANCE",
+      "total_expenditure": 103936900000.0,
+      "total_revenue": 343263200000.0
+    },
+    {
+      "company_name": "Bajaj Finance Limited",
+      "net_profit": 115076900000.0,
+      "period_date": "2023-03-31",
+      "symbol": "BAJFINANCE",
+      "total_expenditure": 82377300000.0,
+      "total_revenue": 269669000000.0
+    },
+    {
+      "company_name": "Bajaj Finance Limited",
+      "net_profit": 70282300000.0,
+      "period_date": "2022-03-31",
+      "symbol": "BAJFINANCE",
+      "total_expenditure": 58001900000.0,
+      "total_revenue": 201322100000.0
+    },
+    {
+      "company_name": "Bharti Airtel Limited",
+      "net_profit": 335561000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "BHARTIARTL",
+      "total_expenditure": 708917000000.0,
+      "total_revenue": 1729852000000.0
+    },
+    {
+      "company_name": "Bharti Airtel Limited",
+      "net_profit": 74670000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "BHARTIARTL",
+      "total_expenditure": 616551000000.0,
+      "total_revenue": 1499824000000.0
+    },
+    {
+      "company_name": "Bharti Airtel Limited",
+      "net_profit": 83459000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "BHARTIARTL",
+      "total_expenditure": 526736000000.0,
+      "total_revenue": 1391448000000.0
+    },
+    {
+      "company_name": "Bharti Airtel Limited",
+      "net_profit": 42549000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "BHARTIARTL",
+      "total_expenditure": 463799000000.0,
+      "total_revenue": 1165469000000.0
+    },
+    {
+      "company_name": "Bharat Petroleum Corporation Limited",
+      "net_profit": 133365500000.0,
+      "period_date": "2025-03-31",
+      "symbol": "BPCL",
+      "total_expenditure": 295735700000.0,
+      "total_revenue": 4402718600000.0
+    },
+    {
+      "company_name": "Bharat Petroleum Corporation Limited",
+      "net_profit": 268588400000.0,
+      "period_date": "2024-03-31",
+      "symbol": "BPCL",
+      "total_expenditure": 279048500000.0,
+      "total_revenue": 4480830300000.0
+    },
+    {
+      "company_name": "Bharat Petroleum Corporation Limited",
+      "net_profit": 21310500000.0,
+      "period_date": "2023-03-31",
+      "symbol": "BPCL",
+      "total_expenditure": 129516500000.0,
+      "total_revenue": 4662577300000.0
+    },
+    {
+      "company_name": "Bharat Petroleum Corporation Limited",
+      "net_profit": 116815000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "BPCL",
+      "total_expenditure": 168383900000.0,
+      "total_revenue": 3455960300000.0
+    },
+    {
+      "company_name": "Britannia Industries Limited",
+      "net_profit": 21787300000.0,
+      "period_date": "2025-03-31",
+      "symbol": "BRITANNIA",
+      "total_expenditure": 40571600000.0,
+      "total_revenue": 175350200000.0
+    },
+    {
+      "company_name": "Britannia Industries Limited",
+      "net_profit": 21398100000.0,
+      "period_date": "2024-03-31",
+      "symbol": "BRITANNIA",
+      "total_expenditure": 41848000000.0,
+      "total_revenue": 165462100000.0
+    },
+    {
+      "company_name": "Britannia Industries Limited",
+      "net_profit": 23217700000.0,
+      "period_date": "2023-03-31",
+      "symbol": "BRITANNIA",
+      "total_expenditure": 37326800000.0,
+      "total_revenue": 159849000000.0
+    },
+    {
+      "company_name": "Britannia Industries Limited",
+      "net_profit": 15248200000.0,
+      "period_date": "2022-03-31",
+      "symbol": "BRITANNIA",
+      "total_expenditure": 31434100000.0,
+      "total_revenue": 139446700000.0
+    },
+    {
+      "company_name": "Cipla Limited",
+      "net_profit": 52725200000.0,
+      "period_date": "2025-03-31",
+      "symbol": "CIPLA",
+      "total_expenditure": 121954600000.0,
+      "total_revenue": 271454000000.0
+    },
+    {
+      "company_name": "Cipla Limited",
+      "net_profit": 41215500000.0,
+      "period_date": "2024-03-31",
+      "symbol": "CIPLA",
+      "total_expenditure": 113870300000.0,
+      "total_revenue": 254466300000.0
+    },
+    {
+      "company_name": "Cipla Limited",
+      "net_profit": 28019100000.0,
+      "period_date": "2023-03-31",
+      "symbol": "CIPLA",
+      "total_expenditure": 94946800000.0,
+      "total_revenue": 224731800000.0
+    },
+    {
+      "company_name": "Cipla Limited",
+      "net_profit": 25167500000.0,
+      "period_date": "2022-03-31",
+      "symbol": "CIPLA",
+      "total_expenditure": 88232100000.0,
+      "total_revenue": 216233600000.0
+    },
+    {
+      "company_name": "Coal India Limited",
+      "net_profit": 353581600000.0,
+      "period_date": "2025-03-31",
+      "symbol": "COALINDIA",
+      "total_expenditure": 750556700000.0,
+      "total_revenue": 1269567600000.0
+    },
+    {
+      "company_name": "Coal India Limited",
+      "net_profit": 374022900000.0,
+      "period_date": "2024-03-31",
+      "symbol": "COALINDIA",
+      "total_expenditure": 759953500000.0,
+      "total_revenue": 1303256500000.0
+    },
+    {
+      "company_name": "Coal India Limited",
+      "net_profit": 317632300000.0,
+      "period_date": "2023-03-31",
+      "symbol": "COALINDIA",
+      "total_expenditure": 668021500000.0,
+      "total_revenue": 1274290300000.0
+    },
+    {
+      "company_name": "Coal India Limited",
+      "net_profit": 173581000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "COALINDIA",
+      "total_expenditure": 575825100000.0,
+      "total_revenue": 1005625700000.0
+    },
+    {
+      "company_name": "Divi's Laboratories Limited",
+      "net_profit": 21910000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "DIVISLAB",
+      "total_expenditure": 30690000000.0,
+      "total_revenue": 93600000000.0
+    },
+    {
+      "company_name": "Divi's Laboratories Limited",
+      "net_profit": 16000000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "DIVISLAB",
+      "total_expenditure": 28890000000.0,
+      "total_revenue": 78450000000.0
+    },
+    {
+      "company_name": "Divi's Laboratories Limited",
+      "net_profit": 18240000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "DIVISLAB",
+      "total_expenditure": 24600000000.0,
+      "total_revenue": 76650000000.0
+    },
+    {
+      "company_name": "Divi's Laboratories Limited",
+      "net_profit": 29604500000.0,
+      "period_date": "2022-03-31",
+      "symbol": "DIVISLAB",
+      "total_expenditure": 21335800000.0,
+      "total_revenue": 87992300000.0
+    },
+    {
+      "company_name": "Dr. Reddy's Laboratories Limited",
+      "net_profit": 56544000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "DRREDDY",
+      "total_expenditure": 118414000000.0,
+      "total_revenue": 325535000000.0
+    },
+    {
+      "company_name": "Dr. Reddy's Laboratories Limited",
+      "net_profit": 55684000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "DRREDDY",
+      "total_expenditure": 98299000000.0,
+      "total_revenue": 279164000000.0
+    },
+    {
+      "company_name": "Dr. Reddy's Laboratories Limited",
+      "net_profit": 45067000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "DRREDDY",
+      "total_expenditure": 80289000000.0,
+      "total_revenue": 245879000000.0
+    },
+    {
+      "company_name": "Dr. Reddy's Laboratories Limited",
+      "net_profit": 23568000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "DRREDDY",
+      "total_expenditure": 77921000000.0,
+      "total_revenue": 214391000000.0
+    },
+    {
+      "company_name": "Eicher Motors Limited",
+      "net_profit": 47344400000.0,
+      "period_date": "2025-03-31",
+      "symbol": "EICHERMOT",
+      "total_expenditure": 42584300000.0,
+      "total_revenue": 185382100000.0
+    },
+    {
+      "company_name": "Eicher Motors Limited",
+      "net_profit": 40010100000.0,
+      "period_date": "2024-03-31",
+      "symbol": "EICHERMOT",
+      "total_expenditure": 35240600000.0,
+      "total_revenue": 162340200000.0
+    },
+    {
+      "company_name": "Eicher Motors Limited",
+      "net_profit": 29139400000.0,
+      "period_date": "2023-03-31",
+      "symbol": "EICHERMOT",
+      "total_expenditure": 27364900000.0,
+      "total_revenue": 141759000000.0
+    },
+    {
+      "company_name": "Eicher Motors Limited",
+      "net_profit": 16766000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "EICHERMOT",
+      "total_expenditure": 24510700000.0,
+      "total_revenue": 101270700000.0
+    },
+    {
+      "company_name": "Grasim Industries Limited",
+      "net_profit": 37056800000.0,
+      "period_date": "2025-03-31",
+      "symbol": "GRASIM",
+      "total_expenditure": 550131200000.0,
+      "total_revenue": 1484778900000.0
+    },
+    {
+      "company_name": "Grasim Industries Limited",
+      "net_profit": 56244900000.0,
+      "period_date": "2024-03-31",
+      "symbol": "GRASIM",
+      "total_expenditure": 464980700000.0,
+      "total_revenue": 1309784800000.0
+    },
+    {
+      "company_name": "Grasim Industries Limited",
+      "net_profit": 68272600000.0,
+      "period_date": "2023-03-31",
+      "symbol": "GRASIM",
+      "total_expenditure": 372640200000.0,
+      "total_revenue": 1168956600000.0
+    },
+    {
+      "company_name": "Grasim Industries Limited",
+      "net_profit": 75497800000.0,
+      "period_date": "2022-03-31",
+      "symbol": "GRASIM",
+      "total_expenditure": 311307900000.0,
+      "total_revenue": 948717700000.0
+    },
+    {
+      "company_name": "HCL Technologies Limited",
+      "net_profit": 173900000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "HCLTECH",
+      "total_expenditure": 268520000000.0,
+      "total_revenue": 1170550000000.0
+    },
+    {
+      "company_name": "HCL Technologies Limited",
+      "net_profit": 157020000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "HCLTECH",
+      "total_expenditure": 256110000000.0,
+      "total_revenue": 1099130000000.0
+    },
+    {
+      "company_name": "HCL Technologies Limited",
+      "net_profit": 148510000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "HCLTECH",
+      "total_expenditure": 246510000000.0,
+      "total_revenue": 1014560000000.0
+    },
+    {
+      "company_name": "HCL Technologies Limited",
+      "net_profit": 134990000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "HCLTECH",
+      "total_expenditure": 219110000000.0,
+      "total_revenue": 856510000000.0
+    },
+    {
+      "company_name": "HDFC Bank Limited",
+      "net_profit": 622656600000.0,
+      "period_date": "2024-03-31",
+      "symbol": "HDFCBANK",
+      "total_expenditure": 0,
+      "total_revenue": 1986934300000.0
+    },
+    {
+      "company_name": "HDFC Bank Limited",
+      "net_profit": 495446900000.0,
+      "period_date": "2023-03-31",
+      "symbol": "HDFCBANK",
+      "total_expenditure": 0,
+      "total_revenue": 1205375000000.0
+    },
+    {
+      "company_name": "HDFC Bank Limited",
+      "net_profit": 386000400000.0,
+      "period_date": "2022-03-31",
+      "symbol": "HDFCBANK",
+      "total_expenditure": 0,
+      "total_revenue": 1019413700000.0
+    },
+    {
+      "company_name": "HDFC Bank Limited",
+      "net_profit": 325977100000.0,
+      "period_date": "2021-03-31",
+      "symbol": "HDFCBANK",
+      "total_expenditure": 0,
+      "total_revenue": 936662200000.0
+    },
+    {
+      "company_name": "HDFC Life Insurance Company Limited",
+      "net_profit": 18108200000.0,
+      "period_date": "2025-03-31",
+      "symbol": "HDFCLIFE",
+      "total_expenditure": 0,
+      "total_revenue": 968268200000.0
+    },
+    {
+      "company_name": "HDFC Life Insurance Company Limited",
+      "net_profit": 15740800000.0,
+      "period_date": "2024-03-31",
+      "symbol": "HDFCLIFE",
+      "total_expenditure": 0,
+      "total_revenue": 1015709300000.0
+    },
+    {
+      "company_name": "HDFC Life Insurance Company Limited",
+      "net_profit": 13682771000.0,
+      "period_date": "2023-03-31",
+      "symbol": "HDFCLIFE",
+      "total_expenditure": 0,
+      "total_revenue": 702463154000.0
+    },
+    {
+      "company_name": "HDFC Life Insurance Company Limited",
+      "net_profit": 13269331000.0,
+      "period_date": "2022-03-31",
+      "symbol": "HDFCLIFE",
+      "total_expenditure": 0,
+      "total_revenue": 674427348000.0
+    },
+    {
+      "company_name": "Hero MotoCorp Limited",
+      "net_profit": 43784800000.0,
+      "period_date": "2025-03-31",
+      "symbol": "HEROMOTOCO",
+      "total_expenditure": 88915300000.0,
+      "total_revenue": 409234200000.0
+    },
+    {
+      "company_name": "Hero MotoCorp Limited",
+      "net_profit": 37448300000.0,
+      "period_date": "2024-03-31",
+      "symbol": "HEROMOTOCO",
+      "total_expenditure": 76869100000.0,
+      "total_revenue": 377886200000.0
+    },
+    {
+      "company_name": "Hero MotoCorp Limited",
+      "net_profit": 28099600000.0,
+      "period_date": "2023-03-31",
+      "symbol": "HEROMOTOCO",
+      "total_expenditure": 62547600000.0,
+      "total_revenue": 337377200000.0
+    },
+    {
+      "company_name": "Hero MotoCorp Limited",
+      "net_profit": 23168800000.0,
+      "period_date": "2022-03-31",
+      "symbol": "HEROMOTOCO",
+      "total_expenditure": 51956100000.0,
+      "total_revenue": 289776400000.0
+    },
+    {
+      "company_name": "Hindalco Industries Limited",
+      "net_profit": 160010000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "HINDALCO",
+      "total_expenditure": 607230000000.0,
+      "total_revenue": 2384960000000.0
+    },
+    {
+      "company_name": "Hindalco Industries Limited",
+      "net_profit": 101550000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "HINDALCO",
+      "total_expenditure": 578500000000.0,
+      "total_revenue": 2159620000000.0
+    },
+    {
+      "company_name": "Hindalco Industries Limited",
+      "net_profit": 100970000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "HINDALCO",
+      "total_expenditure": 524730000000.0,
+      "total_revenue": 2219370000000.0
+    },
+    {
+      "company_name": "Hindalco Industries Limited",
+      "net_profit": 137300000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "HINDALCO",
+      "total_expenditure": 412390000000.0,
+      "total_revenue": 1938880000000.0
+    },
+    {
+      "company_name": "Hindustan Unilever Limited",
+      "net_profit": 106490000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "HINDUNILVR",
+      "total_expenditure": 182140000000.0,
+      "total_revenue": 622880000000.0
+    },
+    {
+      "company_name": "Hindustan Unilever Limited",
+      "net_profit": 102770000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "HINDUNILVR",
+      "total_expenditure": 177590000000.0,
+      "total_revenue": 609660000000.0
+    },
+    {
+      "company_name": "Hindustan Unilever Limited",
+      "net_profit": 101200000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "HINDUNILVR",
+      "total_expenditure": 138200000000.0,
+      "total_revenue": 595490000000.0
+    },
+    {
+      "company_name": "Hindustan Unilever Limited",
+      "net_profit": 88790000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "HINDUNILVR",
+      "total_expenditure": 131950000000.0,
+      "total_revenue": 515480000000.0
+    },
+    {
+      "company_name": "ICICI Bank Limited",
+      "net_profit": 442563735000.0,
+      "period_date": "2024-03-31",
+      "symbol": "ICICIBANK",
+      "total_expenditure": 0,
+      "total_revenue": 1612101952000.0
+    },
+    {
+      "company_name": "ICICI Bank Limited",
+      "net_profit": 340366408000.0,
+      "period_date": "2023-03-31",
+      "symbol": "ICICIBANK",
+      "total_expenditure": 0,
+      "total_revenue": 1341894552000.0
+    },
+    {
+      "company_name": "ICICI Bank Limited",
+      "net_profit": 251100960000.0,
+      "period_date": "2022-03-31",
+      "symbol": "ICICIBANK",
+      "total_expenditure": 0,
+      "total_revenue": 1163639822000.0
+    },
+    {
+      "company_name": "ICICI Bank Limited",
+      "net_profit": 183843186000.0,
+      "period_date": "2021-03-31",
+      "symbol": "ICICIBANK",
+      "total_expenditure": 0,
+      "total_revenue": 1185394470000.0
+    },
+    {
+      "company_name": "IndusInd Bank Limited",
+      "net_profit": 25755400000.0,
+      "period_date": "2025-03-31",
+      "symbol": "INDUSINDBK",
+      "total_expenditure": 160603500000.0,
+      "total_revenue": 267217500000.0
+    },
+    {
+      "company_name": "IndusInd Bank Limited",
+      "net_profit": 89773000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "INDUSINDBK",
+      "total_expenditure": 141476300000.0,
+      "total_revenue": 300116900000.0
+    },
+    {
+      "company_name": "IndusInd Bank Limited",
+      "net_profit": 74434978000.0,
+      "period_date": "2023-03-31",
+      "symbol": "INDUSINDBK",
+      "total_expenditure": 116471570000.0,
+      "total_revenue": 254676829000.0
+    },
+    {
+      "company_name": "IndusInd Bank Limited",
+      "net_profit": 48050380000.0,
+      "period_date": "2022-03-31",
+      "symbol": "INDUSINDBK",
+      "total_expenditure": 114626457000.0,
+      "total_revenue": 220432085000.0
+    },
+    {
+      "company_name": "Infosys Limited",
+      "net_profit": 3167000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "INFY",
+      "total_expenditure": 1738000000.0,
+      "total_revenue": 18562000000.0
+    },
+    {
+      "company_name": "Infosys Limited",
+      "net_profit": 2981000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "INFY",
+      "total_expenditure": 1643000000.0,
+      "total_revenue": 18212000000.0
+    },
+    {
+      "company_name": "Infosys Limited",
+      "net_profit": 2963000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "INFY",
+      "total_expenditure": 1560000000.0,
+      "total_revenue": 16311000000.0
+    },
+    {
+      "company_name": "Infosys Limited",
+      "net_profit": 2613000000.0,
+      "period_date": "2021-03-31",
+      "symbol": "INFY",
+      "total_expenditure": 1408000000.0,
+      "total_revenue": 13561000000.0
+    },
+    {
+      "company_name": "ITC Limited",
+      "net_profit": 347466300000.0,
+      "period_date": "2025-03-31",
+      "symbol": "ITC",
+      "total_expenditure": 183427100000.0,
+      "total_revenue": 746533200000.0
+    },
+    {
+      "company_name": "ITC Limited",
+      "net_profit": 204587800000.0,
+      "period_date": "2024-03-31",
+      "symbol": "ITC",
+      "total_expenditure": 166785000000.0,
+      "total_revenue": 673910400000.0
+    },
+    {
+      "company_name": "ITC Limited",
+      "net_profit": 191916600000.0,
+      "period_date": "2023-03-31",
+      "symbol": "ITC",
+      "total_expenditure": 168880000000.0,
+      "total_revenue": 702452200000.0
+    },
+    {
+      "company_name": "ITC Limited",
+      "net_profit": 152426600000.0,
+      "period_date": "2022-03-31",
+      "symbol": "ITC",
+      "total_expenditure": 144394700000.0,
+      "total_revenue": 600813600000.0
+    },
+    {
+      "company_name": "JSW Steel Limited",
+      "net_profit": 35040000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "JSWSTEEL",
+      "total_expenditure": 538380000000.0,
+      "total_revenue": 1665750000000.0
+    },
+    {
+      "company_name": "JSW Steel Limited",
+      "net_profit": 88120000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "JSWSTEEL",
+      "total_expenditure": 508460000000.0,
+      "total_revenue": 1725880000000.0
+    },
+    {
+      "company_name": "JSW Steel Limited",
+      "net_profit": 41440000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "JSWSTEEL",
+      "total_expenditure": 423210000000.0,
+      "total_revenue": 1636460000000.0
+    },
+    {
+      "company_name": "JSW Steel Limited",
+      "net_profit": 206650000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "JSWSTEEL",
+      "total_expenditure": 314970000000.0,
+      "total_revenue": 1438290000000.0
+    },
+    {
+      "company_name": "Kotak Mahindra Bank Limited",
+      "net_profit": 221259900000.0,
+      "period_date": "2025-03-31",
+      "symbol": "KOTAKBANK",
+      "total_expenditure": 457566800000.0,
+      "total_revenue": 747546500000.0
+    },
+    {
+      "company_name": "Kotak Mahindra Bank Limited",
+      "net_profit": 182132100000.0,
+      "period_date": "2024-03-31",
+      "symbol": "KOTAKBANK",
+      "total_expenditure": 458708200000.0,
+      "total_revenue": 716735400000.0
+    },
+    {
+      "company_name": "Kotak Mahindra Bank Limited",
+      "net_profit": 149250096000.0,
+      "period_date": "2023-03-31",
+      "symbol": "KOTAKBANK",
+      "total_expenditure": 320795887000.0,
+      "total_revenue": 518572514000.0
+    },
+    {
+      "company_name": "Kotak Mahindra Bank Limited",
+      "net_profit": 120893915000.0,
+      "period_date": "2022-03-31",
+      "symbol": "KOTAKBANK",
+      "total_expenditure": 294361844000.0,
+      "total_revenue": 459723509000.0
+    },
+    {
+      "company_name": "Larsen & Toubro Limited",
+      "net_profit": 54972600000.0,
+      "period_date": "2025-03-31",
+      "symbol": "LT",
+      "total_expenditure": 165035100000.0,
+      "total_revenue": 743922800000.0
+    },
+    {
+      "company_name": "Larsen & Toubro Limited",
+      "net_profit": 43961200000.0,
+      "period_date": "2024-03-31",
+      "symbol": "LT",
+      "total_expenditure": 148205400000.0,
+      "total_revenue": 670786800000.0
+    },
+    {
+      "company_name": "Larsen & Toubro Limited",
+      "net_profit": 104707200000.0,
+      "period_date": "2023-03-31",
+      "symbol": "LT",
+      "total_expenditure": 455446700000.0,
+      "total_revenue": 1816614200000.0
+    },
+    {
+      "company_name": "Larsen & Toubro Limited",
+      "net_profit": 86693300000.0,
+      "period_date": "2022-03-31",
+      "symbol": "LT",
+      "total_expenditure": 364444700000.0,
+      "total_revenue": 1556724600000.0
+    },
+    {
+      "company_name": "LTIMindtree Limited",
+      "net_profit": 45987000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "LTIM",
+      "total_expenditure": 52509000000.0,
+      "total_revenue": 380081000000.0
+    },
+    {
+      "company_name": "LTIMindtree Limited",
+      "net_profit": 45821000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "LTIM",
+      "total_expenditure": 46563000000.0,
+      "total_revenue": 355170000000.0
+    },
+    {
+      "company_name": "LTIMindtree Limited",
+      "net_profit": 44083000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "LTIM",
+      "total_expenditure": 69619000000.0,
+      "total_revenue": 331830000000.0
+    },
+    {
+      "company_name": "LTIMindtree Limited",
+      "net_profit": 39483000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "LTIM",
+      "total_expenditure": 53894000000.0,
+      "total_revenue": 261087000000.0
+    },
+    {
+      "company_name": "Mahindra & Mahindra Limited",
+      "net_profit": 129291000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "M&M",
+      "total_expenditure": 389927200000.0,
+      "total_revenue": 1587497500000.0
+    },
+    {
+      "company_name": "Mahindra & Mahindra Limited",
+      "net_profit": 112686400000.0,
+      "period_date": "2024-03-31",
+      "symbol": "M&M",
+      "total_expenditure": 352624500000.0,
+      "total_revenue": 1382793000000.0
+    },
+    {
+      "company_name": "Mahindra & Mahindra Limited",
+      "net_profit": 102815000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "M&M",
+      "total_expenditure": 284061600000.0,
+      "total_revenue": 1190403800000.0
+    },
+    {
+      "company_name": "Mahindra & Mahindra Limited",
+      "net_profit": 65773200000.0,
+      "period_date": "2022-03-31",
+      "symbol": "M&M",
+      "total_expenditure": 251261100000.0,
+      "total_revenue": 884404400000.0
+    },
+    {
+      "company_name": "Maruti Suzuki India Limited",
+      "net_profit": 145002000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "MARUTI",
+      "total_expenditure": 234459000000.0,
+      "total_revenue": 1451099000000.0
+    },
+    {
+      "company_name": "Maruti Suzuki India Limited",
+      "net_profit": 134882000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "MARUTI",
+      "total_expenditure": 221710000000.0,
+      "total_revenue": 1349217000000.0
+    },
+    {
+      "company_name": "Maruti Suzuki India Limited",
+      "net_profit": 82637000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "MARUTI",
+      "total_expenditure": 150203000000.0,
+      "total_revenue": 1137648000000.0
+    },
+    {
+      "company_name": "Maruti Suzuki India Limited",
+      "net_profit": 38795000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "MARUTI",
+      "total_expenditure": 127552000000.0,
+      "total_revenue": 851688000000.0
+    },
+    {
+      "company_name": "Nestlé India Limited",
+      "net_profit": 32075900000.0,
+      "period_date": "2025-03-31",
+      "symbol": "NESTLEIND",
+      "total_expenditure": 70939100000.0,
+      "total_revenue": 200775000000.0
+    },
+    {
+      "company_name": "Nestlé India Limited",
+      "net_profit": 23905200000.0,
+      "period_date": "2022-12-31",
+      "symbol": "NESTLEIND",
+      "total_expenditure": 55452700000.0,
+      "total_revenue": 167895300000.0
+    },
+    {
+      "company_name": "Nestlé India Limited",
+      "net_profit": 21184100000.0,
+      "period_date": "2021-12-31",
+      "symbol": "NESTLEIND",
+      "total_expenditure": 50076600000.0,
+      "total_revenue": 146649000000.0
+    },
+    {
+      "company_name": "Nestlé India Limited",
+      "net_profit": 20824300000.0,
+      "period_date": "2020-12-31",
+      "symbol": "NESTLEIND",
+      "total_expenditure": 46806200000.0,
+      "total_revenue": 132901600000.0
+    },
+    {
+      "company_name": "NTPC Limited",
+      "net_profit": 234224600000.0,
+      "period_date": "2025-03-31",
+      "symbol": "NTPC",
+      "total_expenditure": 443792500000.0,
+      "total_revenue": 1881380600000.0
+    },
+    {
+      "company_name": "NTPC Limited",
+      "net_profit": 208118900000.0,
+      "period_date": "2024-03-31",
+      "symbol": "NTPC",
+      "total_expenditure": 396170500000.0,
+      "total_revenue": 1785248000000.0
+    },
+    {
+      "company_name": "NTPC Limited",
+      "net_profit": 169125500000.0,
+      "period_date": "2023-03-31",
+      "symbol": "NTPC",
+      "total_expenditure": 294719000000.0,
+      "total_revenue": 1740761500000.0
+    },
+    {
+      "company_name": "NTPC Limited",
+      "net_profit": 166759000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "NTPC",
+      "total_expenditure": 264121700000.0,
+      "total_revenue": 1313293100000.0
+    },
+    {
+      "company_name": "Oil and Natural Gas Corporation Limited",
+      "net_profit": 362256000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "ONGC",
+      "total_expenditure": 869075400000.0,
+      "total_revenue": 6632623100000.0
+    },
+    {
+      "company_name": "Oil and Natural Gas Corporation Limited",
+      "net_profit": 491439300000.0,
+      "period_date": "2024-03-31",
+      "symbol": "ONGC",
+      "total_expenditure": 895008000000.0,
+      "total_revenue": 6531707700000.0
+    },
+    {
+      "company_name": "Oil and Natural Gas Corporation Limited",
+      "net_profit": 367093340000.0,
+      "period_date": "2023-03-31",
+      "symbol": "ONGC",
+      "total_expenditure": 539676230000.0,
+      "total_revenue": 6295101440000.0
+    },
+    {
+      "company_name": "Oil and Natural Gas Corporation Limited",
+      "net_profit": 455221060000.0,
+      "period_date": "2022-03-31",
+      "symbol": "ONGC",
+      "total_expenditure": 496466400000.0,
+      "total_revenue": 4893010620000.0
+    },
+    {
+      "company_name": "Power Grid Corporation of India Limited",
+      "net_profit": 155214400000.0,
+      "period_date": "2025-03-31",
+      "symbol": "POWERGRID",
+      "total_expenditure": 196311000000.0,
+      "total_revenue": 457923200000.0
+    },
+    {
+      "company_name": "Power Grid Corporation of India Limited",
+      "net_profit": 155731600000.0,
+      "period_date": "2024-03-31",
+      "symbol": "POWERGRID",
+      "total_expenditure": 190354800000.0,
+      "total_revenue": 458431000000.0
+    },
+    {
+      "company_name": "Power Grid Corporation of India Limited",
+      "net_profit": 154197400000.0,
+      "period_date": "2023-03-31",
+      "symbol": "POWERGRID",
+      "total_expenditure": 171586800000.0,
+      "total_revenue": 440052200000.0
+    },
+    {
+      "company_name": "Power Grid Corporation of India Limited",
+      "net_profit": 168240700000.0,
+      "period_date": "2022-03-31",
+      "symbol": "POWERGRID",
+      "total_expenditure": 162062900000.0,
+      "total_revenue": 407899900000.0
+    },
+    {
+      "company_name": "Reliance Industries Limited",
+      "net_profit": 696480000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "RELIANCE",
+      "total_expenditure": 1695600000000.0,
+      "total_revenue": 9646930000000.0
+    },
+    {
+      "company_name": "Reliance Industries Limited",
+      "net_profit": 696210000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "RELIANCE",
+      "total_expenditure": 1534880000000.0,
+      "total_revenue": 9010640000000.0
+    },
+    {
+      "company_name": "Reliance Industries Limited",
+      "net_profit": 667020000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "RELIANCE",
+      "total_expenditure": 1039220000000.0,
+      "total_revenue": 8778350000000.0
+    },
+    {
+      "company_name": "Reliance Industries Limited",
+      "net_profit": 607050000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "RELIANCE",
+      "total_expenditure": 855220000000.0,
+      "total_revenue": 6959630000000.0
+    },
+    {
+      "company_name": "State Bank of India",
+      "net_profit": 775613400000.0,
+      "period_date": "2025-03-31",
+      "symbol": "SBIN",
+      "total_expenditure": 2375291800000.0,
+      "total_revenue": 3623999900000.0
+    },
+    {
+      "company_name": "State Bank of India",
+      "net_profit": 670846700000.0,
+      "period_date": "2024-03-31",
+      "symbol": "SBIN",
+      "total_expenditure": 2242569400000.0,
+      "total_revenue": 3348388500000.0
+    },
+    {
+      "company_name": "State Bank of India",
+      "net_profit": 556481728000.0,
+      "period_date": "2023-03-31",
+      "symbol": "SBIN",
+      "total_expenditure": 1861696085000.0,
+      "total_revenue": 2703369068000.0
+    },
+    {
+      "company_name": "State Bank of India",
+      "net_profit": 353738798000.0,
+      "period_date": "2022-03-31",
+      "symbol": "SBIN",
+      "total_expenditure": 1741951087000.0,
+      "total_revenue": 2360910738000.0
+    },
+    {
+      "company_name": "Shree Cement Limited",
+      "net_profit": 11227700000.0,
+      "period_date": "2025-03-31",
+      "symbol": "SHREECEM",
+      "total_expenditure": 113357800000.0,
+      "total_revenue": 192828300000.0
+    },
+    {
+      "company_name": "Shree Cement Limited",
+      "net_profit": 23957000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "SHREECEM",
+      "total_expenditure": 95924800000.0,
+      "total_revenue": 204038000000.0
+    },
+    {
+      "company_name": "Shree Cement Limited",
+      "net_profit": 12707000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "SHREECEM",
+      "total_expenditure": 78308400000.0,
+      "total_revenue": 174410400000.0
+    },
+    {
+      "company_name": "Shree Cement Limited",
+      "net_profit": 23319400000.0,
+      "period_date": "2022-03-31",
+      "symbol": "SHREECEM",
+      "total_expenditure": 66614600000.0,
+      "total_revenue": 145853900000.0
+    },
+    {
+      "company_name": "Sun Pharmaceutical Industries Limited",
+      "net_profit": 109290400000.0,
+      "period_date": "2025-03-31",
+      "symbol": "SUNPHARMA",
+      "total_expenditure": 287831200000.0,
+      "total_revenue": 520412500000.0
+    },
+    {
+      "company_name": "Sun Pharmaceutical Industries Limited",
+      "net_profit": 95763800000.0,
+      "period_date": "2024-03-31",
+      "symbol": "SUNPHARMA",
+      "total_expenditure": 266654800000.0,
+      "total_revenue": 477584500000.0
+    },
+    {
+      "company_name": "Sun Pharmaceutical Industries Limited",
+      "net_profit": 84735800000.0,
+      "period_date": "2023-03-31",
+      "symbol": "SUNPHARMA",
+      "total_expenditure": 220590900000.0,
+      "total_revenue": 432788700000.0
+    },
+    {
+      "company_name": "Sun Pharmaceutical Industries Limited",
+      "net_profit": 32727300000.0,
+      "period_date": "2022-03-31",
+      "symbol": "SUNPHARMA",
+      "total_expenditure": 199748600000.0,
+      "total_revenue": 384264200000.0
+    },
+    {
+      "company_name": "Tata Consumer Products Limited",
+      "net_profit": 12784700000.0,
+      "period_date": "2025-03-31",
+      "symbol": "TATACONSUM",
+      "total_expenditure": 56704100000.0,
+      "total_revenue": 176183000000.0
+    },
+    {
+      "company_name": "Tata Consumer Products Limited",
+      "net_profit": 11503300000.0,
+      "period_date": "2024-03-31",
+      "symbol": "TATACONSUM",
+      "total_expenditure": 47349900000.0,
+      "total_revenue": 152058500000.0
+    },
+    {
+      "company_name": "Tata Consumer Products Limited",
+      "net_profit": 12037700000.0,
+      "period_date": "2023-03-31",
+      "symbol": "TATACONSUM",
+      "total_expenditure": 38152700000.0,
+      "total_revenue": 136598100000.0
+    },
+    {
+      "company_name": "Tata Consumer Products Limited",
+      "net_profit": 9357800000.0,
+      "period_date": "2022-03-31",
+      "symbol": "TATACONSUM",
+      "total_expenditure": 35650800000.0,
+      "total_revenue": 123470100000.0
+    },
+    {
+      "company_name": "Tata Motors Limited",
+      "net_profit": 278300000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "TATAMOTORS",
+      "total_expenditure": 1642640000000.0,
+      "total_revenue": 4368210000000.0
+    },
+    {
+      "company_name": "Tata Motors Limited",
+      "net_profit": 313990000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "TATAMOTORS",
+      "total_expenditure": 1545820000000.0,
+      "total_revenue": 4312120000000.0
+    },
+    {
+      "company_name": "Tata Motors Limited",
+      "net_profit": 24142900000.0,
+      "period_date": "2023-03-31",
+      "symbol": "TATAMOTORS",
+      "total_expenditure": 1118718100000.0,
+      "total_revenue": 3428745900000.0
+    },
+    {
+      "company_name": "Tata Motors Limited",
+      "net_profit": -114414700000.0,
+      "period_date": "2022-03-31",
+      "symbol": "TATAMOTORS",
+      "total_expenditure": 896277100000.0,
+      "total_revenue": 2752352300000.0
+    },
+    {
+      "company_name": "Tata Steel Limited",
+      "net_profit": 34205100000.0,
+      "period_date": "2025-03-31",
+      "symbol": "TATASTEEL",
+      "total_expenditure": 1069625800000.0,
+      "total_revenue": 2168403500000.0
+    },
+    {
+      "company_name": "Tata Steel Limited",
+      "net_profit": -44374400000.0,
+      "period_date": "2024-03-31",
+      "symbol": "TATASTEEL",
+      "total_expenditure": 1129567200000.0,
+      "total_revenue": 2272962000000.0
+    },
+    {
+      "company_name": "Tata Steel Limited",
+      "net_profit": 87604000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "TATASTEEL",
+      "total_expenditure": 742889700000.0,
+      "total_revenue": 2416362500000.0
+    },
+    {
+      "company_name": "Tata Steel Limited",
+      "net_profit": 401539300000.0,
+      "period_date": "2022-03-31",
+      "symbol": "TATASTEEL",
+      "total_expenditure": 727188100000.0,
+      "total_revenue": 2423268700000.0
+    },
+    {
+      "company_name": "Tata Consultancy Services Limited",
+      "net_profit": 485530000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "TCS",
+      "total_expenditure": 357230000000.0,
+      "total_revenue": 2553240000000.0
+    },
+    {
+      "company_name": "Tata Consultancy Services Limited",
+      "net_profit": 459080000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "TCS",
+      "total_expenditure": 377490000000.0,
+      "total_revenue": 2408930000000.0
+    },
+    {
+      "company_name": "Tata Consultancy Services Limited",
+      "net_profit": 421470000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "TCS",
+      "total_expenditure": 513220000000.0,
+      "total_revenue": 2254580000000.0
+    },
+    {
+      "company_name": "Tata Consultancy Services Limited",
+      "net_profit": 383270000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "TCS",
+      "total_expenditure": 428990000000.0,
+      "total_revenue": 1917540000000.0
+    },
+    {
+      "company_name": "Tech Mahindra Limited",
+      "net_profit": 42515000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "TECHM",
+      "total_expenditure": 123886000000.0,
+      "total_revenue": 529883000000.0
+    },
+    {
+      "company_name": "Tech Mahindra Limited",
+      "net_profit": 23578000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "TECHM",
+      "total_expenditure": 130309000000.0,
+      "total_revenue": 519955000000.0
+    },
+    {
+      "company_name": "Tech Mahindra Limited",
+      "net_profit": 48313000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "TECHM",
+      "total_expenditure": 86247000000.0,
+      "total_revenue": 532902000000.0
+    },
+    {
+      "company_name": "Tech Mahindra Limited",
+      "net_profit": 55661000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "TECHM",
+      "total_expenditure": 70150000000.0,
+      "total_revenue": 446460000000.0
+    },
+    {
+      "company_name": "Titan Company Limited",
+      "net_profit": 33370000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "TITAN",
+      "total_expenditure": 46860000000.0,
+      "total_revenue": 571430000000.0
+    },
+    {
+      "company_name": "Titan Company Limited",
+      "net_profit": 34960000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "TITAN",
+      "total_expenditure": 26110000000.0,
+      "total_revenue": 467510000000.0
+    },
+    {
+      "company_name": "Titan Company Limited",
+      "net_profit": 32500000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "TITAN",
+      "total_expenditure": 55560000000.0,
+      "total_revenue": 404470000000.0
+    },
+    {
+      "company_name": "Titan Company Limited",
+      "net_profit": 21730000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "TITAN",
+      "total_expenditure": 40800000000.0,
+      "total_revenue": 287360000000.0
+    },
+    {
+      "company_name": "UltraTech Cement Limited",
+      "net_profit": 60391100000.0,
+      "period_date": "2025-03-31",
+      "symbol": "ULTRACEMCO",
+      "total_expenditure": 537089000000.0,
+      "total_revenue": 759551300000.0
+    },
+    {
+      "company_name": "UltraTech Cement Limited",
+      "net_profit": 70050000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "ULTRACEMCO",
+      "total_expenditure": 491819600000.0,
+      "total_revenue": 709081400000.0
+    },
+    {
+      "company_name": "UltraTech Cement Limited",
+      "net_profit": 50639600000.0,
+      "period_date": "2023-03-31",
+      "symbol": "ULTRACEMCO",
+      "total_expenditure": 438558600000.0,
+      "total_revenue": 623376000000.0
+    },
+    {
+      "company_name": "UltraTech Cement Limited",
+      "net_profit": 73443100000.0,
+      "period_date": "2022-03-31",
+      "symbol": "ULTRACEMCO",
+      "total_expenditure": 338728300000.0,
+      "total_revenue": 517078500000.0
+    },
+    {
+      "company_name": "Wipro Limited",
+      "net_profit": 131354000000.0,
+      "period_date": "2025-03-31",
+      "symbol": "WIPRO",
+      "total_expenditure": 122396000000.0,
+      "total_revenue": 890884000000.0
+    },
+    {
+      "company_name": "Wipro Limited",
+      "net_profit": 110452000000.0,
+      "period_date": "2024-03-31",
+      "symbol": "WIPRO",
+      "total_expenditure": 132376000000.0,
+      "total_revenue": 897603000000.0
+    },
+    {
+      "company_name": "Wipro Limited",
+      "net_profit": 113500000000.0,
+      "period_date": "2023-03-31",
+      "symbol": "WIPRO",
+      "total_expenditure": 124296000000.0,
+      "total_revenue": 904876000000.0
+    },
+    {
+      "company_name": "Wipro Limited",
+      "net_profit": 122191000000.0,
+      "period_date": "2022-03-31",
+      "symbol": "WIPRO",
+      "total_expenditure": 99131000000.0,
+      "total_revenue": 790934000000.0
+    }
+  ],
+  "total_records": 200
+}
+\n==== /api/stock-data/AXISBANK?period=1mo ====
+{
+  "currency": "INR",
+  "current_price": 1168.4,
+  "data": [
+    {
+      "close": 1214.36,
+      "date": "2025-06-16",
+      "high": 1216.96,
+      "low": 1194.98,
+      "open": 1205.07,
+      "volume": 5697424
+    },
+    {
+      "close": 1214.06,
+      "date": "2025-06-17",
+      "high": 1225.95,
+      "low": 1210.27,
+      "open": 1214.36,
+      "volume": 4492946
+    },
+    {
+      "close": 1219.96,
+      "date": "2025-06-18",
+      "high": 1222.26,
+      "low": 1202.87,
+      "open": 1208.77,
+      "volume": 3135662
+    },
+    {
+      "close": 1216.46,
+      "date": "2025-06-19",
+      "high": 1226.75,
+      "low": 1212.76,
+      "open": 1216.96,
+      "volume": 4243763
+    },
+    {
+      "close": 1219.66,
+      "date": "2025-06-20",
+      "high": 1224.95,
+      "low": 1213.16,
+      "open": 1216.46,
+      "volume": 4652390
+    },
+    {
+      "close": 1213.06,
+      "date": "2025-06-23",
+      "high": 1221.86,
+      "low": 1204.57,
+      "open": 1211.56,
+      "volume": 2312469
+    },
+    {
+      "close": 1220.16,
+      "date": "2025-06-24",
+      "high": 1237.34,
+      "low": 1214.56,
+      "open": 1221.86,
+      "volume": 6745788
+    },
+    {
+      "close": 1212.26,
+      "date": "2025-06-25",
+      "high": 1225.25,
+      "low": 1209.97,
+      "open": 1225.25,
+      "volume": 4229259
+    },
+    {
+      "close": 1232.45,
+      "date": "2025-06-26",
+      "high": 1237.94,
+      "low": 1210.17,
+      "open": 1214.16,
+      "volume": 8678448
+    },
+    {
+      "close": 1224.05,
+      "date": "2025-06-27",
+      "high": 1245.94,
+      "low": 1219.36,
+      "open": 1235.84,
+      "volume": 6068274
+    },
+    {
+      "close": 1198.18,
+      "date": "2025-06-30",
+      "high": 1234.94,
+      "low": 1192.08,
+      "open": 1227.85,
+      "volume": 6559872
+    },
+    {
+      "close": 1172.3,
+      "date": "2025-07-01",
+      "high": 1200.97,
+      "low": 1166.0,
+      "open": 1200.97,
+      "volume": 8702198
+    },
+    {
+      "close": 1174.3,
+      "date": "2025-07-02",
+      "high": 1180.89,
+      "low": 1171.0,
+      "open": 1178.99,
+      "volume": 5471100
+    },
+    {
+      "close": 1170.1,
+      "date": "2025-07-03",
+      "high": 1179.99,
+      "low": 1167.0,
+      "open": 1176.99,
+      "volume": 6237185
+    },
+    {
+      "close": 1177.6,
+      "date": "2025-07-04",
+      "high": 1179.5,
+      "low": 1162.0,
+      "open": 1174.0,
+      "volume": 3926186
+    },
+    {
+      "close": 1175.1,
+      "date": "2025-07-07",
+      "high": 1177.6,
+      "low": 1167.6,
+      "open": 1177.6,
+      "volume": 5783402
+    },
+    {
+      "close": 1165.4,
+      "date": "2025-07-08",
+      "high": 1180.0,
+      "low": 1161.9,
+      "open": 1180.0,
+      "volume": 9973619
+    },
+    {
+      "close": 1164.7,
+      "date": "2025-07-09",
+      "high": 1171.0,
+      "low": 1158.6,
+      "open": 1160.0,
+      "volume": 8674795
+    },
+    {
+      "close": 1164.3,
+      "date": "2025-07-10",
+      "high": 1176.6,
+      "low": 1163.0,
+      "open": 1170.1,
+      "volume": 4339755
+    },
+    {
+      "close": 1173.8,
+      "date": "2025-07-11",
+      "high": 1175.9,
+      "low": 1160.6,
+      "open": 1162.0,
+      "volume": 4468654
+    },
+    {
+      "close": 1172.7,
+      "date": "2025-07-14",
+      "high": 1179.9,
+      "low": 1163.0,
+      "open": 1179.0,
+      "volume": 4772502
+    },
+    {
+      "close": 1165.9,
+      "date": "2025-07-15",
+      "high": 1179.0,
+      "low": 1162.3,
+      "open": 1174.0,
+      "volume": 4776756
+    },
+    {
+      "close": 1168.4,
+      "date": "2025-07-16",
+      "high": 1174.0,
+      "low": 1157.1,
+      "open": 1164.9,
+      "volume": 4388279
+    }
+  ],
+  "symbol": "AXISBANK",
+  "ticker": "AXISBANK.NS"
+}
+\n==== /api/stock-news/AXISBANK?page=1&per_page=5 ====
+{
+  "articles": [
+    {
+      "description": "Banking stocks: Buy Axis Bank, SBI & ICICI Bank shares suggests YES Securities  Business Today",
+      "published_at": "2025-07-17T01:40:36",
+      "source": "Unknown",
+      "stock_symbol": "AXISBANK",
+      "title": "Banking stocks: Buy Axis Bank, SBI & ICICI Bank shares suggests YES Securities  Business Today",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOa1RrQ0RleUN0QmppYXE4R2x5NDJyOHN5WnZlVU9YakdlZm5RU1pveGFUUXBGODlnMFRLTzkyVXBwcmJGaVcxM3BURVczcUhHYzAyT0Q2WUMtRHppSHQ1ZWk4bGV5T2p2QjlwQzF0b1BhU09nYlgxb2NIN2hxd3NndkVSMkpFc3ZuZEs3TlFzdjNEOVhfYm1UZ3UwZXNudXU5UmgycEx6a2pfQmRwNmZKUElld1lYYTUtMUhQOXFxWHlmWW5nM3N3MU11OHNwalBjeGR4LWFnaUozd9IB3wFBVV95cUxOekZyWWUzSTJKN2x4aDhXb2RJY0NQWE5UcXZObjhqaC1yQU0xN25YZlFrQ2FHbGpHeXRNYjJPUmRQQ0NiS0NYRFVmdXFFdzNkSkVyV0E0Zi1SSGVhSTFxZllIUzk4VDJuaWQ4ZjZfVDFieW9tb0htSkI2cm81djAyemp1R1J4NVVicjB2TnExVmJhdDRuRnBqQkkyUHIxbkRSV0l5WmdMVi1FcnFGWlhVaHg1WmliSi0zblhENHpjLUxiLTBURWVnZ0wyQ29wRmJBeTlORzJkOWs0dWVCdEZr?oc=5&hl=en-IN&gl=IN&ceid=IN:en"
+    },
+    {
+      "description": "Stocks in news: Axis Bank, Tech Mahindra, Wipro, LTIMindtree, Angel One  The Economic Times",
+      "published_at": "2025-07-17T01:11:34",
+      "source": "Unknown",
+      "stock_symbol": "AXISBANK",
+      "title": "Stocks in news: Axis Bank, Tech Mahindra, Wipro, LTIMindtree, Angel One  The Economic Times",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPYUk5czBRbW9sYWpvdTFfcFB0SHJGdmJiaTRwY1J6bm16YUo5Q1MwUm4yVTU1QjVVazJlMWk5VnE3dXpnTFNIUnlUbUU5dUVrZ0l3bmtRcGp1RnlTaTVOMnpRa0xEMDdKQUlKbDJ5RVNLX2Y2bEwyMC1ISFFXaVluVUxVdGNvZTE3cjhmQjdiMnFzdUxLU3dHTHp4SVZhUkxwbngxNGdMckJiSFZpTm1LY0gwQ0tXWHMwQmpjYkhkVGROLXhGd1MxdzdrOFhGMzJCSXpSSGJCc9IB3AFBVV95cUxQTUYzN3FWbGE0NkJBY2lKY1FOTWJoXy1CSTFXTDR5VnpVVkdBRXpXVThlSkdWNzNVUXdHN0FfUDk3bm1sTkVEMlB5a3ZEblVfNXdQSzNZcWpOS0E4cEdBSlBJZk5kYlozN1h3cWtoX1JmTThoT0plYjFZMzZqMlB1elZkZ296T2xTUU5yYVJ0Ri01RTJCZndKYjZENWpQa2FHcUc4cFExZW5fcTRaUVFVMkdMZldqcWxkcTQ1RmFUR04wYlpoM2MyVVJ2ejNZTG9GZm5vd1BTU3YxMk9n?oc=5&hl=en-IN&gl=IN&ceid=IN:en"
+    },
+    {
+      "description": "Wipro, Axis Bank, LTIMindtree Q1 Results Today — Earnings Estimates  NDTV Profit",
+      "published_at": "2025-07-17T00:30:00",
+      "source": "Unknown",
+      "stock_symbol": "AXISBANK",
+      "title": "Wipro, Axis Bank, LTIMindtree Q1 Results Today — Earnings Estimates  NDTV Profit",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdmVmS1BKTHpBOXlNOXdfaHRjc0ZqajFJQ3hJS0t5ZzMwUGU5c2tBRjBLS2NZU1BBN3VORVdNQTEzd3BOb05sWDBtRVhZV0tqVXFJcjI3QjhtR25wbEQ5QWUxakZlT1liZGNrLUN1VVpSelhTZER6dXlKVEtoeGpIMlZCeTB5ZG56a2Y3bUw3NnVFYk5FYmptcnlKd2xZUTJHa2VVei1qV3E2N21zOWfSAbMBQVVfeXFMTnBwUDZtMkpZNTFMZ3l5ZTRGMWlVQ1h0NWVvd3QzaS1NS2VQd1FVZzdHc21ZdW5RR2o2d0pjUzFtdGtPdTF1UFJ0cGl6TTZMNWE3b0M0WHNPTjdRSFE3ZU5aZk9ZVF9qTjJFalJPclNsamhiQzM0bWhRMGJ0VWw2eVkwUVZkTktjWDhwS0VSVFJlVE9QNG5nelZMX0dlZTh3VThSTWtDR3VDVTJpdWdxeHgwTTg?oc=5&hl=en-IN&gl=IN&ceid=IN:en"
+    },
+    {
+      "description": "HDFC, Axis Bank see sharp drop in attrition in FY25 amid training push  Business Standard",
+      "published_at": "2025-07-16T15:09:16",
+      "source": "Unknown",
+      "stock_symbol": "AXISBANK",
+      "title": "HDFC, Axis Bank see sharp drop in attrition in FY25 amid training push  Business Standard",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZEpzbERZQml2eENVN09rby1UMDExTjRfbWRkZTJ3Rk1VWi1URGxWWWhabkJzdDJpa0hRVjNIaTh3STBtbHpHTFJPcVd3aTBBYW03cVctSUZva3VVb2prSUxzaElRTWN2TV9vNFN4X3dzam1WalZHMk1mV2k5NlVCNlBJRHdobGtGTUdDQ2ZxQzFwSThKSjlKV055YTBsV1FTV1V6THNtcEh4X2JLNWd3a0pmaGQ0UHlmSWtqNTh3bjRPN1JISmJSV2xORdIB0AFBVV95cUxOb3FSUXlQUS1MSHhsNi0zdFNsMllNVEhqeTl6ZTYzTGpwck10MHFXRlNJODlWMDJtSWJUc3pPX29VcnMxb0FCNTJMbkQ4Y3U3cW9kUHZHZkVDRmEyTjdZVG9zRGZQUUtDYXVNSldvRU1NTzE2N2Fid01UNXFtbjJ4R05Ld21zaFpmdnFEUndqUC1Pb1JHZE9Xc1FRWTNNT1pCVHVydHJydHozVzBpbC00UTJ6REU1LUswRDEzUXdzRmsxcnVZdEtiXzcyOGtUNVJ4?oc=5&hl=en-IN&gl=IN&ceid=IN:en"
+    },
+    {
+      "description": "Wipro, Axis Bank, LTIMindtree, IHCL, HDFC AMC: Q1 results preview  Business Today",
+      "published_at": "2025-07-16T10:19:56",
+      "source": "Unknown",
+      "stock_symbol": "AXISBANK",
+      "title": "Wipro, Axis Bank, LTIMindtree, IHCL, HDFC AMC: Q1 results preview  Business Today",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOelBMRWwwQmp6RURWeFBVemFncUphRHA0NER5ZzBHcWNuMFJzVTh6Y01HZHlqR094MV9zaDJoZlVrSTlOQTlvWVhwSkZTbjdZNWJ3NFEtbElsTTJFSEVMRWdDMTFDQVhpcVBPc0E5RnlzU2sxdldXTEhkcWNDUk5ISTNyWU41R1BsZFU4RFZCajFsdGMyTGNMYUNLNENLYU1SaXlNdEFkb1JSMGJaRW5lcXJDU3JGdGRCMlBadDFpUVRfbXdzZmQ00gHMAUFVX3lxTE40WllfLWNMZkd5MzF1Y0gwVkdZVGIxSVdobEw0VU9DTFgzV1NMR1l6SEhDMlhTUWF1WVpaSjBEWk9YQ2VZSjJjZzhqcjZUc2h1VzVrY2Q0c2ZMZkVScFNYS0E5UVJPVHhlamptb1FwRWxiXzF1UkRSWWM0QkN6c3Z4WUlVZFctYVNVOElrMmxtQkdaMVc4aXkwTFJVdmlEbEY4MlpxRGdVV051M2RhOER2ZEQtUW56WEtMYnk5b2dGdy1KYVZucE9hMHBYVQ?oc=5&hl=en-IN&gl=IN&ceid=IN:en"
+    }
+  ],
+  "company_name": "Axis Bank",
+  "database_info": {
+    "table_name": "news",
+    "total_articles_found": 256
+  },
+  "last_updated": "2025-07-16T19:37:37.939855",
+  "pagination": {
+    "current_page": 1,
+    "has_next": true,
+    "has_prev": false,
+    "per_page": 5,
+    "total_articles": 256,
+    "total_pages": 52
+  },
+  "stock_symbol": "AXISBANK"
+}
+\n==== /api/sectoral-analysis ====
+{
+  "market_summary": {
+    "overall_sentiment": 0.6,
+    "top_performing_sector": "Oil & Gas",
+    "total_market_cap": 335000000000,
+    "total_volume": 4460000,
+    "worst_performing_sector": "Automobiles"
+  },
+  "sectors": [
+    {
+      "market_cap": 85000000000,
+      "name": "Technology",
+      "performance": 2.5,
+      "sentiment": 0.7,
+      "top_stocks": [
+        {
+          "change": 1.2,
+          "name": "Tata Consultancy Services",
+          "price": 3850.5,
+          "symbol": "TCS"
+        },
+        {
+          "change": 0.8,
+          "name": "Infosys Limited",
+          "price": 1450.75,
+          "symbol": "INFY"
+        },
+        {
+          "change": 1.5,
+          "name": "HCL Technologies",
+          "price": 1250.25,
+          "symbol": "HCLTECH"
+        }
+      ],
+      "volume": 1250000
+    },
+    {
+      "market_cap": 120000000000,
+      "name": "Banking & Financial",
+      "performance": 1.8,
+      "sentiment": 0.6,
+      "top_stocks": [
+        {
+          "change": 0.9,
+          "name": "HDFC Bank",
+          "price": 1650.0,
+          "symbol": "HDFCBANK"
+        },
+        {
+          "change": 1.1,
+          "name": "ICICI Bank",
+          "price": 950.5,
+          "symbol": "ICICIBANK"
+        },
+        {
+          "change": 0.7,
+          "name": "State Bank of India",
+          "price": 650.75,
+          "symbol": "SBIN"
+        }
+      ],
+      "volume": 980000
+    },
+    {
+      "market_cap": 45000000000,
+      "name": "Automobiles",
+      "performance": -0.5,
+      "sentiment": 0.4,
+      "top_stocks": [
+        {
+          "change": -0.3,
+          "name": "Maruti Suzuki",
+          "price": 10500.0,
+          "symbol": "MARUTI"
+        },
+        {
+          "change": 0.5,
+          "name": "Tata Motors",
+          "price": 850.25,
+          "symbol": "TATAMOTORS"
+        },
+        {
+          "change": -0.8,
+          "name": "Mahindra & Mahindra",
+          "price": 1850.5,
+          "symbol": "M&M"
+        }
+      ],
+      "volume": 750000
+    },
+    {
+      "market_cap": 35000000000,
+      "name": "Oil & Gas",
+      "performance": 3.2,
+      "sentiment": 0.8,
+      "top_stocks": [
+        {
+          "change": 2.1,
+          "name": "Reliance Industries",
+          "price": 2850.75,
+          "symbol": "RELIANCE"
+        },
+        {
+          "change": 1.8,
+          "name": "Oil & Natural Gas Corp",
+          "price": 185.5,
+          "symbol": "ONGC"
+        },
+        {
+          "change": 1.2,
+          "name": "Indian Oil Corporation",
+          "price": 95.25,
+          "symbol": "IOC"
+        }
+      ],
+      "volume": 650000
+    },
+    {
+      "market_cap": 28000000000,
+      "name": "Pharmaceuticals",
+      "performance": 1.2,
+      "sentiment": 0.5,
+      "top_stocks": [
+        {
+          "change": 0.6,
+          "name": "Sun Pharmaceutical",
+          "price": 1250.0,
+          "symbol": "SUNPHARMA"
+        },
+        {
+          "change": 0.9,
+          "name": "Dr. Reddy's Laboratories",
+          "price": 5850.75,
+          "symbol": "DRREDDY"
+        },
+        {
+          "change": 0.4,
+          "name": "Cipla Limited",
+          "price": 1250.5,
+          "symbol": "CIPLA"
+        }
+      ],
+      "volume": 450000
+    },
+    {
+      "market_cap": 22000000000,
+      "name": "Consumer Goods",
+      "performance": 0.8,
+      "sentiment": 0.6,
+      "top_stocks": [
+        {
+          "change": 0.3,
+          "name": "Hindustan Unilever",
+          "price": 2850.25,
+          "symbol": "HINDUNILVR"
+        },
+        {
+          "change": 0.7,
+          "name": "ITC Limited",
+          "price": 485.75,
+          "symbol": "ITC"
+        },
+        {
+          "change": 0.5,
+          "name": "Nestle India",
+          "price": 2850.0,
+          "symbol": "NESTLEIND"
+        }
+      ],
+      "volume": 380000
+    }
+  ]
+}
+\n==== /api/portfolio?email=... ====
+{
+  "portfolio": []
+}

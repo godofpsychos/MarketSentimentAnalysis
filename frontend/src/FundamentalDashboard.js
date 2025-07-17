@@ -48,6 +48,20 @@ const FundamentalDashboard = ({ selectedStock }) => {
         const aiJson = await aiRes.json();
         setFundamentalData(fundamentalJson);
         setAiData(aiJson);
+        // Debug: Save API response to a temp file for inspection
+        try {
+          await fetch('/save-temp-debug', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              type: 'fundamental-analysis',
+              stock: selectedStock,
+              data: fundamentalJson
+            })
+          });
+        } catch (e) {
+          // Ignore errors in debug logging
+        }
       } catch (err) {
         setError(err.message);
         setFundamentalData(null);
@@ -73,8 +87,8 @@ const FundamentalDashboard = ({ selectedStock }) => {
   }
 
   return (
-    <motion.div className="fundamental-dashboard">
-      <div className="dashboard-header">
+    <motion.div className="fundamental-dashboard-section">
+      <div className="dashboard-header fundamental-header">
         <h2>Fundamental Analysis - {selectedStock}</h2>
         <div className="tab-navigation">
           {['overview', 'profitability', 'valuation', 'growth', 'liquidity', 'leverage'].map(tab => (
@@ -89,7 +103,7 @@ const FundamentalDashboard = ({ selectedStock }) => {
         </div>
       </div>
       <AnimatePresence mode="wait">
-        <motion.div key={activeTab} className="tab-content">
+        <motion.div key={activeTab} className="tab-content fundamental-tab">
           {activeTab === 'overview' && <OverviewTab fundamentalData={fundamentalData} aiData={aiData} />}
           {activeTab === 'profitability' && <ProfitabilityTab fundamentalData={fundamentalData} aiData={aiData} />}
           {activeTab === 'valuation' && <ValuationTab fundamentalData={fundamentalData} aiData={aiData} />}
@@ -202,7 +216,7 @@ const OverviewTab = ({ fundamentalData, aiData }) => {
       {/* AI-powered add-on */}
       {aiData && (
         <div className="ai-indicator-card">
-          <h3>AI-Powered Indicator</h3>
+          <h4>AI-Powered Indicator</h4>
           <div className="ai-indicator-content">
             <p><strong>Composite Score:</strong> {aiData.overview_score || 'N/A'}/100</p>
             <p><strong>Health Grade:</strong> {aiData.overview_grade || 'N/A'}</p>
@@ -549,7 +563,6 @@ const LeverageTab = ({ fundamentalData, aiData }) => {
 
   const keyMetrics = [
     { name: 'Debt to Equity', value: leverage.debt_to_equity, unit: 'x', color: '#EF4444', description: 'Total Debt / Shareholders Equity' },
-    { name: 'Interest Coverage Ratio', value: leverage.interest_coverage_ratio, unit: 'x', color: '#EF4444', description: 'EBIT / Interest Expense' },
     { name: 'Operating Margin', value: profitability.operating_margin_percent, unit: '%', color: '#4F46E5', description: 'Operating Profit Margin' },
     { name: 'Net Margin', value: profitability.net_margin_percent, unit: '%', color: '#4F46E5', description: 'Net Profit Margin' },
     { name: 'Current Ratio', value: liquidity.current_ratio, unit: 'x', color: '#06B6D4', description: 'Current Assets / Current Liabilities' }
