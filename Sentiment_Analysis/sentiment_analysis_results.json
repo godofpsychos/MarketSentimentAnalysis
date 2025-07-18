@@ -1,95 +1,79 @@
 {
-    "RELIANCE": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "TITAN": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "NTPC": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "SBI": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "TATASTEEL": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "M&M": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "ITC": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "WIPRO": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "HDFCBANK": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "LT": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "MARUTI": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "TECHM": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "TCS": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "INFY": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "HCLTECH": {
-        "2025-07-17T08:14:20.761884": 5
+    "AXISBANK": {
+        "2025-07-18T08:18:50.942851": {
+            "sentiment": 3.0,
+            "impact_time_frame": "short-term",
+            "signal_strength": 7.0
+        }
     },
     "ICICIBANK": {
-        "2025-07-17T08:14:20.761884": 5
+        "2025-07-18T08:18:50.942851": {
+            "sentiment": 6.0,
+            "impact_time_frame": "short-term",
+            "signal_strength": 7.0
+        }
     },
-    "HDFCLIFE": {
-        "2025-07-17T08:14:20.761884": 5
+    "LTIM": {
+        "2025-07-18T08:18:50.942851": {
+            "sentiment": 6.0,
+            "impact_time_frame": "short-term",
+            "signal_strength": 7.0
+        }
     },
-    "KOTAKBANK": {
-        "2025-07-17T08:14:20.761884": 5
+    "RELIANCE": {
+        "2025-07-18T08:18:50.942851": {
+            "sentiment": 8.0,
+            "impact_time_frame": "short-term",
+            "signal_strength": 9.0
+        }
     },
-    "AXISBANK": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "ONGC": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "CIPLA": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "JSWSTEEL": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "HINDALCO": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "BRITANNIA": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "POWERGRID": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "GRASIM": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "HINDUNILVR": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "SHREECEM": {
-        "2025-07-17T08:14:20.761884": 5
-    },
-    "DIVISLAB": {
-        "2025-07-17T08:14:20.761884": 5
+    "MARUTI": {
+        "2025-07-18T08:18:50.942851": {
+            "sentiment": 8.0,
+            "impact_time_frame": "short-term",
+            "signal_strength": 7.0
+        }
     },
     "SUNPHARMA": {
-        "2025-07-17T08:14:20.761884": 5
+        "2025-07-18T08:18:50.942851": {
+            "sentiment": 8.0,
+            "impact_time_frame": "short-term",
+            "signal_strength": 7.0
+        }
     },
-    "BHARTIARTL": {
-        "2025-07-17T08:14:20.761884": 5
+    "TITAN": {
+        "2025-07-18T08:18:50.942851": {
+            "sentiment": 8.0,
+            "impact_time_frame": "short-term",
+            "signal_strength": 7.0
+        }
+    },
+    "LT": {
+        "2025-07-18T08:18:50.942851": {
+            "sentiment": 6.0,
+            "impact_time_frame": "medium-term",
+            "signal_strength": 7.0
+        }
+    },
+    "BPCL": {
+        "2025-07-18T08:18:50.942851": {
+            "sentiment": 8.0,
+            "impact_time_frame": "short-term",
+            "signal_strength": 7.0
+        }
+    },
+    "TCS": {
+        "2025-07-18T08:18:50.942851": {
+            "sentiment": 8.0,
+            "impact_time_frame": "short-term",
+            "signal_strength": 7.0
+        }
+    },
+    "INFY": {
+        "2025-07-18T08:18:50.942851": {
+            "sentiment": 8.0,
+            "impact_time_frame": "medium-term",
+            "signal_strength": 7.0
+        }
     }
 }
