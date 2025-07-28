@@ -1,79 +1,198 @@
 {
-    "AXISBANK": {
-        "2025-07-18T08:18:50.942851": {
-            "sentiment": 3.0,
-            "impact_time_frame": "short-term",
-            "signal_strength": 7.0
-        }
-    },
-    "ICICIBANK": {
-        "2025-07-18T08:18:50.942851": {
-            "sentiment": 6.0,
-            "impact_time_frame": "short-term",
-            "signal_strength": 7.0
-        }
-    },
-    "LTIM": {
-        "2025-07-18T08:18:50.942851": {
-            "sentiment": 6.0,
-            "impact_time_frame": "short-term",
-            "signal_strength": 7.0
-        }
-    },
-    "RELIANCE": {
-        "2025-07-18T08:18:50.942851": {
-            "sentiment": 8.0,
-            "impact_time_frame": "short-term",
-            "signal_strength": 9.0
-        }
-    },
     "MARUTI": {
-        "2025-07-18T08:18:50.942851": {
-            "sentiment": 8.0,
-            "impact_time_frame": "short-term",
-            "signal_strength": 7.0
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
         }
     },
-    "SUNPHARMA": {
-        "2025-07-18T08:18:50.942851": {
-            "sentiment": 8.0,
-            "impact_time_frame": "short-term",
-            "signal_strength": 7.0
+    "CIPLA": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "HDFCLIFE": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "ITC": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
         }
     },
     "TITAN": {
-        "2025-07-18T08:18:50.942851": {
-            "sentiment": 8.0,
-            "impact_time_frame": "short-term",
-            "signal_strength": 7.0
-        }
-    },
-    "LT": {
-        "2025-07-18T08:18:50.942851": {
-            "sentiment": 6.0,
-            "impact_time_frame": "medium-term",
-            "signal_strength": 7.0
-        }
-    },
-    "BPCL": {
-        "2025-07-18T08:18:50.942851": {
-            "sentiment": 8.0,
-            "impact_time_frame": "short-term",
-            "signal_strength": 7.0
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
         }
     },
     "TCS": {
-        "2025-07-18T08:18:50.942851": {
-            "sentiment": 8.0,
-            "impact_time_frame": "short-term",
-            "signal_strength": 7.0
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "SUNPHARMA": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "RELIANCE": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "GRASIM": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
         }
     },
     "INFY": {
-        "2025-07-18T08:18:50.942851": {
-            "sentiment": 8.0,
-            "impact_time_frame": "medium-term",
-            "signal_strength": 7.0
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "ASIANPAINT": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "LT": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "KOTAKBANK": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "BAJFINANCE": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "ICICIBANK": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "BHARTIARTL": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "HINDUNILVR": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "BPCL": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "HCLTECH": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "NESTLEIND": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "POWERGRID": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "ADANIPORTS": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "APOLLOHOSP": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "AXISBANK": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "ADANIGREEN": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "ADANIENT": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "COALINDIA": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
+        }
+    },
+    "HDFCBANK": {
+        "2025-07-25T12:10:48.305158": {
+            "sentiment": 5,
+            "impact_time_frame": "unknown",
+            "signal_strength": 5
         }
     }
 }

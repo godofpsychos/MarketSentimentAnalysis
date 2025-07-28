@@ -37,7 +37,7 @@ SAVE_RESULTS_PID=$!
 echo "Save results service started with PID: $SAVE_RESULTS_PID"
 wait $SAVE_RESULTS_PID  
 
-/home/tarun/MarketSentimentAnalysis/webServerUpdate/updateDB.sh
+# /home/tarun/MarketSentimentAnalysis/webServerUpdate/updateDB.sh
 
 echo "All services ran successfully!"
 echo "Log files:"

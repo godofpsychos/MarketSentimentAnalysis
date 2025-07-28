@@ -1,0 +1,14 @@
+Index Name,Ticker Symbol,Exchange,Country,Type
+NIFTY 50,^NSEI,NSE,India,Domestic
+SENSEX,^BSESN,BSE,India,Domestic
+NIFTY Bank,^NSEBANK,NSE,India,Domestic
+NIFTY IT,^CNXIT,NSE,India,Domestic
+# NIFTY Midcap 100,NIFTYMIDCAP100,NSE,India,Domestic (no Yahoo Finance ticker)
+# NIFTY Smallcap 100,NIFTYSMALLCAP100,NSE,India,Domestic (no Yahoo Finance ticker)
+Dow Jones Industrial Average,^DJI,NYSE,USA,Global
+S&P 500,^GSPC,NYSE,USA,Global
+NASDAQ Composite,^IXIC,NASDAQ,USA,Global
+FTSE 100,^FTSE,LSE,UK,Global
+DAX,^GDAXI,FWB,Germany,Global
+Nikkei 225,^N225,TSE,Japan,Global
+Hang Seng,^HSI,HKEX,Hong Kong,Global

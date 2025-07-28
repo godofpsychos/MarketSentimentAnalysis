@@ -49,13 +49,15 @@ const useStockFinancialData = (stockSymbol) => {
   return { financialData, loading, error };
 };
 
-const formatXAxisLabel = (tickItem) => {
-  try {
-    return format(new Date(tickItem), 'yyyy-MM-dd');
-  } catch {
-    return tickItem;
+// Helper to format X axis labels based on period
+function formatXAxisLabel(dateStr, index, allLabels, period) {
+  const date = new Date(dateStr);
+  if (period !== '1d') {
+    return '';
   }
-};
+  // Only for 1d period
+  return date.toLocaleTimeString('default', { hour: '2-digit', minute: '2-digit' });
+}
 
 const TIMEFRAMES = [
   { label: '1D', value: '1d' },
@@ -94,13 +96,14 @@ function filterByTimeframe(data, timeframe) {
 
 // Chart 1: Price only
 export const StockPriceChart = ({ stockSymbol }) => {
-  const [period, setPeriod] = useState('1mo');
+  const [period, setPeriod] = useState('1d');
   const [priceData, setPriceData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPrice, setCurrentPrice] = useState(null);
 
-  useEffect(() => {
+  // Fetch price data function
+  const fetchPriceData = React.useCallback(() => {
     if (!stockSymbol) return;
     setLoading(true);
     setError(null);
@@ -117,6 +120,19 @@ export const StockPriceChart = ({ stockSymbol }) => {
         setLoading(false);
       });
   }, [stockSymbol, period]);
+
+  // Initial fetch and refetch on stockSymbol/period change
+  useEffect(() => {
+    fetchPriceData();
+  }, [fetchPriceData]);
+
+  // Set up interval to refetch every 1 minute
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      fetchPriceData();
+    }, 60000); // 60,000 ms = 1 minute
+    return () => clearInterval(intervalId);
+  }, [fetchPriceData]);
 
   if (loading) return <div className="stock-financial-loading"><div className="mini-spinner"></div><p>Loading price data...</p></div>;
   if (error) return <div className="stock-financial-error"><p>Unable to load price data</p></div>;
@@ -165,7 +181,7 @@ export const StockPriceChart = ({ stockSymbol }) => {
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
-          <XAxis dataKey="date" tickFormatter={formatXAxisLabel} tick={{ fontSize: 10 }} stroke="#666" />
+          <XAxis dataKey="date" tickFormatter={(dateStr, idx) => formatXAxisLabel(dateStr, idx, priceData.map(d => d.date), period)} tick={{ fontSize: 10 }} stroke="#666" />
           <YAxis tick={{ fontSize: 10 }} stroke="#666" domain={[minPrice, maxPrice]} />
           <Tooltip formatter={(value) => `₹${value}`} labelStyle={{ color: '#333' }} contentStyle={{ backgroundColor: 'rgba(255,255,255,0.95)', border: '1px solid #ccc', borderRadius: '4px' }} />
           <Area type="monotone" dataKey="close" stroke="#7b61ff" strokeWidth={3} fill="url(#priceWhiteArea)" dot={false} name="Price" />

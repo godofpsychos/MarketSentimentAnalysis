@@ -3,13 +3,15 @@
 
 const config = {
   // Backend API Configuration
-  // backendUrl: process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000',
-  backendUrl: process.env.REACT_APP_BACKEND_URL || 'https://yourstock.ai/v1',
-  // apiBaseUrl: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api',
-  apiBaseUrl: process.env.REACT_APP_API_BASE_URL || 'https://yourstock.ai/v1/api',
+   backendUrl: process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000',
+  // backendUrl: process.env.REACT_APP_BACKEND_URL || 'https://yourstock.ai/v1',
+   apiBaseUrl: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api',
+  // apiBaseUrl: process.env.REACT_APP_API_BASE_URL || 'https://yourstock.ai/v1/api',
   
   // Frontend Configuration
-  frontendUrl: process.env.REACT_APP_FRONTEND_URL || 'https://yourstock.ai',
+  // frontendUrl: process.env.REACT_APP_FRONTEND_URL || 'https://yourstock.ai',
+  frontendUrl: process.env.REACT_APP_FRONTEND_URL || 'http://localhost:5000/api',
+
   
   // Application Configuration
   appName: process.env.REACT_APP_APP_NAME || 'Your Stock.ai',
@@ -25,7 +27,8 @@ const config = {
   
   // Authentication Configuration
   googleClientId: process.env.REACT_APP_GOOGLE_CLIENT_ID || '',
-  authRedirectUrl: process.env.REACT_APP_AUTH_REDIRECT_URL || 'https://yourstock.ai'
+  authRedirectUrl: process.env.REACT_APP_AUTH_REDIRECT_URL || 'http://localhost:5000'
+  // authRedirectUrl: process.env.REACT_APP_AUTH_REDIRECT_URL || 'https://yourstock.ai'
 };
 
 // Helper function to build API URLs

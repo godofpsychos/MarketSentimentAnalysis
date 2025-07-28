@@ -16,6 +16,7 @@ import secrets
 import requests
 from functools import wraps
 from dotenv import load_dotenv
+import pytz,time
 
 # Import portfolio API
 from db.portfolio_api import portfolio_api
@@ -68,6 +69,7 @@ def sanitize_for_json(obj):
 BASE_DIR = os.getenv('BASE_DIR', '/home/tarun/MarketSentimentAnalysis')
 DB_PATH = os.getenv('SENTIMENT_DB_PATH', os.path.join(BASE_DIR, 'Sentiment_Analysis', 'sentiment_analysis.db'))
 AUTH_DB_PATH = os.getenv('AUTH_DB_PATH', os.path.join(BASE_DIR, 'db', 'auth.db'))
+EXCHANGE_INDICES_PATH = f"{BASE_DIR}/ExchangeSentiment"
 
 # Fundamental Analysis paths
 FUNDAMENTAL_BASE_DIR = os.getenv('FUNDAMENTAL_BASE_DIR', os.path.join(BASE_DIR, 'FundamentalAnalysis'))
@@ -145,6 +147,37 @@ def init_auth_db():
 
 # Initialize the auth database on startup
 init_auth_db()
+
+CSV_PATH = f'{EXCHANGE_INDICES_PATH}/exchangeinfo.csv'
+
+def load_tickers_from_csv(csv_path=CSV_PATH):
+    """Load ticker symbols from the CSV file, skipping commented lines."""
+    df = pd.read_csv(csv_path, comment='#')
+    return df['Ticker Symbol'].tolist()
+
+def fetch_indices_data(tickers, period='1y', interval='1d'):
+    """Fetch historical data for a list of tickers using yfinance."""
+    data = {}
+    for ticker in tickers:
+        try:
+            ticker_data = yf.Ticker(ticker)
+            hist = ticker_data.history(period=period, interval=interval)
+            data[ticker] = hist
+        except Exception as e:
+            print(f"Error fetching data for {ticker}: {e}")
+    return data
+
+def update_data_every_minute():
+    while True:
+        print("Fetching latest index data...")
+        tickers = load_tickers_from_csv()
+        indices_data = fetch_indices_data(tickers)
+        for ticker, df in indices_data.items():
+            output_path = f"{EXCHANGE_INDICES_PATH}/{ticker.replace('^', '')}.csv"
+            df.to_csv(output_path)
+            print(f"Saved data for {ticker} to {output_path}")
+        print("Index data updated.")
+        time.sleep(60)  # Wait 60 seconds
 
 def generate_token(user_id, email):
     """Generate JWT token for user"""
@@ -294,7 +327,7 @@ def get_sentiment():
         if stock:
             # Get latest sentiment for a specific stock
             query = """
-            SELECT datetime, stock, marketSentiment 
+            SELECT datetime, stock, signal_strength 
             FROM sentimentResult 
             WHERE stock = ? 
             ORDER BY datetime DESC 
@@ -308,11 +341,11 @@ def get_sentiment():
                 SELECT 
                     datetime, 
                     stock, 
-                    marketSentiment,
+                    signal_strength,
                     ROW_NUMBER() OVER (PARTITION BY stock ORDER BY datetime DESC) as rn
                 FROM sentimentResult
             )
-            SELECT datetime, stock, marketSentiment 
+            SELECT datetime, stock, signal_strength 
             FROM ranked 
             WHERE rn = 1
             """
@@ -361,40 +394,66 @@ def get_sentiment_db_timestamp():
 
 @app.route('/api/stock-data/<stock_symbol>', methods=['GET'])
 def get_stock_data(stock_symbol):
-    """Get historical stock data from Yahoo Finance"""
+    """Get historical stock data from Yahoo Finance with smart interval and previous trading day logic."""
     try:
-        # Get period from query parameters (default to 1 month)
-        period = request.args.get('period', '1mo')  # 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max
-        
-        # Map our stock symbol to Yahoo Finance ticker
-        ticker_symbol = STOCK_TICKER_MAP.get(stock_symbol.upper())
-        if not ticker_symbol:
-            # If not in our predefined map, try the standard NSE format
-            ticker_symbol = f"{stock_symbol.upper()}.NS"
-        
-        # Fetch data from Yahoo Finance
-        stock = yf.Ticker(ticker_symbol)
-        hist = stock.history(period=period)
-        
+        period = request.args.get('period', '1mo')  # 1d, 5d, 1mo, etc.
+
+        # Map period to interval
+        if period == '1d':
+            interval = '1m'
+        elif period == '5d':
+            interval = '1h'
+        else:
+            interval = '1d'
+
+        # Timezone for NSE
+        ist = pytz.timezone('Asia/Kolkata')
+        now_ist = datetime.now(ist)
+        market_open = now_ist.replace(hour=9, minute=15, second=0, microsecond=0)
+        market_close = now_ist.replace(hour=15, minute=30, second=0, microsecond=0)
+
+        # Helper to get previous trading day (skipping weekends)
+        def get_previous_trading_day(dt):
+            prev_day = dt - timedelta(days=1)
+            while prev_day.weekday() >= 5:  # 5=Saturday, 6=Sunday
+                prev_day -= timedelta(days=1)
+            return prev_day
+
+        # If period is 1d and now is outside market hours, use previous trading day
+        if period == '1d' and (now_ist < market_open or now_ist > market_close or now_ist.weekday() >= 5):
+            prev_trading_day = get_previous_trading_day(now_ist)
+            start = prev_trading_day.replace(hour=9, minute=15, second=0, microsecond=0)
+            end = prev_trading_day.replace(hour=15, minute=30, second=0, microsecond=0)
+            # Convert to UTC for yfinance
+            start_utc = start.astimezone(pytz.utc)
+            end_utc = end.astimezone(pytz.utc)
+            ticker_symbol = STOCK_TICKER_MAP.get(stock_symbol.upper(), f"{stock_symbol.upper()}.NS")
+            stock = yf.Ticker(ticker_symbol)
+            hist = stock.history(interval='1m', start=start_utc, end=end_utc)
+        else:
+            ticker_symbol = STOCK_TICKER_MAP.get(stock_symbol.upper(), f"{stock_symbol.upper()}.NS")
+            stock = yf.Ticker(ticker_symbol)
+            hist = stock.history(period=period, interval=interval)
+
         if hist.empty:
             return jsonify({"error": f"No data found for {stock_symbol}. Please check if the symbol is correct or the stock is listed on NSE."}), 404
-        
+
         # Convert to list of dictionaries for JSON response
         data = []
         for date, row in hist.iterrows():
             data.append({
-                "date": date.strftime('%Y-%m-%d'),
+                "date": date.strftime('%Y-%m-%d %H:%M') if interval in ['1m', '1h'] else date.strftime('%Y-%m-%d'),
                 "open": round(float(row['Open']), 2),
                 "high": round(float(row['High']), 2),
                 "low": round(float(row['Low']), 2),
                 "close": round(float(row['Close']), 2),
                 "volume": int(row['Volume']) if pd.notna(row['Volume']) else 0
             })
-        
+
         # Get current stock info
         info = stock.info
         current_price = info.get('currentPrice', hist['Close'].iloc[-1])
-        
+
         return jsonify({
             "symbol": stock_symbol,
             "ticker": ticker_symbol,
@@ -402,9 +461,57 @@ def get_stock_data(stock_symbol):
             "currency": info.get('currency', 'INR'),
             "data": data
         })
-        
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+@app.route('/api/exchange-sentiment')
+def exchange_sentiment():
+    """Fetch tickers from CSV, get latest data from yfinance, and return index sentiment info. Use yfinance's marketState for global market open/close detection."""
+    from datetime import datetime
+    # Load ticker-to-index-name mapping
+    mapping = {}
+    tickers = []
+    with open(f'{EXCHANGE_INDICES_PATH}/exchangeinfo.csv', newline='') as csvfile:
+        reader = csv.DictReader(filter(lambda row: row[0]!='#', csvfile))
+        for row in reader:
+            ticker = row['Ticker Symbol']
+            mapping[ticker.replace('^', '')] = row['Index Name']
+            tickers.append(ticker)
+
+    result = []
+    for ticker in tickers:
+        try:
+            yf_ticker = yf.Ticker(ticker)
+            info = yf_ticker.info
+            market_state = info.get('marketState', '').upper()
+            is_market_open = market_state == 'REGULAR'
+            hist = yf_ticker.history(period='2d', interval='1d')
+            if not hist.empty:
+                prev_close = float(hist.iloc[-2]['Close']) if len(hist) > 1 else float(hist.iloc[-1]['Close'])
+                latest_close = float(hist.iloc[-1]['Close'])
+                price_used = latest_close
+                price_type = 'close'
+                if is_market_open:
+                    current_price = info.get('regularMarketPrice', None)
+                    if current_price:
+                        price_used = float(current_price)
+                        price_type = 'live'
+                change = price_used - prev_close
+                percent_change = (change / prev_close) * 100 if prev_close else 0
+                result.append({
+                    'ticker': ticker.replace('^', ''),
+                    'index_name': mapping.get(ticker.replace('^', ''), ticker),
+                    'price': price_used,
+                    'price_type': price_type,
+                    'prev_close': prev_close,
+                    'change': change,
+                    'percent_change': percent_change,
+                    'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                })
+        except Exception as e:
+            print(f"Error fetching data for {ticker}: {e}")
+            continue
+    return jsonify(result)
 
 @app.route('/api/stock-info/<stock_symbol>', methods=['GET'])
 def get_stock_info(stock_symbol):
@@ -1119,19 +1226,30 @@ def get_sector_analysis(sector_name):
 
 @app.route('/api/available-sectors', methods=['GET'])
 def get_available_sectors():
-    """Get list of available sectors"""
+    """Get list of available sectors from database"""
     try:
-        sectors = [
-            "Information Technology",
-            "Banking & Financial Services",
-            "Pharmaceuticals & Healthcare",
-            "Oil, Gas & Energy",
-            "Consumer Goods & FMCG",
-            "Automobiles",
-            "Metals & Mining",
-            "Cement & Construction",
-            "Telecommunications"
-        ]
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        financial_db_path = os.path.join(BASE_DIR, 'financial_reports', 'financial_data.db')
+        
+        if not os.path.exists(financial_db_path):
+            return jsonify({"error": "Financial database not found"}), 404
+            
+        conn = sqlite3.connect(financial_db_path)
+        cursor = conn.cursor()
+        
+        # Get unique sectors from the database
+        query = """
+        SELECT DISTINCT sector 
+        FROM companies 
+        WHERE sector IS NOT NULL AND sector != 'N/A'
+        ORDER BY sector
+        """
+        
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        sectors = [row[0] for row in rows]
+        
+        conn.close()
         
         return jsonify({"sectors": sectors})
         
@@ -2486,6 +2604,453 @@ def get_ai_fundamental_analysis(stock_symbol):
         return jsonify(result)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+@app.route('/api/top-stocks', methods=['GET'])
+def get_top_stocks():
+    """Get comprehensive fundamental analysis for all stocks to create a comparison table"""
+    try:
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        financial_db_path = os.path.join(BASE_DIR, 'financial_reports', 'financial_data.db')
+        
+        if not os.path.exists(financial_db_path):
+            return jsonify({"error": "Financial database not found"}), 404
+            
+        conn = sqlite3.connect(financial_db_path)
+        cursor = conn.cursor()
+        
+        # Get all companies with their financial data
+        query = """
+        SELECT 
+            c.symbol,
+            c.name as company_name,
+            c.sector,
+            c.market_cap_formatted,
+            c.current_price,
+            fh.return_on_equity,
+            fh.profit_margin,
+            fh.current_ratio,
+            fh.quick_ratio,
+            fh.debt_to_equity,
+            fh.revenue_growth,
+            fh.earnings_growth,
+            vm.pe_ratio,
+            vm.price_to_book,
+            vm.price_to_sales
+        FROM companies c
+        LEFT JOIN financial_health fh ON c.symbol = fh.symbol
+        LEFT JOIN valuation_metrics vm ON c.symbol = vm.symbol
+        WHERE c.symbol IS NOT NULL
+        ORDER BY c.market_cap DESC
+        """
+        
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        
+        top_stocks_data = []
+        
+        for row in rows:
+            try:
+                (symbol, company_name, sector, market_cap_formatted, current_price,
+                 roe, profit_margin, current_ratio, quick_ratio, debt_to_equity,
+                 revenue_growth, earnings_growth, pe_ratio, price_to_book, price_to_sales) = row
+                
+                # Calculate scores
+                reliability_score = 0
+                if roe is not None:
+                    if roe >= 0.15: reliability_score += 40
+                    elif roe >= 0.10: reliability_score += 30
+                    elif roe >= 0.05: reliability_score += 20
+                    elif roe > 0: reliability_score += 10
+                if profit_margin is not None:
+                    if profit_margin >= 0.15: reliability_score += 20
+                    elif profit_margin >= 0.08: reliability_score += 15
+                    elif profit_margin >= 0.03: reliability_score += 10
+                    elif profit_margin > 0: reliability_score += 5
+                if current_ratio is not None:
+                    if current_ratio >= 2.0: reliability_score += 20
+                    elif current_ratio >= 1.5: reliability_score += 15
+                    elif current_ratio >= 1.0: reliability_score += 10
+                    elif current_ratio >= 0.8: reliability_score += 5
+                if quick_ratio is not None:
+                    if quick_ratio >= 1.5: reliability_score += 20
+                    elif quick_ratio >= 1.0: reliability_score += 15
+                    elif quick_ratio >= 0.8: reliability_score += 10
+                    elif quick_ratio >= 0.5: reliability_score += 5
+                reliability_score = min(reliability_score, 100)
+                
+                # Growth score
+                growth_score = 0
+                if revenue_growth is not None:
+                    if revenue_growth >= 0.20: growth_score += 40
+                    elif revenue_growth >= 0.15: growth_score += 35
+                    elif revenue_growth >= 0.10: growth_score += 30
+                    elif revenue_growth >= 0.05: growth_score += 25
+                    elif revenue_growth >= 0: growth_score += 20
+                    elif revenue_growth >= -0.05: growth_score += 10
+                if earnings_growth is not None:
+                    if earnings_growth >= 0.20: growth_score += 30
+                    elif earnings_growth >= 0.15: growth_score += 25
+                    elif earnings_growth >= 0.10: growth_score += 20
+                    elif earnings_growth >= 0.05: growth_score += 15
+                    elif earnings_growth >= 0: growth_score += 10
+                    elif earnings_growth >= -0.05: growth_score += 5
+                growth_score = min(growth_score, 100)
+                
+                # Valuation score
+                valuation_score = 0
+                if pe_ratio is not None:
+                    if pe_ratio <= 10: valuation_score += 40
+                    elif pe_ratio <= 15: valuation_score += 35
+                    elif pe_ratio <= 20: valuation_score += 30
+                    elif pe_ratio <= 25: valuation_score += 25
+                    elif pe_ratio <= 30: valuation_score += 20
+                    elif pe_ratio <= 40: valuation_score += 15
+                    elif pe_ratio <= 50: valuation_score += 10
+                    elif pe_ratio <= 100: valuation_score += 5
+                if price_to_book is not None:
+                    if price_to_book <= 1: valuation_score += 30
+                    elif price_to_book <= 2: valuation_score += 25
+                    elif price_to_book <= 3: valuation_score += 20
+                    elif price_to_book <= 5: valuation_score += 15
+                    elif price_to_book <= 8: valuation_score += 10
+                    elif price_to_book <= 15: valuation_score += 5
+                if price_to_sales is not None:
+                    if price_to_sales <= 1: valuation_score += 30
+                    elif price_to_sales <= 2: valuation_score += 25
+                    elif price_to_sales <= 3: valuation_score += 20
+                    elif price_to_sales <= 5: valuation_score += 15
+                    elif price_to_sales <= 8: valuation_score += 10
+                    elif price_to_sales <= 15: valuation_score += 5
+                valuation_score = min(valuation_score, 100)
+                
+                # Overall score
+                overall_score = (reliability_score * 0.40 + growth_score * 0.35 + valuation_score * 0.25)
+                
+                # Determine grade and recommendation
+                if overall_score >= 85:
+                    overall_grade = "A+"
+                    recommendation = "Strong Buy"
+                elif overall_score >= 75:
+                    overall_grade = "A"
+                    recommendation = "Buy"
+                elif overall_score >= 65:
+                    overall_grade = "B+"
+                    recommendation = "Buy"
+                elif overall_score >= 55:
+                    overall_grade = "B"
+                    recommendation = "Hold"
+                elif overall_score >= 45:
+                    overall_grade = "C+"
+                    recommendation = "Hold"
+                elif overall_score >= 35:
+                    overall_grade = "C"
+                    recommendation = "Weak Hold"
+                elif overall_score >= 25:
+                    overall_grade = "D"
+                    recommendation = "Sell"
+                elif overall_score > 0:
+                    overall_grade = "D-"
+                    recommendation = "Sell"
+                else:
+                    overall_grade = "N/A"
+                    recommendation = "Data Unavailable"
+                
+                # Risk level
+                risk_level = "Low"
+                if roe is not None and roe < 0.05:
+                    risk_level = "High"
+                elif current_ratio is not None and current_ratio < 1.0:
+                    risk_level = "High"
+                elif profit_margin is not None and profit_margin < 0.03:
+                    risk_level = "Medium"
+                
+                # Create stock data object
+                stock_data = {
+                    'symbol': symbol,
+                    'company_name': company_name or symbol,
+                    'sector': sector or 'N/A',
+                    'market_cap': market_cap_formatted,
+                    'current_price': current_price,
+                    'reliability_score': round(reliability_score, 1),
+                    'growth_score': round(growth_score, 1),
+                    'valuation_score': round(valuation_score, 1),
+                    'overall_score': round(overall_score, 1),
+                    'overall_grade': overall_grade,
+                    'recommendation': recommendation,
+                    'risk_level': risk_level,
+                    # Key metrics for comparison
+                    'roe': round(roe * 100, 2) if roe else None,
+                    'profit_margin': round(profit_margin * 100, 2) if profit_margin else None,
+                    'current_ratio': round(current_ratio, 2) if current_ratio else None,
+                    'debt_to_equity': round(debt_to_equity, 2) if debt_to_equity else None,
+                    'revenue_growth': round(revenue_growth * 100, 2) if revenue_growth else None,
+                    'earnings_growth': round(earnings_growth * 100, 2) if earnings_growth else None,
+                    'pe_ratio': round(pe_ratio, 2) if pe_ratio else None,
+                    'price_to_book': round(price_to_book, 2) if price_to_book else None,
+                    'price_to_sales': round(price_to_sales, 2) if price_to_sales else None
+                }
+                
+                top_stocks_data.append(stock_data)
+                
+            except Exception as e:
+                print(f"Error processing {symbol}: {e}")
+                continue
+        
+        # Sort by overall score (best first)
+        top_stocks_data.sort(key=lambda x: x['overall_score'], reverse=True)
+        
+        conn.close()
+        
+        return jsonify({
+            "success": True,
+            "top_stocks": top_stocks_data,
+            "total_stocks": len(top_stocks_data),
+            "calculated_at": datetime.now().isoformat()
+        })
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/sector-analysis-stocks/<sector_name>', methods=['GET'])
+def get_sector_analysis_stocks(sector_name):
+    """Get comprehensive fundamental analysis for all stocks in a specific sector"""
+    try:
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        financial_db_path = os.path.join(BASE_DIR, 'financial_reports', 'financial_data.db')
+        
+        if not os.path.exists(financial_db_path):
+            return jsonify({"error": "Financial database not found"}), 404
+            
+        conn = sqlite3.connect(financial_db_path)
+        cursor = conn.cursor()
+        
+        # Get all companies in the specified sector with their financial data
+        query = """
+        SELECT 
+            c.symbol,
+            c.name as company_name,
+            c.sector,
+            c.market_cap_formatted,
+            c.current_price,
+            fh.return_on_equity,
+            fh.profit_margin,
+            fh.current_ratio,
+            fh.quick_ratio,
+            fh.debt_to_equity,
+            fh.revenue_growth,
+            fh.earnings_growth,
+            vm.pe_ratio,
+            vm.price_to_book,
+            vm.price_to_sales
+        FROM companies c
+        LEFT JOIN financial_health fh ON c.symbol = fh.symbol
+        LEFT JOIN valuation_metrics vm ON c.symbol = vm.symbol
+        WHERE c.symbol IS NOT NULL AND c.sector = ?
+        ORDER BY c.market_cap DESC
+        """
+        
+        cursor.execute(query, (sector_name,))
+        rows = cursor.fetchall()
+        
+        sector_stocks_data = []
+        
+        for row in rows:
+            try:
+                (symbol, company_name, sector, market_cap_formatted, current_price,
+                 roe, profit_margin, current_ratio, quick_ratio, debt_to_equity,
+                 revenue_growth, earnings_growth, pe_ratio, price_to_book, price_to_sales) = row
+                
+                # Calculate scores (same logic as top-stocks)
+                reliability_score = 0
+                if roe is not None:
+                    if roe >= 0.15: reliability_score += 40
+                    elif roe >= 0.10: reliability_score += 30
+                    elif roe >= 0.05: reliability_score += 20
+                    elif roe > 0: reliability_score += 10
+                if profit_margin is not None:
+                    if profit_margin >= 0.15: reliability_score += 20
+                    elif profit_margin >= 0.08: reliability_score += 15
+                    elif profit_margin >= 0.03: reliability_score += 10
+                    elif profit_margin > 0: reliability_score += 5
+                if current_ratio is not None:
+                    if current_ratio >= 2.0: reliability_score += 20
+                    elif current_ratio >= 1.5: reliability_score += 15
+                    elif current_ratio >= 1.0: reliability_score += 10
+                    elif current_ratio >= 0.8: reliability_score += 5
+                if quick_ratio is not None:
+                    if quick_ratio >= 1.5: reliability_score += 20
+                    elif quick_ratio >= 1.0: reliability_score += 15
+                    elif quick_ratio >= 0.8: reliability_score += 10
+                    elif quick_ratio >= 0.5: reliability_score += 5
+                reliability_score = min(reliability_score, 100)
+                
+                # Growth score
+                growth_score = 0
+                if revenue_growth is not None:
+                    if revenue_growth >= 0.20: growth_score += 40
+                    elif revenue_growth >= 0.15: growth_score += 35
+                    elif revenue_growth >= 0.10: growth_score += 30
+                    elif revenue_growth >= 0.05: growth_score += 25
+                    elif revenue_growth >= 0: growth_score += 20
+                    elif revenue_growth >= -0.05: growth_score += 10
+                if earnings_growth is not None:
+                    if earnings_growth >= 0.20: growth_score += 30
+                    elif earnings_growth >= 0.15: growth_score += 25
+                    elif earnings_growth >= 0.10: growth_score += 20
+                    elif earnings_growth >= 0.05: growth_score += 15
+                    elif earnings_growth >= 0: growth_score += 10
+                    elif earnings_growth >= -0.05: growth_score += 5
+                growth_score = min(growth_score, 100)
+                
+                # Valuation score
+                valuation_score = 0
+                if pe_ratio is not None and pe_ratio > 0:
+                    if pe_ratio <= 15: valuation_score += 40
+                    elif pe_ratio <= 20: valuation_score += 30
+                    elif pe_ratio <= 25: valuation_score += 20
+                    elif pe_ratio <= 30: valuation_score += 10
+                if price_to_book is not None and price_to_book > 0:
+                    if price_to_book <= 1.5: valuation_score += 30
+                    elif price_to_book <= 2.5: valuation_score += 20
+                    elif price_to_book <= 3.5: valuation_score += 10
+                if price_to_sales is not None and price_to_sales > 0:
+                    if price_to_sales <= 2: valuation_score += 30
+                    elif price_to_sales <= 4: valuation_score += 20
+                    elif price_to_sales <= 6: valuation_score += 10
+                valuation_score = min(valuation_score, 100)
+                
+                # Overall score
+                overall_score = (reliability_score + growth_score + valuation_score) / 3
+                
+                # Determine grade
+                if overall_score >= 80: overall_grade = "A"
+                elif overall_score >= 70: overall_grade = "B"
+                elif overall_score >= 60: overall_grade = "C"
+                elif overall_score >= 50: overall_grade = "D"
+                else: overall_grade = "F"
+                
+                # Determine recommendation
+                if overall_score >= 75: recommendation = "Buy"
+                elif overall_score >= 60: recommendation = "Hold"
+                else: recommendation = "Sell"
+                
+                # Determine risk level
+                if reliability_score >= 70 and growth_score >= 60: risk_level = "Low"
+                elif reliability_score >= 50 and growth_score >= 40: risk_level = "Medium"
+                else: risk_level = "High"
+                
+                stock_data = {
+                    'symbol': symbol,
+                    'company_name': company_name,
+                    'sector': sector,
+                    'market_cap': market_cap_formatted,
+                    'current_price': current_price,
+                    'reliability_score': round(reliability_score, 1),
+                    'growth_score': round(growth_score, 1),
+                    'valuation_score': round(valuation_score, 1),
+                    'overall_score': round(overall_score, 1),
+                    'overall_grade': overall_grade,
+                    'recommendation': recommendation,
+                    'risk_level': risk_level,
+                    'roe': round(roe * 100, 2) if roe else None,
+                    'profit_margin': round(profit_margin * 100, 2) if profit_margin else None,
+                    'current_ratio': round(current_ratio, 2) if current_ratio else None,
+                    'debt_to_equity': round(debt_to_equity, 2) if debt_to_equity else None,
+                    'revenue_growth': round(revenue_growth * 100, 2) if revenue_growth else None,
+                    'earnings_growth': round(earnings_growth * 100, 2) if earnings_growth else None,
+                    'pe_ratio': round(pe_ratio, 2) if pe_ratio else None,
+                    'price_to_book': round(price_to_book, 2) if price_to_book else None,
+                    'price_to_sales': round(price_to_sales, 2) if price_to_sales else None
+                }
+                sector_stocks_data.append(stock_data)
+                
+            except Exception as e:
+                print(f"Error processing stock {symbol}: {e}")
+                continue
+        
+        conn.close()
+        
+        # Sort by overall score
+        sector_stocks_data.sort(key=lambda x: x['overall_score'], reverse=True)
+        
+        return jsonify({
+            "success": True, 
+            "sector_stocks": sector_stocks_data, 
+            "total_stocks": len(sector_stocks_data),
+            "sector_name": sector_name
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/exchange-sentiment', methods=['GET'])
+def get_exchange_sentiment():
+    base_dir = '/home/tarun/MarketSentimentAnalysis/ExchangeSentiment'
+    mapping = {}
+    with open(os.path.join(base_dir, 'exchangeinfo.csv'), newline='') as csvfile:
+        reader = csv.DictReader(filter(lambda row: row[0]!='#', csvfile))
+        for row in reader:
+            mapping[row['Ticker Symbol'].replace('^', '')] = row['Index Name']
+
+    result = []
+    for filename in os.listdir(base_dir):
+        if filename.endswith('.csv') and filename != 'exchangeinfo.csv':
+            ticker = filename.replace('.csv', '')
+            df = pd.read_csv(os.path.join(base_dir, filename))
+            if not df.empty:
+                latest = df.iloc[-1].to_dict()
+                latest['ticker'] = ticker
+                latest['index_name'] = mapping.get(ticker, ticker)
+                if len(df) > 1:
+                    prev_close = df.iloc[-2]['Close']
+                    change = latest['Close'] - prev_close
+                    percent_change = (change / prev_close) * 100 if prev_close else 0
+                    latest['change'] = change
+                    latest['percent_change'] = percent_change
+                else:
+                    latest['change'] = 0
+                    latest['percent_change'] = 0
+                result.append(latest)
+    return jsonify(result)
+
+@app.route('/api/stock-sector/<stock_symbol>', methods=['GET'])
+def get_stock_sector(stock_symbol):
+    """Get sector information for a specific stock"""
+    try:
+        clean_symbol = stock_symbol.replace('.NS', '').upper()
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        financial_db_path = os.path.join(BASE_DIR, 'financial_reports', 'financial_data.db')
+        
+        if not os.path.exists(financial_db_path):
+            return jsonify({"error": "Financial database not found"}), 404
+            
+        conn = sqlite3.connect(financial_db_path)
+        cursor = conn.cursor()
+        
+        # Get sector information for the stock
+        query = """
+        SELECT symbol, name, sector 
+        FROM companies 
+        WHERE symbol = ?
+        """
+        
+        cursor.execute(query, (clean_symbol,))
+        row = cursor.fetchone()
+        conn.close()
+        
+        if not row:
+            return jsonify({"error": f"Stock {stock_symbol} not found in database"}), 404
+        
+        symbol, company_name, sector = row
+        
+        return jsonify({
+            "symbol": symbol,
+            "company_name": company_name,
+            "sector": sector,
+            "success": True
+        })
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     host = os.getenv('HOST', '0.0.0.0')

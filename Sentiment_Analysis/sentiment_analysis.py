@@ -78,7 +78,7 @@ for company, news_dict in news_data.items():
     combined_text = f"News Headlines for stock {company}:\n" + "\n".join(headlines)
     result = analyze_sentiment(combined_text)
     analysis_score[company] = {timestamp: result}
-
+    
 # Save results
 with open("sentiment_analysis_results.json", "w") as f:
     json.dump(analysis_score, f, indent=4)

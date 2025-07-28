@@ -133,9 +133,21 @@ const Layout = ({
     navigate('/', { replace: true });
   };
 
+  // const handleTabChange = (tab) => {
+  //   onTabChange(tab);
+  //   navigate('/dashboard');
+  //   if (window.innerWidth <= 900) {
+  //     setSidebarOpen(false);
+  //   }
+  // };
+
   const handleTabChange = (tab) => {
     onTabChange(tab);
-    navigate('/dashboard');
+    if (tab === 'exchange-sentiment') {
+      navigate('/exchange-sentiment');
+    } else {
+      navigate('/dashboard');
+    }
     if (window.innerWidth <= 900) {
       setSidebarOpen(false);
     }
@@ -196,11 +208,14 @@ const Layout = ({
   const renderSidebar = () => {
     if (!isAuthenticated) return null;
 
-    const tabs = [
-      { key: 'portfolio', label: 'My Portfolio', icon: '💼' },
-      { key: 'sectoral', label: 'Sector View', icon: '📊' }
-      // Market Sentiment and Fundamental Analysis are also sub-tabs within Portfolio
-    ];
+      const tabs = [
+    { key: 'portfolio', label: 'My Portfolio', icon: '💼' },
+    { key: 'top-stocks', label: 'Top Stocks', icon: '🏆' },
+    { key: 'sector-analysis', label: 'Peer Comparison', icon: '📈' },
+    { key: 'sectoral', label: 'Sector View', icon: '📊' },
+    { key: 'exchange-sentiment', label: 'Exchange Sentiment', icon: '🌐' }
+    // Market Sentiment and Fundamental Analysis are also sub-tabs within Portfolio
+  ];
 
     return (
       <div className={`sidebar ${sidebarOpen ? 'open' : ''} ${isHeaderHidden ? 'full-height' : ''}`}>

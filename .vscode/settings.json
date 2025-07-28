@@ -1,0 +1,17 @@
+{
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "block",
+    "terminal.integrated.cursorWidth": 2,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontWeight": "normal",
+    "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.letterSpacing": 0,
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.rendererType": "canvas",
+    "terminal.integrated.cursorSmoothCaretAnimation": "on",
+    "workbench.colorCustomizations": {
+        "terminalCursor.foreground": "#ffffff",
+        "terminalCursor.background": "#000000"
+    }
+} 

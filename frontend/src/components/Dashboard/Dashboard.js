@@ -24,6 +24,16 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated, onTabChange, onS
   const [newsPage, setNewsPage] = useState(1);
   const [newsPerPage] = useState(5);
   const navigate = useNavigate();
+  const [exchangeSentimentData, setExchangeSentimentData] = useState([]);
+  const [exchangeSentimentLoading, setExchangeSentimentLoading] = useState(false);
+  const [topStocksData, setTopStocksData] = useState([]);
+  const [topStocksLoading, setTopStocksLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sectorAnalysisData, setSectorAnalysisData] = useState([]);
+  const [sectorAnalysisLoading, setSectorAnalysisLoading] = useState(false);
+  const [selectedSector, setSelectedSector] = useState('');
+  const [availableSectors, setAvailableSectors] = useState([]);
+  const [sectorSearchTerm, setSectorSearchTerm] = useState('');
 
   // Get user email from localStorage
   const getUserEmail = () => {
@@ -62,6 +72,26 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated, onTabChange, onS
       console.error('❌ Error loading portfolio:', error);
     } finally {
       setPortfolioLoading(false);
+    }
+  };
+
+  // Fetch top stocks data
+  const fetchTopStocks = async () => {
+    setTopStocksLoading(true);
+    try {
+      const apiUrl = `${config.backendUrl}/api/top-stocks`;
+      const response = await fetch(apiUrl);
+      
+      if (response.ok) {
+        const data = await response.json();
+        setTopStocksData(data.top_stocks || []);
+      } else {
+        console.error('Failed to fetch top stocks:', response.status);
+      }
+    } catch (error) {
+      console.error('Error fetching top stocks:', error);
+    } finally {
+      setTopStocksLoading(false);
     }
   };
 
@@ -336,6 +366,9 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated, onTabChange, onS
               console.log('⚠️ No fundamental data available for:', selectedStock);
               setFundamentalData(null);
             }
+            
+            // Fetch and auto-select the stock's sector
+            await fetchStockSector(selectedStock);
           } catch (stockError) {
             console.error('❌ Error fetching stock data:', stockError);
             setFundamentalData(null);
@@ -393,6 +426,32 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated, onTabChange, onS
     }
   };
 
+  // for exchange-sentiments
+  useEffect(() => {
+    let intervalId;
+  
+    const fetchData = () => {
+      setExchangeSentimentLoading(true);
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api';
+      fetch(`${API_BASE_URL}/exchange-sentiment`)
+        .then(res => res.json())
+        .then(data => {
+          setExchangeSentimentData(data);
+          setExchangeSentimentLoading(false);
+        })
+        .catch(() => setExchangeSentimentLoading(false));
+    };
+  
+    if (activeTab === 'exchange-sentiment') {
+      fetchData(); // Initial fetch
+      intervalId = setInterval(fetchData, 60000); // Fetch every 60 seconds
+    }
+  
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
+  }, [activeTab]);
+  
   // Load news when selected stock changes
   useEffect(() => {
     if (selectedStock) {
@@ -400,12 +459,558 @@ const Dashboard = ({ activeTab, selectedStock, isAuthenticated, onTabChange, onS
     }
   }, [selectedStock]);
 
+  // Load top stocks when tab is active
+  useEffect(() => {
+    if (activeTab === 'top-stocks') {
+      fetchTopStocks();
+    }
+  }, [activeTab]);
+
+  // Fetch stock sector and auto-select it
+  const fetchStockSector = async (stockSymbol) => {
+    if (!stockSymbol) return;
+    
+    try {
+      console.log('🔄 Fetching sector for stock:', stockSymbol);
+      const response = await fetch(`${config.backendUrl}/api/stock-sector/${stockSymbol}`);
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log('✅ Stock sector data:', data);
+        
+        if (data.sector && data.sector !== 'N/A') {
+          setSelectedSector(data.sector);
+          console.log('✅ Auto-selected sector:', data.sector);
+          
+          // If we're on the sector analysis tab, fetch the sector analysis
+          if (activeTab === 'sector-analysis') {
+            fetchSectorAnalysis(data.sector);
+          }
+        } else {
+          console.log('⚠️ No valid sector found for stock:', stockSymbol);
+          setSelectedSector('');
+        }
+      } else {
+        console.error('❌ Failed to fetch stock sector:', response.status);
+        setSelectedSector('');
+      }
+    } catch (error) {
+      console.error('❌ Error fetching stock sector:', error);
+      setSelectedSector('');
+    }
+  };
+
+  // Fetch available sectors
+  const fetchAvailableSectors = async () => {
+    try {
+      console.log('🔄 Fetching available sectors...');
+      const response = await fetch(`${config.backendUrl}/api/available-sectors`);
+      if (response.ok) {
+        const data = await response.json();
+        setAvailableSectors(data.sectors || []);
+        console.log('✅ Available sectors loaded:', data.sectors?.length || 0, 'sectors');
+      } else {
+        console.error('❌ Failed to fetch sectors:', response.status);
+      }
+    } catch (error) {
+      console.error('❌ Error fetching sectors:', error);
+    }
+  };
+
+  // Fetch sector analysis data
+  const fetchSectorAnalysis = async (sectorName) => {
+    if (!sectorName) return;
+    
+    console.log('🔄 Fetching sector analysis for:', sectorName);
+    setSectorAnalysisLoading(true);
+    try {
+      const apiUrl = `${config.backendUrl}/api/sector-analysis-stocks/${encodeURIComponent(sectorName)}`;
+      console.log('📡 API URL:', apiUrl);
+      const response = await fetch(apiUrl);
+      console.log('📡 Response status:', response.status);
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log('📊 Sector analysis data:', data);
+        setSectorAnalysisData(data.sector_stocks || []);
+        console.log('✅ Sector stocks loaded:', data.sector_stocks?.length || 0, 'stocks');
+      } else {
+        console.error('❌ Failed to fetch sector analysis:', response.status);
+        const errorText = await response.text();
+        console.error('❌ Error response:', errorText);
+      }
+    } catch (error) {
+      console.error('❌ Error fetching sector analysis:', error);
+    } finally {
+      setSectorAnalysisLoading(false);
+    }
+  };
+
+  // Load sectors when sector analysis tab is active
+  useEffect(() => {
+    console.log('🔄 useEffect triggered, activeTab:', activeTab);
+    if (activeTab === 'sector-analysis') {
+      console.log('📈 Peer Comparison tab activated, loading sectors...');
+      fetchAvailableSectors();
+      
+      // If a stock is already selected, fetch its sector and auto-select it
+      if (selectedStock) {
+        console.log('📈 Stock already selected, fetching its sector:', selectedStock);
+        fetchStockSector(selectedStock);
+      }
+    }
+  }, [activeTab, selectedStock]);
+
   const getSentimentClass = (score) => {
     if (score <= 3) return "bearish";
     if (score <= 7) return "neutral";
     return "bullish";
   };
 
+
+  const renderTopStocksView = () => {
+    const getScoreColor = (score) => {
+      if (score >= 80) return '#2e7d32'; // Green
+      if (score >= 60) return '#1976d2'; // Blue
+      if (score >= 40) return '#ed6c02'; // Orange
+      return '#d32f2f'; // Red
+    };
+
+    const getGradeColor = (grade) => {
+      if (grade === 'A+' || grade === 'A') return '#2e7d32';
+      if (grade === 'B+' || grade === 'B') return '#1976d2';
+      if (grade === 'C+' || grade === 'C') return '#ed6c02';
+      if (grade === 'D' || grade === 'D-') return '#d32f2f';
+      return '#666';
+    };
+
+    const getRecommendationColor = (recommendation) => {
+      if (recommendation.includes('Buy')) return '#2e7d32';
+      if (recommendation.includes('Hold')) return '#ed6c02';
+      if (recommendation.includes('Sell')) return '#d32f2f';
+      return '#666';
+    };
+
+    const getRiskColor = (risk) => {
+      if (risk === 'Low') return '#2e7d32';
+      if (risk === 'Medium') return '#ed6c02';
+      if (risk === 'High') return '#d32f2f';
+      return '#666';
+    };
+
+    return (
+      <div className="top-stocks-container">
+        <div className="top-stocks-header">
+          <h2>🏆 Top Stocks Comparison</h2>
+          <p>Comprehensive fundamental analysis comparison of all stocks</p>
+          <button 
+            onClick={fetchTopStocks} 
+            style={{ 
+              marginTop: '10px', 
+              padding: '8px 16px', 
+              background: '#667eea', 
+              color: 'white', 
+              border: 'none', 
+              borderRadius: '5px', 
+              cursor: 'pointer',
+              fontSize: '14px'
+            }}
+          >
+            🔄 Refresh Data
+          </button>
+        </div>
+
+        {topStocksLoading ? (
+          <div className="loading-container">
+            <div className="spinner"></div>
+            <p>Loading comprehensive stock analysis...</p>
+          </div>
+        ) : topStocksData.length === 0 ? (
+          <div className="loading-container">
+            <p>No data available. Please check console for errors.</p>
+            <button onClick={fetchTopStocks} style={{ marginTop: '10px', padding: '10px 20px', background: '#667eea', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+              Retry Fetch
+            </button>
+          </div>
+        ) : (
+          <div className="top-stocks-table-container">
+            <div className="table-controls">
+              <div className="search-container">
+                <input
+                  type="text"
+                  placeholder="Search stocks by symbol, company name, or sector..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="search-input"
+                />
+                <span className="search-icon">🔍</span>
+              </div>
+              <div className="table-info">
+                Showing {topStocksData.filter(stock => 
+                  searchTerm === '' || 
+                  stock.symbol?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                  stock.company_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                  stock.sector?.toLowerCase().includes(searchTerm.toLowerCase())
+                ).length} of {topStocksData.length} stocks
+              </div>
+
+            </div>
+            
+            <div className="stocks-comparison-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Stock</th>
+                    <th>Company</th>
+                    <th>Sector</th>
+                    <th>Overall Score</th>
+                    <th>Grade</th>
+                    <th>Recommendation</th>
+                    <th>Risk Level</th>
+                    <th>Reliability</th>
+                    <th>Growth</th>
+                    <th>Valuation</th>
+                    <th>ROE (%)</th>
+                    <th>Profit Margin (%)</th>
+                    <th>Current Ratio</th>
+                    <th>Revenue Growth (%)</th>
+                    <th>P/E Ratio</th>
+                    <th>P/B Ratio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {topStocksData.filter(stock => 
+                    searchTerm === '' || 
+                    stock.symbol?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    stock.company_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    stock.sector?.toLowerCase().includes(searchTerm.toLowerCase())
+                  ).map((stock, index) => (
+                    <tr key={stock.symbol} className="stock-row">
+                      <td className="rank-cell">
+                        <span className="rank-number">#{index + 1}</span>
+                      </td>
+                      <td className="symbol-cell">
+                        <strong>{stock.symbol}</strong>
+                      </td>
+                      <td className="company-cell">
+                        {stock.company_name}
+                      </td>
+                      <td className="sector-cell">
+                        {stock.sector}
+                      </td>
+                      <td className="score-cell">
+                        <span 
+                          className="score-value"
+                          style={{ color: getScoreColor(stock.overall_score) }}
+                        >
+                          {stock.overall_score}
+                        </span>
+                      </td>
+                      <td className="grade-cell">
+                        <span 
+                          className="grade-badge"
+                          style={{ 
+                            backgroundColor: getGradeColor(stock.overall_grade),
+                            color: 'white'
+                          }}
+                        >
+                          {stock.overall_grade}
+                        </span>
+                      </td>
+                      <td className="recommendation-cell">
+                        <span 
+                          className="recommendation-badge"
+                          style={{ color: getRecommendationColor(stock.recommendation) }}
+                        >
+                          {stock.recommendation}
+                        </span>
+                      </td>
+                      <td className="risk-cell">
+                        <span 
+                          className="risk-badge"
+                          style={{ color: getRiskColor(stock.risk_level) }}
+                        >
+                          {stock.risk_level}
+                        </span>
+                      </td>
+                      <td className="reliability-cell">
+                        <span style={{ color: getScoreColor(stock.reliability_score) }}>
+                          {stock.reliability_score}
+                        </span>
+                      </td>
+                      <td className="growth-cell">
+                        <span style={{ color: getScoreColor(stock.growth_score) }}>
+                          {stock.growth_score}
+                        </span>
+                      </td>
+                      <td className="valuation-cell">
+                        <span style={{ color: getScoreColor(stock.valuation_score) }}>
+                          {stock.valuation_score}
+                        </span>
+                      </td>
+                      <td className="roe-cell">
+                        {stock.roe !== null ? `${stock.roe}%` : 'N/A'}
+                      </td>
+                      <td className="profit-margin-cell">
+                        {stock.profit_margin !== null ? `${stock.profit_margin}%` : 'N/A'}
+                      </td>
+                      <td className="current-ratio-cell">
+                        {stock.current_ratio !== null ? stock.current_ratio : 'N/A'}
+                      </td>
+                      <td className="revenue-growth-cell">
+                        {stock.revenue_growth !== null ? `${stock.revenue_growth}%` : 'N/A'}
+                      </td>
+                      <td className="pe-ratio-cell">
+                        {stock.pe_ratio !== null ? stock.pe_ratio : 'N/A'}
+                      </td>
+                      <td className="pb-ratio-cell">
+                        {stock.price_to_book !== null ? stock.price_to_book : 'N/A'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const renderSectorAnalysisView = () => {
+    const getScoreColor = (score) => {
+      if (score >= 80) return '#2e7d32'; // Green
+      if (score >= 60) return '#1976d2'; // Blue
+      if (score >= 40) return '#ed6c02'; // Orange
+      return '#d32f2f'; // Red
+    };
+
+    const getGradeColor = (grade) => {
+      switch (grade) {
+        case 'A': return '#2e7d32';
+        case 'B': return '#1976d2';
+        case 'C': return '#ed6c02';
+        case 'D': return '#d32f2f';
+        case 'F': return '#d32f2f';
+        default: return '#666';
+      }
+    };
+
+    const getRecommendationColor = (recommendation) => {
+      switch (recommendation) {
+        case 'Buy': return '#2e7d32';
+        case 'Hold': return '#ed6c02';
+        case 'Sell': return '#d32f2f';
+        default: return '#666';
+      }
+    };
+
+    const getRiskColor = (risk) => {
+      switch (risk) {
+        case 'Low': return '#2e7d32';
+        case 'Medium': return '#ed6c02';
+        case 'High': return '#d32f2f';
+        default: return '#666';
+      }
+    };
+
+    return (
+      <div className="peer-comparison-container">
+        <div className="peer-comparison-header">
+          <h2>📈 Peer Comparison</h2>
+          <p>Compare stocks within the same sector for peer analysis</p>
+
+          <div className="sector-selector-container">
+            <select 
+              value={selectedSector} 
+              onChange={(e) => {
+                setSelectedSector(e.target.value);
+                if (e.target.value) {
+                  fetchSectorAnalysis(e.target.value);
+                }
+              }}
+              className="sector-select"
+            >
+              <option value="">Select a sector...</option>
+              {availableSectors.map(sector => (
+                <option key={sector} value={sector}>{sector}</option>
+              ))}
+            </select>
+            <button 
+              onClick={() => fetchSectorAnalysis(selectedSector)} 
+              disabled={!selectedSector}
+              className="sector-refresh-btn"
+            >
+              🔄 Refresh
+            </button>
+          </div>
+        </div>
+        
+        {sectorAnalysisLoading ? (
+          <div className="peer-comparison-loading">
+            <div className="spinner"></div>
+            <p>Loading peer comparison data...</p>
+          </div>
+        ) : sectorAnalysisData.length === 0 ? (
+          <div className="peer-comparison-empty">
+            <h3>📊 Select a Sector</h3>
+            <p>Choose a sector from the dropdown above to view peer comparison analysis</p>
+            <div className="sector-selector-container">
+              <select 
+                value={selectedSector} 
+                onChange={(e) => {
+                  setSelectedSector(e.target.value);
+                  if (e.target.value) {
+                    fetchSectorAnalysis(e.target.value);
+                  }
+                }}
+                className="sector-select"
+              >
+                <option value="">Select a sector...</option>
+                {availableSectors.map(sector => (
+                  <option key={sector} value={sector}>{sector}</option>
+                ))}
+              </select>
+              <button 
+                onClick={() => fetchSectorAnalysis(selectedSector)} 
+                disabled={!selectedSector}
+                className="sector-refresh-btn"
+              >
+                🔄 Refresh
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="top-stocks-table-container">
+            <div className="table-controls">
+              <div className="search-container">
+                <input
+                  type="text"
+                  placeholder="Search stocks by symbol, company name..."
+                  value={sectorSearchTerm}
+                  onChange={(e) => setSectorSearchTerm(e.target.value)}
+                  className="search-input"
+                />
+                <span className="search-icon">🔍</span>
+              </div>
+              <div className="table-info">
+                Showing {sectorAnalysisData.filter(stock => 
+                  sectorSearchTerm === '' || 
+                  stock.symbol?.toLowerCase().includes(sectorSearchTerm.toLowerCase()) ||
+                  stock.company_name?.toLowerCase().includes(sectorSearchTerm.toLowerCase())
+                ).length} of {sectorAnalysisData.length} stocks in {selectedSector}
+              </div>
+            </div>
+            
+            <div className="stocks-comparison-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Rank</th><th>Stock</th><th>Company</th><th>Sector</th>
+                    <th>Overall Score</th><th>Grade</th><th>Recommendation</th><th>Risk Level</th>
+                    <th>Reliability</th><th>Growth</th><th>Valuation</th>
+                    <th>ROE (%)</th><th>Profit Margin (%)</th><th>Current Ratio</th>
+                    <th>Revenue Growth (%)</th><th>P/E Ratio</th><th>P/B Ratio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sectorAnalysisData.filter(stock => 
+                    sectorSearchTerm === '' || 
+                    stock.symbol?.toLowerCase().includes(sectorSearchTerm.toLowerCase()) ||
+                    stock.company_name?.toLowerCase().includes(sectorSearchTerm.toLowerCase())
+                  ).map((stock, index) => (
+                    <tr key={stock.symbol} className="stock-row">
+                      <td className="rank-cell">
+                        <span className="rank-number">#{index + 1}</span>
+                      </td>
+                      <td className="symbol-cell">
+                        <strong>{stock.symbol}</strong>
+                      </td>
+                      <td className="company-cell">
+                        {stock.company_name}
+                      </td>
+                      <td className="sector-cell">
+                        {stock.sector}
+                      </td>
+                      <td className="score-cell">
+                        <span 
+                          className="score-value"
+                          style={{ color: getScoreColor(stock.overall_score) }}
+                        >
+                          {stock.overall_score}
+                        </span>
+                      </td>
+                      <td className="grade-cell">
+                        <span 
+                          className="grade-badge"
+                          style={{ 
+                            backgroundColor: getGradeColor(stock.overall_grade),
+                            color: 'white'
+                          }}
+                        >
+                          {stock.overall_grade}
+                        </span>
+                      </td>
+                      <td className="recommendation-cell">
+                        <span 
+                          className="recommendation-badge"
+                          style={{ color: getRecommendationColor(stock.recommendation) }}
+                        >
+                          {stock.recommendation}
+                        </span>
+                      </td>
+                      <td className="risk-cell">
+                        <span 
+                          className="risk-badge"
+                          style={{ color: getRiskColor(stock.risk_level) }}
+                        >
+                          {stock.risk_level}
+                        </span>
+                      </td>
+                      <td className="reliability-cell">
+                        <span style={{ color: getScoreColor(stock.reliability_score) }}>
+                          {stock.reliability_score}
+                        </span>
+                      </td>
+                      <td className="growth-cell">
+                        <span style={{ color: getScoreColor(stock.growth_score) }}>
+                          {stock.growth_score}
+                        </span>
+                      </td>
+                      <td className="valuation-cell">
+                        <span style={{ color: getScoreColor(stock.valuation_score) }}>
+                          {stock.valuation_score}
+                        </span>
+                      </td>
+                      <td className="roe-cell">
+                        {stock.roe !== null ? `${stock.roe}%` : 'N/A'}
+                      </td>
+                      <td className="profit-margin-cell">
+                        {stock.profit_margin !== null ? `${stock.profit_margin}%` : 'N/A'}
+                      </td>
+                      <td className="current-ratio-cell">
+                        {stock.current_ratio !== null ? stock.current_ratio : 'N/A'}
+                      </td>
+                      <td className="revenue-growth-cell">
+                        {stock.revenue_growth !== null ? `${stock.revenue_growth}%` : 'N/A'}
+                      </td>
+                      <td className="pe-ratio-cell">
+                        {stock.pe_ratio !== null ? stock.pe_ratio : 'N/A'}
+                      </td>
+                      <td className="pb-ratio-cell">
+                        {stock.price_to_book !== null ? stock.price_to_book : 'N/A'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   const renderSectoralView = () => (
     <div className="dashboard-section sector-view">
@@ -1393,7 +1998,7 @@ const renderOverallPortfolioSentiment = () => {
               // Get sentiment data for this stock
               const sentiment = sentimentData.find(s => s.stock === item.stock_symbol);
               const sentimentScore = sentiment ? sentiment.sentiment : 0;
-              
+              console.log("sentiment score for test",sentimentScore);
               return (
                 <div key={item.stock_symbol} className="portfolio-item">
                   <div className="stock-info">
@@ -1690,19 +2295,132 @@ const renderOverallPortfolioSentiment = () => {
       );
     }
     if (activeTab === 'market') {
-      return <div className="charts-section">{renderMarketSentiment()}</div>;
+      return <div className="charts-section stock-chart">{renderMarketSentiment()}</div>;
     }
     if (activeTab === 'fundamental') {
-      return <div className="charts-section">{renderFundamentalAnalysis()}</div>;
+      return <div className="charts-section fundamental-chart">{renderFundamentalAnalysis()}</div>;
     }
     return null;
   };
+
+
+
+  // exchange-sentiment section
+  // if (activeTab === 'exchange-sentiment') {
+  //   return (
+  //     <div className="dashboard">
+  //       <h2>🌐 Exchange Sentiment Index</h2>
+  //       {exchangeSentimentLoading ? (
+  //         <div>Loading...</div>
+  //       ) : (
+  //         <table>
+  //           <thead>
+  //             <tr>
+  //               <th>Ticker</th>
+  //               <th>Index</th>
+  //               <th>Date</th>
+  //               <th>Open</th>
+  //               <th>Close</th>
+  //               <th>Volume</th>
+  //               {/* Add more columns as needed */}
+  //             </tr>
+  //           </thead>
+  //           <tbody>
+  //             {exchangeSentimentData.map((row, idx) => (
+  //               <tr key={idx}>
+  //                 <td>{row.ticker}</td>
+  //                 <td>{row.index_name}</td>
+  //                 <td>{row.Date || row.date}</td>
+  //                 <td>{row.Open}</td>
+  //                 <td>{row.Close}</td>
+  //                 <td>{row.Volume}</td>
+  //                 {/* Add more cells as needed */}
+  //               </tr>
+  //             ))}
+  //           </tbody>
+  //         </table>
+  //       )}
+  //     </div>
+  //   );
+  // }
+
+  if (activeTab === 'exchange-sentiment') {
+    return (
+      <div className="dashboard">
+        <div className="exchange-sentiment-header">
+            <span className="exchange-sentiment-icon" role="img" aria-label="globe">
+              🌐
+            </span>
+            <span className="exchange-sentiment-title">Exchange Sentiment Index</span>
+        </div>
+        {exchangeSentimentLoading ? (
+          <div>Loading...</div>
+        ) : (
+          <div className="exchange-sentiment-outer-card">
+            <div className="exchange-sentiment-powered">Powered by AI</div>
+            <div className="exchange-sentiment-scroll-container">
+              <div className="exchange-sentiment-list">
+                {(() => {
+                  // Separate live and non-live indices
+                  const live = exchangeSentimentData.filter(row => row.price_type === 'live');
+                  const nonLive = exchangeSentimentData.filter(row => row.price_type !== 'live');
+                  const sorted = [...live, ...nonLive];
+                  return sorted.map((row, idx) => (
+                    <div className="exchange-sentiment-row" key={idx}>
+                      <div className="exchange-info">
+                        <span className="exchange-symbol">{row.ticker}</span>
+                        <span className="exchange-name">{row.index_name}</span>
+                        {row.price_type === 'live' && (
+                          <span className="live-label" style={{ color: 'red', fontWeight: 'bold', marginLeft: 8 }}>
+                            ● Live
+                          </span>
+                        )}
+                      </div>
+                      <div className="sentiment-score-center">
+                        <span className="sentiment-score">
+                          {(row.price ?? row.Close)?.toFixed(2)}
+                        </span>
+                      </div>
+                      <div className={`index-change-right ${row.change < 0 ? 'negative' : 'positive'}`}> 
+                        {row.change > 0 ? '+' : ''}
+                        {row.change?.toFixed(2)} {row.percent_change > 0 ? '+' : ''}
+                        {row.percent_change?.toFixed(2)}%
+                      </div>
+                    </div>
+                  ));
+                })()}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
 
   // Check if we're in sectoral view (separate from portfolio sub-tabs)
   if (activeTab === 'sectoral') {
     return (
       <div className="dashboard">
         {renderSectoralView()}
+      </div>
+    );
+  }
+
+  // Check if we're in top-stocks view
+  if (activeTab === 'top-stocks') {
+    return (
+      <div className="dashboard">
+        {renderTopStocksView()}
+      </div>
+    );
+  }
+
+  // Check if we're in sector-analysis view
+  if (activeTab === 'sector-analysis') {
+    return (
+      <div className="dashboard">
+        {renderSectorAnalysisView()}
       </div>
     );
   }
@@ -1715,6 +2433,8 @@ const renderOverallPortfolioSentiment = () => {
       {renderTabContent()}
     </div>
   );
+
 };
+
 
 export default Dashboard;
